@@ -34,6 +34,9 @@
     },
     "resume-builder-resume-shell-resume": {
       "tags": ["scope:resume-builder", "type:feature"]
+    },
+    "resume-builder-resume-feature-resume-list": {
+      "tags": []
     }
   }
 }

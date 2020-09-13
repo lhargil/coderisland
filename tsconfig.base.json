@@ -18,6 +18,9 @@
     "paths": {
       "@coderisland/resume-builder/resume/shell-resume": [
         "libs/resume-builder/resume/shell-resume/src/index.ts"
+      ],
+      "@coderisland/resume-builder/resume/feature-resume-list": [
+        "libs/resume-builder/resume/feature-resume-list/src/index.ts"
       ]
     }
   },

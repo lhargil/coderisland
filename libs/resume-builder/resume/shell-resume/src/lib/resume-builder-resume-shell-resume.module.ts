@@ -7,7 +7,13 @@ import { RouterModule } from '@angular/router';
     CommonModule,
 
     RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
+      {
+        path: '',
+        loadChildren: () =>
+          import('@coderisland/resume-builder/resume/feature-resume-list').then(
+            (module) => module.ResumeBuilderResumeFeatureResumeListModule
+          ),
+      },
     ]),
   ],
 })
