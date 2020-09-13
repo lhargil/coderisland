@@ -14,6 +14,15 @@ import { RouterModule } from '@angular/router';
             (module) => module.ResumeBuilderResumeFeatureResumeListModule
           ),
       },
+      {
+        path: ':id/details',
+        loadChildren: () =>
+          import(
+            '@coderisland/resume-builder/resume/feature-resume-details'
+          ).then(
+            (module) => module.ResumeBuilderResumeFeatureResumeDetailsModule
+          ),
+      },
     ]),
   ],
 })
