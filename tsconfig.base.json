@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@coderisland/resume-builder/resume/shell-resume": [
+        "libs/resume-builder/resume/shell-resume/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

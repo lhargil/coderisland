@@ -21,5 +21,19 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "resume-builder": {
+      "tags": ["scope:app", "type:app"]
+    },
+    "resume-builder-e2e": {
+      "tags": [],
+      "implicitDependencies": ["resume-builder"]
+    },
+    "resume-builder-api": {
+      "tags": ["scope:api", "type:app"]
+    },
+    "resume-builder-resume-shell-resume": {
+      "tags": ["scope:resume-builder", "type:feature"]
+    }
+  }
 }
