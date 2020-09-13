@@ -27,6 +27,9 @@
       ],
       "@coderisland/resume-builder/resume/feature-resume-edit": [
         "libs/resume-builder/resume/feature-resume-edit/src/index.ts"
+      ],
+      "@coderisland/shared/resume-builder/domain/interfaces": [
+        "libs/shared/resume-builder/domain/interfaces/src/index.ts"
       ]
     }
   },

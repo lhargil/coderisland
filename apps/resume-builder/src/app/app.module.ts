@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { RouterModule } from '@angular/router';
       ],
       { initialNavigation: 'enabled' }
     ),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

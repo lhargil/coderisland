@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Resume } from '@coderisland/shared/resume-builder/domain/interfaces';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'resb-shell-resume-details',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShellResumeDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    this.httpClient.get<Resume>('/api')
+      .pipe(tap(console.log))
+      .subscribe();
   }
-
 }

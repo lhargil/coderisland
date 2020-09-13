@@ -312,6 +312,35 @@
           "style": "scss"
         }
       }
+    },
+    "shared-resume-builder-domain-interfaces": {
+      "root": "libs/shared/resume-builder/domain/interfaces",
+      "sourceRoot": "libs/shared/resume-builder/domain/interfaces/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/shared/resume-builder/domain/interfaces/tsconfig.lib.json",
+              "libs/shared/resume-builder/domain/interfaces/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/resume-builder/domain/interfaces/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/resume-builder/domain/interfaces/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

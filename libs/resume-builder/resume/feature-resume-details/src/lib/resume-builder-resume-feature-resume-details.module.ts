@@ -7,7 +7,6 @@ import { ResumeDetailsComponent } from './components/resume-details/resume-detai
 @NgModule({
   imports: [
     CommonModule,
-
     RouterModule.forChild([
       {path: '', pathMatch: 'full', component: ShellResumeDetailsComponent}
     ]),
