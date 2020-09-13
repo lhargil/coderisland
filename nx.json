@@ -45,8 +45,8 @@
     "resume-builder-resume-feature-resume-edit": {
       "tags": []
     },
-    "shared-resume-builder-domain-interfaces": {
-      "tags": []
+    "resume-builder-domain-interfaces": {
+      "tags": ["scope:resume-builder", "type:domain"]
     }
   }
 }

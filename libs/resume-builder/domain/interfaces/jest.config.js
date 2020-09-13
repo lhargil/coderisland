@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'shared-resume-builder-domain-interfaces',
-  preset: '../../../../../jest.config.js',
+  name: 'resume-builder-domain-interfaces',
+  preset: '../../../../jest.config.js',
   globals: {
     'ts-jest': {
       tsConfig: '<rootDir>/tsconfig.spec.json',
@@ -11,5 +11,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory:
-    '../../../../../coverage/libs/shared/resume-builder/domain/interfaces',
+    '../../../../coverage/libs/resume-builder/domain/interfaces',
 };

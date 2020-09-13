@@ -313,9 +313,9 @@
         }
       }
     },
-    "shared-resume-builder-domain-interfaces": {
-      "root": "libs/shared/resume-builder/domain/interfaces",
-      "sourceRoot": "libs/shared/resume-builder/domain/interfaces/src",
+    "resume-builder-domain-interfaces": {
+      "root": "libs/resume-builder/domain/interfaces",
+      "sourceRoot": "libs/resume-builder/domain/interfaces/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -324,19 +324,19 @@
           "options": {
             "linter": "eslint",
             "tsConfig": [
-              "libs/shared/resume-builder/domain/interfaces/tsconfig.lib.json",
-              "libs/shared/resume-builder/domain/interfaces/tsconfig.spec.json"
+              "libs/resume-builder/domain/interfaces/tsconfig.lib.json",
+              "libs/resume-builder/domain/interfaces/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/shared/resume-builder/domain/interfaces/**/*"
+              "!libs/resume-builder/domain/interfaces/**/*"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/shared/resume-builder/domain/interfaces/jest.config.js",
+            "jestConfig": "libs/resume-builder/domain/interfaces/jest.config.js",
             "passWithNoTests": true
           }
         }

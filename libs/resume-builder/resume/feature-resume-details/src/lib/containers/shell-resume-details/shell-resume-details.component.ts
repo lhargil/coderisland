@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Resume } from '@coderisland/shared/resume-builder/domain/interfaces';
+import { Resume } from '@coderisland/resume-builder/domain/interfaces';
 import { tap } from 'rxjs/operators';
 
 @Component({

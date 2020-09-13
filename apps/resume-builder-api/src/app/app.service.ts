@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Resume } from '@coderisland/shared/resume-builder/domain/interfaces';
+import { Resume } from '@coderisland/resume-builder/domain/interfaces';
 
 @Injectable()
 export class AppService {
