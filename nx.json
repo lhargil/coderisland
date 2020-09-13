@@ -23,7 +23,8 @@
   },
   "projects": {
     "resume-builder": {
-      "tags": ["scope:app", "type:app"]
+      "tags": ["scope:resume-builder", "type:app"],
+      "implicitDependencies": ["resume-builder-api"]
     },
     "resume-builder-e2e": {
       "tags": [],
