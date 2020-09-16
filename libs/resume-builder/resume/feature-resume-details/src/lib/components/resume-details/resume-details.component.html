@@ -4,13 +4,25 @@
   </h2>
 </header>
 <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
-  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
-    <h3 class="text-lg leading-6 font-medium text-gray-900">
-      Basic profile
-    </h3>
-    <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
-      Personal details and contact information.
-    </p>
+  <div
+    class="px-4 py-5 border-b border-gray-200 sm:px-6 flex items-center justify-between"
+  >
+    <div>
+      <h3 class="text-lg leading-6 font-medium text-gray-900">
+        Basic profile
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
+        Personal details and contact information.
+      </p>
+    </div>
+    <span class="ml-4">
+      <button
+        class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+        type="button"
+      >
+        Edit
+      </button>
+    </span>
   </div>
   <div class="px-4 py-5 sm:px-6">
     <dl class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
@@ -90,331 +102,509 @@
 </div>
 
 <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
-  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
-    <h3 class="text-lg leading-6 font-medium text-gray-900">
-      Work experience
-    </h3>
-    <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
-      Details regarding your work career
-    </p>
+  <div
+    class="px-4 py-5 border-b border-gray-200 sm:px-6 flex items-center justify-between"
+  >
+    <div>
+      <h3 class="text-lg leading-6 font-medium text-gray-900">
+        Work experience
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
+        Details regarding your work career
+      </p>
+    </div>
+    <span class="ml-4">
+      <button
+        class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+        type="button"
+      >
+        Add new
+      </button>
+    </span>
   </div>
   <div class="px-4 py-5 sm:px-6">
-    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
-      <div class="mb-4 last:mb-0" *ngFor="let workExperience of resume.work">
-        <header class="mb-4">
-          <h4
-            class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
-          >
-            {{ workExperience.position }}
-          </h4>
-          <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
-            <div
-              class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mr-6"
+    <div>
+      <div
+        class="mb-4 last:mb-0 flex items-start justify-between"
+        *ngFor="let workExperience of resume.work"
+      >
+        <div>
+          <header class="mb-4">
+            <h4
+              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
             >
-              <svg
-                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+              {{ workExperience.position }}
+            </h4>
+            <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
+              <div
+                class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mr-6"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              <a [href]="workExperience.website" class="underline">
-                {{ workExperience.company }}
-              </a>
-            </div>
-            <div class="mt-2 flex items-center text-sm leading-5 text-gray-500">
-              <svg
-                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+                <svg
+                  class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <a [href]="workExperience.website" class="underline">
+                  {{ workExperience.company }}
+                </a>
+              </div>
+              <div
+                class="mt-2 flex items-center text-sm leading-5 text-gray-500"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              {{ workExperience.startDate }} - {{ workExperience.endDate }}
+                <svg
+                  class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                {{ workExperience.startDate }} - {{ workExperience.endDate }}
+              </div>
             </div>
-          </div>
-        </header>
-        <p>
-          {{ workExperience.summary }}
-        </p>
-        <div class="ml-8">
-          <header class="flex items-center justify-start mb-2">
-            <h3>Highlights</h3>
           </header>
-          <div
-            class="mb-4 last:mb-0"
-            *ngFor="let highlight of workExperience.highlights; index as j"
-          >
-            <p class="mt-1 text-sm leading-5 text-gray-900">
-              {{ highlight }}
+          <div>
+            <p>
+              {{ workExperience.summary }}
             </p>
+            <div class="ml-8">
+              <header class="flex items-center justify-start mb-2">
+                <h3>Highlights</h3>
+              </header>
+              <div
+                class="mb-4 last:mb-0"
+                *ngFor="let highlight of workExperience.highlights; index as j"
+              >
+                <p class="mt-1 text-sm leading-5 text-gray-900">
+                  {{ highlight }}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+        <span class="ml-4">
+          <button
+            class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+            type="button"
+          >
+            Edit
+          </button>
+        </span>
       </div>
     </div>
   </div>
 </div>
 
 <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
-  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
-    <h3 class="text-lg leading-6 font-medium text-gray-900">
-      Volunteer experience
-    </h3>
-    <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
-      Details regarding your volunteer work
-    </p>
+  <div
+    class="px-4 py-5 border-b border-gray-200 sm:px-6 flex items-center justify-between"
+  >
+    <div>
+      <h3 class="text-lg leading-6 font-medium text-gray-900">
+        Volunteer experience
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
+        Details regarding your volunteer work
+      </p>
+    </div>
+    <span class="ml-4">
+      <button
+        class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+        type="button"
+      >
+        Add new
+      </button>
+    </span>
   </div>
   <div class="px-4 py-5 sm:px-6">
-    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
+    <div>
       <div
-        class="mb-4 last:mb-0"
+        class="mb-4 last:mb-0 flex items-start justify-between"
         *ngFor="let volunteerExperience of resume.volunteer"
       >
-        <header class="mb-4">
-          <h4
-            class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
-          >
-            {{ volunteerExperience.position }}
-          </h4>
-          <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
-            <div
-              class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mr-6"
+        <div>
+          <header class="mb-4">
+            <h4
+              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
             >
-              <svg
-                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+              {{ volunteerExperience.position }}
+            </h4>
+            <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
+              <div
+                class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mr-6"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              <a [href]="volunteerExperience.website" class="underline">
-                {{ volunteerExperience.company }}
-              </a>
-            </div>
-            <div class="mt-2 flex items-center text-sm leading-5 text-gray-500">
-              <svg
-                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+                <svg
+                  class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <a [href]="volunteerExperience.website" class="underline">
+                  {{ volunteerExperience.company }}
+                </a>
+              </div>
+              <div
+                class="mt-2 flex items-center text-sm leading-5 text-gray-500"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              {{ volunteerExperience.startDate }} -
-              {{ volunteerExperience.endDate }}
+                <svg
+                  class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                {{ volunteerExperience.startDate }} -
+                {{ volunteerExperience.endDate }}
+              </div>
             </div>
-          </div>
-        </header>
-        <p>
-          {{ volunteerExperience.summary }}
-        </p>
-        <div class="ml-8">
-          <header class="flex items-center justify-start mb-2">
-            <h3>Highlights</h3>
           </header>
-          <div
-            class="mb-4 last:mb-0"
-            *ngFor="let highlight of volunteerExperience.highlights; index as j"
-          >
-            <p class="mt-1 text-sm leading-5 text-gray-900">
-              {{ highlight }}
+          <div>
+            <p>
+              {{ volunteerExperience.summary }}
             </p>
+            <div class="ml-8">
+              <header class="flex items-center justify-start mb-2">
+                <h3>Highlights</h3>
+              </header>
+              <div
+                class="mb-4 last:mb-0"
+                *ngFor="
+                  let highlight of volunteerExperience.highlights;
+                  index as j
+                "
+              >
+                <p class="mt-1 text-sm leading-5 text-gray-900">
+                  {{ highlight }}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+        <span class="ml-4">
+          <button
+            class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+            type="button"
+          >
+            Edit
+          </button>
+        </span>
       </div>
     </div>
   </div>
 </div>
 
 <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
-  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+  <div
+    class="px-4 py-5 border-b border-gray-200 sm:px-6 flex items-center justify-between"
+  >
     <h3 class="text-lg leading-6 font-medium text-gray-900">
       Education
     </h3>
+    <span class="ml-4">
+      <button
+        class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+        type="button"
+      >
+        Add new
+      </button>
+    </span>
   </div>
   <div class="px-4 py-5 sm:px-6">
-    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
-      <div class="mb-4 last:mb-0" *ngFor="let education of resume.education">
-        <header class="mb-4">
-          <div>
-            <h4
-              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
-            >
-              {{ education.studyType }}
-            </h4>
-            <p>
-              {{education.area}}
-            </p>
-          </div>
-          <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
-            <div
-              class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mr-6"
-            >
-              <svg
-                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+    <div>
+      <div
+        class="mb-4 last:mb-0 flex items-start justify-between"
+        *ngFor="let education of resume.education"
+      >
+        <div>
+          <header class="mb-4">
+            <div>
+              <h4
+                class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              {{ education.institution }}
+                {{ education.studyType }}
+              </h4>
+              <p>
+                {{ education.area }}
+              </p>
             </div>
-            <div class="mt-2 flex items-center text-sm leading-5 text-gray-500">
-              <svg
-                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+            <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
+              <div
+                class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mr-6"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              {{ education.startDate }} -
-              {{ education.endDate }}
+                <svg
+                  class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                {{ education.institution }}
+              </div>
+              <div
+                class="mt-2 flex items-center text-sm leading-5 text-gray-500"
+              >
+                <svg
+                  class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                {{ education.startDate }} -
+                {{ education.endDate }}
+              </div>
             </div>
-          </div>
-        </header>
-        <div class="ml-8">
-          <header class="flex items-center justify-start mb-2">
-            <h3>Highlights</h3>
           </header>
-          <div
-            class="mb-4 last:mb-0"
-            *ngFor="let course of education.courses"
-          >
-            <p class="mt-1 text-sm leading-5 text-gray-900">
-              {{ course }}
-            </p>
+          <div class="ml-8">
+            <header class="flex items-center justify-start mb-2">
+              <h3>Highlights</h3>
+            </header>
+            <div
+              class="mb-4 last:mb-0"
+              *ngFor="let course of education.courses"
+            >
+              <p class="mt-1 text-sm leading-5 text-gray-900">
+                {{ course }}
+              </p>
+            </div>
           </div>
         </div>
+        <span class="ml-4">
+          <button
+            class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+            type="button"
+          >
+            Edit
+          </button>
+        </span>
       </div>
     </div>
   </div>
 </div>
 
 <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
-  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+  <div
+    class="px-4 py-5 border-b border-gray-200 sm:px-6 flex items-center justify-between"
+  >
     <h3 class="text-lg leading-6 font-medium text-gray-900">
       Skills
     </h3>
+    <span class="ml-4">
+      <button
+        class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+        type="button"
+      >
+        Add new
+      </button>
+    </span>
   </div>
   <div class="px-4 py-5 sm:px-6">
-    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
-      <div class="mb-4 last:mb-0" *ngFor="let skill of resume.skills">
-        <header class="mb-4">
-          <div>
-            <h4
-              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
-            >
-              {{skill.name}}
-            </h4>
-            <p>
-              {{skill.level}}
-            </p>
-          </div>
-        </header>
-        <div class="ml-8">
-          <span *ngFor="let keyword of skill.keywords; index as k;"
-          class="inline-block pt-2 pr-2 mr-1 mb-1 last:mr-0 last:mb-0">
+    <div>
+      <div
+        class="mb-4 last:mb-0 flex items-start justify-between"
+        *ngFor="let skill of resume.skills"
+      >
+        <div>
+          <header class="mb-4">
+            <div>
+              <h4
+                class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+              >
+                {{ skill.name }}
+              </h4>
+              <p>
+                {{ skill.level }}
+              </p>
+            </div>
+          </header>
+          <div class="ml-8">
             <span
-              class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium leading-5 bg-green-100 text-green-800">
-              {{keyword}}
+              *ngFor="let keyword of skill.keywords; index as k"
+              class="inline-block pt-2 pr-2 mr-1 mb-1 last:mr-0 last:mb-0"
+            >
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium leading-5 bg-green-100 text-green-800"
+              >
+                {{ keyword }}
+              </span>
             </span>
-        </span>
+          </div>
         </div>
+        <span class="ml-4">
+          <button
+            class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+            type="button"
+          >
+            Edit
+          </button>
+        </span>
       </div>
     </div>
   </div>
 </div>
 <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
-  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+  <div
+    class="px-4 py-5 border-b border-gray-200 sm:px-6 flex items-center justify-between"
+  >
     <h3 class="text-lg leading-6 font-medium text-gray-900">
       Languages
     </h3>
+    <span class="ml-4">
+      <button
+        class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+        type="button"
+      >
+        Add new
+      </button>
+    </span>
   </div>
   <div class="px-4 py-5 sm:px-6">
-    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
-      <div class="mb-4 last:mb-0" *ngFor="let language of resume.languages">
-        <header class="mb-4">
-          <div>
-            <h4
-              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
-            >
-              {{language.language}}
-            </h4>
-            <p>
-              {{language.fluency}}
-            </p>
+    <div>
+      <div
+        class="mb-4 last:mb-0 flex items-start justify-between"
+        *ngFor="let language of resume.languages"
+      >
+        <div>
+          <div class="mb-4">
+            <div>
+              <h4
+                class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+              >
+                {{ language.language }}
+              </h4>
+              <p>
+                {{ language.fluency }}
+              </p>
+            </div>
           </div>
-        </header>
+        </div>
+        <span class="ml-4">
+          <button
+            class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+            type="button"
+          >
+            Edit
+          </button>
+        </span>
       </div>
     </div>
   </div>
 </div>
 <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
-  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+  <div
+    class="px-4 py-5 border-b border-gray-200 sm:px-6 flex items-center justify-between"
+  >
     <h3 class="text-lg leading-6 font-medium text-gray-900">
       Interests
     </h3>
+    <span class="ml-4">
+      <button
+        class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+        type="button"
+      >
+        Add new
+      </button>
+    </span>
   </div>
   <div class="px-4 py-5 sm:px-6">
-    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
-      <div class="mb-4 last:mb-0" *ngFor="let interest of resume.interests">
-        <header class="mb-4">
-          <div>
-            <h4
-              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
-            >
-              {{interest.name}}
-            </h4>
+    <div>
+      <div
+        class="mb-4 last:mb-0 flex items-start justify-between"
+        *ngFor="let interest of resume.interests"
+      >
+        <div>
+          <div class="mb-4">
+            <div>
+              <h4
+                class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+              >
+                {{ interest.name }}
+              </h4>
+            </div>
           </div>
-        </header>
+        </div>
+        <span class="ml-4">
+          <button
+            class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+            type="button"
+          >
+            Edit
+          </button>
+        </span>
       </div>
     </div>
   </div>
 </div>
 <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
-  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+  <div
+    class="px-4 py-5 border-b border-gray-200 sm:px-6 flex items-center justify-between"
+  >
     <h3 class="text-lg leading-6 font-medium text-gray-900">
       References
     </h3>
+    <span class="ml-4">
+      <button
+        class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+        type="button"
+      >
+        Add new
+      </button>
+    </span>
   </div>
   <div class="px-4 py-5 sm:px-6">
-    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
-      <div class="mb-4 last:mb-0" *ngFor="let reference of resume.references">
-        <header class="mb-4">
-          <div>
-            <h4
-              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
-            >
-              {{reference.name}}
-            </h4>
-            <p>
-              {{reference.reference}}
-            </p>
+    <div>
+      <div
+        class="mb-4 last:mb-0 flex items-start justify-between"
+        *ngFor="let reference of resume.references"
+      >
+        <div>
+          <div class="mb-4">
+            <div>
+              <h4
+                class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+              >
+                {{ reference.name }}
+              </h4>
+              <p>
+                {{ reference.reference }}
+              </p>
+            </div>
           </div>
-        </header>
+        </div>
+        <span class="ml-4">
+          <button
+            class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+            type="button"
+          >
+            Edit
+          </button>
+        </span>
       </div>
     </div>
   </div>
