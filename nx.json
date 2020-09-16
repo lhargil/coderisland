@@ -47,6 +47,9 @@
     },
     "resume-builder-domain-interfaces": {
       "tags": ["scope:resume-builder", "type:domain"]
+    },
+    "resume-builder-resume-data-access": {
+      "tags": ["scope:resume-builder", "type:data-access"]
     }
   }
 }

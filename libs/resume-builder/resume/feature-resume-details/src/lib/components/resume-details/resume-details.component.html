@@ -1,96 +1,84 @@
-<div class="bg-white shadow overflow-hidden sm:rounded-lg">
-  <div class="px-4 py-5 border-b border-gray-200 sm:px-6 flex justify-between">
-    <div>
-      <h3 class="text-lg leading-6 font-medium text-gray-900">
-        Details title
-      </h3>
-      <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
-        description
-      </p>
-    </div>
-    <div>
-      <span>
-        <a [routerLink]="['../../', 'edit']" class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out">
-          Edit
-        </a>
-      </span>
-    </div>
+<header class="my-4">
+  <h2>
+    Company X resume
+  </h2>
+</header>
+<div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
+  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      Basic profile
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
+      Personal details and contact information.
+    </p>
   </div>
-  <div>
-    <dl>
-      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+  <div class="px-4 py-5 sm:px-6">
+    <dl class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
+      <div class="sm:col-span-1">
         <dt class="text-sm leading-5 font-medium text-gray-500">
           Full name
         </dt>
-        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          Margot Foster
+        <dd class="mt-1 text-sm leading-5 text-gray-900">
+          {{ resume.basics.name }}
         </dd>
       </div>
-      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+      <div class="sm:col-span-1">
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          Application for
+          Label
         </dt>
-        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          Backend Developer
+        <dd class="mt-1 text-sm leading-5 text-gray-900">
+          {{ resume.basics.label }}
         </dd>
       </div>
-      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+      <div class="sm:col-span-1">
         <dt class="text-sm leading-5 font-medium text-gray-500">
           Email address
         </dt>
-        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          margotfoster@example.com
+        <dd class="mt-1 text-sm leading-5 text-gray-900">
+          {{ resume.basics.email }}
         </dd>
       </div>
-      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+      <div class="sm:col-span-1">
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          Salary expectation
+          Phone
         </dt>
-        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          $120,000
+        <dd class="mt-1 text-sm leading-5 text-gray-900">
+          {{ resume.basics.phone }}
         </dd>
       </div>
-      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+      <div class="sm:col-span-2">
         <dt class="text-sm leading-5 font-medium text-gray-500">
           About
         </dt>
-        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
+        <dd class="mt-1 text-sm leading-5 text-gray-900">
+          Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt
+          cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint.
+          Sit id mollit nulla mollit nostrud in ea officia proident. Irure
+          nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
         </dd>
       </div>
-      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+      <div class="sm:col-span-2">
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          Attachments
+          Social network profiles
         </dt>
-        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <ul class="border border-gray-200 rounded-md">
-            <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm leading-5">
-              <div class="w-0 flex-1 flex items-center">
-                <svg class="flex-shrink-0 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />
-                </svg>
-                <span class="ml-2 flex-1 w-0 truncate">
-                  resume_back_end_developer.pdf
+        <dd class="mt-1 text-sm leading-5 text-gray-900">
+          <ul>
+            <li
+              *ngFor="let profile of resume.basics.profiles"
+              class="pr-4 py-3 flex items-center text-sm leading-5"
+            >
+              <div class="flex items-center">
+                <span class="flex-1">
+                  {{ profile.network }}
                 </span>
               </div>
-              <div class="ml-4 flex-shrink-0">
-                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out">
-                  Download
-                </a>
-              </div>
-            </li>
-            <li class="border-t border-gray-200 pl-3 pr-4 py-3 flex items-center justify-between text-sm leading-5">
-              <div class="w-0 flex-1 flex items-center">
-                <svg class="flex-shrink-0 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />
-                </svg>
-                <span class="ml-2 flex-1 w-0 truncate">
-                  coverletter_back_end_developer.pdf
-                </span>
-              </div>
-              <div class="ml-4 flex-shrink-0">
-                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out">
-                  Download
+              <div class="ml-4">
+                <a
+                  [href]="profile.network"
+                  target="_blank"
+                  class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out"
+                >
+                  @{{ profile.username }}
                 </a>
               </div>
             </li>
@@ -98,5 +86,336 @@
         </dd>
       </div>
     </dl>
+  </div>
+</div>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
+  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      Work experience
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
+      Details regarding your work career
+    </p>
+  </div>
+  <div class="px-4 py-5 sm:px-6">
+    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
+      <div class="mb-4 last:mb-0" *ngFor="let workExperience of resume.work">
+        <header class="mb-4">
+          <h4
+            class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+          >
+            {{ workExperience.position }}
+          </h4>
+          <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
+            <div
+              class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mr-6"
+            >
+              <svg
+                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <a [href]="workExperience.website" class="underline">
+                {{ workExperience.company }}
+              </a>
+            </div>
+            <div class="mt-2 flex items-center text-sm leading-5 text-gray-500">
+              <svg
+                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              {{ workExperience.startDate }} - {{ workExperience.endDate }}
+            </div>
+          </div>
+        </header>
+        <p>
+          {{ workExperience.summary }}
+        </p>
+        <div class="ml-8">
+          <header class="flex items-center justify-start mb-2">
+            <h3>Highlights</h3>
+          </header>
+          <div
+            class="mb-4 last:mb-0"
+            *ngFor="let highlight of workExperience.highlights; index as j"
+          >
+            <p class="mt-1 text-sm leading-5 text-gray-900">
+              {{ highlight }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
+  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      Volunteer experience
+    </h3>
+    <p class="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
+      Details regarding your volunteer work
+    </p>
+  </div>
+  <div class="px-4 py-5 sm:px-6">
+    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
+      <div
+        class="mb-4 last:mb-0"
+        *ngFor="let volunteerExperience of resume.volunteer"
+      >
+        <header class="mb-4">
+          <h4
+            class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+          >
+            {{ volunteerExperience.position }}
+          </h4>
+          <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
+            <div
+              class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mr-6"
+            >
+              <svg
+                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <a [href]="volunteerExperience.website" class="underline">
+                {{ volunteerExperience.company }}
+              </a>
+            </div>
+            <div class="mt-2 flex items-center text-sm leading-5 text-gray-500">
+              <svg
+                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              {{ volunteerExperience.startDate }} -
+              {{ volunteerExperience.endDate }}
+            </div>
+          </div>
+        </header>
+        <p>
+          {{ volunteerExperience.summary }}
+        </p>
+        <div class="ml-8">
+          <header class="flex items-center justify-start mb-2">
+            <h3>Highlights</h3>
+          </header>
+          <div
+            class="mb-4 last:mb-0"
+            *ngFor="let highlight of volunteerExperience.highlights; index as j"
+          >
+            <p class="mt-1 text-sm leading-5 text-gray-900">
+              {{ highlight }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
+  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      Education
+    </h3>
+  </div>
+  <div class="px-4 py-5 sm:px-6">
+    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
+      <div class="mb-4 last:mb-0" *ngFor="let education of resume.education">
+        <header class="mb-4">
+          <div>
+            <h4
+              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+            >
+              {{ education.studyType }}
+            </h4>
+            <p>
+              {{education.area}}
+            </p>
+          </div>
+          <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
+            <div
+              class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mr-6"
+            >
+              <svg
+                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              {{ education.institution }}
+            </div>
+            <div class="mt-2 flex items-center text-sm leading-5 text-gray-500">
+              <svg
+                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              {{ education.startDate }} -
+              {{ education.endDate }}
+            </div>
+          </div>
+        </header>
+        <div class="ml-8">
+          <header class="flex items-center justify-start mb-2">
+            <h3>Highlights</h3>
+          </header>
+          <div
+            class="mb-4 last:mb-0"
+            *ngFor="let course of education.courses"
+          >
+            <p class="mt-1 text-sm leading-5 text-gray-900">
+              {{ course }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
+  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      Skills
+    </h3>
+  </div>
+  <div class="px-4 py-5 sm:px-6">
+    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
+      <div class="mb-4 last:mb-0" *ngFor="let skill of resume.skills">
+        <header class="mb-4">
+          <div>
+            <h4
+              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+            >
+              {{skill.name}}
+            </h4>
+            <p>
+              {{skill.level}}
+            </p>
+          </div>
+        </header>
+        <div class="ml-8">
+          <span *ngFor="let keyword of skill.keywords; index as k;"
+          class="inline-block pt-2 pr-2 mr-1 mb-1 last:mr-0 last:mb-0">
+            <span
+              class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium leading-5 bg-green-100 text-green-800">
+              {{keyword}}
+            </span>
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
+  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      Languages
+    </h3>
+  </div>
+  <div class="px-4 py-5 sm:px-6">
+    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
+      <div class="mb-4 last:mb-0" *ngFor="let language of resume.languages">
+        <header class="mb-4">
+          <div>
+            <h4
+              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+            >
+              {{language.language}}
+            </h4>
+            <p>
+              {{language.fluency}}
+            </p>
+          </div>
+        </header>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
+  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      Interests
+    </h3>
+  </div>
+  <div class="px-4 py-5 sm:px-6">
+    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
+      <div class="mb-4 last:mb-0" *ngFor="let interest of resume.interests">
+        <header class="mb-4">
+          <div>
+            <h4
+              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+            >
+              {{interest.name}}
+            </h4>
+          </div>
+        </header>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
+  <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      References
+    </h3>
+  </div>
+  <div class="px-4 py-5 sm:px-6">
+    <div class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
+      <div class="mb-4 last:mb-0" *ngFor="let reference of resume.references">
+        <header class="mb-4">
+          <div>
+            <h4
+              class="text-xl font-bold leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate"
+            >
+              {{reference.name}}
+            </h4>
+            <p>
+              {{reference.reference}}
+            </p>
+          </div>
+        </header>
+      </div>
+    </div>
   </div>
 </div>

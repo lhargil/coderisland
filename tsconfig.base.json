@@ -30,6 +30,9 @@
       ],
       "@coderisland/resume-builder/domain/interfaces": [
         "libs/resume-builder/domain/interfaces/src/index.ts"
+      ],
+      "@coderisland/resume-builder/resume/data-access": [
+        "libs/resume-builder/resume/data-access/src/index.ts"
       ]
     }
   },

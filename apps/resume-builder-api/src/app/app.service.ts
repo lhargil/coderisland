@@ -1,10 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { Resume } from '@coderisland/resume-builder/domain/interfaces';
+import { Customer, Resume } from '@coderisland/resume-builder/domain/interfaces';
 
 @Injectable()
 export class AppService {
-  getData(): Resume {
-    return {
+  private readonly customer: Customer = {
+    id: '1',
+    resumes: [{
+      id: 'abc',
       basics: {
         name: 'John Doe',
         label: 'Programmer',
@@ -103,6 +105,9 @@ export class AppService {
           reference: 'Reference...',
         },
       ],
-    };
+    }]
+  };
+  getData(): Resume {
+    return this.customer.resumes.find(r => r.id == 'abc');
   }
 }

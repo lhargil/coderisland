@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Resume } from '@coderisland/resume-builder/domain/interfaces';
 
 @Component({
   selector: 'resb-resume-details',
@@ -7,7 +8,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ResumeDetailsComponent implements OnInit {
-
+  @Input()
+  resume!: Resume;
   constructor() { }
 
   ngOnInit(): void {

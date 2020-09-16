@@ -341,6 +341,39 @@
           }
         }
       }
+    },
+    "resume-builder-resume-data-access": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/data-access",
+      "sourceRoot": "libs/resume-builder/resume/data-access/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/data-access/tsconfig.lib.json",
+              "libs/resume-builder/resume/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
