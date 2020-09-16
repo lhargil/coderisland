@@ -33,6 +33,18 @@
       ],
       "@coderisland/resume-builder/resume/data-access": [
         "libs/resume-builder/resume/data-access/src/index.ts"
+      ],
+      "@coderisland/shared/directives/content-host": [
+        "libs/shared/directives/content-host/src/index.ts"
+      ],
+      "@coderisland/ui-kit/slide-in/components": [
+        "libs/ui-kit/slide-in/components/src/index.ts"
+      ],
+      "@coderisland/ui-kit/slide-in/state": [
+        "libs/ui-kit/slide-in/state/src/index.ts"
+      ],
+      "@coderisland/ui-kit/slide-in/service": [
+        "libs/ui-kit/slide-in/service/src/index.ts"
       ]
     }
   },

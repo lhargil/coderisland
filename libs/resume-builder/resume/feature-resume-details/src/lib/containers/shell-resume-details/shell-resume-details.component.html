@@ -1,1 +1,1 @@
-<resb-resume-details *ngIf="resume$ | async as resume" [resume]="resume"></resb-resume-details>
+<resb-resume-details *ngIf="resume$ | async as resume" [resume]="resume" (editClick)="edit()"></resb-resume-details>

@@ -50,6 +50,18 @@
     },
     "resume-builder-resume-data-access": {
       "tags": ["scope:resume-builder", "type:data-access"]
+    },
+    "shared-directives-content-host": {
+      "tags": ["scope:shared", "type:ui"]
+    },
+    "ui-kit-slide-in-components": {
+      "tags": ["scope:shared", "type:ui"]
+    },
+    "ui-kit-slide-in-state": {
+      "tags": ["scope:ui-kit", "type:ui"]
+    },
+    "ui-kit-slide-in-service": {
+      "tags": ["scope:ui-kit", "type:service"]
     }
   }
 }

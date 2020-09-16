@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { UiKitSlideInComponentsModule } from '@coderisland/ui-kit/slide-in/components';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
       { initialNavigation: 'enabled' }
     ),
     HttpClientModule,
+    UiKitSlideInComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
