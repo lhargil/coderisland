@@ -19,7 +19,6 @@ export class ResumeDetailsComponent implements OnInit {
   }
 
   editProfile() {
-    console.log('edit profile');
     this.editClick.emit();
   }
 }

@@ -66,8 +66,6 @@ export class SlideInShellComponent implements OnInit {
       componentToRender
     );
 
-    console.log(this.contentHost);
-
     const viewContainerRef = this.contentHost.viewContainerRef;
     viewContainerRef.clear();
 
@@ -85,5 +83,4 @@ export class SlideInShellComponent implements OnInit {
       document.querySelector('body')?.classList.remove('modal-open');
     }
   }
-
 }
