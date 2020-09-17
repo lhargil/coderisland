@@ -6,6 +6,7 @@ import { ResumeDetailsComponent } from './components/resume-details/resume-detai
 import { ResumeBuilderResumeUiProfileModule } from '@coderisland/resume-builder/resume/ui-profile';
 import { ShellProfileFormComponent } from './containers/shell-profile-form/shell-profile-form.component';
 import { ShellProfileDetailsComponent } from './containers/shell-profile-details/shell-profile-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [

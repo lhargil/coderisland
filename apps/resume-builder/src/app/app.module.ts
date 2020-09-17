@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UiKitSlideInComponentsModule } from '@coderisland/ui-kit/slide-in/components';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,8 @@ import { UiKitSlideInComponentsModule } from '@coderisland/ui-kit/slide-in/compo
       { initialNavigation: 'enabled' }
     ),
     HttpClientModule,
-    UiKitSlideInComponentsModule
+    UiKitSlideInComponentsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

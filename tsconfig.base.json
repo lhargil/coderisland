@@ -48,6 +48,9 @@
       ],
       "@coderisland/resume-builder/resume/ui-profile": [
         "libs/resume-builder/resume/ui-profile/src/index.ts"
+      ],
+      "@coderisland/resume-builder/utils-interface": [
+        "libs/resume-builder/utils-interface/src/index.ts"
       ]
     }
   },

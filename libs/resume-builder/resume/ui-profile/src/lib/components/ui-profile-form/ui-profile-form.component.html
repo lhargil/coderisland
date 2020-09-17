@@ -1,1 +1,14 @@
-<p>ui-profile-form works!</p>
+<form *ngIf="profileForm" [formGroup]="profileForm">
+  <label for="profile-name">
+    Name:
+    <input type="text" formControlName="name" id="profile-name">
+  </label>
+  <label for="profile-label">
+    Label:
+    <input type="text" formControlName="label" id="profile-label">
+  </label>
+  <label for="profile-email">
+    Email:
+    <input type="email" formControlName="email" id="profile-email">
+  </label>
+</form>
