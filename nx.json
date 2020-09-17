@@ -62,6 +62,9 @@
     },
     "ui-kit-slide-in-service": {
       "tags": ["scope:ui-kit", "type:service"]
+    },
+    "resume-builder-resume-ui-profile": {
+      "tags": ["scope:resume-builder", "type:ui"]
     }
   }
 }

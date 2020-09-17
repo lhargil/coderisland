@@ -2,7 +2,7 @@
 
 export interface Resume {
   id: string;
-  basics:       Basics;
+  basics:       ResumeBasics;
   work:         WorkExperience[];
   volunteer:    WorkExperience[];
   education:    Education[];
@@ -21,7 +21,7 @@ export interface Award {
   summary: string;
 }
 
-export interface Basics {
+export interface ResumeBasics {
   name:     string;
   label:    string;
   picture:  string;

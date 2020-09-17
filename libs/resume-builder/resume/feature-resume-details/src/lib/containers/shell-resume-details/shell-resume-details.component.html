@@ -1,1 +1,3 @@
-<resb-resume-details *ngIf="resume$ | async as resume" [resume]="resume" (editClick)="edit()"></resb-resume-details>
+<ng-container *ngIf="resume$ | async as resume">
+  <resb-shell-ui-profile [resumeBasics]="resume?.basics"></resb-shell-ui-profile>
+</ng-container>
