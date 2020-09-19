@@ -51,6 +51,9 @@
       ],
       "@coderisland/resume-builder/utils-interface": [
         "libs/resume-builder/utils-interface/src/index.ts"
+      ],
+      "@coderisland/ui-kit/forms/text-input": [
+        "libs/ui-kit/forms/text-input/src/index.ts"
       ]
     }
   },

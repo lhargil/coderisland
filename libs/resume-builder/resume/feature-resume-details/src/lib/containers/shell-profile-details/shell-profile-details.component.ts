@@ -20,7 +20,7 @@ export class ShellProfileDetailsComponent implements OnInit {
   editProfile() {
     this.slideInService.show({
       heading: 'Edit profile',
-      formData: {},
+      formData: this.resumeBasics,
       modalMode: SlideInModes.Create,
       component: ShellProfileFormComponent,
       handleSave: this.handleSave(),

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'resb-root',
@@ -9,5 +10,13 @@ import { FormGroup } from '@angular/forms';
 export class AppComponent {
   title = 'resume-builder';
 
-  searchForm = new FormGroup({});
+  searchForm!: FormGroup;
+
+  constructor(private translate: TranslateService, private fb: FormBuilder) {
+    this.translate.addLangs(['en', 'sv']);
+    this.translate.setDefaultLang('sv');
+    this.searchForm = this.fb.group({
+      sample: ['']
+    });
+  }
 }

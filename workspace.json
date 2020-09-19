@@ -568,6 +568,39 @@
           }
         }
       }
+    },
+    "ui-kit-forms-text-input": {
+      "projectType": "library",
+      "root": "libs/ui-kit/forms/text-input",
+      "sourceRoot": "libs/ui-kit/forms/text-input/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/forms/text-input/tsconfig.lib.json",
+              "libs/ui-kit/forms/text-input/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/forms/text-input/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/forms/text-input/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

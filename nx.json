@@ -68,6 +68,9 @@
     },
     "resume-builder-utils-interface": {
       "tags": ["scope:resume-builder", "type:utils"]
+    },
+    "ui-kit-forms-text-input": {
+      "tags": ["scope:ui-kit", "type:ui"]
     }
   }
 }

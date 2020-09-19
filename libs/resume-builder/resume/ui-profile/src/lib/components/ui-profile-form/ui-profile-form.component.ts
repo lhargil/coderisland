@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ResumeBasics } from '@coderisland/resume-builder/domain/interfaces';
 
 @Component({
@@ -10,6 +10,11 @@ import { ResumeBasics } from '@coderisland/resume-builder/domain/interfaces';
 })
 export class UiProfileFormComponent implements OnInit {
   profileForm!: FormGroup;
+
+  get profiles(): FormArray {
+    return this.profileForm.get('profiles') as FormArray;
+  }
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
