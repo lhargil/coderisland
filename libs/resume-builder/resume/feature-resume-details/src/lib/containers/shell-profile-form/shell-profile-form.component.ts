@@ -11,11 +11,11 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./shell-profile-form.component.scss']
 })
 export class ShellProfileFormComponent implements OnInit {
-  @Input() formData: ResumeBasics;
-  @ViewChild(UiProfileFormComponent, { static: true }) uiProfileForm: UiProfileFormComponent;
-  formIsValid$: Observable<boolean>;
+  @Input() formData!: ResumeBasics;
+  @ViewChild(UiProfileFormComponent, { static: true }) uiProfileForm!: UiProfileFormComponent;
+  formIsValid$!: Observable<boolean>;
 
-  private resumeProfieForm: FormGroup;
+  private resumeProfieForm!: FormGroup;
 
   constructor() { }
 
