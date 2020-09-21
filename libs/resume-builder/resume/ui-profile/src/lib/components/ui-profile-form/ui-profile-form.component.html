@@ -80,36 +80,4 @@
     >
     </coderisland-text-input>
   </div>
-  <div>
-    <h3 class="text-md leading-7 font-medium">
-      Profiles
-    </h3>
-    <div formArrayName="profiles">
-      <div *ngFor="let profile of profiles.controls; let i = index">
-        <div [formGroupName]="i">
-          <coderisland-text-input
-            class="mb-3"
-            formControlName="network"
-            placeholder="Network"
-            label="Network"
-          >
-          </coderisland-text-input>
-          <coderisland-text-input
-            class="mb-3"
-            formControlName="username"
-            placeholder="Username"
-            label="Username"
-            >
-          </coderisland-text-input>
-          <coderisland-text-input
-            class="mb-3"
-            formControlName="url"
-            placeholder="Url"
-            label="Url"
-            >
-          </coderisland-text-input>
-        </div>
-      </div>
-    </div>
-  </div>
 </form>

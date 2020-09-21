@@ -7,6 +7,7 @@ import { ResumeBuilderResumeUiProfileModule } from '@coderisland/resume-builder/
 import { ShellProfileFormComponent } from './containers/shell-profile-form/shell-profile-form.component';
 import { ShellProfileDetailsComponent } from './containers/shell-profile-details/shell-profile-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShellProfileSocialNetworksFormComponent } from './containers/shell-profile-social-networks-form/shell-profile-social-networks-form.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ]),
     ResumeBuilderResumeUiProfileModule
   ],
-  declarations: [ShellResumeDetailsComponent, ResumeDetailsComponent, ShellProfileFormComponent, ShellProfileDetailsComponent],
-  exports: [ShellProfileFormComponent, ShellProfileDetailsComponent]
+  declarations: [ShellResumeDetailsComponent, ResumeDetailsComponent, ShellProfileFormComponent, ShellProfileDetailsComponent, ShellProfileSocialNetworksFormComponent],
+  exports: [ShellProfileFormComponent, ShellProfileDetailsComponent, ShellProfileSocialNetworksFormComponent]
 })
 export class ResumeBuilderResumeFeatureResumeDetailsModule {}

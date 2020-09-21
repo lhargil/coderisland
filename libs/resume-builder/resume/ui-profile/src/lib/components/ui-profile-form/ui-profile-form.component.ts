@@ -41,8 +41,7 @@ export class UiProfileFormComponent implements OnInit {
         city: [formData.location?.city],
         countryCode: [formData.location?.countryCode],
         region: [formData.location?.region]
-      }),
-      profiles: this.fb.array(profiles)
+      })
     });
 
 

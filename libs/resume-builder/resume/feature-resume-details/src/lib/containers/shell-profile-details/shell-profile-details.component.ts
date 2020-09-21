@@ -3,6 +3,7 @@ import { ResumeBasics } from '@coderisland/resume-builder/domain/interfaces';
 import { SlideInService } from '@coderisland/ui-kit/slide-in/service';
 import { SlideInModes } from '@coderisland/ui-kit/slide-in/state';
 import { ShellProfileFormComponent } from '../shell-profile-form/shell-profile-form.component';
+import { ShellProfileSocialNetworksFormComponent } from '../shell-profile-social-networks-form/shell-profile-social-networks-form.component';
 
 @Component({
   selector: 'resb-shell-profile-details',
@@ -25,6 +26,16 @@ export class ShellProfileDetailsComponent implements OnInit {
       component: ShellProfileFormComponent,
       handleSave: this.handleSave(),
     });
+  }
+
+  editSocialNetwork(index?: number) {
+    this.slideInService.show({
+      heading: 'Edit social network',
+      formData: !index? {} : this.resumeBasics.profiles.find((v,i) => i == index),
+      modalMode: SlideInModes.Update,
+      component: ShellProfileSocialNetworksFormComponent,
+      handleSave: this.handleSave()
+    })
   }
 
   handleSave(): (eventData: any, afterSave?: () => void) => void {
