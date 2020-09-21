@@ -18,7 +18,7 @@ import { UiProfileSocialNetworksFormComponent } from '@coderisland/resume-builde
 })
 export class ShellProfileSocialNetworksFormComponent implements OnInit {
   @Input() formData!: ResumeBasicsProfile;
-  @ViewChild(UiProfileSocialNetworksFormComponent, {static: true}) uiProfileSocialNetworksForm: UiProfileSocialNetworksFormComponent;
+  @ViewChild(UiProfileSocialNetworksFormComponent, {static: true}) uiProfileSocialNetworksForm!: UiProfileSocialNetworksFormComponent;
   formIsValid$!: Observable<boolean>;
 
   private resumeProfileSocialNetworks!:FormGroup;
