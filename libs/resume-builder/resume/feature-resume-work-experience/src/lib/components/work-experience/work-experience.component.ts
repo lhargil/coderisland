@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ResumeWorkExperience } from '@coderisland/resume-builder/domain/interfaces';
 
 @Component({
@@ -15,9 +15,18 @@ import { ResumeWorkExperience } from '@coderisland/resume-builder/domain/interfa
 })
 export class WorkExperienceComponent implements OnInit {
   @Input() resumeWorkExperience!: ResumeWorkExperience[];
+  @Output() addExperienceClick = new EventEmitter<void>();
+  @Output() editExperienceClick = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  addExperience() {
+    this.addExperienceClick.emit();
+  }
+
+  editExperience(index: number) {
+    this.editExperienceClick.emit(index);
+  }
 }
