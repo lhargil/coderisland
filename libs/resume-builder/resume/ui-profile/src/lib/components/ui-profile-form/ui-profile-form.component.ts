@@ -11,22 +11,12 @@ import { ResumeBasics } from '@coderisland/resume-builder/domain/interfaces';
 export class UiProfileFormComponent implements OnInit {
   profileForm!: FormGroup;
 
-  get profiles(): FormArray {
-    return this.profileForm.get('profiles') as FormArray;
-  }
-
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
   createGroup(formData: ResumeBasics) {
-    const profiles = !formData.profiles ? [] : formData.profiles.map(profile => this.fb.group({
-        network: profile.network,
-        username: profile.username,
-        url: profile.url
-      }));
-
     this.profileForm = this.fb.group({
       name: [formData.name, [Validators.required]],
       label: [formData.label, [Validators.required]],
