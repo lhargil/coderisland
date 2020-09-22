@@ -3,8 +3,8 @@
 export interface Resume {
   id: string;
   basics:       ResumeBasics;
-  work:         WorkExperience[];
-  volunteer:    WorkExperience[];
+  work:         ResumeWorkExperience[];
+  volunteer:    ResumeWorkExperience[];
   education:    Education[];
   awards:       Award[];
   publications: Publication[];
@@ -86,7 +86,7 @@ export interface Skill {
   keywords: string[];
 }
 
-export interface WorkExperience {
+export interface ResumeWorkExperience {
   organization?: string;
   position:      string;
   website:       string;

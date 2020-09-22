@@ -71,6 +71,9 @@
     },
     "ui-kit-forms-text-input": {
       "tags": ["scope:ui-kit", "type:ui"]
+    },
+    "resume-builder-resume-feature-resume-work-experience": {
+      "tags": ["scope:resume", "type:feature"]
     }
   }
 }

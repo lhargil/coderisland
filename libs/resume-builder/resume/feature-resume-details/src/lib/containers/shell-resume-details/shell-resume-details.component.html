@@ -1,3 +1,4 @@
 <ng-container *ngIf="resume$ | async as resume">
   <resb-shell-profile-details [resumeBasics]="resume!.basics"></resb-shell-profile-details>
+  <resb-shell-work-experience [resumeWorkExperience]="resume.work"></resb-shell-work-experience>
 </ng-container>

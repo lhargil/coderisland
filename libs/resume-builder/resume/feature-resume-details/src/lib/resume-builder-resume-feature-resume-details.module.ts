@@ -6,8 +6,8 @@ import { ResumeDetailsComponent } from './components/resume-details/resume-detai
 import { ResumeBuilderResumeUiProfileModule } from '@coderisland/resume-builder/resume/ui-profile';
 import { ShellProfileFormComponent } from './containers/shell-profile-form/shell-profile-form.component';
 import { ShellProfileDetailsComponent } from './containers/shell-profile-details/shell-profile-details.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { ShellProfileSocialNetworksFormComponent } from './containers/shell-profile-social-networks-form/shell-profile-social-networks-form.component';
+import { ResumeBuilderResumeFeatureResumeWorkExperienceModule } from '@coderisland/resume-builder/resume/feature-resume-work-experience';
 
 @NgModule({
   imports: [
@@ -15,7 +15,8 @@ import { ShellProfileSocialNetworksFormComponent } from './containers/shell-prof
     RouterModule.forChild([
       {path: '', pathMatch: 'full', component: ShellResumeDetailsComponent}
     ]),
-    ResumeBuilderResumeUiProfileModule
+    ResumeBuilderResumeUiProfileModule,
+    ResumeBuilderResumeFeatureResumeWorkExperienceModule
   ],
   declarations: [ShellResumeDetailsComponent, ResumeDetailsComponent, ShellProfileFormComponent, ShellProfileDetailsComponent, ShellProfileSocialNetworksFormComponent],
   exports: [ShellProfileFormComponent, ShellProfileDetailsComponent, ShellProfileSocialNetworksFormComponent]
