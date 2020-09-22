@@ -32,5 +32,4 @@ export class ShellWorkExperienceFormComponent implements OnInit {
         map((status: string) => status.toLowerCase() == 'valid')
       );
   }
-
 }

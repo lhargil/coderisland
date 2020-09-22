@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ResumeWorkExperience } from '@coderisland/resume-builder/domain/interfaces';
 
@@ -34,9 +34,17 @@ export class WorkExperienceFormComponent implements OnInit {
       startDate: [formData.startDate, [Validators.required]],
       endDate: [formData.endDate, [Validators.required]],
       summary: [formData.summary, [Validators.required]],
-      highlights: this.fb.array(!formData.highlights ? ['abc'] : formData.highlights.map(highlight => highlight))
+      highlights: this.fb.array(!formData.highlights ? [] : formData.highlights.map(highlight => highlight))
     });
 
     return this.workExperienceForm;
+  }
+
+  addWorkHighlight() {
+    this.highlights.push(this.fb.control(''))
+  }
+
+  removeWorkHighlight(index: number) {
+    this.highlights.removeAt(index);
   }
 }

@@ -57,6 +57,9 @@
       ],
       "@coderisland/resume-builder/resume/feature-resume-work-experience": [
         "libs/resume-builder/resume/feature-resume-work-experience/src/index.ts"
+      ],
+      "@coderisland/ui-kit/forms/textarea": [
+        "libs/ui-kit/forms/textarea/src/index.ts"
       ]
     }
   },

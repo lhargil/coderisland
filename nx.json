@@ -74,6 +74,9 @@
     },
     "resume-builder-resume-feature-resume-work-experience": {
       "tags": ["scope:resume", "type:feature"]
+    },
+    "ui-kit-forms-textarea": {
+      "tags": ["scope:ui-kit", "type:ui"]
     }
   }
 }

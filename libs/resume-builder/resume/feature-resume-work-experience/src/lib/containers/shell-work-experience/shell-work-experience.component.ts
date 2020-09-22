@@ -20,6 +20,7 @@ export class ShellWorkExperienceComponent implements OnInit {
   constructor(private slideInService: SlideInService) { }
 
   ngOnInit(): void {
+    this.editExperience(0);
   }
 
   addExperience() {

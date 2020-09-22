@@ -6,9 +6,10 @@ import { ShellWorkExperienceFormComponent } from './containers/shell-work-experi
 import { WorkExperienceFormComponent } from './components/work-experience-form/work-experience-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UiKitFormsTextInputModule } from '@coderisland/ui-kit/forms/text-input';
+import { UiKitFormsTextareaModule } from '@coderisland/ui-kit/forms/textarea';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, UiKitFormsTextInputModule],
+  imports: [CommonModule, ReactiveFormsModule, UiKitFormsTextInputModule, UiKitFormsTextareaModule],
   declarations: [ShellWorkExperienceComponent, WorkExperienceComponent, ShellWorkExperienceFormComponent, WorkExperienceFormComponent],
   exports: [ShellWorkExperienceComponent, ShellWorkExperienceFormComponent],
 })
