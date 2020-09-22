@@ -1,5 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ComponentFactoryResolver, EventEmitter, Input, OnDestroy, OnInit, Output, Type, ViewChild } from '@angular/core';
 import { ContentHostDirective } from '@coderisland/shared/directives/content-host';
+import { SlideInModes } from '@coderisland/ui-kit/slide-in/state';
 import { fromEvent, Subject, Observable } from 'rxjs';
 import { filter, map, takeUntil, tap } from 'rxjs/operators'
 
