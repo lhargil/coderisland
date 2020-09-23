@@ -21,7 +21,6 @@ export class ShellEducationComponent implements OnInit {
   constructor(private slideInService: SlideInService) { }
 
   ngOnInit(): void {
-    this.addEducation()
   }
 
   addEducation() {
