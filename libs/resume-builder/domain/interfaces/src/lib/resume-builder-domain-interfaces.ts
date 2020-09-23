@@ -5,7 +5,7 @@ export interface Resume {
   basics:       ResumeBasics;
   work:         ResumeWorkExperience[];
   volunteer:    ResumeWorkExperience[];
-  education:    Education[];
+  education:    ResumeEducation[];
   awards:       Award[];
   publications: Publication[];
   skills:       Skill[];
@@ -47,7 +47,7 @@ export interface ResumeBasicsProfile {
   url:      string;
 }
 
-export interface Education {
+export interface ResumeEducation {
   institution: string;
   area:        string;
   studyType:   string;
