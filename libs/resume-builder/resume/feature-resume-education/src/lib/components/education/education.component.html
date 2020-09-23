@@ -12,6 +12,7 @@
     </div>
     <span class="ml-4">
       <button
+        (click)="addEducation()"
         class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
         type="button"
       >
@@ -28,6 +29,7 @@
             {{education.studyType}} - {{education.area}}
           </h3>
           <button
+            (click)="editEducation(i)"
             class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
             type="button">
             Edit

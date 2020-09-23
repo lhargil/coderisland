@@ -4,9 +4,11 @@ import { ShellEducationComponent } from './containers/shell-education/shell-educ
 import { ShellEducationFormComponent } from './containers/shell-education-form/shell-education-form.component';
 import { EducationFormComponent } from './components/education-form/education-form.component';
 import { EducationComponent } from './components/education/education.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UiKitFormsTextInputModule } from '@coderisland/ui-kit/forms/text-input';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule, UiKitFormsTextInputModule],
   declarations: [ShellEducationComponent, ShellEducationFormComponent, EducationFormComponent, EducationComponent],
   exports: [ShellEducationComponent, EducationComponent],
 })
