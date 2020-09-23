@@ -12,6 +12,7 @@
     </div>
     <span class="ml-4">
       <button
+        (click)="addSkill()"
         class="bg-transparent hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
         type="button"
       >
@@ -21,7 +22,7 @@
   </div>
   <div class="px-4 py-5 sm:px-6">
     <dl class="grid grid-cols-1 col-gap-4 gap-y-8 sm:grid-cols-2">
-      <ng-container *ngFor="let skill of resumeSkills">
+      <ng-container *ngFor="let skill of resumeSkills; index as i;">
         <div class="sm:col-span-1">
           <dt class="text-sm leading-5 font-medium text-gray-500">
             <span class="inline-block">
@@ -29,6 +30,7 @@
             </span>
             <span class="ml-4">
               <button
+                (click)="editSkill(i)"
                 type="button"
                 aria-label="Edit professional skill"
                 class="inline-flex text-gray-400 focus:outline-none focus:text-gray-500 transition ease-in-out duration-150"

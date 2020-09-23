@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { ResumeSkill } from '@coderisland/resume-builder/domain/interfaces';
 
 @Component({
@@ -15,9 +15,19 @@ import { ResumeSkill } from '@coderisland/resume-builder/domain/interfaces';
 })
 export class SkillsComponent implements OnInit {
   @Input() resumeSkills!: ResumeSkill[];
+  @Output() addSkillClick = new EventEmitter<void>();
+  @Output() editSkillClick = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  addSkill() {
+    this.addSkillClick.emit();
+  }
+
+  editSkill(index: number) {
+    this.editSkillClick.emit(index);
+  }
 }
