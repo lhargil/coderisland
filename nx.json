@@ -80,6 +80,9 @@
     },
     "resume-builder-resume-feature-resume-education": {
       "tags": ["scope:resume-builder", "type:feature"]
+    },
+    "resume-builder-resume-feature-resume-skills": {
+      "tags": ["scope:resume-builder", "type:feature"]
     }
   }
 }

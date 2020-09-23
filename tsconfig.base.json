@@ -63,6 +63,9 @@
       ],
       "@coderisland/resume-builder/resume/feature-resume-education": [
         "libs/resume-builder/resume/feature-resume-education/src/index.ts"
+      ],
+      "@coderisland/resume-builder/resume/feature-resume-skills": [
+        "libs/resume-builder/resume/feature-resume-skills/src/index.ts"
       ]
     }
   },

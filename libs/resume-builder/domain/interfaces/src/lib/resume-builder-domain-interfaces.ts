@@ -2,99 +2,100 @@
 
 export interface Resume {
   id: string;
-  basics:       ResumeBasics;
-  work:         ResumeWorkExperience[];
-  volunteer:    ResumeWorkExperience[];
-  education:    ResumeEducation[];
-  awards:       Award[];
+  basics: ResumeBasics;
+  work: ResumeWorkExperience[];
+  volunteer: ResumeWorkExperience[];
+  education: ResumeEducation[];
+  awards: Award[];
   publications: Publication[];
-  skills:       Skill[];
-  languages:    Language[];
-  interests:    Interest[];
-  references:   Reference[];
+  skills: ResumeSkill[];
+  languages: Language[];
+  interests: Interest[];
+  references: Reference[];
 }
 
 export interface Award {
-  title:   string;
-  date:    string;
+  title: string;
+  date: string;
   awarder: string;
   summary: string;
 }
 
 export interface ResumeBasics {
-  name:     string;
-  label:    string;
-  picture:  string;
-  email:    string;
-  phone:    string;
-  website:  string;
-  summary:  string;
+  name: string;
+  label: string;
+  picture: string;
+  email: string;
+  phone: string;
+  website: string;
+  summary: string;
   location: ResumeBasicsLocation;
   profiles: ResumeBasicsProfile[];
 }
 
 export interface ResumeBasicsLocation {
-  address:     string;
-  postalCode:  string;
-  city:        string;
+  address: string;
+  postalCode: string;
+  city: string;
   countryCode: string;
-  region:      string;
+  region: string;
 }
 
 export interface ResumeBasicsProfile {
-  network:  string;
+  network: string;
   username: string;
-  url:      string;
+  url: string;
 }
 
 export interface ResumeEducation {
   institution: string;
-  area:        string;
-  studyType:   string;
-  startDate:   string;
-  endDate:     string;
-  gpa:         string;
-  courses:     string[];
+  area: string;
+  studyType: string;
+  startDate: string;
+  endDate: string;
+  gpa: string;
+  courses: string[];
 }
 
 export interface Interest {
-  name:     string;
+  name: string;
   keywords: string[];
 }
 
 export interface Language {
   language: string;
-  fluency:  string;
+  fluency: string;
 }
 
 export interface Publication {
-  name:        string;
-  publisher:   string;
+  name: string;
+  publisher: string;
   releaseDate: string;
-  website:     string;
-  summary:     string;
+  website: string;
+  summary: string;
 }
 
 export interface Reference {
-  name:      string;
+  name: string;
   reference: string;
 }
 
-export interface Skill {
-  name:     string;
-  level:    string;
+export interface ResumeSkill {
+  name: string;
+  level: string;
+  lastUsed: string;
   keywords: string[];
 }
 
 export interface ResumeWorkExperience {
   organization?: string;
-  position:      string;
-  website:       string;
-  startDate:     string;
-  endDate:       string;
-  summary:       string;
-  highlights:    string[];
-  company?:      string;
+  position: string;
+  website: string;
+  startDate: string;
+  endDate: string;
+  summary: string;
+  highlights: string[];
+  company?: string;
 }
 
 export interface Customer {

@@ -82,26 +82,63 @@ export class AppService {
       ],
       skills: [
         {
-          name: 'Web Development',
+          name: 'Backend web development',
           level: 'Master',
-          keywords: ['HTML', 'CSS', 'Javascript'],
+          lastUsed: '2017',
+          keywords: ['ASP.NET Core', 'Signalr', 'NestJs', 'REST', 'GraphQL'],
         },
+        {
+          name: 'DevOps',
+          level: 'Master',
+          lastUsed: '2017',
+          keywords: ['Github actions', 'Azure Devops pipelines', 'Docker', 'OpenShift'],
+        },
+        {
+          name: 'Frontend web development',
+          level: 'Master',
+          lastUsed: '2017',
+          keywords: ['HTML', 'CSS', 'SCSS', 'Javascript', 'Typescript', 'Angular', 'TailwindCSS', 'Bootstrap'],
+        },
+        {
+          name: 'Source Control',
+          level: 'Master',
+          lastUsed: '2017',
+          keywords: ['Github', 'Azure Devops']
+        },
+        {
+          name: 'Databases',
+          level: 'Master',
+          lastUsed: '2017',
+          keywords: ['MSSQL', 'MYSQL', 'MongoDB']
+        }
       ],
       languages: [
         {
-          language: 'English',
+          language: 'Filipino',
           fluency: 'Native speaker',
+        },
+        {
+          language: 'English',
+          fluency: 'Advanced',
         },
       ],
       interests: [
         {
-          name: 'Wildlife',
-          keywords: ['Ferrets', 'Unicorns'],
+          name: 'Photography',
+          keywords: [],
         },
       ],
       references: [
         {
-          name: 'Jane Doe',
+          name: 'Rosana Ferolin',
+          reference: 'Reference...',
+        },
+        {
+          name: 'Gert Monnissen',
+          reference: 'Reference...',
+        },
+        {
+          name: 'Jiok Min Lee',
           reference: 'Reference...',
         },
       ],
