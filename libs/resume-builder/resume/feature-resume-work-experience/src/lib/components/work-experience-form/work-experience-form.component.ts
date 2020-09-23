@@ -16,6 +16,7 @@ import { ResumeWorkExperience } from '@coderisland/resume-builder/domain/interfa
 })
 export class WorkExperienceFormComponent implements OnInit {
   workExperienceForm!:FormGroup;
+  isVolunteerExperience = false;
 
   get highlights() {
     return this.workExperienceForm.get('highlights') as FormArray;
@@ -27,6 +28,8 @@ export class WorkExperienceFormComponent implements OnInit {
   }
 
   createGroup(formData: ResumeWorkExperience) {
+    this.isVolunteerExperience = formData.organization != null;
+
     this.workExperienceForm = this.fb.group({
       company: [formData.company],
       position: [formData.position, [Validators.required]],

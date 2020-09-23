@@ -17,6 +17,9 @@ import { ShellWorkExperienceFormComponent } from '../shell-work-experience-form/
 })
 export class ShellWorkExperienceComponent implements OnInit {
   @Input() resumeWorkExperience!: ResumeWorkExperience[];
+  @Input() options = {
+    isVolunteerExperience: false
+  };
   constructor(private slideInService: SlideInService) { }
 
   ngOnInit(): void {

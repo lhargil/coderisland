@@ -15,6 +15,7 @@ import { ResumeWorkExperience } from '@coderisland/resume-builder/domain/interfa
 })
 export class WorkExperienceComponent implements OnInit {
   @Input() resumeWorkExperience!: ResumeWorkExperience[];
+  @Input() options!: { isVolunteerExperience: boolean };
   @Output() addExperienceClick = new EventEmitter<void>();
   @Output() editExperienceClick = new EventEmitter<number>();
   constructor() { }

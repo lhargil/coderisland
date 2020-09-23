@@ -2,8 +2,8 @@
   <coderisland-text-input
     class="mb-3"
     formControlName="company"
-    placeholder="Where did you work"
-    label="Company"
+    [placeholder]="isVolunteerExperience ? 'Where did you volunteer?': 'Where did you work?'"
+    [label]="isVolunteerExperience ? 'Organization': 'Company'"
   >
   </coderisland-text-input>
   <coderisland-text-input
@@ -16,8 +16,8 @@
   <coderisland-text-input
     class="mb-3"
     formControlName="website"
-    placeholder="Company website"
-    label="Company website"
+    [placeholder]="isVolunteerExperience ? 'Organization website' : 'Company website'"
+    [label]="isVolunteerExperience ? 'Organization website' : 'Company website'"
   >
   </coderisland-text-input>
   <coderisland-text-input
@@ -43,7 +43,7 @@
   </coderisland-text-input>
   <div class="mt-6" formArrayName="highlights">
     <h3 class="flex justify-start">
-      <span>Work Highlights</span>
+      <span>{{isVolunteerExperience ? 'Volunteer' : 'Work'}} Highlights</span>
       <span class="ml-4">
         <button
           (click)="addWorkHighlight()"
