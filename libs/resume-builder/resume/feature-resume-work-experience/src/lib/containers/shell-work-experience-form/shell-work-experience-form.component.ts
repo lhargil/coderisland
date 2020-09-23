@@ -32,4 +32,13 @@ export class ShellWorkExperienceFormComponent implements OnInit {
         map((status: string) => status.toLowerCase() == 'valid')
       );
   }
+
+  formSubmit(callback: (x: any) => void) {
+    this.resumeWorkExperienceForm.markAllAsTouched();
+    if (this.resumeWorkExperienceForm.invalid) {
+      return;
+    }
+
+    callback(this.resumeWorkExperienceForm.value);
+  }
 }
