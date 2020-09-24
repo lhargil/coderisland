@@ -733,6 +733,39 @@
           "style": "scss"
         }
       }
+    },
+    "resume-builder-resume-feature-resume-interests": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/feature-resume-interests",
+      "sourceRoot": "libs/resume-builder/resume/feature-resume-interests/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/feature-resume-interests/tsconfig.lib.json",
+              "libs/resume-builder/resume/feature-resume-interests/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/feature-resume-interests/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/feature-resume-interests/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

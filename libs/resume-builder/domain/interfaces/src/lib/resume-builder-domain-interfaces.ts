@@ -10,7 +10,7 @@ export interface Resume {
   publications: Publication[];
   skills: ResumeSkill[];
   languages: Language[];
-  interests: Interest[];
+  interests: ResumeInterest[];
   references: Reference[];
 }
 
@@ -57,7 +57,7 @@ export interface ResumeEducation {
   courses: string[];
 }
 
-export interface Interest {
+export interface ResumeInterest {
   name: string;
   keywords: string[];
 }

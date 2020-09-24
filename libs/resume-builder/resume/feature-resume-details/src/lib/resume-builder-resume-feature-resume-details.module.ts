@@ -10,6 +10,7 @@ import { ShellProfileSocialNetworksFormComponent } from './containers/shell-prof
 import { ResumeBuilderResumeFeatureResumeWorkExperienceModule } from '@coderisland/resume-builder/resume/feature-resume-work-experience';
 import { ResumeBuilderResumeFeatureResumeEducationModule } from '@coderisland/resume-builder/resume/feature-resume-education';
 import { ResumeBuilderResumeFeatureResumeSkillsModule } from '@coderisland/resume-builder/resume/feature-resume-skills';
+import { ResumeBuilderResumeFeatureResumeInterestsModule } from '@coderisland/resume-builder/resume/feature-resume-interests';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { ResumeBuilderResumeFeatureResumeSkillsModule } from '@coderisland/resum
     ResumeBuilderResumeFeatureResumeWorkExperienceModule,
     ResumeBuilderResumeFeatureResumeEducationModule,
     ResumeBuilderResumeFeatureResumeSkillsModule,
+    ResumeBuilderResumeFeatureResumeInterestsModule
   ],
   declarations: [ShellResumeDetailsComponent, ResumeDetailsComponent, ShellProfileFormComponent, ShellProfileDetailsComponent, ShellProfileSocialNetworksFormComponent],
   exports: [ShellProfileFormComponent, ShellProfileDetailsComponent, ShellProfileSocialNetworksFormComponent]

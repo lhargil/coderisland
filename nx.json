@@ -83,6 +83,9 @@
     },
     "resume-builder-resume-feature-resume-skills": {
       "tags": ["scope:resume-builder", "type:feature"]
+    },
+    "resume-builder-resume-feature-resume-interests": {
+      "tags": ["scope:resume-builder", "type=feature"]
     }
   }
 }

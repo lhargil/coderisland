@@ -125,7 +125,7 @@ export class AppService {
       interests: [
         {
           name: 'Photography',
-          keywords: [],
+          keywords: ['Macro', 'Street', 'Scapes'],
         },
       ],
       references: [

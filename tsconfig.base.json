@@ -66,6 +66,9 @@
       ],
       "@coderisland/resume-builder/resume/feature-resume-skills": [
         "libs/resume-builder/resume/feature-resume-skills/src/index.ts"
+      ],
+      "@coderisland/resume-builder/resume/feature-resume-interests": [
+        "libs/resume-builder/resume/feature-resume-interests/src/index.ts"
       ]
     }
   },
