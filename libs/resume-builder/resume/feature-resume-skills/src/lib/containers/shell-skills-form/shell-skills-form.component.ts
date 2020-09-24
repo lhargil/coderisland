@@ -22,12 +22,12 @@ export class ShellSkillsFormComponent implements OnInit {
 
   formIsValid$!: Observable<boolean>;
 
-  private resumeEducationForm!: FormGroup;
+  private resumeSkillsForm!: FormGroup;
   constructor() { }
 
   ngOnInit(): void {
-    this.resumeEducationForm = this.skillsFormComponent.createGroup(this.formData);
-    this.formIsValid$ = this.resumeEducationForm.statusChanges
+    this.resumeSkillsForm = this.skillsFormComponent.createGroup(this.formData);
+    this.formIsValid$ = this.resumeSkillsForm.statusChanges
       .pipe(
         map((status: string) => status.toLowerCase() == 'valid')
       );
