@@ -23,7 +23,6 @@ export class ShellSkillsComponent implements OnInit {
   }
 
   addSkill() {
-    console.log('hello');
     this.slideInService.show({
       heading: 'Add new skill',
       formData: {},
