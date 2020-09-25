@@ -799,6 +799,36 @@
           "style": "scss"
         }
       }
+    },
+    "ui-kit-forms-select": {
+      "projectType": "library",
+      "root": "libs/ui-kit/forms/select",
+      "sourceRoot": "libs/ui-kit/forms/select/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/forms/select/tsconfig.lib.json",
+              "libs/ui-kit/forms/select/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/forms/select/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/forms/select/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

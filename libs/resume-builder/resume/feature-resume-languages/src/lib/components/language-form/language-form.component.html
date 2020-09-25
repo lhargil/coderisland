@@ -5,10 +5,6 @@
     placeholder="Language"
     label="Language"
   ></coderisland-text-input>
-  <coderisland-text-input
-    class="mb-3"
-    formControlName="fluency"
-    placeholder="Fluency"
-    label="Fluency"
-  ></coderisland-text-input>
+  <coderisland-select class="mb-4" formControlName="fluency" label="Fluency"
+    placeholder="Select fluency level" [items]="fluencyLevels"></coderisland-select>
 </form>

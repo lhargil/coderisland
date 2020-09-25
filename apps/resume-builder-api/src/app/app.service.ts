@@ -115,11 +115,11 @@ export class AppService {
       languages: [
         {
           language: 'Filipino',
-          fluency: 'Native speaker',
+          fluency: 'C2',
         },
         {
           language: 'English',
-          fluency: 'Advanced',
+          fluency: 'C1',
         },
       ],
       interests: [

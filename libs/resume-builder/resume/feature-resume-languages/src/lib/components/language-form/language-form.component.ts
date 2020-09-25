@@ -10,22 +10,46 @@ import { ResumeLanguage } from '@coderisland/resume-builder/domain/interfaces';
       :host {
         display: block;
       }
-    `
+    `,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LanguageFormComponent implements OnInit {
   resumeLanguageForm!: FormGroup;
+  fluencyLevels: { name: string; value: any }[] = [
+    {
+      name: 'A1',
+      value: 'A1',
+    },
+    {
+      name: 'A2',
+      value: 'A2',
+    },
+    {
+      name: 'B1',
+      value: 'B1',
+    },
+    {
+      name: 'B2',
+      value: 'B2',
+    },
+    {
+      name: 'C1',
+      value: 'C1',
+    },
+    {
+      name: 'C2',
+      value: 'C2',
+    },
+  ];
+  constructor(private fb: FormBuilder) {}
 
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   createGroup(formData: ResumeLanguage) {
     this.resumeLanguageForm = this.fb.group({
       language: [formData.language, [Validators.required]],
-      fluency: [formData.fluency, [Validators.required]]
+      fluency: [formData.fluency, [Validators.required]],
     });
     return this.resumeLanguageForm;
   }

@@ -6,9 +6,10 @@ import { ShellLanguageFormComponent } from './containers/shell-language-form/she
 import { LanguageFormComponent } from './components/language-form/language-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UiKitFormsTextInputModule } from '@coderisland/ui-kit/forms/text-input';
+import { UiKitFormsSelectModule } from '@coderisland/ui-kit/forms/select';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, UiKitFormsTextInputModule],
+  imports: [CommonModule, ReactiveFormsModule, UiKitFormsTextInputModule, UiKitFormsSelectModule],
   declarations: [ShellLanguagesComponent, LanguagesComponent, ShellLanguageFormComponent, LanguageFormComponent],
   exports: [ShellLanguagesComponent, ShellLanguageFormComponent],
 })

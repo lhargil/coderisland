@@ -89,6 +89,9 @@
     },
     "resume-builder-resume-feature-resume-languages": {
       "tags": ["scope:resume-builder", "type:feature"]
+    },
+    "ui-kit-forms-select": {
+      "tags": ["scope:ui-kit", "type:ui"]
     }
   }
 }

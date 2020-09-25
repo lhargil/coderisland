@@ -72,6 +72,9 @@
       ],
       "@coderisland/resume-builder/resume/feature-resume-languages": [
         "libs/resume-builder/resume/feature-resume-languages/src/index.ts"
+      ],
+      "@coderisland/ui-kit/forms/select": [
+        "libs/ui-kit/forms/select/src/index.ts"
       ]
     }
   },
