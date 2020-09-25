@@ -86,6 +86,9 @@
     },
     "resume-builder-resume-feature-resume-interests": {
       "tags": ["scope:resume-builder", "type=feature"]
+    },
+    "resume-builder-resume-feature-resume-languages": {
+      "tags": ["scope:resume-builder", "type:feature"]
     }
   }
 }

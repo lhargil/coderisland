@@ -11,6 +11,7 @@ import { ResumeBuilderResumeFeatureResumeWorkExperienceModule } from '@coderisla
 import { ResumeBuilderResumeFeatureResumeEducationModule } from '@coderisland/resume-builder/resume/feature-resume-education';
 import { ResumeBuilderResumeFeatureResumeSkillsModule } from '@coderisland/resume-builder/resume/feature-resume-skills';
 import { ResumeBuilderResumeFeatureResumeInterestsModule } from '@coderisland/resume-builder/resume/feature-resume-interests';
+import { ResumeBuilderResumeFeatureResumeLanguagesModule } from '@coderisland/resume-builder/resume/feature-resume-languages';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { ResumeBuilderResumeFeatureResumeInterestsModule } from '@coderisland/re
     ResumeBuilderResumeFeatureResumeWorkExperienceModule,
     ResumeBuilderResumeFeatureResumeEducationModule,
     ResumeBuilderResumeFeatureResumeSkillsModule,
-    ResumeBuilderResumeFeatureResumeInterestsModule
+    ResumeBuilderResumeFeatureResumeInterestsModule,
+    ResumeBuilderResumeFeatureResumeLanguagesModule
   ],
   declarations: [ShellResumeDetailsComponent, ResumeDetailsComponent, ShellProfileFormComponent, ShellProfileDetailsComponent, ShellProfileSocialNetworksFormComponent],
   exports: [ShellProfileFormComponent, ShellProfileDetailsComponent, ShellProfileSocialNetworksFormComponent]

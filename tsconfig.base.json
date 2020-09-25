@@ -69,6 +69,9 @@
       ],
       "@coderisland/resume-builder/resume/feature-resume-interests": [
         "libs/resume-builder/resume/feature-resume-interests/src/index.ts"
+      ],
+      "@coderisland/resume-builder/resume/feature-resume-languages": [
+        "libs/resume-builder/resume/feature-resume-languages/src/index.ts"
       ]
     }
   },
