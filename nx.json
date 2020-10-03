@@ -92,6 +92,9 @@
     },
     "ui-kit-forms-select": {
       "tags": ["scope:ui-kit", "type:ui"]
+    },
+    "resume-builder-resume-feature-resume-references": {
+      "tags": ["scope:resume-builder", "type:feature"]
     }
   }
 }

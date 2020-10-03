@@ -75,6 +75,9 @@
       ],
       "@coderisland/ui-kit/forms/select": [
         "libs/ui-kit/forms/select/src/index.ts"
+      ],
+      "@coderisland/resume-builder/resume/feature-resume-references": [
+        "libs/resume-builder/resume/feature-resume-references/src/index.ts"
       ]
     }
   },

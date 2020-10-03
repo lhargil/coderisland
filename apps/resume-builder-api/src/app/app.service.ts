@@ -131,15 +131,15 @@ export class AppService {
       references: [
         {
           name: 'Rosana Ferolin',
-          reference: 'Reference...',
+          reference: 'Manager, Department of Technology - University of San Carlos',
         },
         {
           name: 'Gert Monnissen',
-          reference: 'Reference...',
+          reference: 'CEO, Gemango Software Services Inc.',
         },
         {
           name: 'Jiok Min Lee',
-          reference: 'Reference...',
+          reference: 'Manager, Inscale Asia Sdn Bhd.',
         },
       ],
     }]

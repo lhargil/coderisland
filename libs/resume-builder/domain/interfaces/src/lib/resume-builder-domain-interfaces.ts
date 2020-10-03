@@ -11,7 +11,7 @@ export interface Resume {
   skills: ResumeSkill[];
   languages: ResumeLanguage[];
   interests: ResumeInterest[];
-  references: Reference[];
+  references: ResumeReference[];
 }
 
 export interface Award {
@@ -75,7 +75,7 @@ export interface Publication {
   summary: string;
 }
 
-export interface Reference {
+export interface ResumeReference {
   name: string;
   reference: string;
 }
