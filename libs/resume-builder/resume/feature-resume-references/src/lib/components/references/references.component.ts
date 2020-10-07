@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { ResumeReference } from '@coderisland/resume-builder/domain/interfaces';
 
 @Component({
@@ -15,6 +15,8 @@ import { ResumeReference } from '@coderisland/resume-builder/domain/interfaces';
 })
 export class ReferencesComponent implements OnInit {
   @Input() resumeReferences!: ResumeReference[];
+  @Output() addReferenceClick = new EventEmitter<void>();
+  @Output() editReferenceClick = new EventEmitter<number>();
 
   constructor() { }
 
@@ -22,9 +24,10 @@ export class ReferencesComponent implements OnInit {
   }
 
   addReference() {
+    this.addReferenceClick.emit();
   }
 
   editReference(index: number) {
-
+    this.editReferenceClick.emit(index);
   }
 }
