@@ -16,7 +16,8 @@ import { ResumeBasics } from '@coderisland/resume-builder/domain/interfaces';
 export class ProfileComponent implements OnInit {
   @Input() resumeBasics!: ResumeBasics;
   @Output() editClick = new EventEmitter<void>();
-  @Output() editSocialNetworkClick = new EventEmitter<number | undefined>();
+  @Output() editSocialNetworkClick = new EventEmitter<number>();
+  @Output() addSocialNetworkClick = new EventEmitter<void>();
 
   constructor() { }
 
@@ -27,7 +28,11 @@ export class ProfileComponent implements OnInit {
     this.editClick.emit();
   }
 
-  editSocialNetwork(index?: number) {
+  editSocialNetwork(index: number) {
     this.editSocialNetworkClick.emit(index);
+  }
+
+  addSocialNetwork() {
+    this.addSocialNetworkClick.emit();
   }
 }

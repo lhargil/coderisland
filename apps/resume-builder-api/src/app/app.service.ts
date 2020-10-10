@@ -25,9 +25,19 @@ export class AppService {
         profiles: [
           {
             network: 'Twitter',
-            username: 'john',
-            url: 'http://twitter.com/john',
+            username: '@lhargil',
+            url: 'https://twitter.com/lhargil',
           },
+          {
+            network: 'Instagram',
+            username: '@lhar.gil',
+            url: 'https://instagram.com/lhar.gil'
+          },
+          {
+            network: 'Github',
+            username: '@lhargil',
+            url: 'https://github.com/lhargil'
+          }
         ],
       },
       work: [
