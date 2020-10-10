@@ -507,39 +507,6 @@
         }
       }
     },
-    "resume-builder-resume-ui-profile": {
-      "projectType": "library",
-      "root": "libs/resume-builder/resume/ui-profile",
-      "sourceRoot": "libs/resume-builder/resume/ui-profile/src",
-      "prefix": "coderisland",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/resume-builder/resume/ui-profile/tsconfig.lib.json",
-              "libs/resume-builder/resume/ui-profile/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/ui-profile/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/resume-builder/resume/ui-profile/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "resume-builder-utils-interface": {
       "root": "libs/resume-builder/utils-interface",
       "sourceRoot": "libs/resume-builder/utils-interface/src",
@@ -853,6 +820,39 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/resume-builder/resume/feature-resume-references/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "resume-builder-resume-feature-resume-profile": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/feature-resume-profile",
+      "sourceRoot": "libs/resume-builder/resume/feature-resume-profile/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/feature-resume-profile/tsconfig.lib.json",
+              "libs/resume-builder/resume/feature-resume-profile/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/feature-resume-profile/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/feature-resume-profile/jest.config.js",
             "passWithNoTests": true
           }
         }

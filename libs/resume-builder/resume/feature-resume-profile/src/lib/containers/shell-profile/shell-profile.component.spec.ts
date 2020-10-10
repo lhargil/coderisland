@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ResumeDetailsComponent } from './resume-details.component';
+import { ShellProfileComponent } from './shell-profile.component';
 
-describe('ResumeDetailsComponent', () => {
-  let component: ResumeDetailsComponent;
-  let fixture: ComponentFixture<ResumeDetailsComponent>;
+describe('ShellProfileComponent', () => {
+  let component: ShellProfileComponent;
+  let fixture: ComponentFixture<ShellProfileComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResumeDetailsComponent ]
+      declarations: [ ShellProfileComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ResumeDetailsComponent);
+    fixture = TestBed.createComponent(ShellProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

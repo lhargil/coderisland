@@ -1,14 +1,19 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ResumeBasics } from '@coderisland/resume-builder/domain/interfaces';
-
 @Component({
-  selector: 'resb-ui-profile-form',
-  templateUrl: './ui-profile-form.component.html',
-  styleUrls: ['./ui-profile-form.component.scss'],
+  selector: 'resb-profile-form',
+  templateUrl: './profile-form.component.html',
+  styles: [
+    `
+      :host {
+        display: block;
+      }
+    `
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UiProfileFormComponent implements OnInit {
+export class ProfileFormComponent implements OnInit {
   profileForm!: FormGroup;
 
   constructor(private fb: FormBuilder) { }

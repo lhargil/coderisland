@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'resume-builder-resume-ui-profile',
+  name: 'resume-builder-resume-feature-resume-profile',
   preset: '../../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -13,7 +13,7 @@ module.exports = {
     },
   },
   coverageDirectory:
-    '../../../../coverage/libs/resume-builder/resume/ui-profile',
+    '../../../../coverage/libs/resume-builder/resume/feature-resume-profile',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

@@ -2,12 +2,18 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 import { ResumeBasics } from '@coderisland/resume-builder/domain/interfaces';
 
 @Component({
-  selector: 'resb-ui-profile',
-  templateUrl: './ui-profile.component.html',
-  styleUrls: ['./ui-profile.component.scss'],
+  selector: 'resb-profile',
+  templateUrl: './profile.component.html',
+  styles: [
+    `
+      :host {
+        display: block;
+      }
+    `
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UiProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   @Input() resumeBasics!: ResumeBasics;
   @Output() editClick = new EventEmitter<void>();
   @Output() editSocialNetworkClick = new EventEmitter<number | undefined>();

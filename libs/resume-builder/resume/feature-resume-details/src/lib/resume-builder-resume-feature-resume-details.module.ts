@@ -2,17 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ShellResumeDetailsComponent } from './containers/shell-resume-details/shell-resume-details.component';
-import { ResumeDetailsComponent } from './components/resume-details/resume-details.component';
-import { ResumeBuilderResumeUiProfileModule } from '@coderisland/resume-builder/resume/ui-profile';
-import { ShellProfileFormComponent } from './containers/shell-profile-form/shell-profile-form.component';
-import { ShellProfileDetailsComponent } from './containers/shell-profile-details/shell-profile-details.component';
-import { ShellProfileSocialNetworksFormComponent } from './containers/shell-profile-social-networks-form/shell-profile-social-networks-form.component';
 import { ResumeBuilderResumeFeatureResumeWorkExperienceModule } from '@coderisland/resume-builder/resume/feature-resume-work-experience';
 import { ResumeBuilderResumeFeatureResumeEducationModule } from '@coderisland/resume-builder/resume/feature-resume-education';
 import { ResumeBuilderResumeFeatureResumeSkillsModule } from '@coderisland/resume-builder/resume/feature-resume-skills';
 import { ResumeBuilderResumeFeatureResumeInterestsModule } from '@coderisland/resume-builder/resume/feature-resume-interests';
 import { ResumeBuilderResumeFeatureResumeLanguagesModule } from '@coderisland/resume-builder/resume/feature-resume-languages';
 import { ResumeBuilderResumeFeatureResumeReferencesModule } from '@coderisland/resume-builder/resume/feature-resume-references';
+import { ResumeBuilderResumeFeatureResumeProfileModule } from '@coderisland/resume-builder/resume/feature-resume-profile';
 
 @NgModule({
   imports: [
@@ -20,7 +16,7 @@ import { ResumeBuilderResumeFeatureResumeReferencesModule } from '@coderisland/r
     RouterModule.forChild([
       {path: '', pathMatch: 'full', component: ShellResumeDetailsComponent}
     ]),
-    ResumeBuilderResumeUiProfileModule,
+    ResumeBuilderResumeFeatureResumeProfileModule,
     ResumeBuilderResumeFeatureResumeWorkExperienceModule,
     ResumeBuilderResumeFeatureResumeEducationModule,
     ResumeBuilderResumeFeatureResumeSkillsModule,
@@ -28,7 +24,6 @@ import { ResumeBuilderResumeFeatureResumeReferencesModule } from '@coderisland/r
     ResumeBuilderResumeFeatureResumeLanguagesModule,
     ResumeBuilderResumeFeatureResumeReferencesModule
   ],
-  declarations: [ShellResumeDetailsComponent, ResumeDetailsComponent, ShellProfileFormComponent, ShellProfileDetailsComponent, ShellProfileSocialNetworksFormComponent],
-  exports: [ShellProfileFormComponent, ShellProfileDetailsComponent, ShellProfileSocialNetworksFormComponent]
+  declarations: [ShellResumeDetailsComponent],
 })
 export class ResumeBuilderResumeFeatureResumeDetailsModule {}

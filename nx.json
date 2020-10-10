@@ -34,13 +34,13 @@
       "tags": ["scope:api", "type:app"]
     },
     "resume-builder-resume-shell-resume": {
-      "tags": ["scope:resume-builder", "type:feature"]
+      "tags": ["scope:resume", "type:feature"]
     },
     "resume-builder-resume-feature-resume-list": {
       "tags": []
     },
     "resume-builder-resume-feature-resume-details": {
-      "tags": []
+      "tags": ["scope:resume", "type:feature"]
     },
     "resume-builder-resume-feature-resume-edit": {
       "tags": []
@@ -63,9 +63,6 @@
     "ui-kit-slide-in-service": {
       "tags": ["scope:ui-kit", "type:service"]
     },
-    "resume-builder-resume-ui-profile": {
-      "tags": ["scope:resume-builder", "type:ui"]
-    },
     "resume-builder-utils-interface": {
       "tags": ["scope:resume-builder", "type:utils"]
     },
@@ -79,22 +76,25 @@
       "tags": ["scope:ui-kit", "type:ui"]
     },
     "resume-builder-resume-feature-resume-education": {
-      "tags": ["scope:resume-builder", "type:feature"]
+      "tags": ["scope:resume", "type:feature"]
     },
     "resume-builder-resume-feature-resume-skills": {
-      "tags": ["scope:resume-builder", "type:feature"]
+      "tags": ["scope:resume", "type:feature"]
     },
     "resume-builder-resume-feature-resume-interests": {
-      "tags": ["scope:resume-builder", "type=feature"]
+      "tags": ["scope:resume", "type=feature"]
     },
     "resume-builder-resume-feature-resume-languages": {
-      "tags": ["scope:resume-builder", "type:feature"]
+      "tags": ["scope:resume", "type:feature"]
     },
     "ui-kit-forms-select": {
       "tags": ["scope:ui-kit", "type:ui"]
     },
     "resume-builder-resume-feature-resume-references": {
-      "tags": ["scope:resume-builder", "type:feature"]
+      "tags": ["scope:resume", "type:feature"]
+    },
+    "resume-builder-resume-feature-resume-profile": {
+      "tags": ["scope:resume", "type:feature"]
     }
   }
 }

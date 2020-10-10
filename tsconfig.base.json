@@ -46,9 +46,6 @@
       "@coderisland/ui-kit/slide-in/service": [
         "libs/ui-kit/slide-in/service/src/index.ts"
       ],
-      "@coderisland/resume-builder/resume/ui-profile": [
-        "libs/resume-builder/resume/ui-profile/src/index.ts"
-      ],
       "@coderisland/resume-builder/utils-interface": [
         "libs/resume-builder/utils-interface/src/index.ts"
       ],
@@ -78,6 +75,9 @@
       ],
       "@coderisland/resume-builder/resume/feature-resume-references": [
         "libs/resume-builder/resume/feature-resume-references/src/index.ts"
+      ],
+      "@coderisland/resume-builder/resume/feature-resume-profile": [
+        "libs/resume-builder/resume/feature-resume-profile/src/index.ts"
       ]
     }
   },
