@@ -22,14 +22,7 @@ import { RouterModule } from '@angular/router';
           ).then(
             (module) => module.ResumeBuilderResumeFeatureResumeDetailsModule
           ),
-      },
-      {
-        path: ':id/edit',
-        loadChildren: () =>
-          import('@coderisland/resume-builder/resume/feature-resume-edit').then(
-            (module) => module.ResumeBuilderResumeFeatureResumeEditModule
-          ),
-      },
+      }
     ]),
   ],
 })

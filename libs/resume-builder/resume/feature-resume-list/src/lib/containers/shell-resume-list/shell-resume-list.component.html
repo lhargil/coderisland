@@ -1,1 +1,1 @@
-<resb-resume-list [resumes]="resumes$ | async"></resb-resume-list>
+<resb-resume-list *ngIf="resumes$ | async as resumes" [resumes]="resumes"></resb-resume-list>

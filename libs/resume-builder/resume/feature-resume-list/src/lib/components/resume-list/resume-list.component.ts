@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ResumeListComponent implements OnInit {
-  @Input() resumes: Observable<Resume[]>
+  @Input() resumes!: Resume[];
   constructor() { }
 
   ngOnInit(): void {

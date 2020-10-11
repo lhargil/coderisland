@@ -42,9 +42,6 @@
     "resume-builder-resume-feature-resume-details": {
       "tags": ["scope:resume", "type:feature"]
     },
-    "resume-builder-resume-feature-resume-edit": {
-      "tags": []
-    },
     "resume-builder-domain-interfaces": {
       "tags": ["scope:resume-builder", "type:domain"]
     },
