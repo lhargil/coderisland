@@ -7,10 +7,14 @@ import { Resume } from '@coderisland/resume-builder/domain/interfaces';
   providedIn: 'root'
 })
 export class ResumeService {
-  private readonly apiUrl = 'api';
+  private readonly resumesUrl = 'api/resumes';
   constructor(private httpClient: HttpClient) { }
 
   getResume(id: string): Observable<Resume> {
-    return this.httpClient.get<Resume>(this.apiUrl);
+    return this.httpClient.get<Resume>(`${this.resumesUrl}/${id}`);
+  }
+
+  getResumes(): Observable<Resume[]> {
+    return this.httpClient.get<Resume[]>(this.resumesUrl);
   }
 }

@@ -2,6 +2,7 @@
 
 export interface Resume {
   id: string;
+  appliedFor: CompanyApplication;
   basics: ResumeBasics;
   work: ResumeWorkExperience[];
   volunteer: ResumeWorkExperience[];
@@ -12,6 +13,11 @@ export interface Resume {
   languages: ResumeLanguage[];
   interests: ResumeInterest[];
   references: ResumeReference[];
+}
+
+export interface CompanyApplication {
+  companyName: string;
+  dateApplied: string;
 }
 
 export interface Award {
