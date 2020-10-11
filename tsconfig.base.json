@@ -75,6 +75,9 @@
       ],
       "@coderisland/resume-builder/resume/feature-resume-profile": [
         "libs/resume-builder/resume/feature-resume-profile/src/index.ts"
+      ],
+      "@coderisland/resume-builder/resume/feature-resume-preview": [
+        "libs/resume-builder/resume/feature-resume-preview/src/index.ts"
       ]
     }
   },

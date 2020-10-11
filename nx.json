@@ -92,6 +92,9 @@
     },
     "resume-builder-resume-feature-resume-profile": {
       "tags": ["scope:resume", "type:feature"]
+    },
+    "resume-builder-resume-feature-resume-preview": {
+      "tags": ["scope:resume-builder", "type:feature"]
     }
   }
 }
