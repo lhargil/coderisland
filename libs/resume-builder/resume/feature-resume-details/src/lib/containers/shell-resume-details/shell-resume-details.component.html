@@ -1,4 +1,10 @@
+
 <ng-container *ngIf="resume$ | async as resume">
+  <div class="text-right">
+    <a [routerLink]="['../../','preview']">
+      Preview
+    </a>
+  </div>
   <resb-shell-profile [resumeBasics]="resume!.basics"></resb-shell-profile>
   <resb-shell-work-experience [resumeWorkExperience]="resume.work"></resb-shell-work-experience>
   <resb-shell-work-experience [resumeWorkExperience]="resume.volunteer" [options]="{ isVolunteerExperience: true }"></resb-shell-work-experience>
