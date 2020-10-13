@@ -52,7 +52,7 @@ module.exports = (isProd) => ({
     ],
     backgroundColor: ['responsive', 'odd', 'even', 'hover', 'focus'],
     translate: ['responsive', 'hover', 'focus'],
-    margin: ['responsive', 'hover', 'focus', 'last'],
+    margin: ['responsive', 'hover', 'focus', 'last', 'first'],
     padding: ['responsive', 'hover', 'focus', 'last'],
     placeholderColor: ['responsive', 'focus', 'hover', 'active'],
     boxShadow: ['responsive', 'hover', 'focus', 'active', 'group-hover'],

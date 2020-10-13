@@ -48,7 +48,7 @@ export class AppService {
       work: [
         {
           company: 'Inscale Asia Sdn Bhd',
-          position: 'Software developer',
+          position: 'Software Developer',
           website: 'https://inscale.net',
           startDate: '2018-02-18',
           endDate: 'current',
@@ -57,13 +57,31 @@ export class AppService {
         },
         {
           company: 'SimplyGiving.com',
-          position: 'Senior Software engineer',
+          position: 'Senior Software Engineer',
           website: 'https://www.simplygiving.com/SimplyGiving/About',
           startDate: '2015-09-01',
           endDate: '2017-09-01',
           summary: 'Work closely with the management to formulate, implement and maintain features that enhances, among other things, user-acquisition activities, user engagement and site usability.',
           highlights: ['Built the Corporate Cup feature that enabled SimplyGiving to gain more users through the acquisition of a Hongkong-based events company. This feature opened up competitive fundraising among participants of a given event in various categories.', `Implemented Events PRO that increased engagement of fundraisers and event participants by allowing them to dynamically create forms and attach merchandising options to their event.`,
           `Implemented a highly-requested feature to the site that made it possible for donors to regularly donate to their chosen charities. This added a recurring revenue-stream to Simplygiving`],
+        },
+        {
+          company: 'Fusion Informatics',
+          position: 'Software Engineer',
+          website: 'https://www.simplygiving.com/SimplyGiving/About',
+          startDate: '2015-09-01',
+          endDate: '2017-09-01',
+          summary: 'Ham hock sausage chislic venison. Rump ground round andouille ham pig swine filet mignon meatball prosciutto. Meatloaf bresaola pork cupim porchetta strip steak. Ribeye kevin cupim ball tip alcatra. Shank pork burgdoggen short ribs rump, short loin pancetta cupim beef kevin buffalo.',
+          highlights: ['Kielbasa frankfurter filet mignon pastrami ball tip. Sirloin tenderloin meatball ham biltong boudin. Alcatra strip steak bacon, swine sirloin porchetta short loin frankfurter salami flank.', `Buffalo doner tail, landjaeger meatball leberkas shoulder pork belly. Tenderloin prosciutto meatball ham pancetta biltong.`],
+        },
+        {
+          company: 'Gemango Software Services',
+          position: 'Software Developer',
+          website: 'https://www.simplygiving.com/SimplyGiving/About',
+          startDate: '2015-09-01',
+          endDate: '2017-09-01',
+          summary: 'Shank chicken jerky, tri-tip pork belly jowl buffalo. Ham hock rump pork belly, pancetta picanha turkey chislic short loin jerky ground round turducken salami bacon hamburger.',
+          highlights: [`Ball tip strip steak venison, sirloin porchetta prosciutto meatloaf meatball picanha fatback alcatra. Pork belly filet mignon sausage biltong tenderloin, bacon chuck tongue burgdoggen. Cow tongue beef, fatback pork belly porchetta strip steak. Short ribs turkey andouille salami kielbasa. T-bone short loin sausage shoulder pig jerky, landjaeger pork chop leberkas drumstick frankfurter kielbasa.`],
         },
       ],
       volunteer: [
@@ -79,8 +97,8 @@ export class AppService {
       ],
       education: [
         {
-          institution: 'University',
-          area: 'Software Development',
+          institution: 'University of San Carlos',
+          area: 'Computer Science',
           studyType: 'Bachelor',
           startDate: '2011-01-01',
           endDate: '2013-01-01',
@@ -107,28 +125,28 @@ export class AppService {
       ],
       skills: [
         {
-          name: 'Backend web development',
+          name: 'API development',
           level: 'Master',
           lastUsed: '2017',
-          keywords: ['ASP.NET Core', 'Signalr', 'NestJs', 'REST', 'GraphQL'],
-        },
-        {
-          name: 'DevOps',
-          level: 'Master',
-          lastUsed: '2017',
-          keywords: ['Github actions', 'Azure Devops pipelines', 'Docker', 'OpenShift'],
+          keywords: ['ASP.NET Core', 'RESTful', 'GraphQL', 'Signalr', 'NestJs', 'Kafka'],
         },
         {
           name: 'Frontend web development',
           level: 'Master',
           lastUsed: '2017',
-          keywords: ['HTML', 'CSS', 'SCSS', 'Javascript', 'Typescript', 'Angular', 'TailwindCSS', 'Bootstrap'],
+          keywords: ['Angular', 'Typescript', 'Bootstrap', 'TailwindCSS', 'HTML', 'CSS', 'SCSS', 'Javascript'],
+        },
+        {
+          name: 'DevOps',
+          level: 'Master',
+          lastUsed: '2017',
+          keywords: ['Azure Devops pipelines', 'Github actions', 'Docker', 'OpenShift'],
         },
         {
           name: 'Source Control',
           level: 'Master',
           lastUsed: '2017',
-          keywords: ['Github', 'Azure Devops']
+          keywords: ['Git', 'SVN']
         },
         {
           name: 'Databases',
@@ -150,8 +168,12 @@ export class AppService {
       interests: [
         {
           name: 'Photography',
-          keywords: ['Macro', 'Street', 'Scapes'],
+          keywords: ['Macro', 'Street', 'Landscape', 'Timelapse'],
         },
+        {
+          name: 'Reading',
+          keywords: ['Fiction', 'Biography', 'Political thriller', 'Philosophy', 'Software Development']
+        }
       ],
       references: [
         {
