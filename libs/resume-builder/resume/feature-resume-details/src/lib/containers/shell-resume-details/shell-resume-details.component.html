@@ -1,7 +1,7 @@
 
 <ng-container *ngIf="resume$ | async as resume">
   <div class="text-right">
-    <a [routerLink]="['../../','preview']">
+    <a [routerLink]="['/', resume.id, 'preview']">
       Preview
     </a>
   </div>

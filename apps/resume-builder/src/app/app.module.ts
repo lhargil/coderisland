@@ -27,6 +27,16 @@ export function HttpLoaderFactory(http: HttpClient) {
               (module) => module.ResumeBuilderResumeShellResumeModule
             ),
         },
+        {
+          path: ':id/preview',
+          data: { layout: 'public' },
+          loadChildren: () =>
+            import(
+              '@coderisland/resume-builder/resume/feature-resume-preview'
+            ).then(
+              (module) => module.ResumeBuilderResumeFeatureResumePreviewModule
+            ),
+        },
       ],
       { initialNavigation: 'enabled' }
     ),
@@ -39,7 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -12,6 +12,9 @@ module.exports = (isProd) => ({
   },
   theme: {
     extend: {
+      screens: {
+        'print': {'raw': 'print'},
+      },
       fontFamily: {
         display: ['Raleway', ...defaultTheme.fontFamily.sans],
         body: ['Roboto', ...defaultTheme.fontFamily.sans],
