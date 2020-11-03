@@ -44,7 +44,7 @@ export class AppService {
               url: 'https://instagram.com/lhar.gil',
             },
             {
-              network: 'Github',
+              network: 'GitHub',
               username: '@lhargil',
               url: 'https://github.com/lhargil',
             },
@@ -60,9 +60,9 @@ export class AppService {
             summary:
               'Work with a team as a full-stack developer in an AGILE environment to actively develop internal applications for a Scandinavian financial institution that are compliant with European regulations.',
             highlights: [
-              'Strongly participate in hackathons, together with like-minded team members, to come up with proofs-of-concept to formulate new solutions to a given problem. One of the hackathon ideas was eventually adopted and deployed to production to be used by stakeholders inside the organization.',
-              'Provide inputs during Scrum activities such as sprint planning and daily stand-ups to support effective delivery of features through a timely and organized manner.',
-              'Selected as one of the individuals tasked to periodically conduct tech interviews on prospective new employees enabling the company to expand their pool of talented and highly-skilled professionals.',
+              'Participate in hackathons, together with like-minded team members, to come up with proofs-of-concept to formulate new solutions to a given problem. One of the hackathon ideas was eventually adopted and deployed to production to be used by stakeholders inside the organization.',
+              'Chosen as one of the developers to be part of the initiative of streamlining some of the organization\'s core functions.',
+              'Selected as one of the individuals tasked to periodically conduct tech interviews on prospective new employees enabling the organization to expand their pool of talented and highly-skilled professionals.',
             ],
           },
           {
@@ -75,7 +75,7 @@ export class AppService {
               'Performed the duties of a full-stack software engineer who work closely with the management to formulate, implement and maintain site features that enhances, among other things, user-acquisition activities, user engagement, site usability and systems integration.',
             highlights: [
               'Built a leaderboard feature for corporate clients that enabled SimplyGiving to gain more users through the acquisition of a large Hongkong-based events company. This feature opened up competitive fundraising among participants of a given event in various categories.',
-              'Implemented a fundraising events solution that increased engagement of fundraisers and event participants by allowing them to dynamically create forms and attach merchandising options to their event.',
+              'Implemented a fundraising events solution that increased engagement of fundraisers and event participants by allowing them to dynamically create online forms and attach merchandising options to their event.',
               'Implemented a highly-requested feature to the site that made it possible for donors to regularly donate to their chosen charities. This added a recurring revenue-stream to Simplygiving.',
             ],
           },
@@ -88,7 +88,7 @@ export class AppService {
             summary:
               'Served as a full-stack developer utilizing various frameworks such as ASP.NET MVC, Web API and Unity 3D to build bespoke client applications, formulate gamified solutions and integrate with existing services',
             highlights: [
-              'Built from the ground up, a web application and API solution that integrates with mobile applications that enable services companies to track the progress of their workers.',
+              'Built from the ground up, a web application and API solution that integrates with mobile applications that enable services-oriented companies to track the progress of their workers.',
               'Built a dashboard solution that enabled the client to change their records management from doing it directly in SQL Management Tool to a web-based form.',
               'Started a web application that served as a dashboard for players of a MMORPG where they can do transactions for items that are usable in-game.',
             ],
@@ -113,9 +113,9 @@ export class AppService {
             endDate: '2012-10-01',
             summary: 'Assigned as one of the full-stack developers who architected and developed the web-based information management system of the University of San Carlos that brought most of the core functions of the university online such as student admission, enrollment, payments, faculty management, and many more. The technical core comprised of ASP.NET MVC, jQuery and SQL Server.',
             highlights: [
-              'Developed the online enrollment module with requisites handling, scheduling conflict handling and administrator overrides fully supported. This resulted in improved enrollment experience and turnout.',
+              'Developed the online enrollment module with requisites handling, scheduling conflict handling and administrator overrides fully supported. This resulted to an improved student enrollment experience and turnout.',
               'Enhanced the university admission process by implementing the online student admission form with an automatic ID number generator and student ID photo capture using a web camera.',
-              'Developed from the ground up the university manual tracking system that enabled users to organize, view and update various administrative manuals and related documents'
+              'Developed from the ground up the university manual tracking system that enabled users to organize, update and version various administrative manuals and related documents.'
             ],
           },
         ],
