@@ -34,8 +34,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: yarn
-    - run: nx run-many --target=build --projects=resume-builder,resume-builder-api --with-deps --prod
+    - run: yarn install --frozen-lockfile
+    - run: yarn nx run-many --target=build --projects=resume-builder,resume-builder-api --with-deps --prod
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.0
       with:
