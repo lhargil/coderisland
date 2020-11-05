@@ -61,7 +61,7 @@ jobs:
         host: ${{ secrets.RESUMEBUILDER_SSH_HOST }}
         username: ${{ secrets.RESUMEBUILDER_SSH_USER }}
         password: ${{ secrets.RESUMEBUILDER_SSH_PW }}
-        port: ${{ secrets.RESUMEBUILDER_PORT }}
+        port: ${{ secrets.RESUMEBUILDER_SSH_PORT }}
         script: mkdir -p ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/client
     - name: copy to temp dest
       uses: appleboy/scp-action@v0.1.1
