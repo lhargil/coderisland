@@ -76,7 +76,7 @@ jobs:
         username: ${{ secrets.RESUMEBUILDER_SSH_USER }}
         password: ${{ secrets.RESUMEBUILDER_SSH_PW }}
         port: ${{ secrets.RESUMEBUILDER_SSH_PORT }}
-        source: "resume-builder-app"
+        source: "resume-builder-api"
         target: ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/api
     - name: copy from temp dest to dest
       uses: appleboy/ssh-action@master
