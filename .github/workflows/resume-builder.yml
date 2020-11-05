@@ -42,7 +42,7 @@ jobs:
         name: resume-builder-app-artifact
         path: dist/apps/resume-builder
         retention-days: 1
-release_api:
+  release_api:
     name: Release API to VPS
     needs: [build]
     runs-on: ubuntu-latest
