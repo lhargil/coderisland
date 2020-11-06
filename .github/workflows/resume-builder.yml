@@ -36,6 +36,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn install --frozen-lockfile
     - run: yarn nx run-many --target=build --projects=resume-builder,resume-builder-api --with-deps --prod
+    - run: yarn cpx package.json ./dist/apps/resume-builder-api/
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.0
       with:
