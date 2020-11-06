@@ -42,7 +42,14 @@ jobs:
         name: resume-builder-app-artifact
         path: dist/apps/resume-builder
         retention-days: 1
-release_api:
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.0
+      with:
+        name: resume-builder-api-artifact
+        path: dist/apps/resume-builder-api
+        retention-days: 1
+  
+  release_api:
     name: Release API to VPS
     needs: [build]
     runs-on: ubuntu-latest
@@ -69,7 +76,7 @@ release_api:
         username: ${{ secrets.RESUMEBUILDER_SSH_USER }}
         password: ${{ secrets.RESUMEBUILDER_SSH_PW }}
         port: ${{ secrets.RESUMEBUILDER_SSH_PORT }}
-        source: "resume-builder-app"
+        source: "resume-builder-api"
         target: ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/api
     - name: copy from temp dest to dest
       uses: appleboy/ssh-action@master
