@@ -20,7 +20,7 @@ export class AppService {
           name: 'Lhar Gil',
           label: 'Software Developer',
           picture:
-            'http://localhost:8080/images/lhargil.jpg?w=540&h=540',
+            'https://omgimgflow.lhargil.com/images/lhargil.jpg?w=540&h=540',
           email: 'me@lhargil.com',
           phone: '',
           website: 'https://lhargil.com',
