@@ -3,7 +3,6 @@ import {
   Customer,
   Resume,
 } from '@coderisland/resume-builder/domain/interfaces';
-import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class AppService {
@@ -55,7 +54,7 @@ export class AppService {
             company: 'Inscale Asia Sdn Bhd',
             position: 'Software Developer',
             website: 'https://inscale.net',
-            startDate: '2018-02-18',
+            startDate: '2018-02',
             endDate: 'current',
             summary:
               'Work with a team as a full-stack developer in an AGILE environment to actively develop internal applications for a Scandinavian financial institution that are compliant with European regulations.',
@@ -69,8 +68,8 @@ export class AppService {
             company: 'SimplyGiving.com',
             position: 'Senior Software Engineer',
             website: 'https://www.simplygiving.com/SimplyGiving/About',
-            startDate: '2015-09-01',
-            endDate: '2017-09-01',
+            startDate: '2015-09',
+            endDate: '2017-09',
             summary:
               'Performed the duties of a full-stack software engineer who work closely with the management to formulate, implement and maintain site features that enhances, among other things, user-acquisition activities, user engagement, site usability and systems integration.',
             highlights: [
@@ -83,8 +82,8 @@ export class AppService {
             company: 'BEpic BV (formerly Fusion Informatics)',
             position: 'Software Engineer',
             website: 'https://b-epic.nl/',
-            startDate: '2014-05-01',
-            endDate: '2015-08-31',
+            startDate: '2014-05',
+            endDate: '2015-08',
             summary:
               'Served as a full-stack developer utilizing various frameworks such as ASP.NET MVC, Web API and Unity 3D to build bespoke client applications, formulate gamified solutions and integrate with existing services',
             highlights: [
@@ -97,8 +96,8 @@ export class AppService {
             company: 'Gemango Software Services, Inc.',
             position: 'Software Developer',
             website: 'https://www.gemango.com/',
-            startDate: '2013-03-18',
-            endDate: '2014-04-30',
+            startDate: '2013-03',
+            endDate: '2014-04',
             summary: 'Served as a backend developer that actively develop and maintain solutions for various clients of Gemango. Several frameworks such as Mono framework, ASP.NET Web API and Phonegap were used to deliver solutions to the client.',
             highlights: [
               'Ported the logbook and report generator from a VB6 application to VB.NET Mono in less time that previously estimated. The time savings helped Gemango in releasing the feature on time.',
@@ -109,8 +108,8 @@ export class AppService {
             company: 'University of San Carlos',
             position: 'Web Developer',
             website: 'http://usc.edu.ph/',
-            startDate: '2009-12-20',
-            endDate: '2012-10-01',
+            startDate: '2009-12',
+            endDate: '2012-10',
             summary: 'Assigned as one of the full-stack developers who architected and developed the web-based information management system of the University of San Carlos that brought most of the core functions of the university online such as student admission, enrollment, payments, faculty management, and many more. The technical core comprised of ASP.NET MVC, jQuery and SQL Server.',
             highlights: [
               'Developed the online enrollment module with requisites handling, scheduling conflict handling and administrator overrides fully supported. This resulted to an improved student enrollment experience and turnout.',
