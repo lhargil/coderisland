@@ -154,7 +154,7 @@ export class AppService {
               'RESTful',
               'GraphQL',
               'Signalr',
-              'NestJs',
+              'NestJS',
               'Kafka',
             ],
           },
@@ -165,6 +165,7 @@ export class AppService {
             keywords: [
               'Angular',
               'Typescript',
+              'rxjs',
               'Bootstrap',
               'TailwindCSS',
               'Javascript',
