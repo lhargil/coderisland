@@ -62,6 +62,7 @@ export interface ResumeEducation {
   endDate: string;
   gpa: string;
   courses: string[];
+  website: string;
 }
 
 export interface ResumeInterest {

@@ -121,14 +121,16 @@ export class AppService {
         ],
         volunteer: [
           {
-            organization: 'Personal projects',
-            position: 'Volunteer',
-            website: 'https://lhargil.com/apps',
+            organization: 'apps.lhargil.com',
+            position: 'Personal projets',
+            website: 'https://apps.lhargil.com',
             startDate: 'January, 2019',
             endDate: 'present',
-            summary: 'Description...',
+            summary: `Carved a niche for myself in the interwebs where I can freely experiment with radical ideas and new technologies, implement fresh approaches to solutions, making and learning from mistakes along the way.`,
             highlights: [
-              ''
+              'Dipped my toes into Linux administration by self-managing a Virtual Private Server.',
+              'Embracing the importance of CI/CD practices at an early stage so software releases can be handled in an AGILE way.',
+              'Being able to build fun apps with virtually no limits where I get to try out crazy ideas.'
             ],
           },
         ],
@@ -141,6 +143,7 @@ export class AppService {
             endDate: 'March, 2008',
             gpa: '',
             courses: [],
+            website: 'http://usc.edu.ph/'
           },
         ],
         awards: [],
@@ -157,6 +160,7 @@ export class AppService {
               'Signalr',
               'NestJS',
               'Apache Kafka',
+              'ASP.NET MVC'
             ],
           },
           {
@@ -170,6 +174,7 @@ export class AppService {
               'Bootstrap',
               'TailwindCSS',
               'Javascript',
+              'Markdown',
               'SCSS',
               'HTML',
               'CSS',
@@ -230,19 +235,19 @@ export class AppService {
           }
         ],
         references: [
-          {
-            name: 'Rosana Ferolin',
-            reference:
-              'Manager, Department of Technology - University of San Carlos',
-          },
-          {
-            name: 'Gert Monnissen',
-            reference: 'CEO, Gemango Software Services Inc.',
-          },
-          {
-            name: 'Jiok Min Lee',
-            reference: 'Manager, Inscale Asia Sdn Bhd.',
-          },
+          // {
+          //   name: 'Rosana Ferolin',
+          //   reference:
+          //     'Manager, Department of Technology - University of San Carlos',
+          // },
+          // {
+          //   name: 'Gert Monnissen',
+          //   reference: 'CEO, Gemango Software Services Inc.',
+          // },
+          // {
+          //   name: 'Jiok Min Lee',
+          //   reference: 'Manager, Inscale Asia Sdn Bhd.',
+          // },
         ],
       },
     ],

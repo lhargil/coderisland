@@ -28,7 +28,22 @@ import { Resume } from '@coderisland/resume-builder/domain/interfaces';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PreviewComponent implements OnInit {
-  @Input() resume!: Resume;
+  private _resume!: Resume;
+  @Input()
+  set resume(value: Resume) {
+
+    this._resume = value;
+    this._resume.work = value
+      .work
+      .slice(0, 3);
+    this._resume.work = [
+      ...this._resume.work,
+      ...this._resume.volunteer
+    ];
+  }
+  get resume() {
+    return this._resume;
+  }
   @Output() clickPrint = new EventEmitter<void>();
   constructor() {}
 

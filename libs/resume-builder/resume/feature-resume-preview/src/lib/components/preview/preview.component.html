@@ -83,7 +83,7 @@
                 >{{ resume.basics.website }}</a
               >
             </p>
-            <div class="mt-8 max-w-sm mx-auto">
+            <div class="mt-10 max-w-sm mx-auto">
               <header>
                 <h2 class="text-xl flex items-center text-gray-200">
                   <svg
@@ -110,7 +110,7 @@
               <ul>
                 <li
                   *ngFor="let skill of resume.skills; index as i"
-                  class="mt-4 first:t-0"
+                  class="mt-6 first:t-0"
                 >
                   <span class="block">
                     {{ skill.name }}
@@ -144,7 +144,7 @@
               <ul class="mt-3">
                 <li
                   *ngFor="let interest of resume.interests"
-                  class="mt-4 first:mt-0"
+                  class="mt-6 first:mt-0"
                 >
                   <span class="block">
                     {{ interest.name }}
@@ -261,7 +261,7 @@
                       target="_blank"
                     >
                       <span>
-                        {{ experience.company }}
+                        {{ experience.company || experience.organization }}
                       </span>
                       <svg
                         class="flex-shrink-0 ml-1.5 h-4 w-4 text-gray-400"
@@ -344,7 +344,28 @@
                       clip-rule="evenodd"
                     />
                   </svg>
-                  {{ education.institution }}
+                  <a
+                      class="flex items-center"
+                      [href]="education.website"
+                      target="_blank"
+                    >
+                      <span>
+                        {{ education.institution }}
+                      </span>
+                      <svg
+                        class="flex-shrink-0 ml-1.5 h-4 w-4 text-gray-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
+                        ></path>
+                        <path
+                          d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
+                        ></path>
+                      </svg>
+                    </a>
+
                 </div>
                 <div
                   class="mt-2 flex items-center text-sm leading-5 text-gray-500"
