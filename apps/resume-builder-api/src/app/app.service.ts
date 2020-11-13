@@ -60,9 +60,9 @@ export class AppService {
             summary:
               'Work with a team as a full-stack developer in an AGILE environment to actively develop internal applications for a Scandinavian financial institution that are compliant with European regulations.',
             highlights: [
-              'Participate in hackathons, together with like-minded team members, to come up with proofs-of-concept to formulate new solutions to a given problem. One of the hackathon ideas was eventually adopted and deployed to production to be used by stakeholders inside the organization.',
-              'Chosen as one of the developers to be part of the initiative of streamlining some of the organization\'s core functions.',
-              'Selected as one of the individuals tasked to periodically conduct tech interviews on prospective new employees enabling the organization to expand their pool of talented and highly-skilled professionals.',
+              'Participate in hackathons, together with like-minded team members, to come up with proofs-of-concept to address the problem at hand. One of the hackathon ideas was eventually adopted and deployed to production to be used by stakeholders inside the organization.',
+              'Chosen as one of the developers to be part of a new initiative to streamline some of the organization\'s core functions.',
+              'Selected as one of the individuals tasked to periodically conduct tech interviews on prospective candidates, contributing to the organization\'s pool of talented and highly-skilled professionals.',
             ],
           },
           {
@@ -184,7 +184,6 @@ export class AppService {
               'Azure Devops pipelines',
               'Github actions',
               'Docker',
-              'OpenShift',
             ],
           },
           {
