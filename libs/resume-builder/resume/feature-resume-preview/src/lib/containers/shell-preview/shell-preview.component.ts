@@ -23,4 +23,7 @@ export class ShellPreviewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  printClicked() {
+    window.print();
+  }
 }

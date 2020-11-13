@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { Resume } from '@coderisland/resume-builder/domain/interfaces';
 
 @Component({
@@ -15,9 +15,13 @@ import { Resume } from '@coderisland/resume-builder/domain/interfaces';
 })
 export class PreviewComponent implements OnInit {
   @Input() resume!: Resume;
+  @Output() clickPrint = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  print() {
+    this.clickPrint.emit();
+  }
 }
