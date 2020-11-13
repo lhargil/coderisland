@@ -12,7 +12,7 @@ export class AppService {
       {
         id: '8a408822-992c-4ae6-95bf-58026bc97073',
         appliedFor: {
-          companyName: 'Petronas ICT',
+          companyName: 'Company name',
           dateApplied: '2020-08-04',
         },
         basics: {
@@ -23,7 +23,8 @@ export class AppService {
           email: 'me@lhargil.com',
           phone: '',
           website: 'https://lhargil.com',
-          summary: `I am a software developer, currently based in Kuala Lumpur, passionate about building web applications that help people become better versions of themselves. I am seeking for a highly-rewarding career in an environment that harnesses the skills and knowledge of individuals in securing the organization's success while providing them with opportunities for further professional advancement.`,
+          summary: `I am a software developer, with nine years of experience, currently based in Kuala Lumpur, actively building web APIs and application solutions that help people become better versions of themselves.`,
+          objective: `I am seeking for a highly-rewarding career in an environment that harnesses the skills and knowledge of individuals in securing the organization's success while providing them with opportunities for further professional advancement.`,
           location: {
             address: '2712 Broadway St',
             postalCode: 'CA 94115',
@@ -54,7 +55,7 @@ export class AppService {
             company: 'Inscale Asia Sdn Bhd',
             position: 'Software Developer',
             website: 'https://inscale.net',
-            startDate: '2018-02',
+            startDate: 'February, 2018',
             endDate: 'current',
             summary:
               'Work with a team as a full-stack developer in an AGILE environment to actively develop internal applications for a Scandinavian financial institution that are compliant with European regulations.',
@@ -68,8 +69,8 @@ export class AppService {
             company: 'SimplyGiving.com',
             position: 'Senior Software Engineer',
             website: 'https://www.simplygiving.com/SimplyGiving/About',
-            startDate: '2015-09',
-            endDate: '2017-09',
+            startDate: 'September, 2015',
+            endDate: 'September, 2017',
             summary:
               'Performed the duties of a full-stack software engineer who work closely with the management to formulate, implement and maintain site features that enhances, among other things, user-acquisition activities, user engagement, site usability and systems integration.',
             highlights: [
@@ -82,8 +83,8 @@ export class AppService {
             company: 'BEpic BV (formerly Fusion Informatics)',
             position: 'Software Engineer',
             website: 'https://b-epic.nl/',
-            startDate: '2014-05',
-            endDate: '2015-08',
+            startDate: 'May, 2014',
+            endDate: 'August, 2015',
             summary:
               'Served as a full-stack developer utilizing various frameworks such as ASP.NET MVC, Web API and Unity 3D to build bespoke client applications, formulate gamified solutions and integrate with existing services',
             highlights: [
@@ -96,8 +97,8 @@ export class AppService {
             company: 'Gemango Software Services, Inc.',
             position: 'Software Developer',
             website: 'https://www.gemango.com/',
-            startDate: '2013-03',
-            endDate: '2014-04',
+            startDate: 'March, 2013',
+            endDate: 'April, 2014',
             summary: 'Served as a backend developer that actively develop and maintain solutions for various clients of Gemango. Several frameworks such as Mono framework, ASP.NET Web API and Phonegap were used to deliver solutions to the client.',
             highlights: [
               'Ported the logbook and report generator from a VB6 application to VB.NET Mono in less time that previously estimated. The time savings helped Gemango in releasing the feature on time.',
@@ -108,22 +109,22 @@ export class AppService {
             company: 'University of San Carlos',
             position: 'Web Developer',
             website: 'http://usc.edu.ph/',
-            startDate: '2009-12',
-            endDate: '2012-10',
+            startDate: 'December, 2009',
+            endDate: 'October, 2012',
             summary: 'Assigned as one of the full-stack developers who architected and developed the web-based information management system of the University of San Carlos that brought most of the core functions of the university online such as student admission, enrollment, payments, faculty management, and many more. The technical core comprised of ASP.NET MVC, jQuery and SQL Server.',
             highlights: [
               'Developed the online enrollment module with requisites handling, scheduling conflict handling and administrator overrides fully supported. This resulted to an improved student enrollment experience and turnout.',
-              'Enhanced the university admission process by implementing the online student admission form with an automatic ID number generator and student ID photo capture using a web camera.',
+              'Enhanced the university admission process by digitalizing the online student admission form with an automatic ID number generator and student ID photo capture using a web camera.',
               'Developed from the ground up the university manual tracking system that enabled users to organize, update and version various administrative manuals and related documents.'
             ],
           },
         ],
         volunteer: [
           {
-            organization: 'Self projects',
+            organization: 'Personal projects',
             position: 'Volunteer',
             website: 'https://lhargil.com/apps',
-            startDate: '2019-01-01',
+            startDate: 'January, 2019',
             endDate: 'present',
             summary: 'Description...',
             highlights: [
@@ -136,8 +137,8 @@ export class AppService {
             institution: 'University of San Carlos',
             area: 'Bachelor of Science in Computer Science',
             studyType: 'Bachelor',
-            startDate: '06-2004',
-            endDate: '08-2008',
+            startDate: 'June, 2004',
+            endDate: 'March, 2008',
             gpa: '',
             courses: [],
           },
@@ -155,7 +156,7 @@ export class AppService {
               'GraphQL',
               'Signalr',
               'NestJS',
-              'Kafka',
+              'Apache Kafka',
             ],
           },
           {
@@ -165,7 +166,7 @@ export class AppService {
             keywords: [
               'Angular',
               'Typescript',
-              'rxjs',
+              'RxJS',
               'Bootstrap',
               'TailwindCSS',
               'Javascript',
@@ -196,7 +197,7 @@ export class AppService {
             name: 'Databases',
             level: 'Master',
             lastUsed: '2017',
-            keywords: ['SQL Server', 'MySQL', 'MongoDB'],
+            keywords: ['MongoDB', 'SQL Server', 'MySQL'],
           },
         ],
         languages: [
@@ -224,6 +225,10 @@ export class AppService {
               'Software Development',
             ],
           },
+          {
+            name: 'Stand-up comedy',
+            keywords: []
+          }
         ],
         references: [
           {

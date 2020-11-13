@@ -35,6 +35,7 @@ export interface ResumeBasics {
   phone: string;
   website: string;
   summary: string;
+  objective: string;
   location: ResumeBasicsLocation;
   profiles: ResumeBasicsProfile[];
 }
