@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  mongoDbUri: ''
+  mongoDbUri: process.env.CEEVEE_MONGODB_URI
 };
