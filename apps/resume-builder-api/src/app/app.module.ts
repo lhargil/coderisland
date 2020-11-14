@@ -19,7 +19,7 @@ import { environment } from '../environments/environment';
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
-        uri: process.env.CEEVEE_MONGODB_URI
+        uri: configService.get<string>('CEEVEE_MONGODB_URI')
       }),
       inject: [ConfigService],
     }),
