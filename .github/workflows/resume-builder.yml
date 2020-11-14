@@ -90,7 +90,7 @@ jobs:
         script: |
           cp -r -f ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/api/resume-builder-api/* ${{ secrets.RESUMEBUILDER_SSH_DEST }}/api
           cd ${{ secrets.RESUMEBUILDER_SSH_DEST }}/api
-          yarn install --production=true --frozen-lockfile --ignore-scripts
+          yarn install --production=true --ignore-scripts
           pm2 restart main
           rm -rf ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/api/resume-builder-api
 
