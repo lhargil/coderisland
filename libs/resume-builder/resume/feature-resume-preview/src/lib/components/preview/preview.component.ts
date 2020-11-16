@@ -35,7 +35,7 @@ export class PreviewComponent implements OnInit {
     this._resume = value;
     this._resume.work = value
       .work
-      .slice(0, 3);
+      .slice(0, 2);
     this._resume.work = [
       ...this._resume.work,
       ...this._resume.volunteer
