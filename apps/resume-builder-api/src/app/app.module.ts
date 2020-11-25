@@ -10,7 +10,6 @@ import { environment } from '../environments/environment';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: '.development.env',
       isGlobal: true,
       load: [() => ({
         ...environment
