@@ -862,6 +862,72 @@
           "style": "scss"
         }
       }
+    },
+    "ui-kit-page-loader-services": {
+      "projectType": "library",
+      "root": "libs/ui-kit/page-loader/services",
+      "sourceRoot": "libs/ui-kit/page-loader/services/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/page-loader/services/tsconfig.lib.json",
+              "libs/ui-kit/page-loader/services/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/page-loader/services/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/page-loader/services/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-kit-page-loader-components": {
+      "projectType": "library",
+      "root": "libs/ui-kit/page-loader/components",
+      "sourceRoot": "libs/ui-kit/page-loader/components/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/page-loader/components/tsconfig.lib.json",
+              "libs/ui-kit/page-loader/components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/page-loader/components/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/page-loader/components/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

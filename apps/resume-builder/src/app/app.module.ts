@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UiKitSlideInComponentsModule } from '@coderisland/ui-kit/slide-in/components';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { PageLoaderInterceptor } from '@coderisland/ui-kit/page-loader/services';
+import { UiKitPageLoaderComponentsModule } from '@coderisland/ui-kit/page-loader/components';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
@@ -50,8 +52,15 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    UiKitPageLoaderComponentsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: PageLoaderInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

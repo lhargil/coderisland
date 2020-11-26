@@ -78,6 +78,12 @@
       ],
       "@coderisland/resume-builder/resume/feature-resume-preview": [
         "libs/resume-builder/resume/feature-resume-preview/src/index.ts"
+      ],
+      "@coderisland/ui-kit/page-loader/services": [
+        "libs/ui-kit/page-loader/services/src/index.ts"
+      ],
+      "@coderisland/ui-kit/page-loader/components": [
+        "libs/ui-kit/page-loader/components/src/index.ts"
       ]
     }
   },
