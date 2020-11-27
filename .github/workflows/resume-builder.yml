@@ -132,5 +132,6 @@ jobs:
         password: ${{ secrets.RESUMEBUILDER_SSH_PW }}
         script_stop: true
         script: |
+          rm -rfv ${{ secrets.RESUMEBUILDER_SSH_DEST }}/client/
           cp -r -f ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/client/resume-builder-app/* ${{ secrets.RESUMEBUILDER_SSH_DEST }}/client
           rm -rf ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/client/resume-builder-app
