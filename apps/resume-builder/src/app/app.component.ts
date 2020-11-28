@@ -15,6 +15,9 @@ export class AppComponent implements OnInit {
 
   layout = 'public';
 
+  open = false;
+  show = false;
+
   @ViewChild('publicTemplate', { static: true}) publicTemplate: TemplateRef<HTMLElement> | undefined;
   @ViewChild('adminTemplate', { static: true}) adminTemplate: TemplateRef<HTMLElement> | undefined;
   @ViewChild('homeTemplate', { static: true}) homeTemplate: TemplateRef<HTMLElement> | undefined;
@@ -44,5 +47,19 @@ export class AppComponent implements OnInit {
         this.layout = this.activatedRoute.firstChild?.snapshot.data.layout || 'admin';
       }
     });
+  }
+
+  toggle() {
+    this.show = !this.show;
+    setTimeout(() => {
+      this.open = !this.open;
+    }, 100);
+  }
+
+  hide() {
+    this.open = false;
+    setTimeout(() => {
+      this.show = false;
+    }, 500);
   }
 }
