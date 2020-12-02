@@ -1,0 +1,28 @@
+<label *ngIf="label" class="block text-sm font-medium leading-5 text-gray-700 mb-2" [attr.for]="controlUniqueId">
+  {{label}}
+</label>
+<div class="mt-1 relative rounded-sm shadow-sm">
+  <input [id]="controlUniqueId" [name]="controlUniqueId" [formControl]="$any(control)" (blur)="onTouched && onTouched()"
+    (input)="onChanged && onChanged($any($event?.target)?.value)"
+    class="form-input block w-full pr-10 sm:text-sm sm:leading-5" [class.form-input-invalid]="controlIsInvalid"
+    [class.form-input-valid]="controlIsValid" type="text" [placeholder]="placeholder"
+    [attr.aria-placeholder]="placeholder" [attr.aria-invalid]="controlIsInvalid"
+    [attr.aria-describedby]="controlIsInvalid ? controlUniqueId+'-error': null" />
+  <div *ngIf="controlIsInvalid" class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+    <svg class="h-5 w-5 text-red-500" [attr.aria-labelledby]="controlUniqueId+'-error-indicator'" fill="currentColor"
+      viewBox="0 0 20 20">
+      <title id="{{controlUniqueId}}-error-indicator" lang="en">Error indicator</title>
+      <path fill-rule="evenodd"
+        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+        clip-rule="evenodd" />
+    </svg>
+  </div>
+</div>
+<div id="{{controlUniqueId}}-error" class="mt-2" role="alert" aria-relevant="all" aria-live="assertive"
+  *ngIf="errors$ | async as errors">
+  <div *ngIf="controlIsInvalid">
+    <p *ngFor="let error of errors" class="text-sm text-red-600 mb-2 last:mb-0">
+      {{error}}
+    </p>
+  </div>
+</div>

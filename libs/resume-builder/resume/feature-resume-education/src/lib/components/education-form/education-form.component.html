@@ -1,0 +1,99 @@
+<form [formGroup]="educationForm">
+  <coderisland-text-input
+    class="mb-3"
+    formControlName="institution"
+    placeholder="Institution"
+    label="Institution"
+  >
+  </coderisland-text-input>
+  <coderisland-text-input
+    class="mb-3"
+    formControlName="area"
+    placeholder="Area"
+    label="Area"
+  >
+  </coderisland-text-input>
+  <coderisland-text-input
+    class="mb-3"
+    formControlName="studyType"
+    placeholder="Study type"
+    label="Study type"
+  >
+  </coderisland-text-input>
+  <coderisland-text-input
+    class="mb-3"
+    formControlName="startDate"
+    placeholder="Start date"
+    label="Start date"
+  >
+  </coderisland-text-input>
+  <coderisland-text-input
+    class="mb-3"
+    formControlName="endDate"
+    placeholder="End date"
+    label="End date"
+  >
+  </coderisland-text-input>
+  <coderisland-text-input
+    class="mb-3"
+    formControlName="gpa"
+    placeholder="GPA"
+    label="GPA"
+  >
+  </coderisland-text-input>
+  <div class="mt-6" formArrayName="courses">
+    <h3 class="flex justify-start">
+      <span>Courses</span>
+      <span class="ml-4">
+        <button
+          (click)="addCourse()"
+          type="button"
+          aria-label="Add new course"
+          class="inline-flex text-gray-400 focus:outline-none focus:text-gray-500 hover:text-green-600 transition ease-in-out duration-150"
+        >
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+              clip-rule="evenodd"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </span>
+    </h3>
+    <div *ngFor="let course of courses.controls; index as i">
+      <div class="relative">
+        <span class="absolute top-0 right-0 z-10">
+          <span class="rounded-full bg-red-400">
+            <button
+              (click)="removeCourse(i)"
+              type="button"
+              aria-label="Remove course"
+              class="inline-flex text-red-800 focus:outline-none focus:text-gray-900"
+            >
+              <svg
+                class="w-6 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </span>
+        </span>
+        <coderisland-text-input
+          class="mb-3"
+          [formControlName]="i"
+        >
+        </coderisland-text-input>
+      </div>
+    </div>
+  </div>
+</form>

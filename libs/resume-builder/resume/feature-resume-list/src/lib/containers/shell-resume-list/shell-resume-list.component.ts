@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResumeService } from '@coderisland/resume-builder/resume/data-access';
 
 @Component({
   selector: 'resb-shell-resume-list',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shell-resume-list.component.scss']
 })
 export class ShellResumeListComponent implements OnInit {
-
-  constructor() { }
+  resumes$ = this.resumeService.getResumes();
+  constructor(private readonly resumeService: ResumeService) { }
 
   ngOnInit(): void {
   }

@@ -1,1 +1,16 @@
-<resb-resume-details></resb-resume-details>
+
+<ng-container *ngIf="resume$ | async as resume">
+  <div class="text-right mb-4">
+    <a [routerLink]="['/', resume._id, 'preview']" class="inline-block bg-white hover:bg-gray-700 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded">
+      Preview
+    </a>
+  </div>
+  <resb-shell-profile [resumeBasics]="resume!.basics"></resb-shell-profile>
+  <resb-shell-work-experience [resumeWorkExperience]="resume.work"></resb-shell-work-experience>
+  <resb-shell-work-experience [resumeWorkExperience]="resume.volunteer" [options]="{ isVolunteerExperience: true }"></resb-shell-work-experience>
+  <resb-shell-education [resumeEducation]="resume.education"></resb-shell-education>
+  <resb-shell-skills [resumeSkills]="resume.skills"></resb-shell-skills>
+  <resb-shell-interests [resumeInterests]="resume.interests"></resb-shell-interests>
+  <resb-shell-languages [resumeLanguages]="resume.languages"></resb-shell-languages>
+  <resb-shell-references [resumeReferences]="resume.references"></resb-shell-references>
+</ng-container>

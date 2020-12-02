@@ -1,0 +1,31 @@
+<div>
+  <label *ngIf="label" class="block text-sm font-medium leading-5 text-gray-700 mb-2" d [attr.for]="controlUniqueId">
+    {{label}}
+  </label>
+  <div class="mt-1 relative rounded-sm shadow-sm">
+    <textarea [id]="controlUniqueId" [name]="controlUniqueId" [formControl]="$any(control)" [rows]="rows" [cols]="cols"
+      (blur)="onTouched && onTouched()" (input)="onChanged && onChanged($any($event?.target)?.value)"
+      class="form-textarea block w-full pr-10 sm:text-sm sm:leading-5"
+      [class.form-input-invalid]="control?.invalid && (control?.dirty || control?.touched)" [placeholder]="placeholder"
+      [attr.aria-placeholder]="placeholder"
+      [attr.aria-invalid]="control?.invalid && (control?.dirty || control?.touched)"
+      [attr.aria-describedby]="control?.invalid && (control?.dirty || control?.touched) ? controlUniqueId+'-error': null">
+          </textarea>
+    <div *ngIf="control?.invalid && (control?.dirty || control?.touched)"
+      class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+      <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd"
+          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+  </div>
+  <div id="{{controlUniqueId}}-error" class="mt-2" role="alert" aria-relevant="all" aria-live="assertive"
+    *ngIf="errors$ | async as errors">
+    <div *ngIf="control?.invalid && (control?.dirty || control?.touched)" class="mt-2">
+      <p *ngFor="let error of errors" class="text-sm text-red-600 mb-2 last:mb-0">
+        {{error}}
+      </p>
+    </div>
+  </div>
+</div>

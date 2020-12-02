@@ -1,0 +1,27 @@
+<div>
+  <label *ngIf="label" class="block text-sm font-medium leading-5 text-gray-700 mb-2" [attr.for]="controlUniqueId">
+    {{label}}
+  </label>
+  <div class="mt-1 sm:mt-0">
+    <div class="rounded-md shadow-sm">
+      <select [id]="controlUniqueId" [name]="controlUniqueId" [formControl]="$any(control)"
+        [attr.aria-placeholder]="placeholder"
+        [class.form-input-invalid]="control?.invalid && (control?.dirty || control?.touched)" type="text"
+        (change)="onChanged && onChanged($any($event?.target)?.value)"
+        [attr.aria-invalid]="control?.invalid && (control?.dirty || control?.touched)"
+        [attr.aria-describedby]="control?.invalid && (control?.dirty || control?.touched) ? controlUniqueId+'-error': null"
+        class="block form-select w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+        <option *ngFor="let item of items" [value]="item.value">{{item.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div id="{{controlUniqueId}}-error" class="mt-2" role="alert" aria-relevant="all" aria-live="assertive"
+    *ngIf="errors$ | async as errors">
+    <div *ngIf="control?.invalid && (control?.dirty || control?.touched)" class="mt-2">
+      <p *ngFor="let error of errors" class="text-sm text-red-600 mb-2 last:mb-0">
+        {{error}}
+      </p>
+    </div>
+  </div>
+</div>

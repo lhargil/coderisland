@@ -16,7 +16,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "webpack.config.js"
+              "path": "apps/resume-builder/webpack.config.js"
             },
             "outputPath": "dist/apps/resume-builder",
             "index": "apps/resume-builder/src/index.html",
@@ -280,29 +280,645 @@
         }
       }
     },
-    "resume-builder-resume-feature-resume-edit": {
+    "resume-builder-domain-interfaces": {
+      "root": "libs/resume-builder/domain/interfaces",
+      "sourceRoot": "libs/resume-builder/domain/interfaces/src",
       "projectType": "library",
-      "root": "libs/resume-builder/resume/feature-resume-edit",
-      "sourceRoot": "libs/resume-builder/resume/feature-resume-edit/src",
-      "prefix": "coderisland",
+      "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:lint",
           "options": {
+            "linter": "eslint",
             "tsConfig": [
-              "libs/resume-builder/resume/feature-resume-edit/tsconfig.lib.json",
-              "libs/resume-builder/resume/feature-resume-edit/tsconfig.spec.json"
+              "libs/resume-builder/domain/interfaces/tsconfig.lib.json",
+              "libs/resume-builder/domain/interfaces/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-edit/**/*"
+              "!libs/resume-builder/domain/interfaces/**/*"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/resume-builder/resume/feature-resume-edit/jest.config.js",
+            "jestConfig": "libs/resume-builder/domain/interfaces/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "resume-builder-resume-data-access": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/data-access",
+      "sourceRoot": "libs/resume-builder/resume/data-access/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/data-access/tsconfig.lib.json",
+              "libs/resume-builder/resume/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-directives-content-host": {
+      "projectType": "library",
+      "root": "libs/shared/directives/content-host",
+      "sourceRoot": "libs/shared/directives/content-host/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/directives/content-host/tsconfig.lib.json",
+              "libs/shared/directives/content-host/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/directives/content-host/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/directives/content-host/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-kit-slide-in-components": {
+      "projectType": "library",
+      "root": "libs/ui-kit/slide-in/components",
+      "sourceRoot": "libs/ui-kit/slide-in/components/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/slide-in/components/tsconfig.lib.json",
+              "libs/ui-kit/slide-in/components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/slide-in/components/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/slide-in/components/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-kit-slide-in-state": {
+      "projectType": "library",
+      "root": "libs/ui-kit/slide-in/state",
+      "sourceRoot": "libs/ui-kit/slide-in/state/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/slide-in/state/tsconfig.lib.json",
+              "libs/ui-kit/slide-in/state/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/slide-in/state/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/slide-in/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-kit-slide-in-service": {
+      "projectType": "library",
+      "root": "libs/ui-kit/slide-in/service",
+      "sourceRoot": "libs/ui-kit/slide-in/service/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/slide-in/service/tsconfig.lib.json",
+              "libs/ui-kit/slide-in/service/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/slide-in/service/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/slide-in/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "resume-builder-utils-interface": {
+      "root": "libs/resume-builder/utils-interface",
+      "sourceRoot": "libs/resume-builder/utils-interface/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/resume-builder/utils-interface/tsconfig.lib.json",
+              "libs/resume-builder/utils-interface/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/utils-interface/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/utils-interface/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-kit-forms-text-input": {
+      "projectType": "library",
+      "root": "libs/ui-kit/forms/text-input",
+      "sourceRoot": "libs/ui-kit/forms/text-input/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/forms/text-input/tsconfig.lib.json",
+              "libs/ui-kit/forms/text-input/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/forms/text-input/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/forms/text-input/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "resume-builder-resume-feature-resume-work-experience": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/feature-resume-work-experience",
+      "sourceRoot": "libs/resume-builder/resume/feature-resume-work-experience/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/feature-resume-work-experience/tsconfig.lib.json",
+              "libs/resume-builder/resume/feature-resume-work-experience/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/feature-resume-work-experience/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/feature-resume-work-experience/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-kit-forms-textarea": {
+      "projectType": "library",
+      "root": "libs/ui-kit/forms/textarea",
+      "sourceRoot": "libs/ui-kit/forms/textarea/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/forms/textarea/tsconfig.lib.json",
+              "libs/ui-kit/forms/textarea/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/forms/textarea/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/forms/textarea/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "resume-builder-resume-feature-resume-education": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/feature-resume-education",
+      "sourceRoot": "libs/resume-builder/resume/feature-resume-education/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/feature-resume-education/tsconfig.lib.json",
+              "libs/resume-builder/resume/feature-resume-education/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/feature-resume-education/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/feature-resume-education/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "resume-builder-resume-feature-resume-skills": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/feature-resume-skills",
+      "sourceRoot": "libs/resume-builder/resume/feature-resume-skills/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/feature-resume-skills/tsconfig.lib.json",
+              "libs/resume-builder/resume/feature-resume-skills/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/feature-resume-skills/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/feature-resume-skills/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "resume-builder-resume-feature-resume-interests": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/feature-resume-interests",
+      "sourceRoot": "libs/resume-builder/resume/feature-resume-interests/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/feature-resume-interests/tsconfig.lib.json",
+              "libs/resume-builder/resume/feature-resume-interests/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/feature-resume-interests/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/feature-resume-interests/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "resume-builder-resume-feature-resume-languages": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/feature-resume-languages",
+      "sourceRoot": "libs/resume-builder/resume/feature-resume-languages/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/feature-resume-languages/tsconfig.lib.json",
+              "libs/resume-builder/resume/feature-resume-languages/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/feature-resume-languages/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/feature-resume-languages/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-kit-forms-select": {
+      "projectType": "library",
+      "root": "libs/ui-kit/forms/select",
+      "sourceRoot": "libs/ui-kit/forms/select/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/forms/select/tsconfig.lib.json",
+              "libs/ui-kit/forms/select/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/forms/select/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/forms/select/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "resume-builder-resume-feature-resume-references": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/feature-resume-references",
+      "sourceRoot": "libs/resume-builder/resume/feature-resume-references/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/feature-resume-references/tsconfig.lib.json",
+              "libs/resume-builder/resume/feature-resume-references/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/feature-resume-references/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/feature-resume-references/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "resume-builder-resume-feature-resume-profile": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/feature-resume-profile",
+      "sourceRoot": "libs/resume-builder/resume/feature-resume-profile/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/feature-resume-profile/tsconfig.lib.json",
+              "libs/resume-builder/resume/feature-resume-profile/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/feature-resume-profile/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/feature-resume-profile/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "resume-builder-resume-feature-resume-preview": {
+      "projectType": "library",
+      "root": "libs/resume-builder/resume/feature-resume-preview",
+      "sourceRoot": "libs/resume-builder/resume/feature-resume-preview/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/resume-builder/resume/feature-resume-preview/tsconfig.lib.json",
+              "libs/resume-builder/resume/feature-resume-preview/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/resume-builder/resume/feature-resume-preview/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/resume-builder/resume/feature-resume-preview/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-kit-page-loader-services": {
+      "projectType": "library",
+      "root": "libs/ui-kit/page-loader/services",
+      "sourceRoot": "libs/ui-kit/page-loader/services/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/page-loader/services/tsconfig.lib.json",
+              "libs/ui-kit/page-loader/services/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/page-loader/services/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/page-loader/services/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-kit-page-loader-components": {
+      "projectType": "library",
+      "root": "libs/ui-kit/page-loader/components",
+      "sourceRoot": "libs/ui-kit/page-loader/components/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/page-loader/components/tsconfig.lib.json",
+              "libs/ui-kit/page-loader/components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/page-loader/components/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/page-loader/components/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -324,7 +940,8 @@
       "strict": true
     },
     "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "strict": true
     }
   },
   "defaultProject": "resume-builder"

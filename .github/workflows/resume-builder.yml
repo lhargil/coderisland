@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Build Resume Builder App
+name: Resume Builder CI
 
 on:
   push:
@@ -34,11 +34,104 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: yarn
-    - run: nx run-many --target=build --projects=resume-builder,resume-builder-api --with-deps --prod
+    - run: yarn install --frozen-lockfile
+    - run: yarn nx run-many --target=build --projects=resume-builder,resume-builder-api --with-deps --prod
+    - run: yarn cpx package.json ./dist/apps/resume-builder-api/
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.0
       with:
         name: resume-builder-app-artifact
         path: dist/apps/resume-builder
         retention-days: 1
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.0
+      with:
+        name: resume-builder-api-artifact
+        path: dist/apps/resume-builder-api
+        retention-days: 1
+  
+  release_api:
+    name: Release API to VPS
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v2.0.5
+      with:
+        # Artifact name
+        name: resume-builder-api-artifact
+        # Destination path
+        path: resume-builder-api
+    - name: ssh mkdir
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.RESUMEBUILDER_SSH_HOST }}
+        username: ${{ secrets.RESUMEBUILDER_SSH_USER }}
+        password: ${{ secrets.RESUMEBUILDER_SSH_PW }}
+        port: ${{ secrets.RESUMEBUILDER_SSH_PORT }}
+        script: mkdir -p ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/api
+    - name: copy to temp dest
+      uses: appleboy/scp-action@v0.1.1
+      with:
+        host: ${{ secrets.RESUMEBUILDER_SSH_HOST }}
+        username: ${{ secrets.RESUMEBUILDER_SSH_USER }}
+        password: ${{ secrets.RESUMEBUILDER_SSH_PW }}
+        port: ${{ secrets.RESUMEBUILDER_SSH_PORT }}
+        source: "resume-builder-api"
+        target: ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/api
+    - name: copy from temp dest to dest
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.RESUMEBUILDER_SSH_HOST }}
+        username: ${{ secrets.RESUMEBUILDER_SSH_USER }}
+        port: ${{ secrets.RESUMEBUILDER_SSH_PORT }}
+        password: ${{ secrets.RESUMEBUILDER_SSH_PW }}
+        script_stop: true
+        script: |
+          cp -r -f ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/api/resume-builder-api/* ${{ secrets.RESUMEBUILDER_SSH_DEST }}/api
+          cd ${{ secrets.RESUMEBUILDER_SSH_DEST }}/api
+          yarn install --production=true --ignore-scripts
+          pm2 restart ${{ secrets.RESUMEBUILDER_CONFIG_FILE }} --only ${{secrets.RESUMEBUILDER_APP_NAME}}
+          rm -rf ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/api/resume-builder-api
+
+  release_app:
+    name: Release App to VPS
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v2.0.5
+      with:
+        # Artifact name
+        name: resume-builder-app-artifact
+        # Destination path
+        path: resume-builder-app
+    - name: ssh mkdir
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.RESUMEBUILDER_SSH_HOST }}
+        username: ${{ secrets.RESUMEBUILDER_SSH_USER }}
+        password: ${{ secrets.RESUMEBUILDER_SSH_PW }}
+        port: ${{ secrets.RESUMEBUILDER_SSH_PORT }}
+        script: mkdir -p ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/client
+    - name: copy to temp dest
+      uses: appleboy/scp-action@v0.1.1
+      with:
+        host: ${{ secrets.RESUMEBUILDER_SSH_HOST }}
+        username: ${{ secrets.RESUMEBUILDER_SSH_USER }}
+        password: ${{ secrets.RESUMEBUILDER_SSH_PW }}
+        port: ${{ secrets.RESUMEBUILDER_SSH_PORT }}
+        source: "resume-builder-app"
+        target: ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/client
+    - name: copy from temp dest to dest
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.RESUMEBUILDER_SSH_HOST }}
+        username: ${{ secrets.RESUMEBUILDER_SSH_USER }}
+        port: ${{ secrets.RESUMEBUILDER_SSH_PORT }}
+        password: ${{ secrets.RESUMEBUILDER_SSH_PW }}
+        script_stop: true
+        script: |
+          rm -rfv ${{ secrets.RESUMEBUILDER_SSH_DEST }}/client/*
+          cp -r -f ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/client/resume-builder-app/* ${{ secrets.RESUMEBUILDER_SSH_DEST }}/client
+          rm -rf ${{ secrets.RESUMEBUILDER_SSH_TEMP_DEST}}/client/resume-builder-app

@@ -1,0 +1,10 @@
+<form *ngIf="resumeLanguageForm" [formGroup]="resumeLanguageForm">
+  <coderisland-text-input
+    class="mb-3"
+    formControlName="language"
+    placeholder="Language"
+    label="Language"
+  ></coderisland-text-input>
+  <coderisland-select class="mb-4" formControlName="fluency" label="Fluency"
+    placeholder="Select fluency level" [items]="fluencyLevels"></coderisland-select>
+</form>

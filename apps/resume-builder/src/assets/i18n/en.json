@@ -1,0 +1,27 @@
+{
+  "validations": {
+    "firstname.required": "First name is required.",
+    "firstname.minlength": "First name minimum length is 3.",
+    "lastname.required": "Last name is required.",
+    "current role.required": "Current role is required.",
+    "objective.required": "Objective is required",
+    "address.required": "Address is required.",
+    "phone.required": "Phone is required",
+    "email.required": "Email is required",
+    "name.required": "Social network name is required.",
+    "url.required": "Social network url is required.",
+    "label.required": "Social network label is required.",
+    "role.required": "Role is required.",
+    "company.required": "Company is required.",
+    "fromMonth.required": "Month is required.",
+    "fromYear.required": "Year is required.",
+    "title.required": "Highlight title is required.",
+    "remarks.required": "Highlight remarks is required.",
+    "attainment.required": "Attainment is required.",
+    "institution.required": "Institution is required.",
+    "fromPeriod.required": "Start year is required.",
+    "toPeriod.required": "End year is required.",
+    "reference name.required": "Reference name is required.",
+    "organization name.required": "Organization name is required."
+  }
+}

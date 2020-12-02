@@ -1,0 +1,8 @@
+<div class="shadow bg-white min-h-full text-white">
+  <resb-preview
+    *ngIf="resume$ | async as resume"
+    (clickPrint)="printClicked()"
+    [resume]="resume"
+    class="h-full"
+  ></resb-preview>
+</div>
