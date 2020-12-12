@@ -1,5 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
+const colors = require('tailwindcss/colors');
+
 module.exports = (isProd) => ({
   prefix: '',
   future: {
@@ -8,12 +10,26 @@ module.exports = (isProd) => ({
   },
   purge: {
     enabled: isProd,
-    content: ['**/*.html', '**/*.ts'],
+    content: [
+      './apps/**/*.html',
+      './apps/**/*.ts',
+      './libs/**/*.html',
+      './libs/**/*.ts',
+    ],
   },
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        black: '#000',
+        white: '#fff',
+        cyan: colors.cyan,
+        'cool-gray': colors.coolGray,
+      },
       screens: {
-        'print': {'raw': 'print'},
+        print: { raw: 'print' },
       },
       fontFamily: {
         display: ['Raleway', ...defaultTheme.fontFamily.sans],
@@ -61,9 +77,9 @@ module.exports = (isProd) => ({
     boxShadow: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
   plugins: [
-    require('@tailwindcss/ui')({
-      layout: 'sidebar',
-    }),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
     plugin(function ({ addComponents, theme, config }) {
       const formControlStyles = {
         '.control-invalid': {
