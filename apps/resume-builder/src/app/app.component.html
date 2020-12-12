@@ -6,8 +6,10 @@
   <div class="h-screen flex overflow-hidden bg-cool-gray-100">
     <!-- Off-canvas menu for mobile -->
     <div [ngClass]="{ block: show, 'hidden md:hidden': !show }">
-      <div class="fixed inset-0 flex z-40 transition-opacity ease-linear duration-300"
-      [ngClass]="{ 'opacity-0': !open, 'opacity-100': open }">
+      <div
+        class="fixed inset-0 flex z-40 transition-opacity ease-linear duration-300"
+        [ngClass]="{ 'opacity-0': !open, 'opacity-100': open }"
+      >
         <!--
         Off-canvas menu overlay, show/hide based on off-canvas menu state.
 
@@ -32,7 +34,7 @@
           To: "-translate-x-full"
       -->
         <div
-          class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-teal-600 transition ease-in-out duration-300 transform"
+          class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-cyan-700 transition ease-in-out duration-300 transform"
           [ngClass]="{ '-translate-x-full': !open, 'translate-x-0': open }"
         >
           <div class="absolute top-0 right-0 -mr-14 p-1">
@@ -58,21 +60,19 @@
           </div>
           <div class="flex-shrink-0 flex items-center px-4">
             <a [routerLink]="['/']">
-              <span class="text-4xl text-white font-bold">
-                CeeVee
-              </span>
+              <span class="text-4xl text-white font-bold"> CeeVee </span>
             </a>
           </div>
           <div class="mt-5 overflow-y-auto">
             <nav class="px-2 space-y-1">
               <a
                 [routerLink]="['/']"
-                routerLinkActive="bg-teal-700"
+                routerLinkActive="bg-cyan-800"
                 [routerLinkActiveOptions]="{ exact: true }"
-                class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-teal-700 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-cyan-700 focus:outline-none focus:bg-cyan-500 transition ease-in-out duration-150"
               >
                 <svg
-                  class="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150"
+                  class="mr-4 h-6 w-6 text-cyan-200 transition ease-in-out duration-150"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -89,12 +89,11 @@
 
               <a
                 [routerLink]="['resumes']"
-                routerLinkActive="bg-teal-700"
-                [routerLinkActiveOptions]="{ exact: true }"
-                class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                routerLinkActive="bg-cyan-800"
+                class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600 focus:outline-none focus:bg-cyan-500 transition ease-in-out duration-150"
               >
                 <svg
-                  class="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150"
+                  class="mr-4 h-6 w-6 text-cyan-200 transition ease-in-out duration-150"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -111,15 +110,15 @@
               </a>
             </nav>
           </div>
-          <hr class="h-px mt-6 bg-teal-700 border-none" />
+          <hr class="h-px mt-6 bg-cyan-800 border-none" />
           <div class="mt-6 flex-1 h-0 overflow-y-auto">
             <nav class="px-2 space-y-1">
               <a
                 href="#"
-                class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600 focus:outline-none focus:bg-cyan-500 transition ease-in-out duration-150"
               >
                 <svg
-                  class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+                  class="mr-4 h-6 w-6 text-cyan-200 group-hover:text-cyan-200 group-focus:text-cyan-200 transition ease-in-out duration-150"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -142,10 +141,10 @@
 
               <a
                 href="#"
-                class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600 focus:outline-none focus:bg-cyan-500 transition ease-in-out duration-150"
               >
                 <svg
-                  class="mr-4 h-6 w-6 text-teal-300 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+                  class="mr-4 h-6 w-6 text-cyan-300 group-hover:text-cyan-200 group-focus:text-cyan-200 transition ease-in-out duration-150"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -162,10 +161,10 @@
 
               <a
                 href="#"
-                class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600 focus:outline-none focus:bg-cyan-500 transition ease-in-out duration-150"
               >
                 <svg
-                  class="mr-4 h-6 w-6 text-teal-300 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+                  class="mr-4 h-6 w-6 text-cyan-300 group-hover:text-cyan-200 group-focus:text-cyan-200 transition ease-in-out duration-150"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -193,13 +192,11 @@
       <div class="flex flex-col w-64">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div
-          class="flex flex-col flex-grow bg-teal-600 pt-5 pb-4 overflow-y-auto"
+          class="flex flex-col flex-grow bg-cyan-700 pt-5 pb-4 overflow-y-auto"
         >
           <div class="flex items-center flex-shrink-0 px-4">
             <a [routerLink]="['/']">
-              <span class="text-4xl text-white font-bold">
-                CeeVee
-              </span>
+              <span class="text-4xl text-white font-bold"> CeeVee </span>
             </a>
           </div>
           <div class="mt-5 flex-1 flex flex-col overflow-y-auto">
@@ -207,12 +204,12 @@
               <nav class="px-2 space-y-1">
                 <a
                   [routerLink]="['/']"
-                  routerLinkActive="bg-teal-700"
+                  routerLinkActive="bg-cyan-800"
                   [routerLinkActiveOptions]="{ exact: true }"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-white focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-white focus:outline-none focus:bg-cyan-500 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-cyan-200 group-hover:text-cyan-200 group-focus:text-cyan-200 transition ease-in-out duration-150"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -229,12 +226,11 @@
 
                 <a
                   [routerLink]="['resumes']"
-                  routerLinkActive="bg-teal-700"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                  routerLinkActive="bg-cyan-800"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600 focus:outline-none focus:bg-cyan-500 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-teal-300 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-cyan-300 group-hover:text-cyan-200 group-focus:text-cyan-200 transition ease-in-out duration-150"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -251,15 +247,15 @@
                 </a>
               </nav>
             </div>
-            <hr class="h-px mt-6 bg-teal-700 border-none" />
+            <hr class="h-px mt-6 bg-cyan-800 border-none" />
             <div class="mt-6 flex-1 h-0 overflow-y-auto">
               <nav class="px-2 space-y-1">
                 <a
                   href="#"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600 focus:outline-none focus:bg-cyan-500 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-cyan-200 transition ease-in-out duration-150"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -282,10 +278,10 @@
 
                 <a
                   href="#"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600 focus:outline-none focus:bg-cyan-500 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-cyan-200 transition ease-in-out duration-150"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -302,10 +298,10 @@
 
                 <a
                   href="#"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600 focus:outline-none focus:bg-cyan-500 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-cyan-200 transition ease-in-out duration-150"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -356,23 +352,32 @@
             <form class="w-full flex md:ml-0" [formGroup]="searchForm">
               <label for="search_field" class="sr-only">Search</label>
               <div
-                class="relative w-full text-cool-gray-400 focus-within:text-cool-gray-600"
+                class="relative w-full text-gray-400 focus-within:text-gray-600"
               >
                 <div
                   class="absolute inset-y-0 left-0 flex items-center pointer-events-none"
+                  aria-hidden="true"
                 >
-                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                  <!-- Heroicon name: search -->
+                  <svg
+                    class="h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
                     <path
                       fill-rule="evenodd"
-                      clip-rule="evenodd"
                       d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                      clip-rule="evenodd"
                     />
                   </svg>
                 </div>
                 <input
                   id="search_field"
-                  class="block w-full h-full pl-8 pr-3 py-2 rounded-md text-cool-gray-900 placeholder-cool-gray-500 focus:outline-none focus:placeholder-cool-gray-400 sm:text-sm"
-                  placeholder="Search"
+                  name="search_field"
+                  class="block w-full h-full pl-8 pr-3 py-2 border-transparent text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent sm:text-sm"
+                  placeholder="Search transactions"
                   type="search"
                 />
               </div>
@@ -551,7 +556,7 @@
           <div class="shadow sm:hidden"></div>
 
           <!-- Activity table (small breakopoint and up) -->
-          <div class="hidden sm:block">
+          <div>
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div class="flex flex-col mt-2">
                 <div

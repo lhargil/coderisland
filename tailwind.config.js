@@ -1,5 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
+const colors = require('tailwindcss/colors');
+
 module.exports = (isProd) => ({
   prefix: '',
   future: {
@@ -18,6 +20,14 @@ module.exports = (isProd) => ({
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        black: '#000',
+        white: '#fff',
+        cyan: colors.cyan,
+        'cool-gray': colors.coolGray,
+      },
       screens: {
         print: { raw: 'print' },
       },
