@@ -26,7 +26,8 @@
     "help": "nx help",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "start:rb-app": "nx serve resume-builder -- -o",
-    "start:rb-api": "nx serve resume-builder-api"
+    "start:rb-api": "nx serve resume-builder-api",
+    "build:all": "nx run-many --target=build --projects=resume-builder,resume-builder-api --with-deps --prod"
   },
   "private": true,
   "dependencies": {
@@ -70,7 +71,9 @@
     "@nrwl/node": "11.0.1",
     "@nrwl/tao": "11.0.1",
     "@nrwl/workspace": "11.0.1",
+    "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/typography": "^0.3.1",
     "@tailwindcss/ui": "^0.6.0",
     "@types/jest": "26.0.8",
     "@types/mongoose": "^5.10.0",

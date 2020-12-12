@@ -67,10 +67,9 @@ module.exports = (isProd) => ({
     boxShadow: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
   plugins: [
-    require('@tailwindcss/ui')({
-      layout: 'sidebar',
-    }),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
     plugin(function ({ addComponents, theme, config }) {
       const formControlStyles = {
         '.control-invalid': {
