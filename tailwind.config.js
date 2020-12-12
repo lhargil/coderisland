@@ -8,12 +8,18 @@ module.exports = (isProd) => ({
   },
   purge: {
     enabled: isProd,
-    content: ['**/*.html', '**/*.ts'],
+    content: [
+      './apps/**/*.html',
+      './apps/**/*.ts',
+      './libs/**/*.html',
+      './libs/**/*.ts',
+    ],
   },
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       screens: {
-        'print': {'raw': 'print'},
+        print: { raw: 'print' },
       },
       fontFamily: {
         display: ['Raleway', ...defaultTheme.fontFamily.sans],
@@ -64,6 +70,7 @@ module.exports = (isProd) => ({
     require('@tailwindcss/ui')({
       layout: 'sidebar',
     }),
+    require('@tailwindcss/forms'),
     plugin(function ({ addComponents, theme, config }) {
       const formControlStyles = {
         '.control-invalid': {
