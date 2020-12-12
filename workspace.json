@@ -180,7 +180,7 @@
           }
         },
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
             "linter": "eslint",
             "tsConfig": [
@@ -320,16 +320,15 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/resume-builder/domain/interfaces/tsconfig.lib.json",
-              "libs/resume-builder/domain/interfaces/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/domain/interfaces/**/*"
+            "lintFilePatterns": [
+              "libs/resume-builder/domain/interfaces/**/*.ts",
+              "libs/resume-builder/domain/interfaces/**/*.spec.ts",
+              "libs/resume-builder/domain/interfaces/**/*.spec.tsx",
+              "libs/resume-builder/domain/interfaces/**/*.spec.js",
+              "libs/resume-builder/domain/interfaces/**/*.spec.jsx",
+              "libs/resume-builder/domain/interfaces/**/*.d.ts"
             ]
           }
         },
@@ -532,16 +531,15 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/resume-builder/utils-interface/tsconfig.lib.json",
-              "libs/resume-builder/utils-interface/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/utils-interface/**/*"
+            "lintFilePatterns": [
+              "libs/resume-builder/utils-interface/**/*.ts",
+              "libs/resume-builder/utils-interface/**/*.spec.ts",
+              "libs/resume-builder/utils-interface/**/*.spec.tsx",
+              "libs/resume-builder/utils-interface/**/*.spec.js",
+              "libs/resume-builder/utils-interface/**/*.spec.jsx",
+              "libs/resume-builder/utils-interface/**/*.d.ts"
             ]
           }
         },
