@@ -16,7 +16,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "webpack.config.js"
+              "path": "tailwind-configs/resume-builder.webpack.config.js"
             },
             "outputPath": "dist/apps/resume-builder",
             "index": "apps/resume-builder/src/index.html",
