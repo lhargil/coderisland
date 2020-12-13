@@ -11,12 +11,10 @@ module.exports = (isProd) => ({
   purge: {
     enabled: isProd,
     content: [
-      '../apps/resume-builder/**/*.html',
-      '../apps/resume-builder/**/*.ts',
-      '../libs/resume-builder/**/*.html',
-      '../libs/resume-builder/**/*.ts',
-      '../libs/shared/**/*.html',
-      '../libs/ui-kit/**/*.ts',
+      './apps/?(resume-builder)/**/*.html',
+      './apps/?(resume-builder)**/*.ts',
+      './libs/+({resume-builder,ui-kit,shared})/**/*.html',
+      './libs/+({resume-builder,ui-kit,shared})/**/*.ts',
     ],
   },
   darkMode: false, // or 'media' or 'class'
