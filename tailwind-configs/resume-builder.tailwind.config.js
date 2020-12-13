@@ -12,7 +12,7 @@ module.exports = (isProd) => ({
     enabled: isProd,
     content: [
       './apps/?(resume-builder)/**/*.html',
-      './apps/?(resume-builder)**/*.ts',
+      './apps/?(resume-builder)/**/*.ts',
       './libs/+({resume-builder,ui-kit,shared})/**/*.html',
       './libs/+({resume-builder,ui-kit,shared})/**/*.ts',
     ],
