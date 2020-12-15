@@ -26,5 +26,6 @@ module.exports = {
     '<rootDir>/libs/ui-kit/page-loader/services',
     '<rootDir>/libs/ui-kit/page-loader/components',
     '<rootDir>/apps/easy-street',
+    '<rootDir>/libs/easy-street/dashboard/feature-transactions',
   ],
 };

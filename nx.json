@@ -109,6 +109,9 @@
     "easy-street-e2e": {
       "tags": [],
       "implicitDependencies": ["easy-street"]
+    },
+    "easy-street-dashboard-feature-transactions": {
+      "tags": ["scope:easy-street", "type:feature"]
     }
   }
 }

@@ -84,6 +84,9 @@
       ],
       "@coderisland/ui-kit/page-loader/components": [
         "libs/ui-kit/page-loader/components/src/index.ts"
+      ],
+      "@coderisland/easy-street/dashboard/feature-transactions": [
+        "libs/easy-street/dashboard/feature-transactions/src/index.ts"
       ]
     }
   },

@@ -8,6 +8,7 @@ import { UiKitPageLoaderComponentsModule } from '@coderisland/ui-kit/page-loader
 import { UiKitSlideInComponentsModule } from '@coderisland/ui-kit/slide-in/components';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PageLoaderInterceptor } from '@coderisland/ui-kit/page-loader/services';
+import { EasyStreetDashboardFeatureTransactionsModule } from '@coderisland/easy-street/dashboard/feature-transactions';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,8 @@ import { PageLoaderInterceptor } from '@coderisland/ui-kit/page-loader/services'
     BrowserModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     UiKitSlideInComponentsModule,
-    UiKitPageLoaderComponentsModule
+    UiKitPageLoaderComponentsModule,
+    EasyStreetDashboardFeatureTransactionsModule
   ],
   providers: [
     {

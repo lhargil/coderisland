@@ -1090,6 +1090,37 @@
           }
         }
       }
+    },
+    "easy-street-dashboard-feature-transactions": {
+      "projectType": "library",
+      "root": "libs/easy-street/dashboard/feature-transactions",
+      "sourceRoot": "libs/easy-street/dashboard/feature-transactions/src",
+      "prefix": "easy",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/easy-street/dashboard/feature-transactions/tsconfig.lib.json",
+              "libs/easy-street/dashboard/feature-transactions/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/easy-street/dashboard/feature-transactions/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/easy-street/dashboard/feature-transactions"
+          ],
+          "options": {
+            "jestConfig": "libs/easy-street/dashboard/feature-transactions/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

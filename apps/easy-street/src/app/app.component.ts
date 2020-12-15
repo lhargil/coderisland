@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { SlideInService } from '@coderisland/ui-kit/slide-in/service';
+import { SlideInModes } from '@coderisland/ui-kit/slide-in/state';
+import { ShellTransactionFormComponent } from '@coderisland/easy-street/dashboard/feature-transactions';
 import { BehaviorSubject, combineLatest, of } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
 
@@ -30,6 +33,8 @@ export class AppComponent {
 
   isFirstPage$ = this.page$.pipe(map(page => page == 0));
 
+  constructor(private slideInService: SlideInService) {}
+
   handleNextClick() {
     this.page$.next(this.page$.getValue() + 1);
   }
@@ -39,6 +44,12 @@ export class AppComponent {
   }
 
   handleAddNewClick() {
-
+    this.slideInService.show({
+      heading: 'Add social network',
+      formData: {},
+      modalMode: SlideInModes.Create,
+      component: ShellTransactionFormComponent,
+      handleSave: (eventData)=>{}
+    });
   }
 }
