@@ -75,6 +75,7 @@ module.exports = (isProd) => ({
     padding: ['responsive', 'hover', 'focus', 'last'],
     placeholderColor: ['responsive', 'focus', 'hover', 'active'],
     boxShadow: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+    opacity: ['disabled'],
   },
   plugins: [
     require('@tailwindcss/forms'),
