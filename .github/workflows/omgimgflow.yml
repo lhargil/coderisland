@@ -71,7 +71,7 @@ jobs:
     - name: copy from temp dest to dest
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.LHARGILCOM_HOST_HOST }}
+        host: ${{ secrets.LHARGILCOM_HOST }}
         username: ${{ secrets.LHARGILCOM_DEPLOYER }}
         password: ${{ secrets.LHARGILCOM_DEPLOYERPW }}
         port: ${{ secrets.LHARGILCOM_PORT }}
