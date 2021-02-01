@@ -31,7 +31,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install --frozen-lockfile
-    - run: yarn run build:omgimgflow
+    - run: yarn run nx run-many --target=build --projects=omgimgflow --with-deps --prod --parallel
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.0
       with:
