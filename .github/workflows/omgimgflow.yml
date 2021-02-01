@@ -1,0 +1,86 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: OmgImgFlow CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Random word for kicks'
+        # Default value if no value is explicitly provided
+        default: 'Mango'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: yarn install --frozen-lockfile
+    - run: yarn run build:omgimgflow
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.0
+      with:
+        name: omgimgflow-artifact
+        path: dist/apps/omgimgflow
+        retention-days: 1
+
+  release_app:
+    name: Release App to VPS
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v2.0.5
+      with:
+        # Artifact name
+        name: omgimgflow-artifact
+        # Destination path
+        path: omgimgflow
+    - name: ssh mkdir
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.LHARGILCOM_HOST }}
+        username: ${{ secrets.LHARGILCOM_DEPLOYER }}
+        password: ${{ secrets.LHARGILCOM_DEPLOYERPW }}
+        port: ${{ secrets.LHARGILCOM_PORT }}
+        script: mkdir -p ${{ secrets.OMGIMGFLOW_TEMP_DEST}}/client
+    - name: copy to temp dest
+      uses: appleboy/scp-action@v0.1.1
+      with:
+        host: ${{ secrets.LHARGILCOM_HOST }}
+        username: ${{ secrets.LHARGILCOM_DEPLOYER }}
+        password: ${{ secrets.LHARGILCOM_DEPLOYERPW }}
+        port: ${{ secrets.LHARGILCOM_PORT }}
+        source: "omgimgflow"
+        target: ${{ secrets.OMGIMGFLOW_TEMP_DEST}}/client
+    - name: copy from temp dest to dest
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.LHARGILCOM_HOST_HOST }}
+        username: ${{ secrets.LHARGILCOM_DEPLOYER }}
+        password: ${{ secrets.LHARGILCOM_DEPLOYERPW }}
+        port: ${{ secrets.LHARGILCOM_PORT }}
+        script_stop: true
+        script: |
+          rm -rfv ${{ secrets.OMGIMGFLOW_DEST }}/client/*
+          cp -r -f ${{ secrets.OMGIMGFLOW_TEMP_DEST}}/client/omgimgflow/* ${{ secrets.OMGIMGFLOW_DEST }}/client
+          rm -rf ${{ secrets.OMGIMGFLOW_TEMP_DEST}}/client/omgimgflow
