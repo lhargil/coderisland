@@ -25,5 +25,6 @@ module.exports = {
     '<rootDir>/libs/resume-builder/resume/feature-resume-preview',
     '<rootDir>/libs/ui-kit/page-loader/services',
     '<rootDir>/libs/ui-kit/page-loader/components',
+    '<rootDir>/apps/omgimgflow',
   ],
 };
