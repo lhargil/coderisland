@@ -978,7 +978,7 @@
       "prefix": "omg",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/apps/omgimgflow",
             "index": "apps/omgimgflow/src/index.html",
@@ -991,7 +991,10 @@
               "apps/omgimgflow/src/assets"
             ],
             "styles": ["apps/omgimgflow/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "./tailwind-configs/omgimgflow.webpack.config.js"
+            }
           },
           "configurations": {
             "production": {
@@ -1024,7 +1027,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "omgimgflow:build"
           },
