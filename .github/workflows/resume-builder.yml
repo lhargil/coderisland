@@ -4,10 +4,6 @@
 name: Resume Builder CI
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
@@ -49,7 +45,7 @@ jobs:
         name: resume-builder-api-artifact
         path: dist/apps/resume-builder-api
         retention-days: 1
-  
+
   release_api:
     name: Release API to VPS
     needs: [build]
