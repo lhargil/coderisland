@@ -27,7 +27,7 @@
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "start:rb-app": "nx serve resume-builder --hmr -o",
     "start:rb-api": "nx serve resume-builder-api",
-    "build:all": "nx run-many --target=build --projects=resume-builder,resume-builder-api --with-deps --prod"
+    "build:all": "nx run-many --target=build --projects=resume-builder,resume-builder-api --with-deps --prod --parallel"
   },
   "private": true,
   "dependencies": {
