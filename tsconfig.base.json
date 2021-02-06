@@ -90,6 +90,9 @@
       ],
       "@coderisland/omgimgflow/photos/feature-manage": [
         "libs/omgimgflow/photos/feature-manage/src/index.ts"
+      ],
+      "@coderisland/omgimgflow/photos/domain": [
+        "libs/omgimgflow/photos/domain/src/index.ts"
       ]
     }
   },

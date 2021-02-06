@@ -1029,7 +1029,8 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "omgimgflow:build"
+            "browserTarget": "omgimgflow:build",
+            "proxyConfig": "apps/omgimgflow/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -1157,6 +1158,31 @@
           "outputs": ["coverage/libs/omgimgflow/photos/feature-manage"],
           "options": {
             "jestConfig": "libs/omgimgflow/photos/feature-manage/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "omgimgflow-photos-domain": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/domain",
+      "sourceRoot": "libs/omgimgflow/photos/domain/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/domain/src/**/*.ts",
+              "libs/omgimgflow/photos/domain/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/domain"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/domain/jest.config.js",
             "passWithNoTests": true
           }
         }
