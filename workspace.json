@@ -1124,6 +1124,43 @@
           }
         }
       }
+    },
+    "omgimgflow-photos-feature-manage": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/feature-manage",
+      "sourceRoot": "libs/omgimgflow/photos/feature-manage/src",
+      "prefix": "coderisland",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/omgimgflow/photos/feature-manage/tsconfig.lib.json",
+            "project": "libs/omgimgflow/photos/feature-manage/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/omgimgflow/photos/feature-manage/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/feature-manage/src/**/*.ts",
+              "libs/omgimgflow/photos/feature-manage/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/feature-manage"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/feature-manage/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

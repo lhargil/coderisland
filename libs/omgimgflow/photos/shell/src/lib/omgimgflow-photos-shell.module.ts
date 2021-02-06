@@ -20,8 +20,8 @@ import { LayoutComponent } from './layout.component';
             {
               path: 'photos',
               loadChildren: () =>
-                import('@coderisland/omgimgflow/photos/shell').then(
-                  (module) => module.OmgimgflowPhotosShellModule
+                import('@coderisland/omgimgflow/photos/feature-manage').then(
+                  (module) => module.FeatureManageModule
                 ),
             },
           ],
@@ -31,6 +31,6 @@ import { LayoutComponent } from './layout.component';
     ),
   ],
   declarations: [LayoutComponent],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class OmgimgflowPhotosShellModule {}
