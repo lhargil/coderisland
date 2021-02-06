@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { OmgimgflowPhotosShellModule } from '@coderisland/omgimgflow/photos/shell';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    OmgimgflowPhotosShellModule
   ],
   providers: [],
   bootstrap: [AppComponent],
