@@ -5,10 +5,12 @@ import { ShellListComponent } from './list/shell-list.component';
 import { ListComponent } from './list/list.component';
 import { ShellEditComponent } from './edit/shell-edit.component';
 import { EditComponent } from './edit/edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
       {
         path: '',
