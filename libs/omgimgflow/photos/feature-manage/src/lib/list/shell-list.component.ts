@@ -3,7 +3,7 @@ import { SearchFacade } from '@coderisland/omgimgflow/photos/domain';
 
 @Component({
   template: `
-    <coderisland-omgimgflow-feature-manage-list *ngIf="searchResults$ | async as searchResults" [searchResults]="searchResults">
+    <coderisland-omgimgflow-feature-manage-list *ngIf="photos$ | async as photos" [photos]="photos">
     </coderisland-omgimgflow-feature-manage-list>
     <!-- <span *ngFor="let result of searchResults$ | async">
       {{result.filename}}
@@ -13,12 +13,11 @@ import { SearchFacade } from '@coderisland/omgimgflow/photos/domain';
   ]
 })
 export class ShellListComponent implements OnInit {
-  searchResults$ = this.searchFacade.searchResults$;
+  photos$ = this.searchFacade.photos$;
 
   constructor(private readonly searchFacade: SearchFacade) {}
 
   ngOnInit(): void {
-    this.searchFacade.loadPhotos();
   }
 
 }

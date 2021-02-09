@@ -14,18 +14,18 @@ import { Photo } from '@coderisland/omgimgflow/photos/domain';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListComponent implements OnInit {
-  @Input() searchResults!: Photo[];
+  @Input() photos!: Photo[];
   @Output() photoClicked = new EventEmitter<Photo>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  trackByPhotoId(photo: Photo) {
+  trackByPhotoId(index: number, photo: Photo) {
     return photo.id;
   }
 
-  trackByTag(tag: string) {
+  trackByTag(index: number, tag: string) {
     return tag;
   }
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { Photo } from '../models/photo';
-import { map, startWith } from 'rxjs/operators';
+import { map, startWith, switchMap, tap } from 'rxjs/operators';
 import { PhotosDataService } from '../infrastructure/photos.data.service';
 
 class SearchState {
@@ -12,27 +12,7 @@ class SearchState {
 export class SearchFacade {
   private state = new SearchState();
   private dispatch = new BehaviorSubject<SearchState>(this.state);
+  photos$ = this.photosDataService.getPhotos();
 
-  searchResults$: Observable<Photo[]> = this.dispatch.asObservable().pipe(
-    map(state => state.photos),
-    startWith([] as Photo[])
-  );
-
-  constructor(private readonly photosDataService: PhotosDataService) { }
-
-  loadPhotos() {
-    this.photosDataService.getPhotos()
-      .subscribe(photos => {
-        this.updateResults(photos);
-      })
-  }
-
-  private updateResults(photos: Photo[]) {
-    this.dispatch.next((
-      this.state = {
-        ...this.state,
-        photos
-      }
-    ))
-  }
+  constructor(private readonly photosDataService: PhotosDataService) {}
 }
