@@ -41,9 +41,11 @@ export class SearchFacade implements OnDestroy {
     map((state) => state.photos),
     startWith([] as Photo[])
   );
+
   searchCriteria$: Observable<SearchCriteria> = this.dispatch
     .asObservable()
     .pipe(map((state) => state.criteria));
+
   constructor(private readonly photosDataService: PhotosDataService) {}
 
   updateCriteria(title: string) {

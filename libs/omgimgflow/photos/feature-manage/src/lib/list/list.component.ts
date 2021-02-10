@@ -14,7 +14,7 @@ import { Photo } from '@coderisland/omgimgflow/photos/domain';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListComponent implements OnInit {
-  @Input() photos!: Photo[];
+  @Input() photos: Photo[] | null = [];
   @Output() photoClicked = new EventEmitter<Photo>();
   constructor() { }
 
