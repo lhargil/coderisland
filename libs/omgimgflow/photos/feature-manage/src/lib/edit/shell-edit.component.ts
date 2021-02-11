@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 @Component({
   template: `
-    <coderisland-edit *ngIf="photo$ | async as photo" [photo]="photo" (fileUploaded)="handleFileUpload($event)" (photoEdited)="handlePhotoEdit($event)"></coderisland-edit>
+    <!-- <coderisland-edit *ngIf="photo$ | async as photo" [photo]="photo" (fileUploaded)="handleFileUpload($event)" (photoEdited)="handlePhotoEdit($event)"></coderisland-edit> -->
   `,
   styles: [
   ]
@@ -36,7 +36,7 @@ export class ShellEditComponent implements OnInit {
     this.editFacade.submitPhotoUpdate({
         ...editedPhoto,
         id: String(id),
-        photo: this.uploadedFile,
+        photoBlob: this.uploadedFile,
       });
   }
 }

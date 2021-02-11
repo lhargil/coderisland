@@ -19,17 +19,17 @@ import { Photo } from '@coderisland/omgimgflow/photos/domain';
       }
     `,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EditComponent implements OnInit {
   _photo: Photo | null = null;
-  photoEditForm!: FormGroup;
+  photoForm!: FormGroup;
 
   @Input()
   set photo(value: Photo | null) {
     this._photo = value;
-    this.photoEditForm = this.formBuilder.group({
-      photo: this.formBuilder.control(null),
+    this.photoForm = this.formBuilder.group({
+      photoBlob: this.formBuilder.control(null, value?.id == '' ? [Validators.required]: null),
       title: [value?.title, [Validators.required]],
       description: [value?.description],
       tags: this.formBuilder.array(
@@ -43,16 +43,20 @@ export class EditComponent implements OnInit {
   get photo(): Photo | null {
     return this._photo;
   }
-
-  @Output() photoEdited = new EventEmitter<Photo>();
+  @Output() photoSubmitted = new EventEmitter<FormGroup>();
   @Output() fileUploaded = new EventEmitter<any>();
+  @Output() cancelClicked = new EventEmitter<void>();
 
   get tags() {
-    return this.photoEditForm?.get('tags') as FormArray;
+    return this.photoForm?.get('tags') as FormArray;
   }
 
   get title() {
-    return this.photoEditForm?.get('title');
+    return this.photoForm?.get('title');
+  }
+
+  get photoBlob() {
+    return this.photoForm?.get('photoBlob');
   }
 
   constructor(private readonly formBuilder: FormBuilder) {
@@ -62,13 +66,9 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleSubmit() {
-    if (this.photoEditForm?.invalid) {
-      return;
-    }
 
-    const photoEdits = this.photoEditForm?.value;
-    this.photoEdited.emit(photoEdits);
+  handleSubmit() {
+    this.photoSubmitted.emit(this.photoForm);
   }
 
   handleFileUpload($event: any) {
@@ -81,5 +81,9 @@ export class EditComponent implements OnInit {
 
   handleRemoveTag(index: number) {
     this.tags.removeAt(index);
+  }
+
+  handleCancelClick() {
+    this.cancelClicked.emit();
   }
 }

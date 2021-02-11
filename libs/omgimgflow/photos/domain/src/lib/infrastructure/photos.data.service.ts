@@ -41,8 +41,8 @@ export class PhotosDataService {
     const formData = new FormData();
     formData.append('title', photoEdit.title);
     formData.append('description', photoEdit.description);
-    if (photoEdit.photo != null) {
-      formData.append('photo', photoEdit.photo);
+    if (photoEdit.photoBlob != null) {
+      formData.append('photo', photoEdit.photoBlob);
     }
     photoEdit.tags.forEach((tag: string) => formData.append('tags[]', tag));
     return this.httpClient
@@ -56,7 +56,7 @@ export class PhotosDataService {
     const formData = new FormData();
     formData.append('title', photoCreate.title);
     formData.append('description', photoCreate.description);
-    formData.append('photo', photoCreate.photo!);
+    formData.append('photo', photoCreate.photoBlob!);
 
     photoCreate.tags.forEach((tag: string) => formData.append('tags[]', tag));
     return this.httpClient

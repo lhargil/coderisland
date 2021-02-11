@@ -1,20 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EditFacade, Photo } from '@coderisland/omgimgflow/photos/domain';
-import { Observable } from 'rxjs';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { Observable, of } from 'rxjs';
+import { map, take, takeUntil, tap } from 'rxjs/operators';
+import { EditComponent } from './edit.component';
 
+@UntilDestroy()
 @Component({
   template: `
-    <coderisland-edit *ngIf="photo$ | async as photo" [photo]="photo" (fileUploaded)="handleFileUpload($event)" (photoEdited)="handlePhotoCreate($event)"></coderisland-edit>
+    <coderisland-edit
+      [photo]="photo$ | async"
+      (photoSubmitted)="handlePhotoSubmit($event)"
+      (fileUploaded)="handleFileUpload($event)"
+      (cancelClicked)="handleCancelClick()"
+    ></coderisland-edit>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class ShellCreateComponent implements OnInit {
-  uploadedFile!: File | null;
   photo$: Observable<Photo> = this.editFacade.photo$;
-  constructor(private readonly editFacade: EditFacade) { }
+  uploadedFile!: File | null;
+
+  constructor(private readonly editFacade: EditFacade, private readonly router: Router, private readonly activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.editFacade.createPhoto();
   }
 
   handleFileUpload($event: any) {
@@ -23,11 +35,21 @@ export class ShellCreateComponent implements OnInit {
     }
   }
 
-  handlePhotoCreate(createdPhoto: Photo) {
+  handlePhotoSubmit(createForm: FormGroup) {
+    createForm.markAllAsTouched();
+    if (createForm.invalid) {
+      return;
+    }
+
+    const createdPhoto = createForm.value;
 
     this.editFacade.submitPhotoCreate({
-        ...createdPhoto,
-        photo: this.uploadedFile,
-      });
+      ...createdPhoto,
+      photoBlob: this.uploadedFile,
+    });
+  }
+
+  handleCancelClick() {
+    this.router.navigate(['../'], {relativeTo: this.activatedRoute})
   }
 }

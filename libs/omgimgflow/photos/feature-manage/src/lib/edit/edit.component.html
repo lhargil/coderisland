@@ -1,6 +1,7 @@
 <form
+  *ngIf="photoForm"
   (ngSubmit)="handleSubmit()"
-  [formGroup]="photoEditForm"
+  [formGroup]="photoForm"
   class="space-y-8 divide-y divide-gray-200"
 >
   <div class="space-y-8 divide-y divide-gray-200">
@@ -13,20 +14,21 @@
           Enter new information about the photo
         </p>
       </div>
-      <div class="pt-6 bg-white space-y-6">
-        <figure *ngIf="photo?.description">
-          <img [src]="photo?.filename" alt="photo?.description" />
-        </figure>
-      </div>
       <div class="mt-6 grid grid-cols-3 gap-y-6 gap-x-4 sm:grid-cols-6">
         <div class="sm:col-span-6">
           <label class="block text-sm font-medium text-gray-700"> Photo </label>
           <input
             id="file-upload"
-            formControlName="photo"
+            formControlName="photoBlob"
             type="file"
             (change)="handleFileUpload($event)"
           />
+          <div
+            *ngIf="photoBlob?.invalid && (photoBlob?.dirty || photoBlob?.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="photoBlob?.errors?.required">Photo file is required.</div>
+          </div>
         </div>
 
         <div class="sm:col-span-6">
@@ -124,6 +126,7 @@
   <div class="pt-5">
     <div class="flex justify-end">
       <button
+        (click)="handleCancelClick()"
         type="button"
         class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
