@@ -6,6 +6,7 @@ import { ListComponent } from './list/list.component';
 import { ShellEditComponent } from './edit/shell-edit.component';
 import { EditComponent } from './edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShellCreateComponent } from './edit/shell-create.component';
 
 @NgModule({
   imports: [
@@ -20,9 +21,13 @@ import { ReactiveFormsModule } from '@angular/forms';
       {
         path: ':id/edit',
         component: ShellEditComponent
+      },
+      {
+        path: 'create',
+        component: ShellCreateComponent
       }
     ]),
   ],
-  declarations: [ShellListComponent, ListComponent, ShellEditComponent, EditComponent],
+  declarations: [ShellListComponent, ListComponent, ShellEditComponent, EditComponent, ShellCreateComponent],
 })
 export class FeatureManageModule {}

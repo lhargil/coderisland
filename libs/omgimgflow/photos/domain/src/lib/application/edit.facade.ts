@@ -54,6 +54,14 @@ export class EditFacade implements OnDestroy {
       .subscribe();
   }
 
+  submitPhotoCreate(photo: Photo, ) {
+    this.photosDataService.createPhoto(photo)
+      .pipe(
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+  }
+
   ngOnDestroy() {
     this.destroySubject$.next();
   }

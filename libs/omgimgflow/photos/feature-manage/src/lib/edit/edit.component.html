@@ -14,7 +14,7 @@
         </p>
       </div>
       <div class="pt-6 bg-white space-y-6">
-        <figure>
+        <figure *ngIf="photo?.description">
           <img [src]="photo?.filename" alt="photo?.description" />
         </figure>
       </div>

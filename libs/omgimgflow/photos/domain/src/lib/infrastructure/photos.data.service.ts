@@ -51,4 +51,18 @@ export class PhotosDataService {
         observe: 'events',
       });
   }
+
+  createPhoto(photoCreate: Photo) {
+    const formData = new FormData();
+    formData.append('title', photoCreate.title);
+    formData.append('description', photoCreate.description);
+    formData.append('photo', photoCreate.photo!);
+
+    photoCreate.tags.forEach((tag: string) => formData.append('tags[]', tag));
+    return this.httpClient
+      .post(`${this.photosApi}`, formData, {
+        reportProgress: true,
+        observe: 'events',
+      });
+  }
 }
