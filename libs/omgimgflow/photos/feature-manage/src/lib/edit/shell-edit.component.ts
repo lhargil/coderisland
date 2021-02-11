@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { EditFacade, Photo } from '@coderisland/omgimgflow/photos/domain'
 import { map } from 'rxjs/operators';
 
 @Component({
   template: `
-    <!-- <coderisland-edit *ngIf="photo$ | async as photo" [photo]="photo" (fileUploaded)="handleFileUpload($event)" (photoEdited)="handlePhotoEdit($event)"></coderisland-edit> -->
+    <coderisland-edit [photo]="photo$ | async"
+    (fileUploaded)="handleFileUpload($event)"
+    (photoSubmitted)="handlePhotoEdit($event)"
+    (cancelClicked)="handleCancelClick()"
+    ></coderisland-edit>
   `,
   styles: [
   ]
@@ -19,7 +24,7 @@ export class ShellEditComponent implements OnInit {
       })
     )
   )
-  constructor(private readonly activatedRoute: ActivatedRoute, private readonly editFacade: EditFacade) { }
+  constructor(private readonly router: Router, private readonly activatedRoute: ActivatedRoute, private readonly editFacade: EditFacade) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +35,13 @@ export class ShellEditComponent implements OnInit {
     }
   }
 
-  handlePhotoEdit(editedPhoto: Photo) {
+  handlePhotoEdit(editForm: FormGroup) {
+    editForm.markAllAsTouched();
+    if (editForm.invalid) {
+      return;
+    }
+
+    const editedPhoto = editForm.value;
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.editFacade.submitPhotoUpdate({
@@ -38,5 +49,9 @@ export class ShellEditComponent implements OnInit {
         id: String(id),
         photoBlob: this.uploadedFile,
       });
+  }
+
+  handleCancelClick() {
+    this.router.navigate(['../../'], {relativeTo: this.activatedRoute});
   }
 }
