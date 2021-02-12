@@ -19,7 +19,7 @@ import { Photo } from '@coderisland/omgimgflow/photos/domain';
       }
     `,
   ],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EditComponent implements OnInit {
   _photo: Photo | null = null;

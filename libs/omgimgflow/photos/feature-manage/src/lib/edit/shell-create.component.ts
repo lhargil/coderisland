@@ -32,6 +32,7 @@ export class ShellCreateComponent implements OnInit {
   handleFileUpload($event: any) {
     if ($event.target.files && $event.target.files.length) {
       this.uploadedFile = $event.target.files[0];
+      this.previewFiles();
     }
   }
 
@@ -51,5 +52,32 @@ export class ShellCreateComponent implements OnInit {
 
   handleCancelClick() {
     this.router.navigate(['../'], {relativeTo: this.activatedRoute})
+  }
+
+  private previewFiles() {
+    const preview = document.querySelector('#preview');
+
+    function readAndPreview(file: File) {
+      // Make sure `file.name` matches our extensions criteria
+      if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+        var reader = new FileReader();
+
+        reader.addEventListener(
+          'load',
+          function () {
+            var image = new Image();
+            image.title = file.name;
+            image.src = this.result;
+            preview!.textContent = '';
+            preview!.appendChild(image);
+          },
+          false
+        );
+
+        reader.readAsDataURL(file);
+      }
+    }
+
+    readAndPreview(this.uploadedFile);
   }
 }
