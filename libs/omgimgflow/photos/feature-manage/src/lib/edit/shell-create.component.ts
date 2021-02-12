@@ -67,7 +67,7 @@ export class ShellCreateComponent implements OnInit {
           function () {
             var image = new Image();
             image.title = file.name;
-            image.src = this.result;
+            image.src = this.result! as string;
             preview!.textContent = '';
             preview!.appendChild(image);
           },
@@ -78,6 +78,6 @@ export class ShellCreateComponent implements OnInit {
       }
     }
 
-    readAndPreview(this.uploadedFile);
+    readAndPreview(this.uploadedFile!);
   }
 }
