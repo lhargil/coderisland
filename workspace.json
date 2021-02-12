@@ -28,9 +28,7 @@
               "apps/resume-builder/src/favicon.ico",
               "apps/resume-builder/src/assets"
             ],
-            "styles": [
-              "apps/resume-builder/src/styles.scss"
-            ],
+            "styles": ["apps/resume-builder/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -89,10 +87,7 @@
               "apps/resume-builder/tsconfig.app.json",
               "apps/resume-builder/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/resume-builder/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/resume-builder/**/*"]
           }
         },
         "test": {
@@ -101,9 +96,7 @@
             "jestConfig": "apps/resume-builder/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/apps/resume-builder"
-          ]
+          "outputs": ["coverage/apps/resume-builder"]
         }
       }
     },
@@ -128,13 +121,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/resume-builder-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/resume-builder-e2e/**/*"
-            ]
+            "tsConfig": ["apps/resume-builder-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/resume-builder-e2e/**/*"]
           }
         }
       }
@@ -152,9 +140,7 @@
             "outputPath": "dist/apps/resume-builder-api",
             "main": "apps/resume-builder-api/src/main.ts",
             "tsConfig": "apps/resume-builder-api/tsconfig.app.json",
-            "assets": [
-              "apps/resume-builder-api/src/assets"
-            ]
+            "assets": ["apps/resume-builder-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -169,9 +155,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@nrwl/node:execute",
@@ -187,10 +171,7 @@
               "apps/resume-builder-api/tsconfig.app.json",
               "apps/resume-builder-api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/resume-builder-api/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/resume-builder-api/**/*"]
           }
         },
         "test": {
@@ -199,9 +180,7 @@
             "jestConfig": "apps/resume-builder-api/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/apps/resume-builder-api"
-          ]
+          "outputs": ["coverage/apps/resume-builder-api"]
         }
       }
     },
@@ -230,9 +209,7 @@
             "jestConfig": "libs/resume-builder/resume/shell-resume/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/shell-resume"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/shell-resume"]
         }
       },
       "schematics": {
@@ -266,9 +243,7 @@
             "jestConfig": "libs/resume-builder/resume/feature-resume-list/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/feature-resume-list"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/feature-resume-list"]
         }
       },
       "schematics": {
@@ -338,9 +313,7 @@
             "jestConfig": "libs/resume-builder/domain/interfaces/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/domain/interfaces"
-          ]
+          "outputs": ["coverage/libs/resume-builder/domain/interfaces"]
         }
       }
     },
@@ -369,9 +342,7 @@
             "jestConfig": "libs/resume-builder/resume/data-access/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/data-access"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/data-access"]
         }
       },
       "schematics": {
@@ -405,9 +376,7 @@
             "jestConfig": "libs/shared/directives/content-host/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/shared/directives/content-host"
-          ]
+          "outputs": ["coverage/libs/shared/directives/content-host"]
         }
       },
       "schematics": {
@@ -441,9 +410,7 @@
             "jestConfig": "libs/ui-kit/slide-in/components/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui-kit/slide-in/components"
-          ]
+          "outputs": ["coverage/libs/ui-kit/slide-in/components"]
         }
       },
       "schematics": {
@@ -477,9 +444,7 @@
             "jestConfig": "libs/ui-kit/slide-in/state/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui-kit/slide-in/state"
-          ]
+          "outputs": ["coverage/libs/ui-kit/slide-in/state"]
         }
       },
       "schematics": {
@@ -513,9 +478,7 @@
             "jestConfig": "libs/ui-kit/slide-in/service/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui-kit/slide-in/service"
-          ]
+          "outputs": ["coverage/libs/ui-kit/slide-in/service"]
         }
       },
       "schematics": {
@@ -549,9 +512,7 @@
             "jestConfig": "libs/resume-builder/utils-interface/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/utils-interface"
-          ]
+          "outputs": ["coverage/libs/resume-builder/utils-interface"]
         }
       }
     },
@@ -580,9 +541,7 @@
             "jestConfig": "libs/ui-kit/forms/text-input/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui-kit/forms/text-input"
-          ]
+          "outputs": ["coverage/libs/ui-kit/forms/text-input"]
         }
       },
       "schematics": {
@@ -652,9 +611,7 @@
             "jestConfig": "libs/ui-kit/forms/textarea/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui-kit/forms/textarea"
-          ]
+          "outputs": ["coverage/libs/ui-kit/forms/textarea"]
         }
       },
       "schematics": {
@@ -820,10 +777,7 @@
               "libs/ui-kit/forms/select/tsconfig.lib.json",
               "libs/ui-kit/forms/select/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui-kit/forms/select/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/forms/select/**/*"]
           }
         },
         "test": {
@@ -832,9 +786,7 @@
             "jestConfig": "libs/ui-kit/forms/select/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui-kit/forms/select"
-          ]
+          "outputs": ["coverage/libs/ui-kit/forms/select"]
         }
       },
       "schematics": {
@@ -976,9 +928,7 @@
             "jestConfig": "libs/ui-kit/page-loader/services/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui-kit/page-loader/services"
-          ]
+          "outputs": ["coverage/libs/ui-kit/page-loader/services"]
         }
       },
       "schematics": {
@@ -1012,14 +962,229 @@
             "jestConfig": "libs/ui-kit/page-loader/components/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ui-kit/page-loader/components"
-          ]
+          "outputs": ["coverage/libs/ui-kit/page-loader/components"]
         }
       },
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
+        }
+      }
+    },
+    "omgimgflow": {
+      "projectType": "application",
+      "root": "apps/omgimgflow",
+      "sourceRoot": "apps/omgimgflow/src",
+      "prefix": "omg",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/apps/omgimgflow",
+            "index": "apps/omgimgflow/src/index.html",
+            "main": "apps/omgimgflow/src/main.ts",
+            "polyfills": "apps/omgimgflow/src/polyfills.ts",
+            "tsConfig": "apps/omgimgflow/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/omgimgflow/src/favicon.ico",
+              "apps/omgimgflow/src/assets"
+            ],
+            "styles": ["apps/omgimgflow/src/styles.scss"],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "./tailwind-configs/omgimgflow.webpack.config.js"
+            }
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/omgimgflow/src/environments/environment.ts",
+                  "with": "apps/omgimgflow/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "browserTarget": "omgimgflow:build",
+            "proxyConfig": "apps/omgimgflow/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "omgimgflow:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "omgimgflow:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/omgimgflow/src/**/*.ts",
+              "apps/omgimgflow/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/omgimgflow"],
+          "options": {
+            "jestConfig": "apps/omgimgflow/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "omgimgflow-e2e": {
+      "root": "apps\\omgimgflow-e2e",
+      "sourceRoot": "apps/omgimgflow-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/omgimgflow-e2e/cypress.json",
+            "tsConfig": "apps/omgimgflow-e2e/tsconfig.e2e.json",
+            "devServerTarget": "omgimgflow:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "omgimgflow:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps\\omgimgflow-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "omgimgflow-photos-shell": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/shell",
+      "sourceRoot": "libs/omgimgflow/photos/shell/src",
+      "prefix": "coderisland",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/omgimgflow/photos/shell/tsconfig.lib.json",
+            "project": "libs/omgimgflow/photos/shell/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/omgimgflow/photos/shell/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/shell/src/**/*.ts",
+              "libs/omgimgflow/photos/shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/shell"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "omgimgflow-photos-feature-manage": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/feature-manage",
+      "sourceRoot": "libs/omgimgflow/photos/feature-manage/src",
+      "prefix": "coderisland",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/omgimgflow/photos/feature-manage/tsconfig.lib.json",
+            "project": "libs/omgimgflow/photos/feature-manage/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/omgimgflow/photos/feature-manage/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/feature-manage/src/**/*.ts",
+              "libs/omgimgflow/photos/feature-manage/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/feature-manage"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/feature-manage/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "omgimgflow-photos-domain": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/domain",
+      "sourceRoot": "libs/omgimgflow/photos/domain/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/domain/src/**/*.ts",
+              "libs/omgimgflow/photos/domain/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/domain"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/domain/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }
@@ -1029,13 +1194,20 @@
   },
   "schematics": {
     "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress",
       "strict": true
     },
     "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
       "unitTestRunner": "jest",
       "strict": true
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "resume-builder"

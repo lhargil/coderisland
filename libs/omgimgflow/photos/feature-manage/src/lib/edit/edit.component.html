@@ -1,0 +1,148 @@
+<form
+  *ngIf="photoForm"
+  (ngSubmit)="handleSubmit()"
+  [formGroup]="photoForm"
+  class="space-y-8 divide-y divide-gray-200"
+>
+  <div class="space-y-8 divide-y divide-gray-200">
+    <div>
+      <div>
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          {{photo?.id == '' ? 'Add': 'Edit'}} photo
+        </h3>
+        <p class="mt-1 text-sm text-gray-500">
+          Enter new information about the photo
+        </p>
+      </div>
+      <div class="pt-6 bg-white space-y-6">
+        <figure *ngIf="photo?.description">
+          <img [src]="photo?.filename" alt="photo?.description" />
+        </figure>
+      </div>
+      <div class="mt-6 grid grid-cols-3 gap-y-6 gap-x-4 sm:grid-cols-6">
+        <div class="sm:col-span-6">
+          <label class="block text-sm font-medium text-gray-700"> Photo </label>
+          <input
+            id="file-upload"
+            formControlName="photoBlob"
+            type="file"
+            (change)="handleFileUpload($event)"
+          />
+          <div
+            *ngIf="photoBlob?.invalid && (photoBlob?.dirty || photoBlob?.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="photoBlob?.errors?.required">Photo file is required.</div>
+          </div>
+        </div>
+
+        <div class="sm:col-span-6">
+          <label for="title" class="block text-sm font-medium text-gray-700"
+            >Title</label
+          >
+          <input
+            type="text"
+            formControlName="title"
+            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+          />
+          <div
+            *ngIf="title?.invalid && (title?.dirty || title?.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="title?.errors?.required">Title is required.</div>
+          </div>
+        </div>
+
+        <div class="sm:col-span-6">
+          <label
+            for="description"
+            class="block text-sm font-medium text-gray-700"
+          >
+            Description
+          </label>
+          <div class="mt-1">
+            <textarea
+              formControlName="description"
+              rows="3"
+              class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
+              placeholder="Brief description about the photo"
+            ></textarea>
+          </div>
+          <p class="mt-2 text-sm text-gray-500">
+            Brief description about the photo.
+          </p>
+        </div>
+
+        <div class="sm:col-span-6">
+          <div class="mt-1" formArrayName="tags">
+            <h3>
+              <span>Tags</span>
+              <button
+                type="button"
+                (click)="handleAddTag()"
+                class="bg-white py-2 px-3 ml-2 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Add
+              </button>
+            </h3>
+            <div
+              class="mt-4 relative"
+              *ngFor="let tag of tags.controls; let i = index"
+            >
+              <input
+                type="text"
+                [formControlName]="i"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+              <div
+                *ngIf="tag?.invalid && (tag?.dirty || tag?.touched)"
+                class="alert alert-danger"
+              >
+                <div *ngIf="tag?.errors?.required">
+                  Tag {{ i + 1 }} is required.
+                </div>
+              </div>
+              <button
+                type="button"
+                (click)="handleRemoveTag(i)"
+                class="flex-shrink-0 ml-0.5 h-5 w-5 absolute -top-2 -right-2 rounded-full inline-flex items-center justify-center text-red-200 bg-red-700 hover:bg-red-200 hover:text-red-500 focus:outline-none focus:bg-red-500 focus:text-white"
+              >
+                <span class="sr-only">Remove large option</span>
+                <svg
+                  class="h-2 w-2"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 8 8"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-width="1.5"
+                    d="M1 1l6 6m0-6L1 7"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-5">
+    <div class="flex justify-end">
+      <button
+        (click)="handleCancelClick()"
+        type="button"
+        class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</form>

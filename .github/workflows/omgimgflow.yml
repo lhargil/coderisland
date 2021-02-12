@@ -31,7 +31,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install --frozen-lockfile
-    - run: yarn run build:omgimgflow
+    - run: yarn run nx run-many --target=build --projects=omgimgflow --with-deps --prod --parallel
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.0
       with:
@@ -71,7 +71,7 @@ jobs:
     - name: copy from temp dest to dest
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.LHARGILCOM_HOST_HOST }}
+        host: ${{ secrets.LHARGILCOM_HOST }}
         username: ${{ secrets.LHARGILCOM_DEPLOYER }}
         password: ${{ secrets.LHARGILCOM_DEPLOYERPW }}
         port: ${{ secrets.LHARGILCOM_PORT }}
