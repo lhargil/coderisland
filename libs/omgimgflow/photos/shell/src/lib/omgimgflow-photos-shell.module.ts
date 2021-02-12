@@ -24,6 +24,13 @@ import { LayoutComponent } from './layout.component';
                   (module) => module.FeatureManageModule
                 ),
             },
+            {
+              path: 'configure',
+              loadChildren: () =>
+                import('@coderisland/omgimgflow/photos/feature-configure').then(
+                  (module) => module.FeatureConfigureModule
+                ),
+            },
           ],
         },
       ],

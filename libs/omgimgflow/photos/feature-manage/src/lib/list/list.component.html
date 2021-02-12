@@ -23,8 +23,8 @@
         <div>
           <div class="-mt-px flex divide-x divide-gray-200">
             <div class="w-0 flex-1 flex">
-              <button
-                (click)="handleConfigureClick(photo)"
+              <a
+                [routerLink]="['../configure',photo.id]"
                 class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500"
               >
                 <!-- Heroicon name: mail -->
@@ -39,7 +39,7 @@
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
                 <span class="ml-3">Configure</span>
-              </button>
+              </a>
             </div>
             <div class="-ml-px w-0 flex-1 flex">
               <a

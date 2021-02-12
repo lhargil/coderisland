@@ -15,7 +15,6 @@ import { Photo } from '@coderisland/omgimgflow/photos/domain';
 })
 export class ListComponent implements OnInit {
   @Input() photos: Photo[] | null = [];
-  @Output() photoClicked = new EventEmitter<Photo>();
   @Output() removeClicked = new EventEmitter<Photo>();
   constructor() { }
 
@@ -28,10 +27,6 @@ export class ListComponent implements OnInit {
 
   trackByTag(index: number, tag: string) {
     return tag;
-  }
-
-  handleConfigureClick(photo: Photo) {
-    this.photoClicked.emit(photo);
   }
 
   handleRemoveClick(photo: Photo) {
