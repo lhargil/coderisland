@@ -22,14 +22,11 @@ export class ShellConfigureComponent implements OnInit {
 
   configuredImage$ = this.configureFacade.loadPhoto(this.activatedRoute.paramMap.pipe(map((paramMap: ParamMap) => paramMap.get('id')!)));
 
-  /// configuredImage$ = this.configureFacade.imageUrl$;
-
   constructor(public readonly configureFacade: ConfigureFacade, private readonly activatedRoute: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    // this.configuredImage$ = this.configureFacade.loadPhoto(this.activatedRoute.paramMap.pipe(map((paramMap: ParamMap) => paramMap.get('id')!)));
     this.configureFacade.imageFlowSettings$.subscribe((imageFlowSettings: ImageFlowSettings) => {
       this.configureForm = this.configureFormComponent.createForm(imageFlowSettings);
       this.configureFacade.configure(this.configureForm.valueChanges);

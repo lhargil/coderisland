@@ -4,5 +4,7 @@ export interface Photo {
   filename: string;
   title: string;
   description: string;
+  width: number;
+  height: number;
   tags: string[];
 }

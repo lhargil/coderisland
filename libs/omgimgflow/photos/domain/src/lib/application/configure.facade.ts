@@ -1,7 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import {
   BehaviorSubject,
-  combineLatest,
   merge,
   Observable,
   of,
@@ -9,7 +8,6 @@ import {
   Subject,
 } from 'rxjs';
 import {
-  debounce,
   debounceTime,
   distinctUntilChanged,
   map,
@@ -23,14 +21,27 @@ import {
 import { PhotosDataService } from '../infrastructure/photos.data.service';
 import { ImageFlowSettings, Photo } from '../models';
 
+export interface PhotoLite {
+  filename: string;
+  width: number;
+  height: number;
+}
+
 const initialImageFlowSettings: ImageFlowSettings = {
-  width: 1024,
+  width: 100,
+  height: 100,
   sepia: true,
+};
+
+const initialPhotoSettings: PhotoLite = {
+  filename: '',
+  width: 0,
+  height: 0,
 };
 
 class ConfiguredImageState {
   imageUrl: string = '';
-  imageFilename: string = '';
+  photo: PhotoLite = initialPhotoSettings;
   settings: ImageFlowSettings = initialImageFlowSettings;
 }
 
@@ -48,7 +59,7 @@ export class ConfigureFacade implements OnDestroy {
   );
 
   private setImageFlowSettings$ = new Subject<ImageFlowSettings>();
-  private setImageFilename$ = new Subject<string>();
+  private setPhotoLiteSettings$ = new Subject<PhotoLite>();
 
   private configureImageTriggers$ = merge(
     this.setImageFlowSettings$.pipe(
@@ -56,10 +67,10 @@ export class ConfigureFacade implements OnDestroy {
       debounceTime(400),
       map((settings: ImageFlowSettings) => ({ settings }))
     ),
-    this.setImageFilename$.pipe(
-      map((imageFilename: string) => {
+    this.setPhotoLiteSettings$.pipe(
+      map((photoLite: PhotoLite) => {
         return {
-          imageFilename,
+          photo: photoLite,
         };
       })
     )
@@ -71,13 +82,13 @@ export class ConfigureFacade implements OnDestroy {
   );
 
   constructor(private readonly photoDataService: PhotosDataService) {
-    const { settings, imageFilename } = this.store.getValue();
+    const { settings, photo } = this.store.getValue();
     const configureState = this.configureImageTriggers$.pipe(
-      startWith({settings, imageFilename} as any),
+      startWith({ settings, photo } as any),
       scan(
         (
-          acc: { settings: ImageFlowSettings, imageFilename: string },
-          trigger: { settings: ImageFlowSettings, imageFilename: string }
+          acc: { settings: ImageFlowSettings; photo: PhotoLite },
+          trigger: { settings: ImageFlowSettings; photo: PhotoLite }
         ) => {
           return {
             ...acc,
@@ -90,23 +101,22 @@ export class ConfigureFacade implements OnDestroy {
 
     configureState
       .pipe(
-        tap(console.log),
-        tap((state: { settings: ImageFlowSettings, imageFilename: string }) => {
+        tap((state: { settings: ImageFlowSettings; photo: PhotoLite }) => {
           this.store.next({
             ...this.store.getValue(),
             settings: state.settings,
-            imageFilename: state.imageFilename
-          })
+            photo: state.photo,
+          });
         }),
+        tap(console.log),
         switchMap(
-          (config: {
-            settings: ImageFlowSettings;
-            imageFilename: string;
-          }) => {
-            const queryString = `w=${Math.floor((config.settings.width/100)*1024)}&s.sepia=${config.settings.sepia}`;
-            return of(`${config.imageFilename}?${queryString}`);
+          (config: { settings: ImageFlowSettings; photo: PhotoLite }) => {
+            const queryString = `w=${Math.ceil((config.settings.width/100)*config.photo.width)}&s.sepia=${config.settings.sepia}`;
+
+            return of(`${config.photo.filename}?${queryString}`);
           }
-        )
+        ),
+        tap(console.log)
       )
       .subscribe((imageUrl: string) => {
         this.store.next({
@@ -117,22 +127,27 @@ export class ConfigureFacade implements OnDestroy {
   }
 
   configure(configChanges: Observable<any>) {
-    configChanges.subscribe(c => {
+    configChanges.subscribe((c) => {
       this.setImageFlowSettings$.next(c);
-    })
+    });
   }
 
   loadPhoto(routeId$: Observable<string>): Observable<string> {
     routeId$
       .pipe(
         switchMap((id: string) => {
-          return this.photoDataService
-            .getPhoto(id)
-            .pipe(map((photo: Photo) => photo.filename));
+          return this.photoDataService.getPhoto(id).pipe(
+            map((photo: Photo) => {
+              const { filename, width, height } = photo;
+              return { filename, width, height };
+            })
+          );
         }),
         takeUntil(this.destroy$)
       )
-      .subscribe(filename => this.setImageFilename$.next(filename));
+      .subscribe((photo) => {
+        this.setPhotoLiteSettings$.next(photo);
+      });
 
     return this.imageUrl$;
   }

@@ -12,6 +12,8 @@ const initialState = {
   title: '',
   description: '',
   tags: [],
+  width: 0,
+  height: 0
 };
 
 class EditState {
