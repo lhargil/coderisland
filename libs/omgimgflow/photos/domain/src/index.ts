@@ -1,6 +1,6 @@
 export * from './lib/omgimgflow-photos-domain.module';
 
-export * from './lib/models/photo';
+export * from './lib/models';
 
 export * from './lib/infrastructure/photos.data.service';
 

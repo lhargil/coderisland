@@ -1,0 +1,24 @@
+<form [formGroup]="configureForm">
+  <div class="block">
+    <span class="text-gray-700">Image transforms:</span>
+    <div class="mt-2">
+      <div>
+      <label class="inline-flex items-center">
+          <span class="mr-2">Width</span>
+          <input type="range" formControlName="width" class="mt-1 block w-full" />
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="block mt-4">
+    <span class="text-gray-700">Image transformation:</span>
+    <div class="mt-2">
+      <div>
+        <label class="inline-flex items-center">
+          <input type="checkbox" formControlName="sepia" />
+          <span class="ml-2">Sepia</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</form>
