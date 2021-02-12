@@ -65,4 +65,8 @@ export class PhotosDataService {
         observe: 'events',
       });
   }
+
+  deletePhoto(photoToDelete: Photo) {
+    return this.httpClient.delete(`${this.photosApi}/${photoToDelete.id}`);
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { SearchFacade } from '@coderisland/omgimgflow/photos/domain';
+import { Photo, SearchFacade } from '@coderisland/omgimgflow/photos/domain';
 import { take, takeUntil } from 'rxjs/operators';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy'
 
@@ -25,4 +25,7 @@ export class ShellListComponent implements OnInit {
     });
   }
 
+  handleRemoveClick(photo: Photo) {
+    this.searchFacade.deletePhoto(photo);
+  }
 }

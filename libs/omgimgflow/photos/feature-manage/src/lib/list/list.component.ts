@@ -16,6 +16,7 @@ import { Photo } from '@coderisland/omgimgflow/photos/domain';
 export class ListComponent implements OnInit {
   @Input() photos: Photo[] | null = [];
   @Output() photoClicked = new EventEmitter<Photo>();
+  @Output() removeClicked = new EventEmitter<Photo>();
   constructor() { }
 
   ngOnInit(): void {
@@ -31,5 +32,9 @@ export class ListComponent implements OnInit {
 
   handleConfigureClick(photo: Photo) {
     this.photoClicked.emit(photo);
+  }
+
+  handleRemoveClick(photo: Photo) {
+    this.removeClicked.emit(photo);
   }
 }
