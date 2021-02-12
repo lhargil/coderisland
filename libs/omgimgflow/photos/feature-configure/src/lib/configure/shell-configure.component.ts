@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class ShellConfigureComponent implements OnInit {
-
+  imageUrl = 'https://localhost:5001/omgimages/light-em-up.jpg';
   constructor() { }
 
   ngOnInit(): void {
