@@ -95,6 +95,17 @@ export class SearchFacade implements OnDestroy {
     return this.photos$;
   }
 
+  deletePhoto(photo: Photo) {
+    this.photosDataService.deletePhoto(photo)
+      .pipe(
+        map(_ => {
+          return this.state.photos.filter(item => item.id != photo.id);
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(this.updatePhotos.bind(this));
+  }
+
   private updatePhotos(photos: Photo[]) {
     this.dispatch.next(
       (this.state = {
