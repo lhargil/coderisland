@@ -5,3 +5,5 @@ export * from './lib/models';
 export * from './lib/infrastructure/photos.data.service';
 
 export * from './lib/application';
+
+export * from './lib/utils';

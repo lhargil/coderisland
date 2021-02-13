@@ -17,6 +17,9 @@ export class ConfigureFormComponent implements OnInit {
   createForm(imageFlowSettings: ImageFlowSettings) {
     this.configureForm = this.formBuilder.group({
       width: [imageFlowSettings.width],
+      height: [imageFlowSettings.height],
+      mode: [imageFlowSettings.mode],
+      scale: [imageFlowSettings.scale],
       sepia: [imageFlowSettings.sepia]
     });
 

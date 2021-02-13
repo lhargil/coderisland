@@ -19,7 +19,8 @@ import {
   tap,
 } from 'rxjs/operators';
 import { PhotosDataService } from '../infrastructure/photos.data.service';
-import { ImageFlowSettings, Photo } from '../models';
+import { ImageFlowSettings, ImageTransformModes, ImageTransformScales, Photo } from '../models';
+import { toRiapiQueryString } from '../utils';
 
 export interface PhotoLite {
   filename: string;
@@ -30,7 +31,7 @@ export interface PhotoLite {
 const initialImageFlowSettings: ImageFlowSettings = {
   width: 100,
   height: 100,
-  sepia: true,
+  sepia: false,
 };
 
 const initialPhotoSettings: PhotoLite = {
@@ -42,7 +43,7 @@ const initialPhotoSettings: PhotoLite = {
 class ConfiguredImageState {
   imageUrl: string = '';
   photo: PhotoLite = initialPhotoSettings;
-  settings: ImageFlowSettings = initialImageFlowSettings;
+  imageFlowSettings: ImageFlowSettings = initialImageFlowSettings;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -55,7 +56,7 @@ export class ConfigureFacade implements OnDestroy {
   private store$ = this.store.asObservable();
 
   public imageFlowSettings$ = this.store$.pipe(
-    map((state: ConfiguredImageState) => state.settings)
+    map((state: ConfiguredImageState) => state.imageFlowSettings)
   );
 
   private setImageFlowSettings$ = new Subject<ImageFlowSettings>();
@@ -65,7 +66,7 @@ export class ConfigureFacade implements OnDestroy {
     this.setImageFlowSettings$.pipe(
       distinctUntilChanged(),
       debounceTime(400),
-      map((settings: ImageFlowSettings) => ({ settings }))
+      map((imageFlowSettings: ImageFlowSettings) => ({ imageFlowSettings }))
     ),
     this.setPhotoLiteSettings$.pipe(
       map((photoLite: PhotoLite) => {
@@ -82,13 +83,13 @@ export class ConfigureFacade implements OnDestroy {
   );
 
   constructor(private readonly photoDataService: PhotosDataService) {
-    const { settings, photo } = this.store.getValue();
+    const { imageFlowSettings, photo } = this.store.getValue();
     const configureState = this.configureImageTriggers$.pipe(
-      startWith({ settings, photo } as any),
+      startWith({ imageFlowSettings, photo } as any),
       scan(
         (
-          acc: { settings: ImageFlowSettings; photo: PhotoLite },
-          trigger: { settings: ImageFlowSettings; photo: PhotoLite }
+          acc: { imageFlowSettings: ImageFlowSettings; photo: PhotoLite },
+          trigger: { imageFlowSettings: ImageFlowSettings; photo: PhotoLite }
         ) => {
           return {
             ...acc,
@@ -101,22 +102,27 @@ export class ConfigureFacade implements OnDestroy {
 
     configureState
       .pipe(
-        tap((state: { settings: ImageFlowSettings; photo: PhotoLite }) => {
+        tap((state: { imageFlowSettings: ImageFlowSettings; photo: PhotoLite }) => {
           this.store.next({
             ...this.store.getValue(),
-            settings: state.settings,
+            imageFlowSettings: state.imageFlowSettings,
             photo: state.photo,
           });
         }),
         tap(console.log),
         switchMap(
-          (config: { settings: ImageFlowSettings; photo: PhotoLite }) => {
-            const queryString = `w=${Math.ceil((config.settings.width/100)*config.photo.width)}&s.sepia=${config.settings.sepia}`;
+          (config: { imageFlowSettings: ImageFlowSettings; photo: PhotoLite }) => {
+            const queryString = toRiapiQueryString({
+              ...config.imageFlowSettings,
+              width: Math.ceil((config.imageFlowSettings.width/100)*config.photo.width),
+              height: Math.ceil((config.imageFlowSettings.height/100)*config.photo.height),
+            });
 
-            return of(`${config.photo.filename}?${queryString}`);
+            return of(`${config.photo.filename}${queryString}`);
           }
         ),
-        tap(console.log)
+        tap(console.log),
+        takeUntil(this.destroy$)
       )
       .subscribe((imageUrl: string) => {
         this.store.next({
@@ -127,7 +133,7 @@ export class ConfigureFacade implements OnDestroy {
   }
 
   configure(configChanges: Observable<any>) {
-    configChanges.subscribe((c) => {
+    configChanges.pipe(takeUntil(this.destroy$)).subscribe((c) => {
       this.setImageFlowSettings$.next(c);
     });
   }

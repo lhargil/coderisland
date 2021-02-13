@@ -5,7 +5,9 @@ import { ConfigureFormComponent } from './configure-form.component';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
+@UntilDestroy()
 @Component({
   templateUrl: './shell-configure.component.html',
   styles: [
@@ -27,10 +29,13 @@ export class ShellConfigureComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.configureFacade.imageFlowSettings$.subscribe((imageFlowSettings: ImageFlowSettings) => {
+    this.configureFacade.imageFlowSettings$.pipe(untilDestroyed(this)).subscribe((imageFlowSettings: ImageFlowSettings) => {
       this.configureForm = this.configureFormComponent.createForm(imageFlowSettings);
       this.configureFacade.configure(this.configureForm.valueChanges);
     });
   }
 
+  handleImageUrlCopy(imageUrl: string) {
+    console.log(imageUrl);
+  }
 }

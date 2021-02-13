@@ -5,6 +5,7 @@ import { ShellConfigureComponent } from './configure/shell-configure.component';
 import { ConfigureComponent } from './configure/configure.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfigureFormComponent } from './configure/configure-form.component';
+import { OmgimgflowPhotosDomainModule } from '@coderisland/omgimgflow/photos/domain';
 
 @NgModule({
   imports: [

@@ -4,7 +4,6 @@
       class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3"
     >
       <div class="space-y-6 lg:col-start-2 lg:col-span-2">
-        <!-- Description list-->
         <section aria-labelledby="applicant-information-title">
           <div class="bg-white shadow sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
@@ -20,6 +19,7 @@
               <coderisland-configure
                 *ngIf="configuredImage$ | async as image"
                 [imageUrl]="image"
+                (imageUrlCopied)="handleImageUrlCopy($event)"
               ></coderisland-configure>
             </div>
           </div>
