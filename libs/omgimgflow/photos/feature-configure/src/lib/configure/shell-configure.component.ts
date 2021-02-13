@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ConfigureFacade, ImageFlowSettings } from '@coderisland/omgimgflow/photos/domain';
+import { ConfigureFacade, ImageFlowSettings, ImageTransformModes, ImageTransformScales } from '@coderisland/omgimgflow/photos/domain';
 import { ConfigureFormComponent } from './configure-form.component';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -31,7 +31,7 @@ export class ShellConfigureComponent implements OnInit {
 
   ngOnInit(): void {
     this.configureFacade.imageFlowSettings$.pipe(untilDestroyed(this)).subscribe((imageFlowSettings: ImageFlowSettings) => {
-      this.configureForm = this.configureFormComponent.createForm(imageFlowSettings);
+      this.configureForm = this.configureFormComponent.createForm(imageFlowSettings, Object.values(ImageTransformModes), Object.values(ImageTransformScales));
       this.configureFacade.configure(this.configureForm.valueChanges);
     });
   }

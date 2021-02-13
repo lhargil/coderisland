@@ -11,10 +11,11 @@ import { ImageFlowSettings } from '@coderisland/omgimgflow/photos/domain';
 })
 export class ConfigureFormComponent implements OnInit {
   configureForm!: FormGroup;
-
+  imageTransformModes: string[] = [];
+  imageTransformScales: string[] = [];
   constructor(private readonly formBuilder: FormBuilder) { }
 
-  createForm(imageFlowSettings: ImageFlowSettings) {
+  createForm(imageFlowSettings: ImageFlowSettings, transformModes: string[], transformScales: string[]) {
     this.configureForm = this.formBuilder.group({
       width: [imageFlowSettings.width],
       height: [imageFlowSettings.height],
@@ -23,6 +24,8 @@ export class ConfigureFormComponent implements OnInit {
       sepia: [imageFlowSettings.sepia]
     });
 
+    this.imageTransformModes = transformModes;
+    this.imageTransformScales = transformScales;
     return this.configureForm
   }
 

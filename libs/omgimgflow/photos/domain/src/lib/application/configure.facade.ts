@@ -31,6 +31,8 @@ export interface PhotoLite {
 const initialImageFlowSettings: ImageFlowSettings = {
   width: 100,
   height: 100,
+  mode: ImageTransformModes.max,
+  scale: ImageTransformScales.both,
   sepia: false,
 };
 
