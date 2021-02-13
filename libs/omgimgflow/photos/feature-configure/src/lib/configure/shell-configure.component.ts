@@ -6,6 +6,7 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { Clipboard } from "@angular/cdk/clipboard"
 
 @UntilDestroy()
 @Component({
@@ -24,7 +25,7 @@ export class ShellConfigureComponent implements OnInit {
 
   configuredImage$ = this.configureFacade.loadPhoto(this.activatedRoute.paramMap.pipe(map((paramMap: ParamMap) => paramMap.get('id')!)));
 
-  constructor(public readonly configureFacade: ConfigureFacade, private readonly activatedRoute: ActivatedRoute) {
+  constructor(public readonly configureFacade: ConfigureFacade, private readonly activatedRoute: ActivatedRoute, private clipboard: Clipboard) {
 
   }
 
@@ -36,6 +37,6 @@ export class ShellConfigureComponent implements OnInit {
   }
 
   handleImageUrlCopy(imageUrl: string) {
-    console.log(imageUrl);
+    this.clipboard.copy(imageUrl);
   }
 }

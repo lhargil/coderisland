@@ -5,7 +5,7 @@ import { ShellConfigureComponent } from './configure/shell-configure.component';
 import { ConfigureComponent } from './configure/configure.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfigureFormComponent } from './configure/configure-form.component';
-import { OmgimgflowPhotosDomainModule } from '@coderisland/omgimgflow/photos/domain';
+import { ClipboardModule } from '@angular/cdk/clipboard'
 
 @NgModule({
   imports: [
@@ -13,7 +13,8 @@ import { OmgimgflowPhotosDomainModule } from '@coderisland/omgimgflow/photos/dom
     RouterModule.forChild([
       { path: ':id', pathMatch: 'full', component: ShellConfigureComponent }
     ]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ClipboardModule
   ],
   declarations: [ShellConfigureComponent, ConfigureComponent, ConfigureFormComponent],
 })
