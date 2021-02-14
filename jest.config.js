@@ -27,7 +27,5 @@ module.exports = {
     '<rootDir>/libs/ui-kit/page-loader/components',
     '<rootDir>/apps/omgimgflow',
     '<rootDir>/libs/omgimgflow/photos/shell',
-    '<rootDir>/libs/omgimgflow/photos/feature-manage',
-    '<rootDir>/libs/omgimgflow/photos/domain',
   ],
 };

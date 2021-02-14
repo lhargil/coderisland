@@ -76,10 +76,6 @@
     "ui-kit-page-loader-components": { "tags": ["scope:ui-kit", "type:ui"] },
     "omgimgflow": { "tags": ["scope:omgimgflow", "type:app"] },
     "omgimgflow-e2e": { "tags": [], "implicitDependencies": ["omgimgflow"] },
-    "omgimgflow-photos-shell": { "tags": ["scope:omgimgflow", "type:feature"] },
-    "omgimgflow-photos-feature-manage": {
-      "tags": ["scope:omgimgflow", "type:feature"]
-    },
-    "omgimgflow-photos-domain": { "tags": ["scope:omgimgflow", "type:domain"] }
+    "omgimgflow-photos-shell": { "tags": ["scope:omgimgflow", "type:feature"] }
   }
 }
