@@ -4,6 +4,6 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class OmgimgflowPhotosShellModule {}
