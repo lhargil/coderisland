@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ListComponent } from './list.component';
 
 import { ShellListComponent } from './shell-list.component';
+
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ShellListComponent', () => {
   let component: ShellListComponent;
@@ -8,7 +11,8 @@ describe('ShellListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShellListComponent ]
+      imports: [RouterTestingModule],
+      declarations: [ ShellListComponent, ListComponent ]
     })
     .compileComponents();
   });
