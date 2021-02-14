@@ -4,13 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { OmgimgflowPhotosShellModule } from '@coderisland/omgimgflow/photos/shell'
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    OmgimgflowPhotosShellModule
   ],
   providers: [],
   bootstrap: [AppComponent],

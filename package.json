@@ -29,7 +29,8 @@
     "start:rb-api": "nx serve resume-builder-api",
     "build:all": "nx run-many --target=build --projects=resume-builder,resume-builder-api --with-deps --prod --parallel",
     "start:flow:hot": "nx serve omgimgflow --hmr -o --port 4800",
-    "build:omgimgflow": "nx run-many --target=build --projects=omgimgflow --with-deps --prod --parallel"
+    "build:omgimgflow": "nx run-many --target=build --projects=omgimgflow --with-deps --prod --parallel",
+    "e2e:omgimgflow": "nx e2e omgimgflow-e2e --watch"
   },
   "private": true,
   "dependencies": {
