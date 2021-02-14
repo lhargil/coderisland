@@ -9,10 +9,20 @@ import { ShellComponent } from './shell.component';
     RouterModule.forChild([
       {
         path: '',
-        pathMatch: 'full',
         component: ShellComponent,
-        children: []
-      }
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'list'
+          },
+          {
+            path: 'list',
+            loadChildren: () =>
+              import('@coderisland/omgimgflow/photos/feature-manage-list').then((module) => module.FeatureManageListModule),
+          },
+        ],
+      },
     ]),
   ],
   declarations: [ShellComponent],

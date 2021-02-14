@@ -28,5 +28,6 @@ module.exports = {
     '<rootDir>/apps/omgimgflow',
     '<rootDir>/libs/omgimgflow/photos/shell',
     '<rootDir>/libs/omgimgflow/photos/feature-manage',
+    '<rootDir>/libs/omgimgflow/photos/feature-manage-list',
   ],
 };
