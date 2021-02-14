@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { Photo } from '@coderisland/omgimgflow/photos/domain';
 
 @Component({
   selector: 'omgimg-list',
@@ -13,14 +14,14 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListComponent implements OnInit {
-  @Input() photos!: any[] | null;
-  @Output() removeClicked = new EventEmitter<any>();
+  @Input() photos!: Photo[] | null;
+  @Output() removeClicked = new EventEmitter<Photo>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  trackByPhotoId(index: number, photo: any) {
+  trackByPhotoId(index: number, photo: Photo) {
     return photo.id;
   }
 
@@ -28,7 +29,7 @@ export class ListComponent implements OnInit {
     return tag;
   }
 
-  handleRemoveClick(photo: any) {
+  handleRemoveClick(photo: Photo) {
     this.removeClicked.emit(photo);
   }
 }

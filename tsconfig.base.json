@@ -61,7 +61,8 @@
       "@coderisland/ui-kit/page-loader/components": ["libs/ui-kit/page-loader/components/src/index.ts"],
       "@coderisland/omgimgflow/photos/shell": ["libs/omgimgflow/photos/shell/src/index.ts"],
       "@coderisland/omgimgflow/photos/feature-manage": ["libs/omgimgflow/photos/feature-manage/src/index.ts"],
-      "@coderisland/omgimgflow/photos/feature-manage-list": ["libs/omgimgflow/photos/feature-manage-list/src/index.ts"]
+      "@coderisland/omgimgflow/photos/feature-manage-list": ["libs/omgimgflow/photos/feature-manage-list/src/index.ts"],
+      "@coderisland/omgimgflow/photos/domain": ["libs/omgimgflow/photos/domain/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
