@@ -30,7 +30,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: yarn install --frozen-lockfile
+    - run: yarn install --frozen-lockfile --prod
     - run: yarn run build:omgimgflow
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.0
