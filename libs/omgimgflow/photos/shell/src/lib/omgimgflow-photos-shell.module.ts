@@ -16,14 +16,7 @@ import { LayoutComponent } from './layout.component';
               path: '',
               pathMatch: 'full',
               redirectTo: '/',
-            },
-            {
-              path: 'photos',
-              loadChildren: () =>
-                import('@coderisland/omgimgflow/photos/feature-manage').then(
-                  (module) => module.FeatureManageModule
-                ),
-            },
+            }
           ],
         },
       ],
