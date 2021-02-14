@@ -4,8 +4,10 @@ import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(
-    [
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(
+      [
         {
           path: '',
           component: LayoutComponent,
@@ -15,11 +17,17 @@ import { LayoutComponent } from './layout.component';
               pathMatch: 'full',
               redirectTo: '/',
             },
+            {
+              path: 'photos',
+              loadChildren: () =>
+                import('@coderisland/omgimgflow/photos/feature-manage').then((module) => module.FeatureManageModule),
+            },
           ],
         },
       ],
-      { initialNavigation: 'enabled' }
-  )],
+      { initialNavigation: 'enabled' },
+    ),
+  ],
   exports: [RouterModule],
   declarations: [LayoutComponent],
 })

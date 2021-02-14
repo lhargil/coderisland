@@ -24,10 +24,7 @@
             "polyfills": "apps/resume-builder/src/polyfills.ts",
             "tsConfig": "apps/resume-builder/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/resume-builder/src/favicon.ico",
-              "apps/resume-builder/src/assets"
-            ],
+            "assets": ["apps/resume-builder/src/favicon.ico", "apps/resume-builder/src/assets"],
             "styles": ["apps/resume-builder/src/styles.scss"],
             "scripts": []
           },
@@ -83,10 +80,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/resume-builder/tsconfig.app.json",
-              "apps/resume-builder/tsconfig.spec.json"
-            ],
+            "tsConfig": ["apps/resume-builder/tsconfig.app.json", "apps/resume-builder/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!apps/resume-builder/**/*"]
           }
         },
@@ -167,10 +161,7 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "linter": "eslint",
-            "tsConfig": [
-              "apps/resume-builder-api/tsconfig.app.json",
-              "apps/resume-builder-api/tsconfig.spec.json"
-            ],
+            "tsConfig": ["apps/resume-builder-api/tsconfig.app.json", "apps/resume-builder-api/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!apps/resume-builder-api/**/*"]
           }
         },
@@ -197,10 +188,7 @@
               "libs/resume-builder/resume/shell-resume/tsconfig.lib.json",
               "libs/resume-builder/resume/shell-resume/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/shell-resume/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/shell-resume/**/*"]
           }
         },
         "test": {
@@ -231,10 +219,7 @@
               "libs/resume-builder/resume/feature-resume-list/tsconfig.lib.json",
               "libs/resume-builder/resume/feature-resume-list/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-list/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/feature-resume-list/**/*"]
           }
         },
         "test": {
@@ -265,10 +250,7 @@
               "libs/resume-builder/resume/feature-resume-details/tsconfig.lib.json",
               "libs/resume-builder/resume/feature-resume-details/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-details/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/feature-resume-details/**/*"]
           }
         },
         "test": {
@@ -277,9 +259,7 @@
             "jestConfig": "libs/resume-builder/resume/feature-resume-details/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/feature-resume-details"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/feature-resume-details"]
         }
       },
       "schematics": {
@@ -330,10 +310,7 @@
               "libs/resume-builder/resume/data-access/tsconfig.lib.json",
               "libs/resume-builder/resume/data-access/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/data-access/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/data-access/**/*"]
           }
         },
         "test": {
@@ -364,10 +341,7 @@
               "libs/shared/directives/content-host/tsconfig.lib.json",
               "libs/shared/directives/content-host/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/directives/content-host/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/shared/directives/content-host/**/*"]
           }
         },
         "test": {
@@ -398,10 +372,7 @@
               "libs/ui-kit/slide-in/components/tsconfig.lib.json",
               "libs/ui-kit/slide-in/components/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui-kit/slide-in/components/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/slide-in/components/**/*"]
           }
         },
         "test": {
@@ -432,10 +403,7 @@
               "libs/ui-kit/slide-in/state/tsconfig.lib.json",
               "libs/ui-kit/slide-in/state/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui-kit/slide-in/state/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/slide-in/state/**/*"]
           }
         },
         "test": {
@@ -466,10 +434,7 @@
               "libs/ui-kit/slide-in/service/tsconfig.lib.json",
               "libs/ui-kit/slide-in/service/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui-kit/slide-in/service/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/slide-in/service/**/*"]
           }
         },
         "test": {
@@ -529,10 +494,7 @@
               "libs/ui-kit/forms/text-input/tsconfig.lib.json",
               "libs/ui-kit/forms/text-input/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui-kit/forms/text-input/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/forms/text-input/**/*"]
           }
         },
         "test": {
@@ -563,10 +525,7 @@
               "libs/resume-builder/resume/feature-resume-work-experience/tsconfig.lib.json",
               "libs/resume-builder/resume/feature-resume-work-experience/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-work-experience/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/feature-resume-work-experience/**/*"]
           }
         },
         "test": {
@@ -575,9 +534,7 @@
             "jestConfig": "libs/resume-builder/resume/feature-resume-work-experience/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/feature-resume-work-experience"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/feature-resume-work-experience"]
         }
       },
       "schematics": {
@@ -599,10 +556,7 @@
               "libs/ui-kit/forms/textarea/tsconfig.lib.json",
               "libs/ui-kit/forms/textarea/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui-kit/forms/textarea/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/forms/textarea/**/*"]
           }
         },
         "test": {
@@ -633,10 +587,7 @@
               "libs/resume-builder/resume/feature-resume-education/tsconfig.lib.json",
               "libs/resume-builder/resume/feature-resume-education/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-education/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/feature-resume-education/**/*"]
           }
         },
         "test": {
@@ -645,9 +596,7 @@
             "jestConfig": "libs/resume-builder/resume/feature-resume-education/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/feature-resume-education"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/feature-resume-education"]
         }
       },
       "schematics": {
@@ -669,10 +618,7 @@
               "libs/resume-builder/resume/feature-resume-skills/tsconfig.lib.json",
               "libs/resume-builder/resume/feature-resume-skills/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-skills/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/feature-resume-skills/**/*"]
           }
         },
         "test": {
@@ -681,9 +627,7 @@
             "jestConfig": "libs/resume-builder/resume/feature-resume-skills/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/feature-resume-skills"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/feature-resume-skills"]
         }
       },
       "schematics": {
@@ -705,10 +649,7 @@
               "libs/resume-builder/resume/feature-resume-interests/tsconfig.lib.json",
               "libs/resume-builder/resume/feature-resume-interests/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-interests/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/feature-resume-interests/**/*"]
           }
         },
         "test": {
@@ -717,9 +658,7 @@
             "jestConfig": "libs/resume-builder/resume/feature-resume-interests/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/feature-resume-interests"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/feature-resume-interests"]
         }
       },
       "schematics": {
@@ -741,10 +680,7 @@
               "libs/resume-builder/resume/feature-resume-languages/tsconfig.lib.json",
               "libs/resume-builder/resume/feature-resume-languages/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-languages/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/feature-resume-languages/**/*"]
           }
         },
         "test": {
@@ -753,9 +689,7 @@
             "jestConfig": "libs/resume-builder/resume/feature-resume-languages/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/feature-resume-languages"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/feature-resume-languages"]
         }
       },
       "schematics": {
@@ -773,10 +707,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/ui-kit/forms/select/tsconfig.lib.json",
-              "libs/ui-kit/forms/select/tsconfig.spec.json"
-            ],
+            "tsConfig": ["libs/ui-kit/forms/select/tsconfig.lib.json", "libs/ui-kit/forms/select/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!libs/ui-kit/forms/select/**/*"]
           }
         },
@@ -808,10 +739,7 @@
               "libs/resume-builder/resume/feature-resume-references/tsconfig.lib.json",
               "libs/resume-builder/resume/feature-resume-references/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-references/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/feature-resume-references/**/*"]
           }
         },
         "test": {
@@ -820,9 +748,7 @@
             "jestConfig": "libs/resume-builder/resume/feature-resume-references/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/feature-resume-references"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/feature-resume-references"]
         }
       },
       "schematics": {
@@ -844,10 +770,7 @@
               "libs/resume-builder/resume/feature-resume-profile/tsconfig.lib.json",
               "libs/resume-builder/resume/feature-resume-profile/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-profile/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/feature-resume-profile/**/*"]
           }
         },
         "test": {
@@ -856,9 +779,7 @@
             "jestConfig": "libs/resume-builder/resume/feature-resume-profile/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/feature-resume-profile"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/feature-resume-profile"]
         }
       },
       "schematics": {
@@ -880,10 +801,7 @@
               "libs/resume-builder/resume/feature-resume-preview/tsconfig.lib.json",
               "libs/resume-builder/resume/feature-resume-preview/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/resume-builder/resume/feature-resume-preview/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/resume-builder/resume/feature-resume-preview/**/*"]
           }
         },
         "test": {
@@ -892,9 +810,7 @@
             "jestConfig": "libs/resume-builder/resume/feature-resume-preview/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/resume-builder/resume/feature-resume-preview"
-          ]
+          "outputs": ["coverage/libs/resume-builder/resume/feature-resume-preview"]
         }
       },
       "schematics": {
@@ -916,10 +832,7 @@
               "libs/ui-kit/page-loader/services/tsconfig.lib.json",
               "libs/ui-kit/page-loader/services/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui-kit/page-loader/services/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/page-loader/services/**/*"]
           }
         },
         "test": {
@@ -950,10 +863,7 @@
               "libs/ui-kit/page-loader/components/tsconfig.lib.json",
               "libs/ui-kit/page-loader/components/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui-kit/page-loader/components/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui-kit/page-loader/components/**/*"]
           }
         },
         "test": {
@@ -986,10 +896,7 @@
             "polyfills": "apps/omgimgflow/src/polyfills.ts",
             "tsConfig": "apps/omgimgflow/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/omgimgflow/src/favicon.ico",
-              "apps/omgimgflow/src/assets"
-            ],
+            "assets": ["apps/omgimgflow/src/favicon.ico", "apps/omgimgflow/src/assets"],
             "styles": ["apps/omgimgflow/src/styles.scss"],
             "scripts": [],
             "customWebpackConfig": {
@@ -1047,10 +954,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/omgimgflow/src/**/*.ts",
-              "apps/omgimgflow/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/omgimgflow/src/**/*.ts", "apps/omgimgflow/src/**/*.html"]
           }
         },
         "test": {
@@ -1109,6 +1013,31 @@
           "outputs": ["coverage/libs/omgimgflow/photos/shell"],
           "options": {
             "jestConfig": "libs/omgimgflow/photos/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "omgimgflow-photos-feature-manage": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/feature-manage",
+      "sourceRoot": "libs/omgimgflow/photos/feature-manage/src",
+      "prefix": "omgimg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/feature-manage/src/**/*.ts",
+              "libs/omgimgflow/photos/feature-manage/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/feature-manage"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/feature-manage/jest.config.js",
             "passWithNoTests": true
           }
         }

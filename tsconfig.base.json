@@ -16,45 +16,25 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@coderisland/resume-builder/resume/shell-resume": [
-        "libs/resume-builder/resume/shell-resume/src/index.ts"
-      ],
+      "@coderisland/resume-builder/resume/shell-resume": ["libs/resume-builder/resume/shell-resume/src/index.ts"],
       "@coderisland/resume-builder/resume/feature-resume-list": [
         "libs/resume-builder/resume/feature-resume-list/src/index.ts"
       ],
       "@coderisland/resume-builder/resume/feature-resume-details": [
         "libs/resume-builder/resume/feature-resume-details/src/index.ts"
       ],
-      "@coderisland/resume-builder/domain/interfaces": [
-        "libs/resume-builder/domain/interfaces/src/index.ts"
-      ],
-      "@coderisland/resume-builder/resume/data-access": [
-        "libs/resume-builder/resume/data-access/src/index.ts"
-      ],
-      "@coderisland/shared/directives/content-host": [
-        "libs/shared/directives/content-host/src/index.ts"
-      ],
-      "@coderisland/ui-kit/slide-in/components": [
-        "libs/ui-kit/slide-in/components/src/index.ts"
-      ],
-      "@coderisland/ui-kit/slide-in/state": [
-        "libs/ui-kit/slide-in/state/src/index.ts"
-      ],
-      "@coderisland/ui-kit/slide-in/service": [
-        "libs/ui-kit/slide-in/service/src/index.ts"
-      ],
-      "@coderisland/resume-builder/utils-interface": [
-        "libs/resume-builder/utils-interface/src/index.ts"
-      ],
-      "@coderisland/ui-kit/forms/text-input": [
-        "libs/ui-kit/forms/text-input/src/index.ts"
-      ],
+      "@coderisland/resume-builder/domain/interfaces": ["libs/resume-builder/domain/interfaces/src/index.ts"],
+      "@coderisland/resume-builder/resume/data-access": ["libs/resume-builder/resume/data-access/src/index.ts"],
+      "@coderisland/shared/directives/content-host": ["libs/shared/directives/content-host/src/index.ts"],
+      "@coderisland/ui-kit/slide-in/components": ["libs/ui-kit/slide-in/components/src/index.ts"],
+      "@coderisland/ui-kit/slide-in/state": ["libs/ui-kit/slide-in/state/src/index.ts"],
+      "@coderisland/ui-kit/slide-in/service": ["libs/ui-kit/slide-in/service/src/index.ts"],
+      "@coderisland/resume-builder/utils-interface": ["libs/resume-builder/utils-interface/src/index.ts"],
+      "@coderisland/ui-kit/forms/text-input": ["libs/ui-kit/forms/text-input/src/index.ts"],
       "@coderisland/resume-builder/resume/feature-resume-work-experience": [
         "libs/resume-builder/resume/feature-resume-work-experience/src/index.ts"
       ],
-      "@coderisland/ui-kit/forms/textarea": [
-        "libs/ui-kit/forms/textarea/src/index.ts"
-      ],
+      "@coderisland/ui-kit/forms/textarea": ["libs/ui-kit/forms/textarea/src/index.ts"],
       "@coderisland/resume-builder/resume/feature-resume-education": [
         "libs/resume-builder/resume/feature-resume-education/src/index.ts"
       ],
@@ -67,9 +47,7 @@
       "@coderisland/resume-builder/resume/feature-resume-languages": [
         "libs/resume-builder/resume/feature-resume-languages/src/index.ts"
       ],
-      "@coderisland/ui-kit/forms/select": [
-        "libs/ui-kit/forms/select/src/index.ts"
-      ],
+      "@coderisland/ui-kit/forms/select": ["libs/ui-kit/forms/select/src/index.ts"],
       "@coderisland/resume-builder/resume/feature-resume-references": [
         "libs/resume-builder/resume/feature-resume-references/src/index.ts"
       ],
@@ -79,15 +57,10 @@
       "@coderisland/resume-builder/resume/feature-resume-preview": [
         "libs/resume-builder/resume/feature-resume-preview/src/index.ts"
       ],
-      "@coderisland/ui-kit/page-loader/services": [
-        "libs/ui-kit/page-loader/services/src/index.ts"
-      ],
-      "@coderisland/ui-kit/page-loader/components": [
-        "libs/ui-kit/page-loader/components/src/index.ts"
-      ],
-      "@coderisland/omgimgflow/photos/shell": [
-        "libs/omgimgflow/photos/shell/src/index.ts"
-      ]
+      "@coderisland/ui-kit/page-loader/services": ["libs/ui-kit/page-loader/services/src/index.ts"],
+      "@coderisland/ui-kit/page-loader/components": ["libs/ui-kit/page-loader/components/src/index.ts"],
+      "@coderisland/omgimgflow/photos/shell": ["libs/omgimgflow/photos/shell/src/index.ts"],
+      "@coderisland/omgimgflow/photos/feature-manage": ["libs/omgimgflow/photos/feature-manage/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
