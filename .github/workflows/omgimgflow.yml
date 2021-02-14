@@ -11,7 +11,7 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'Random word for kicks'
         # Default value if no value is explicitly provided
-        default: 'Mango'
+        default: 'Chocolate'
         # Input has to be provided for the workflow to run
         required: true
 
@@ -31,12 +31,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install --frozen-lockfile
-    - run: yarn run nx run-many --target=build --projects=omgimgflow --with-deps --prod --parallel
+    - run: yarn run build:omgimgflow
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.0
       with:
         name: omgimgflow-artifact
-        path: dist/apps/omgimgflow
+        path: dist
         retention-days: 1
 
   release_app:
