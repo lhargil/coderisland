@@ -13,8 +13,8 @@ module.exports = (isProd) => ({
     content: [
       './apps/?(omgimgflow)/**/*.html',
       './apps/?(omgimgflow)/**/*.ts',
-      './libs/+(omgimgflow,shared)/**/*.html',
-      './libs/+(omgimgflow,shared)/**/*.ts',
+      './libs/+({omgimgflow,shared})/**/*.html',
+      './libs/+({omgimgflow,shared})/**/*.ts',
     ],
   },
   darkMode: false, // or 'media' or 'class'
