@@ -6,6 +6,7 @@ import { ShellListComponent } from './shell-list.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ListFacade, OmgimgflowPhotosDomainModule } from '@coderisland/omgimgflow/photos/domain';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ShellListComponent', () => {
   let component: ShellListComponent;
@@ -13,7 +14,7 @@ describe('ShellListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, HttpClientModule],
+      imports: [RouterTestingModule, HttpClientModule, ReactiveFormsModule],
       declarations: [ ShellListComponent, ListComponent ],
       providers: [ListFacade]
     })
