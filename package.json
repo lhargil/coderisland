@@ -30,7 +30,10 @@
     "build:all": "nx run-many --target=build --projects=resume-builder,resume-builder-api --with-deps --prod --parallel",
     "start:flow:hot": "nx serve omgimgflow --hmr -o --port 4800",
     "build:omgimgflow": "nx run-many --target=build --projects=omgimgflow --with-deps --prod --parallel",
-    "e2e:omgimgflow": "nx e2e omgimgflow-e2e --watch"
+    "e2e:omgimgflow": "nx e2e omgimgflow-e2e --watch",
+    "unit:omgimgflow": "nx test omgimgflow",
+    "format:check:omgimgflow": "nx format:check --projects=omgimgflow,omgimgflow-photos-shell",
+    "format:write:omgimgflow": "nx format:write --projects=omgimgflow,omgimgflow-photos-shell"
   },
   "private": true,
   "dependencies": {
