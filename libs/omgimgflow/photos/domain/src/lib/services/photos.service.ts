@@ -17,4 +17,19 @@ export class PhotosService {
   getPhoto(id: string): Observable<Photo> {
     return this.httpClient.get<Photo>(`${this.apiUrl}/${id}`)
   }
+
+  updatePhoto(id: string, photoEdit: Photo) {
+    const formData = new FormData();
+    formData.append('title', photoEdit.title);
+    formData.append('description', photoEdit.description);
+    if (photoEdit.photoBlob != null) {
+      formData.append('photo', photoEdit.photoBlob);
+    }
+    photoEdit.tags.forEach((tag: string) => formData.append('tags[]', tag));
+    return this.httpClient
+      .put(`/api/photos/${id}`, formData, {
+        reportProgress: true,
+        observe: 'events',
+      });
+  }
 }

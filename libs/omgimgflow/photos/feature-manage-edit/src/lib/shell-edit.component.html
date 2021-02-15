@@ -1,1 +1,6 @@
-{{editFacade.photo$ | async | json}}
+<omgimg-edit-form
+  [photo]="editFacade.photo$ | async"
+  (photoUpdateSubmitted)="handlePhotoUpdateSubmit($event)"
+  (photoUploaded)="handlePhotoUpload($event)"
+  (cancelClicked)="handleCancelClick()"
+></omgimg-edit-form>

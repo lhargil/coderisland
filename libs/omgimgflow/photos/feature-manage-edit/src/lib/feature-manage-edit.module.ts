@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ShellEditComponent } from './shell-edit.component';
+import { EditFormComponent } from './edit-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -11,7 +13,8 @@ import { ShellEditComponent } from './shell-edit.component';
         path: '', pathMatch: 'full', component: ShellEditComponent
       }
     ]),
+    ReactiveFormsModule
   ],
-  declarations: [ShellEditComponent],
+  declarations: [ShellEditComponent, EditFormComponent],
 })
 export class FeatureManageEditModule {}
