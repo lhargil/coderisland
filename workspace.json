@@ -1104,6 +1104,31 @@
           }
         }
       }
+    },
+    "omgimgflow-photos-feature-manage-edit": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/feature-manage-edit",
+      "sourceRoot": "libs/omgimgflow/photos/feature-manage-edit/src",
+      "prefix": "omgimg",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/feature-manage-edit/src/**/*.ts",
+              "libs/omgimgflow/photos/feature-manage-edit/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/feature-manage-edit"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/feature-manage-edit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

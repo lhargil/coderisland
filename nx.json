@@ -47,6 +47,7 @@
     "omgimgflow-photos-shell": { "tags": ["scope:omgimgflow", "type:feature"] },
     "omgimgflow-photos-feature-manage": { "tags": ["scope:omgimgflow", "type:feature"] },
     "omgimgflow-photos-feature-manage-list": { "tags": ["scope:omgimgflow", "type:feature"] },
-    "omgimgflow-photos-domain": { "tags": ["scope:omgimgflow", "type:domain"] }
+    "omgimgflow-photos-domain": { "tags": ["scope:omgimgflow", "type:domain"] },
+    "omgimgflow-photos-feature-manage-edit": { "tags": ["scope:omgimgflow", "type:feature"] }
   }
 }

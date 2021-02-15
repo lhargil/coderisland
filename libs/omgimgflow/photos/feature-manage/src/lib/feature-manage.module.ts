@@ -14,12 +14,19 @@ import { ShellComponent } from './shell.component';
           {
             path: '',
             pathMatch: 'full',
-            redirectTo: 'list'
+            redirectTo: 'list',
           },
           {
             path: 'list',
             loadChildren: () =>
-              import('@coderisland/omgimgflow/photos/feature-manage-list').then((module) => module.FeatureManageListModule),
+              import('@coderisland/omgimgflow/photos/feature-manage-list').then(
+                (module) => module.FeatureManageListModule,
+              ),
+          },
+          {
+            path: ':id/edit',
+            loadChildren: () =>
+              import('@coderisland/omgimgflow/photos/feature-manage-edit').then((module) => module.FeatureManageEditModule),
           },
         ],
       },
