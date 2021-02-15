@@ -13,4 +13,8 @@ export class PhotosService {
   getPhotos(): Observable<Photo[]> {
     return this.httpClient.get<Photo[]>(this.apiUrl);
   }
+
+  getPhoto(id: string): Observable<Photo> {
+    return this.httpClient.get<Photo>(`${this.apiUrl}/${id}`)
+  }
 }
