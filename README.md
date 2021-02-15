@@ -1,3 +1,5 @@
+![OmgImgFlow CI](https://github.com/lhargil/coderisland/workflows/OmgImgFlow%20CI/badge.svg?branch=feature%2Fredo-omgimgflow-libs)
+
 # Coderisland
 
 This is a monorepo that contains several javascript apps that I have created to implement and experiment on ideas.
