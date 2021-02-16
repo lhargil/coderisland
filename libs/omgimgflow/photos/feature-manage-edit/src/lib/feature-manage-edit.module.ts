@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ShellEditComponent } from './shell-edit.component';
-import { EditFormComponent } from './edit-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UiEditFormModule } from '@coderisland/omgimgflow/photos/shared/ui-edit-form'
 
 @NgModule({
   imports: [
@@ -13,8 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
         path: '', pathMatch: 'full', component: ShellEditComponent
       }
     ]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UiEditFormModule
   ],
-  declarations: [ShellEditComponent, EditFormComponent],
+  declarations: [ShellEditComponent],
 })
 export class FeatureManageEditModule {}

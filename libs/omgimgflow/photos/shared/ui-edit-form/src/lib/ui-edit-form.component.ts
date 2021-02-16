@@ -1,10 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Photo } from '@coderisland/omgimgflow/photos/domain';
 
 @Component({
-  selector: 'omgimg-edit-form',
-  templateUrl: './edit-form.component.html',
+  selector: 'omgimg-ui-edit-form',
+  templateUrl: './ui-edit-form.component.html',
   styles: [
     `
       :host {
@@ -14,7 +14,7 @@ import { Photo } from '@coderisland/omgimgflow/photos/domain';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EditFormComponent implements OnInit {
+export class UiEditFormComponent implements OnInit {
   _photo: Photo | null = null;
   photoForm!: FormGroup;
 
@@ -79,4 +79,5 @@ export class EditFormComponent implements OnInit {
   handleCancelClick() {
     this.cancelClicked.emit();
   }
+
 }

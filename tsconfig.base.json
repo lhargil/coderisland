@@ -66,7 +66,8 @@
       "@coderisland/omgimgflow/photos/feature-manage-edit": ["libs/omgimgflow/photos/feature-manage-edit/src/index.ts"],
       "@coderisland/omgimgflow/photos/feature-manage-create": [
         "libs/omgimgflow/photos/feature-manage-create/src/index.ts"
-      ]
+      ],
+      "@coderisland/omgimgflow/photos/shared/ui-edit-form": ["libs/omgimgflow/photos/shared/ui-edit-form/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

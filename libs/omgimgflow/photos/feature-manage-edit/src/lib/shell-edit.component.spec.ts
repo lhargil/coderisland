@@ -2,9 +2,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
-import { EditFormComponent } from './edit-form.component';
 
 import { ShellEditComponent } from './shell-edit.component';
+
+import { UiEditFormModule } from '@coderisland/omgimgflow/photos/shared/ui-edit-form';
 
 describe('ShellEditComponent', () => {
   let component: ShellEditComponent;
@@ -12,8 +13,8 @@ describe('ShellEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientModule, RouterTestingModule, ReactiveFormsModule],
-      declarations: [ ShellEditComponent, EditFormComponent ]
+      imports: [HttpClientModule, RouterTestingModule, ReactiveFormsModule, UiEditFormModule],
+      declarations: [ ShellEditComponent ]
     })
     .compileComponents();
   });

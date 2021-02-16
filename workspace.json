@@ -1154,6 +1154,43 @@
           }
         }
       }
+    },
+    "omgimgflow-photos-shared-ui-edit-form": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/shared/ui-edit-form",
+      "sourceRoot": "libs/omgimgflow/photos/shared/ui-edit-form/src",
+      "prefix": "omgimg",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/omgimgflow/photos/shared/ui-edit-form/tsconfig.lib.json",
+            "project": "libs/omgimgflow/photos/shared/ui-edit-form/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/omgimgflow/photos/shared/ui-edit-form/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/shared/ui-edit-form/src/**/*.ts",
+              "libs/omgimgflow/photos/shared/ui-edit-form/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/shared/ui-edit-form"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/shared/ui-edit-form/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
