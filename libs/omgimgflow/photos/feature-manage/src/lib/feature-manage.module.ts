@@ -26,7 +26,16 @@ import { ShellComponent } from './shell.component';
           {
             path: ':id/edit',
             loadChildren: () =>
-              import('@coderisland/omgimgflow/photos/feature-manage-edit').then((module) => module.FeatureManageEditModule),
+              import('@coderisland/omgimgflow/photos/feature-manage-edit').then(
+                (module) => module.FeatureManageEditModule,
+              ),
+          },
+          {
+            path: 'create',
+            loadChildren: () =>
+              import('@coderisland/omgimgflow/photos/feature-manage-create').then(
+                (module) => module.FeatureManageCreateModule,
+              ),
           },
         ],
       },
