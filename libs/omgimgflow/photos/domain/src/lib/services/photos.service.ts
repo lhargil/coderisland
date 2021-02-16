@@ -32,4 +32,19 @@ export class PhotosService {
         observe: 'events',
       });
   }
+
+  createPhoto(photoEdit: Photo) {
+  const formData = new FormData();
+    formData.append('title', photoEdit.title);
+    formData.append('description', photoEdit.description);
+    if (photoEdit.photoBlob != null) {
+      formData.append('photo', photoEdit.photoBlob);
+    }
+    photoEdit.tags.forEach((tag: string) => formData.append('tags[]', tag));
+    return this.httpClient
+      .post(`/api/photos`, formData, {
+        reportProgress: true,
+        observe: 'events',
+      });
+  }
 }

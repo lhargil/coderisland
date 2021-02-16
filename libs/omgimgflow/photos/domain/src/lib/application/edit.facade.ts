@@ -45,6 +45,9 @@ export class EditFacade implements OnDestroy {
     routeParam$
       .pipe(
         switchMap((id: string) => {
+          if ('' === id) {
+            return of({...initialPhotoState});
+          }
           return this.photosService
             .getPhoto(id)
             .pipe(map((photo: Photo) => ({ ...photo, filename: `/omgimages/${photo.filename}` })));
@@ -61,6 +64,36 @@ export class EditFacade implements OnDestroy {
         uploadedFile,
       }),
     );
+  }
+
+  submitCreatedPhoto(photo: Photo) {
+    const editState = this.editState;
+
+    this.photosService
+      .createPhoto({
+        ...photo,
+        photoBlob: editState.uploadedFile
+      })
+      .pipe(
+        takeUntil(this.destroy$),
+        map((result: any) => result),
+      ).subscribe((event: HttpEvent<any>) => {
+        switch (event.type) {
+          case HttpEventType.Sent:
+            console.log('Request has been made!');
+            break;
+          case HttpEventType.ResponseHeader:
+            console.log('Response header has been received!');
+            break;
+          case HttpEventType.UploadProgress:
+            // const progress = Math.round((event.loaded / event.total!) * 100);
+            // console.log(`Uploaded! ${progress}%`);
+            break;
+          case HttpEventType.Response:
+            console.log('Created!', event);
+            this.loadPhoto(of(editState.photo.id));
+        }
+      });
   }
 
   submitPhotoUpdate(photo: Photo) {
