@@ -15,14 +15,14 @@ import { ImageFlowSettings } from '@coderisland/omgimgflow/photos/domain';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConfigureFormComponent implements OnInit {
-  configureForm!: FormGroup | null;
+  configureForm: FormGroup;
 
   private _imageFlowSettings: ImageFlowSettings | null = null;
 
   @Input()
-  set imageFlowSettings(value: ImageFlowSettings) {
+  set imageFlowSettings(value: ImageFlowSettings | null) {
     this._imageFlowSettings = value;
-    this.configureForm!.patchValue(value, {emitEvent: false});
+    this.configureForm!.patchValue(value!, {emitEvent: false});
   }
 
   @Input()
