@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ShellConfigureComponent } from './shell-configure.component';
 import { ConfigureFormComponent } from './configure-form.component';
 import { ConfigurePreviewComponent } from './configure-preview.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -11,6 +12,8 @@ import { ConfigurePreviewComponent } from './configure-preview.component';
     RouterModule.forChild([
       {path: '', pathMatch: 'full', component: ShellConfigureComponent}
     ]),
+    ReactiveFormsModule,
+
   ],
   declarations: [ShellConfigureComponent, ConfigureFormComponent, ConfigurePreviewComponent],
 })
