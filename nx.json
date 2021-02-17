@@ -50,6 +50,7 @@
     "omgimgflow-photos-domain": { "tags": ["scope:omgimgflow", "type:domain"] },
     "omgimgflow-photos-feature-manage-edit": { "tags": ["scope:omgimgflow", "type:feature"] },
     "omgimgflow-photos-feature-manage-create": { "tags": ["scope:omgimgflow", "type:feature"] },
-    "omgimgflow-photos-shared-ui-edit-form": { "tags": ["scope:omgimgflow", "type:ui"] }
+    "omgimgflow-photos-shared-ui-edit-form": { "tags": ["scope:omgimgflow", "type:ui"] },
+    "omgimgflow-photos-feature-configure": { "tags": ["scope:omgimgflow", "type:feature"] }
   }
 }

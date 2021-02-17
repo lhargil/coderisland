@@ -37,6 +37,11 @@ import { ShellComponent } from './shell.component';
                 (module) => module.FeatureManageCreateModule,
               ),
           },
+          {
+            path: ':id/configure',
+            loadChildren: () =>
+              import('@coderisland/omgimgflow/photos/feature-configure').then((module) => module.FeatureConfigureModule),
+          },
         ],
       },
     ]),

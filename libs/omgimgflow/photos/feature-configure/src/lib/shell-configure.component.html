@@ -1,0 +1,45 @@
+<div class="min-h-screen bg-gray-100">
+  <div class="py-5">
+    <div
+      class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3"
+    >
+      <div class="space-y-6 lg:col-start-2 lg:col-span-2">
+        <section aria-labelledby="applicant-information-title">
+          <div class="bg-white shadow sm:rounded-lg">
+            <div class="px-4 py-5 sm:px-6">
+              <h2
+                id="applicant-information-title"
+                class="text-lg leading-6 font-medium text-gray-900"
+              >
+                Image preview
+              </h2>
+              <p class="mt-1 max-w-2xl text-sm text-gray-500"></p>
+            </div>
+            <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
+              <omgimg-configure-preview></omgimg-configure-preview>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section
+        aria-labelledby="timeline-title"
+        class="lg:col-start-1 lg:col-span-1"
+      >
+        <div class="bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6">
+          <h2 id="timeline-title" class="text-lg font-medium text-gray-900">
+            Settings
+          </h2>
+
+          <div class="mt-6 flow-root">
+            <div class="relative pb-8">
+              <div class="space-x-3">
+                <omgimg-configure-form></omgimg-configure-form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
