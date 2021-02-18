@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ConfigurePreviewComponent } from './configure-preview.component';
 
@@ -8,6 +9,7 @@ describe('ConfigurePreviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule],
       declarations: [ ConfigurePreviewComponent ]
     })
     .compileComponents();
