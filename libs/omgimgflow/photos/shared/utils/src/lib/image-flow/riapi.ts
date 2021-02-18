@@ -1,6 +1,4 @@
-import { ImageFlowSettings } from '../models';
-
-export function toRiapiQueryString(imageFlowSettings: ImageFlowSettings) {
+export function toRiapiQueryString(imageFlowSettings: {[key: string]: any}) {
   const settings = Object.entries(imageFlowSettings);
 
   const riapiSettings = new Map<string, string>();
@@ -12,7 +10,7 @@ export function toRiapiQueryString(imageFlowSettings: ImageFlowSettings) {
 
   const riapiQueryString = settings.reduce((acc, curr, currIndex, sourceArray) => {
     let queryString;
-    if ('' === curr[1]) {
+    if (!Boolean(curr[1])) {
       queryString = '';
     } else {
       queryString = `${riapiSettings.get(curr[0])}=${curr[1]}&`;
