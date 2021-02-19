@@ -1216,43 +1216,6 @@
           }
         }
       }
-    },
-    "omgimgflow-photos-shared-utils": {
-      "projectType": "library",
-      "root": "libs/omgimgflow/photos/shared/utils",
-      "sourceRoot": "libs/omgimgflow/photos/shared/utils/src",
-      "prefix": "omgimg",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/omgimgflow/photos/shared/utils/tsconfig.lib.json",
-            "project": "libs/omgimgflow/photos/shared/utils/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/omgimgflow/photos/shared/utils/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/omgimgflow/photos/shared/utils/src/**/*.ts",
-              "libs/omgimgflow/photos/shared/utils/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/omgimgflow/photos/shared/utils"],
-          "options": {
-            "jestConfig": "libs/omgimgflow/photos/shared/utils/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
     }
   },
   "cli": {

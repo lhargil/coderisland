@@ -34,6 +34,5 @@ module.exports = {
     '<rootDir>/libs/omgimgflow/photos/feature-manage-create',
     '<rootDir>/libs/omgimgflow/photos/shared/ui-edit-form',
     '<rootDir>/libs/omgimgflow/photos/feature-configure',
-    '<rootDir>/libs/omgimgflow/photos/shared/utils',
   ],
 };
