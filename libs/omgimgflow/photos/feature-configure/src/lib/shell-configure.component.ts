@@ -3,7 +3,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ConfigureFacade, ImageFlowSettings, ImageTransformModes, ImageTransformScales } from '@coderisland/omgimgflow/photos/domain';
 import { map } from 'rxjs/operators';
 import { ConfigureFormComponent } from './configure-form.component';
-import { Clipboard } from "@angular/cdk/clipboard"
+import { ClipboardWrapperService } from '@coderisland/omgimgflow/photos/shared/utils/clipboard-wrapper';
 
 @Component({
   selector: 'omgimg-shell-configure',
@@ -21,7 +21,7 @@ export class ShellConfigureComponent implements OnInit {
 
   imageTransformModes = Object.values(ImageTransformModes)
   imageTransformScales = Object.values(ImageTransformScales)
-  constructor(public readonly configureFacade: ConfigureFacade, private readonly activatedRoute: ActivatedRoute, private readonly clipBoard: Clipboard) { }
+  constructor(public readonly configureFacade: ConfigureFacade, private readonly activatedRoute: ActivatedRoute, private readonly clipboardWrapperService: ClipboardWrapperService) { }
 
   ngOnInit(): void {
     this.configureFacade.loadPhotoPreview(this.activatedRoute.paramMap.pipe(map((paramMap: ParamMap) => paramMap.get('id') || '')));
@@ -32,6 +32,6 @@ export class ShellConfigureComponent implements OnInit {
   }
 
   handleCopyClick(imageUrl: string) {
-    this.clipBoard.copy(imageUrl);
+    this.clipboardWrapperService.copyOmgImageUrl(imageUrl);
   }
 }

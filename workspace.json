@@ -1253,6 +1253,43 @@
           }
         }
       }
+    },
+    "omgimgflow-photos-shared-utils-clipboard-wrapper": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/shared/utils/clipboard-wrapper",
+      "sourceRoot": "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/src",
+      "prefix": "omgimg",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/tsconfig.lib.json",
+            "project": "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/src/**/*.ts",
+              "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/shared/utils/clipboard-wrapper"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
