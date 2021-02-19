@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  omgImageApiBaseUrl: 'https://localhost:5001'
 };
 
 /*

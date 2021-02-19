@@ -72,7 +72,8 @@
       "@coderisland/omgimgflow/photos/shared/utils/riapi": ["libs/omgimgflow/photos/shared/utils/riapi/src/index.ts"],
       "@coderisland/omgimgflow/photos/shared/utils/clipboard-wrapper": [
         "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/src/index.ts"
-      ]
+      ],
+      "@coderisland/omgimgflow/photos/shared/environments": ["libs/omgimgflow/photos/shared/environments/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

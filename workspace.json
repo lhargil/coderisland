@@ -907,8 +907,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/omgimgflow/src/environments/environment.ts",
-                  "with": "apps/omgimgflow/src/environments/environment.prod.ts"
+                  "replace": "libs/omgimgflow/photos/shared/environments/src/lib/environment.ts",
+                  "with": "libs/omgimgflow/photos/shared/environments/src/lib/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -1286,6 +1286,43 @@
           "outputs": ["coverage/libs/omgimgflow/photos/shared/utils/clipboard-wrapper"],
           "options": {
             "jestConfig": "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "omgimgflow-photos-shared-environments": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/shared/environments",
+      "sourceRoot": "libs/omgimgflow/photos/shared/environments/src",
+      "prefix": "omgimg",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/omgimgflow/photos/shared/environments/tsconfig.lib.json",
+            "project": "libs/omgimgflow/photos/shared/environments/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/omgimgflow/photos/shared/environments/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/shared/environments/src/**/*.ts",
+              "libs/omgimgflow/photos/shared/environments/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/shared/environments"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/shared/environments/jest.config.js",
             "passWithNoTests": true
           }
         }
