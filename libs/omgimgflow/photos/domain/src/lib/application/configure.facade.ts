@@ -13,7 +13,7 @@ import {
 } from 'rxjs/operators';
 import { ImageFlowSettings, ImageTransformModes, ImageTransformScales, Photo } from '../models';
 import { PhotosService } from '../services';
-import { toRiapiQueryString } from '@coderisland/omgimgflow/photos/shared/utils';
+import { toRiapiQueryString } from '@coderisland/omgimgflow/photos/shared/utils/riapi';
 
 interface PhotoPreview {
   filename: string;

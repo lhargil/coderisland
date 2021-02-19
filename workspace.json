@@ -1216,6 +1216,43 @@
           }
         }
       }
+    },
+    "omgimgflow-photos-shared-utils-riapi": {
+      "projectType": "library",
+      "root": "libs/omgimgflow/photos/shared/utils/riapi",
+      "sourceRoot": "libs/omgimgflow/photos/shared/utils/riapi/src",
+      "prefix": "omgimg",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/omgimgflow/photos/shared/utils/riapi/tsconfig.lib.json",
+            "project": "libs/omgimgflow/photos/shared/utils/riapi/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/omgimgflow/photos/shared/utils/riapi/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/omgimgflow/photos/shared/utils/riapi/src/**/*.ts",
+              "libs/omgimgflow/photos/shared/utils/riapi/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/omgimgflow/photos/shared/utils/riapi"],
+          "options": {
+            "jestConfig": "libs/omgimgflow/photos/shared/utils/riapi/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
