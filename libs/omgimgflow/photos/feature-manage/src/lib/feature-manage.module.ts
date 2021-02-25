@@ -1,33 +1,51 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ShellListComponent } from './list/shell-list.component';
-import { ListComponent } from './list/list.component';
-import { ShellEditComponent } from './edit/shell-edit.component';
-import { EditComponent } from './edit/edit.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ShellCreateComponent } from './edit/shell-create.component';
+import { ShellComponent } from './shell.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     RouterModule.forChild([
       {
         path: '',
-        pathMatch: 'full',
-        component: ShellListComponent,
+        component: ShellComponent,
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'list',
+          },
+          {
+            path: 'list',
+            loadChildren: () =>
+              import('@coderisland/omgimgflow/photos/feature-manage-list').then(
+                (module) => module.FeatureManageListModule,
+              ),
+          },
+          {
+            path: ':id/edit',
+            loadChildren: () =>
+              import('@coderisland/omgimgflow/photos/feature-manage-edit').then(
+                (module) => module.FeatureManageEditModule,
+              ),
+          },
+          {
+            path: 'create',
+            loadChildren: () =>
+              import('@coderisland/omgimgflow/photos/feature-manage-create').then(
+                (module) => module.FeatureManageCreateModule,
+              ),
+          },
+          {
+            path: ':id/configure',
+            loadChildren: () =>
+              import('@coderisland/omgimgflow/photos/feature-configure').then((module) => module.FeatureConfigureModule),
+          },
+        ],
       },
-      {
-        path: ':id/edit',
-        component: ShellEditComponent
-      },
-      {
-        path: 'create',
-        component: ShellCreateComponent
-      }
     ]),
   ],
-  declarations: [ShellListComponent, ListComponent, ShellEditComponent, EditComponent, ShellCreateComponent],
+  declarations: [ShellComponent],
 })
 export class FeatureManageModule {}

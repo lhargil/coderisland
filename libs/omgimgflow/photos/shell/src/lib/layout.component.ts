@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'coderisland-layout',
+  selector: 'omgimg',
   templateUrl: './layout.component.html',
   styles: [
+    `
+      :host {
+        display: block;
+      }
+    `
   ]
 })
 export class LayoutComponent implements OnInit {
-  title = 'omgimgflow';
+  title = 'Welcome to omgimgflow!';
   links = [
     {
       path: 'home',

@@ -20,17 +20,15 @@ import { LayoutComponent } from './layout.component';
             {
               path: 'photos',
               loadChildren: () =>
-                import('@coderisland/omgimgflow/photos/feature-manage').then(
-                  (module) => module.FeatureManageModule
-                ),
+                import('@coderisland/omgimgflow/photos/feature-manage').then((module) => module.FeatureManageModule),
             },
           ],
         },
       ],
-      { initialNavigation: 'enabled' }
+      { initialNavigation: 'enabled' },
     ),
   ],
-  declarations: [LayoutComponent],
   exports: [RouterModule],
+  declarations: [LayoutComponent],
 })
 export class OmgimgflowPhotosShellModule {}

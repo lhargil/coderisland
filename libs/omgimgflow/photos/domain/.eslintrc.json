@@ -4,13 +4,8 @@
   "overrides": [
     {
       "files": ["*.ts"],
-      "extends": [
-        "plugin:@nrwl/nx/angular",
-        "plugin:@angular-eslint/template/process-inline-templates"
-      ],
-      "parserOptions": {
-        "project": ["libs/omgimgflow/photos/domain/tsconfig.*?.json"]
-      },
+      "extends": ["plugin:@nrwl/nx/angular", "plugin:@angular-eslint/template/process-inline-templates"],
+      "parserOptions": { "project": ["libs/omgimgflow/photos/domain/tsconfig.*?.json"] },
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
@@ -22,10 +17,6 @@
         ]
       }
     },
-    {
-      "files": ["*.html"],
-      "extends": ["plugin:@nrwl/nx/angular-template"],
-      "rules": {}
-    }
+    { "files": ["*.html"], "extends": ["plugin:@nrwl/nx/angular-template"], "rules": {} }
   ]
 }

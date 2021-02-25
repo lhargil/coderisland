@@ -1,0 +1,72 @@
+<form [formGroup]="configureForm">
+  <div class="block">
+    <span class="text-gray-700">Image transforms:</span>
+    <div class="mt-2">
+      <div>
+        <label class="inline-flex items-center">
+          <span class="mr-2">Width</span>
+          <input
+            type="range"
+            formControlName="width"
+            class="mt-1 block w-full"
+          />
+        </label>
+      </div>
+    </div>
+    <div class="mt-2">
+      <div>
+        <label class="inline-flex items-center">
+          <span class="mr-2">Height</span>
+          <input
+            type="range"
+            formControlName="height"
+            class="mt-1 block w-full"
+          />
+        </label>
+      </div>
+    </div>
+    <div class="mt-2">
+      <div>
+        <label for="mode" class="inline-flex items-center"
+          >
+            <span class="mr-2">Mode</span>
+            <select
+              id="mode"
+              formControlName="mode"
+              class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+            >
+              <option *ngFor="let tmode of imageTransformModes;" [value]="tmode">{{tmode}}</option>
+            </select>
+          </label
+        >
+      </div>
+    </div>
+    <div class="mt-2">
+      <div>
+        <label for="scale" class="inline-flex items-center"
+          >
+            <span class="mr-2">Scale</span>
+            <select
+              id="scale"
+              formControlName="scale"
+              class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+            >
+              <option *ngFor="let tscale of imageTransformScales;" [value]="tscale">{{tscale}}</option>
+            </select>
+          </label
+        >
+      </div>
+    </div>
+  </div>
+  <div class="block mt-4">
+    <span class="text-gray-700">Image filters:</span>
+    <div class="mt-2">
+      <div>
+        <label class="inline-flex items-center">
+          <input type="checkbox" formControlName="sepia" />
+          <span class="ml-2">Sepia</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</form>

@@ -14,8 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory:
-    '../../../../coverage/libs/omgimgflow/photos/feature-manage',
+  coverageDirectory: '../../../../coverage/libs/omgimgflow/photos/feature-manage',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
