@@ -1510,6 +1510,56 @@
           }
         }
       }
+    },
+    "home-cooked-recipes-data-access": {
+      "projectType": "library",
+      "root": "libs/home-cooked/recipes/data-access",
+      "sourceRoot": "libs/home-cooked/recipes/data-access/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/recipes/data-access/src/**/*.ts",
+              "libs/home-cooked/recipes/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/recipes/data-access"],
+          "options": {
+            "jestConfig": "libs/home-cooked/recipes/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-data-access": {
+      "projectType": "library",
+      "root": "libs/home-cooked/data-access",
+      "sourceRoot": "libs/home-cooked/data-access/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/data-access/src/**/*.ts",
+              "libs/home-cooked/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/data-access"],
+          "options": {
+            "jestConfig": "libs/home-cooked/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
