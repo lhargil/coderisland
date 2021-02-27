@@ -39,5 +39,6 @@ module.exports = {
     '<rootDir>/libs/omgimgflow/photos/shared/environments',
     '<rootDir>/apps/home-cooked',
     '<rootDir>/libs/home-cooked/shell',
+    '<rootDir>/libs/home-cooked/recipes/shell',
   ],
 };

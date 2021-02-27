@@ -4,12 +4,25 @@ import { LayoutComponent } from './layout.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot([
-    {
-      path: '',
-      component: LayoutComponent
-    }
-  ], { initialNavigation: 'enabled' })],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(
+      [
+        {
+          path: '',
+          component: LayoutComponent,
+          children: [
+            {
+              path: 'recipes',
+              loadChildren: () =>
+                import('@coderisland/home-cooked/recipes/shell').then((module) => module.HomeCookedRecipesShellModule),
+            },
+          ],
+        },
+      ],
+      { initialNavigation: 'enabled' },
+    ),
+  ],
   exports: [RouterModule],
   declarations: [LayoutComponent],
 })
