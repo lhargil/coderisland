@@ -14,10 +14,6 @@ import { ShellComponent } from './shell.component';
           {
             path: '',
             pathMatch: 'full',
-            redirectTo: 'list',
-          },
-          {
-            path: 'list',
             loadChildren: () =>
               import('@coderisland/home-cooked/recipes/feature-list').then((module) => module.FeatureListModule),
           },
