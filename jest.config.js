@@ -37,5 +37,11 @@ module.exports = {
     '<rootDir>/libs/omgimgflow/photos/shared/utils/riapi',
     '<rootDir>/libs/omgimgflow/photos/shared/utils/clipboard-wrapper',
     '<rootDir>/libs/omgimgflow/photos/shared/environments',
+    '<rootDir>/apps/home-cooked',
+    '<rootDir>/libs/home-cooked/shell',
+    '<rootDir>/libs/home-cooked/recipes/shell',
+    '<rootDir>/libs/home-cooked/recipes/feature-list',
+    '<rootDir>/libs/home-cooked/recipes/data-access',
+    '<rootDir>/libs/home-cooked/data-access',
   ],
 };

@@ -1,0 +1,85 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: HomeCooked CI
+
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Your favorite Targaryen Queen'
+        # Default value if no value is explicitly provided
+        default: 'Alysanne'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: yarn install --frozen-lockfile
+    - run: yarn run build:home-cooked
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.0
+      with:
+        name: home-cooked-artifact
+        path: dist
+        retention-days: 1
+
+  release_app:
+    name: Release App to VPS
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v2.0.5
+      with:
+        # Artifact name
+        name: home-cooked-artifact
+        # Destination path
+        path: home-cooked
+    - name: Create the directories
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.LHARGILCOM_HOST }}
+        username: ${{ secrets.LHARGILCOM_DEPLOYER }}
+        password: ${{ secrets.LHARGILCOM_DEPLOYERPW }}
+        port: ${{ secrets.LHARGILCOM_PORT }}
+        script_stop: true
+        script: |
+          mkdir -p ${{ secrets.HOMECOOKED_TEMP_DEST}}/client
+          mkdir -p ${{ secrets.HOMECOOKED_DEST}}/client
+    - name: Copy the bits to the temp directory
+      uses: appleboy/scp-action@v0.1.1
+      with:
+        host: ${{ secrets.LHARGILCOM_HOST }}
+        username: ${{ secrets.LHARGILCOM_DEPLOYER }}
+        password: ${{ secrets.LHARGILCOM_DEPLOYERPW }}
+        port: ${{ secrets.LHARGILCOM_PORT }}
+        source: "home-cooked"
+        target: ${{ secrets.HOMECOOKED_TEMP_DEST}}/client
+    - name: Copy from temp directory to app directory
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.LHARGILCOM_HOST }}
+        username: ${{ secrets.LHARGILCOM_DEPLOYER }}
+        password: ${{ secrets.LHARGILCOM_DEPLOYERPW }}
+        port: ${{ secrets.LHARGILCOM_PORT }}
+        script_stop: true
+        script: |
+          rm -rfv ${{ secrets.HOMECOOKED_DEST }}/client/*
+          cp -r -f ${{ secrets.HOMECOOKED_TEMP_DEST}}/client/home-cooked/* ${{ secrets.HOMECOOKED_DEST }}/client
+          rm -rf ${{ secrets.HOMECOOKED_TEMP_DEST}}/client/home-cooked

@@ -33,7 +33,9 @@
     "e2e:omgimgflow": "nx e2e omgimgflow-e2e --watch",
     "unit:omgimgflow": "nx run-many --target=test --projects=omgimgflow --with-deps",
     "format:check:omgimgflow": "nx format:check --projects=omgimgflow,omgimgflow-photos-shell",
-    "format:write:omgimgflow": "nx format:write --projects=omgimgflow,omgimgflow-photos-shell"
+    "format:write:omgimgflow": "nx format:write --projects=omgimgflow,omgimgflow-photos-shell",
+    "start:home-cooked:hot": "nx serve home-cooked --hmr -o --port 4900",
+    "build:home-cooked": "nx run-many --target=build --projects=home-cooked --with-deps --prod --parallel"
   },
   "private": true,
   "dependencies": {
