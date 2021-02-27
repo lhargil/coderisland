@@ -12,7 +12,12 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class LayoutComponent implements OnInit {
-  links = [];
+  links = [
+    {
+      path: 'recipes',
+      label: 'Recipes',
+    },
+  ];
   constructor() { }
 
   ngOnInit(): void {
