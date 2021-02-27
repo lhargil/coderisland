@@ -54,6 +54,8 @@
     "omgimgflow-photos-feature-configure": { "tags": ["scope:omgimgflow", "type:feature"] },
     "omgimgflow-photos-shared-utils-riapi": { "tags": ["scope:omgimgflow-shared", "type:utils"] },
     "omgimgflow-photos-shared-utils-clipboard-wrapper": { "tags": ["scope:omgimgflow-shared", "type:utils"] },
-    "omgimgflow-photos-shared-environments": { "tags": ["scope:omgimgflow-shared", "type:environments"] }
+    "omgimgflow-photos-shared-environments": { "tags": ["scope:omgimgflow-shared", "type:environments"] },
+    "home-cooked": { "tags": ["scope:home-cooked", "type:app"] },
+    "home-cooked-e2e": { "tags": [], "implicitDependencies": ["home-cooked"] }
   }
 }

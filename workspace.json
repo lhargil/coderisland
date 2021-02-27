@@ -1327,6 +1327,117 @@
           }
         }
       }
+    },
+    "home-cooked": {
+      "projectType": "application",
+      "root": "apps/home-cooked",
+      "sourceRoot": "apps/home-cooked/src",
+      "prefix": "hc",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "customWebpackConfig": {
+              "path": "tailwind-configs/home-cooked.webpack.config.js"
+            },
+            "outputPath": "dist/apps/home-cooked",
+            "index": "apps/home-cooked/src/index.html",
+            "main": "apps/home-cooked/src/main.ts",
+            "polyfills": "apps/home-cooked/src/polyfills.ts",
+            "tsConfig": "apps/home-cooked/tsconfig.app.json",
+            "aot": true,
+            "assets": ["apps/home-cooked/src/favicon.ico", "apps/home-cooked/src/assets"],
+            "styles": ["apps/home-cooked/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/home-cooked/src/environments/environment.ts",
+                  "with": "apps/home-cooked/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "browserTarget": "home-cooked:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "home-cooked:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "home-cooked:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/home-cooked/src/**/*.ts", "apps/home-cooked/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/home-cooked"],
+          "options": {
+            "jestConfig": "apps/home-cooked/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-e2e": {
+      "root": "apps\\home-cooked-e2e",
+      "sourceRoot": "apps/home-cooked-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/home-cooked-e2e/cypress.json",
+            "tsConfig": "apps/home-cooked-e2e/tsconfig.e2e.json",
+            "devServerTarget": "home-cooked:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "home-cooked:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps\\home-cooked-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
     }
   },
   "cli": {
