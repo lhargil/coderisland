@@ -17,6 +17,11 @@ import { ShellComponent } from './shell.component';
             loadChildren: () =>
               import('@coderisland/home-cooked/recipes/feature-list').then((module) => module.FeatureListModule),
           },
+          {
+            path: ':id',
+            loadChildren: () =>
+              import('@coderisland/home-cooked/recipes/feature-view').then((module) => module.FeatureViewModule),
+          },
         ],
       },
     ]),

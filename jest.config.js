@@ -43,5 +43,6 @@ module.exports = {
     '<rootDir>/libs/home-cooked/recipes/feature-list',
     '<rootDir>/libs/home-cooked/recipes/data-access',
     '<rootDir>/libs/home-cooked/data-access',
+    '<rootDir>/libs/home-cooked/recipes/feature-view',
   ],
 };
