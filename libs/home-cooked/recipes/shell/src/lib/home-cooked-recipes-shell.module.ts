@@ -9,9 +9,20 @@ import { ShellComponent } from './shell.component';
     RouterModule.forChild([
       {
         path: '',
-        pathMatch: 'full',
-        component: ShellComponent
-      }
+        component: ShellComponent,
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'list',
+          },
+          {
+            path: 'list',
+            loadChildren: () =>
+              import('@coderisland/home-cooked/recipes/feature-list').then((module) => module.FeatureListModule),
+          },
+        ],
+      },
     ]),
   ],
   declarations: [ShellComponent],

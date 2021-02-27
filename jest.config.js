@@ -40,5 +40,6 @@ module.exports = {
     '<rootDir>/apps/home-cooked',
     '<rootDir>/libs/home-cooked/shell',
     '<rootDir>/libs/home-cooked/recipes/shell',
+    '<rootDir>/libs/home-cooked/recipes/feature-list',
   ],
 };

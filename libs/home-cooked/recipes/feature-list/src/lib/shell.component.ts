@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  template: `
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './shell.component.html',
   styles: [
     `
       :host {

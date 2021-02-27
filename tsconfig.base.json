@@ -75,7 +75,8 @@
       ],
       "@coderisland/omgimgflow/photos/shared/environments": ["libs/omgimgflow/photos/shared/environments/src/index.ts"],
       "@coderisland/home-cooked/shell": ["libs/home-cooked/shell/src/index.ts"],
-      "@coderisland/home-cooked/recipes/shell": ["libs/home-cooked/recipes/shell/src/index.ts"]
+      "@coderisland/home-cooked/recipes/shell": ["libs/home-cooked/recipes/shell/src/index.ts"],
+      "@coderisland/home-cooked/recipes/feature-list": ["libs/home-cooked/recipes/feature-list/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
