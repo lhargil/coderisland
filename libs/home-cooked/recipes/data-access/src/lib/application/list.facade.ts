@@ -1,17 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { RecipesService } from '@coderisland/home-cooked/data-access';
-import { BehaviorSubject } from 'rxjs';
-import { map, startWith, tap } from 'rxjs/operators';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { map, startWith, takeUntil, tap } from 'rxjs/operators';
 
 export class ListState {
   recipes: any[] =  [];
 }
 
 @Injectable({providedIn: 'root'})
-export class ListFacade {
+export class ListFacade implements OnDestroy {
   private listState = new ListState();
   private listStateSubject = new BehaviorSubject<ListState>(this.listState);
   private store$ = this.listStateSubject.asObservable();
+
+  private destroySubject = new Subject<void>();
+  private destroy$ = this.destroySubject.asObservable();
 
   recipes$ = this.store$.pipe(
     map((state: any) => state.recipes),
@@ -19,9 +22,15 @@ export class ListFacade {
   );
   constructor(private readonly recipesService: RecipesService) { }
 
+  ngOnDestroy() {
+
+  }
+
   loadRecipes() {
     this.recipesService.getAll()
-      .pipe(tap(console.log))
+      .pipe(
+        takeUntil(this.destroy$)
+      )
       .subscribe((recipes: any[]) => this.listStateSubject.next(
         this.listState = {
           ...this.listState,
