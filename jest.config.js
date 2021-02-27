@@ -38,5 +38,6 @@ module.exports = {
     '<rootDir>/libs/omgimgflow/photos/shared/utils/clipboard-wrapper',
     '<rootDir>/libs/omgimgflow/photos/shared/environments',
     '<rootDir>/apps/home-cooked',
+    '<rootDir>/libs/home-cooked/shell',
   ],
 };

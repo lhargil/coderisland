@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
+import { HomeCookedShellModule } from '@coderisland/home-cooked/shell';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, RouterModule.forRoot([], { initialNavigation: 'enabled' })],
+  imports: [BrowserModule, HomeCookedShellModule],
   providers: [],
   bootstrap: [AppComponent],
 })

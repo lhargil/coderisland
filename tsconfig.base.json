@@ -73,7 +73,8 @@
       "@coderisland/omgimgflow/photos/shared/utils/clipboard-wrapper": [
         "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/src/index.ts"
       ],
-      "@coderisland/omgimgflow/photos/shared/environments": ["libs/omgimgflow/photos/shared/environments/src/index.ts"]
+      "@coderisland/omgimgflow/photos/shared/environments": ["libs/omgimgflow/photos/shared/environments/src/index.ts"],
+      "@coderisland/home-cooked/shell": ["libs/home-cooked/shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
