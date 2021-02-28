@@ -7,10 +7,14 @@ import * as recipes from './data/recipes.json';
   providedIn: 'root'
 })
 export class RecipesService {
-  data: any[] = (recipes as any).default;
+  private data: any[] = (recipes as any).default;
   constructor(private readonly httpClient: HttpClient) { }
 
   getAll(): Observable<any> {
     return of(this.data);
+  }
+
+  getOne(id: number) {
+    return of(this.data.find((_, index) => index == id));
   }
 }

@@ -79,7 +79,8 @@
       "@coderisland/home-cooked/recipes/shell": ["libs/home-cooked/recipes/shell/src/index.ts"],
       "@coderisland/home-cooked/recipes/feature-list": ["libs/home-cooked/recipes/feature-list/src/index.ts"],
       "@coderisland/home-cooked/recipes/data-access": ["libs/home-cooked/recipes/data-access/src/index.ts"],
-      "@coderisland/home-cooked/data-access": ["libs/home-cooked/data-access/src/index.ts"]
+      "@coderisland/home-cooked/data-access": ["libs/home-cooked/data-access/src/index.ts"],
+      "@coderisland/home-cooked/recipes/feature-view": ["libs/home-cooked/recipes/feature-view/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

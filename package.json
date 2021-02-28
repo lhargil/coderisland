@@ -35,7 +35,8 @@
     "format:check:omgimgflow": "nx format:check --projects=omgimgflow,omgimgflow-photos-shell",
     "format:write:omgimgflow": "nx format:write --projects=omgimgflow,omgimgflow-photos-shell",
     "start:home-cooked:hot": "nx serve home-cooked --hmr -o --port 4900",
-    "build:home-cooked": "nx run-many --target=build --projects=home-cooked --with-deps --prod --parallel"
+    "build:home-cooked": "nx run-many --target=build --projects=home-cooked --with-deps --prod --parallel",
+    "unit:home-cooked": "nx run-many --target=test --projects=home-cooked --with-deps"
   },
   "private": true,
   "dependencies": {

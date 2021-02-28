@@ -1560,6 +1560,31 @@
           }
         }
       }
+    },
+    "home-cooked-recipes-feature-view": {
+      "projectType": "library",
+      "root": "libs/home-cooked/recipes/feature-view",
+      "sourceRoot": "libs/home-cooked/recipes/feature-view/src",
+      "prefix": "hc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/recipes/feature-view/src/**/*.ts",
+              "libs/home-cooked/recipes/feature-view/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/recipes/feature-view"],
+          "options": {
+            "jestConfig": "libs/home-cooked/recipes/feature-view/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
