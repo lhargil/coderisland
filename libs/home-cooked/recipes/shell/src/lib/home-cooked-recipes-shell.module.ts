@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ShellComponent } from './shell.component';
+import { HomeCookedRecipesDataAccessModule } from '@coderisland/home-cooked/recipes/data-access';
+import { HomeCookedSharedDataAccessModule } from '@coderisland/home-cooked/shared/data-access';
 
 @NgModule({
   imports: [
@@ -25,6 +27,8 @@ import { ShellComponent } from './shell.component';
         ],
       },
     ]),
+    HomeCookedSharedDataAccessModule,
+    HomeCookedRecipesDataAccessModule
   ],
   declarations: [ShellComponent],
 })

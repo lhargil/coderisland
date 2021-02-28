@@ -23,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
         },
       ],
       { initialNavigation: 'enabled' },
-    ),
+    )
   ],
   exports: [RouterModule],
   declarations: [LayoutComponent],
