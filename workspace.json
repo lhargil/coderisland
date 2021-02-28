@@ -1354,8 +1354,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/home-cooked/src/environments/environment.ts",
-                  "with": "apps/home-cooked/src/environments/environment.prod.ts"
+                  "replace": "libs/home-cooked/shared/environments/src/lib/environment.ts",
+                  "with": "libs/home-cooked/shared/environments/src/lib/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -1581,6 +1581,31 @@
           "outputs": ["coverage/libs/home-cooked/shared/data-access"],
           "options": {
             "jestConfig": "libs/home-cooked/shared/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-shared-environments": {
+      "projectType": "library",
+      "root": "libs/home-cooked/shared/environments",
+      "sourceRoot": "libs/home-cooked/shared/environments/src",
+      "prefix": "hc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/shared/environments/src/**/*.ts",
+              "libs/home-cooked/shared/environments/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/shared/environments"],
+          "options": {
+            "jestConfig": "libs/home-cooked/shared/environments/jest.config.js",
             "passWithNoTests": true
           }
         }

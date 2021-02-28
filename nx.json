@@ -1,14 +1,9 @@
 {
   "npmScope": "coderisland",
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     "nx.json": "*",
@@ -17,156 +12,57 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "resume-builder": {
-      "tags": ["scope:resume-builder", "type:app"],
-      "implicitDependencies": ["resume-builder-api"]
-    },
-    "resume-builder-e2e": {
-      "tags": [],
-      "implicitDependencies": ["resume-builder"]
-    },
-    "resume-builder-api": {
-      "tags": ["scope:api", "type:app"]
-    },
-    "resume-builder-resume-shell-resume": {
-      "tags": ["scope:resume", "type:feature"]
-    },
-    "resume-builder-resume-feature-resume-list": {
-      "tags": []
-    },
-    "resume-builder-resume-feature-resume-details": {
-      "tags": ["scope:resume", "type:feature"]
-    },
-    "resume-builder-domain-interfaces": {
-      "tags": ["scope:resume-builder", "type:domain"]
-    },
-    "resume-builder-resume-data-access": {
-      "tags": ["scope:resume-builder", "type:data-access"]
-    },
-    "shared-directives-content-host": {
-      "tags": ["scope:shared", "type:ui"]
-    },
-    "ui-kit-slide-in-components": {
-      "tags": ["scope:shared", "type:ui"]
-    },
-    "ui-kit-slide-in-state": {
-      "tags": ["scope:ui-kit", "type:ui"]
-    },
-    "ui-kit-slide-in-service": {
-      "tags": ["scope:ui-kit", "type:service"]
-    },
-    "resume-builder-utils-interface": {
-      "tags": ["scope:resume-builder", "type:utils"]
-    },
-    "ui-kit-forms-text-input": {
-      "tags": ["scope:ui-kit", "type:ui"]
-    },
-    "resume-builder-resume-feature-resume-work-experience": {
-      "tags": ["scope:resume", "type:feature"]
-    },
-    "ui-kit-forms-textarea": {
-      "tags": ["scope:ui-kit", "type:ui"]
-    },
-    "resume-builder-resume-feature-resume-education": {
-      "tags": ["scope:resume", "type:feature"]
-    },
-    "resume-builder-resume-feature-resume-skills": {
-      "tags": ["scope:resume", "type:feature"]
-    },
-    "resume-builder-resume-feature-resume-interests": {
-      "tags": ["scope:resume", "type=feature"]
-    },
-    "resume-builder-resume-feature-resume-languages": {
-      "tags": ["scope:resume", "type:feature"]
-    },
-    "ui-kit-forms-select": {
-      "tags": ["scope:ui-kit", "type:ui"]
-    },
-    "resume-builder-resume-feature-resume-references": {
-      "tags": ["scope:resume", "type:feature"]
-    },
-    "resume-builder-resume-feature-resume-profile": {
-      "tags": ["scope:resume", "type:feature"]
-    },
-    "resume-builder-resume-feature-resume-preview": {
-      "tags": ["scope:resume-builder", "type:feature"]
-    },
-    "ui-kit-page-loader-services": {
-      "tags": ["scope:ui-kit", "type:service"]
-    },
-    "ui-kit-page-loader-components": {
-      "tags": ["scope:ui-kit", "type:ui"]
-    },
-    "omgimgflow": {
-      "tags": ["scope:omgimgflow", "type:app"]
-    },
-    "omgimgflow-e2e": {
-      "tags": [],
-      "implicitDependencies": ["omgimgflow"]
-    },
-    "omgimgflow-photos-shell": {
-      "tags": ["scope:omgimgflow", "type:feature"]
-    },
-    "omgimgflow-photos-feature-manage": {
-      "tags": ["scope:omgimgflow", "type:feature"]
-    },
-    "omgimgflow-photos-feature-manage-list": {
-      "tags": ["scope:omgimgflow", "type:feature"]
-    },
-    "omgimgflow-photos-domain": {
-      "tags": ["scope:omgimgflow", "type:domain"]
-    },
-    "omgimgflow-photos-feature-manage-edit": {
-      "tags": ["scope:omgimgflow", "type:feature"]
-    },
-    "omgimgflow-photos-feature-manage-create": {
-      "tags": ["scope:omgimgflow", "type:feature"]
-    },
-    "omgimgflow-photos-shared-ui-edit-form": {
-      "tags": ["scope:omgimgflow", "type:ui"]
-    },
-    "omgimgflow-photos-feature-configure": {
-      "tags": ["scope:omgimgflow", "type:feature"]
-    },
-    "omgimgflow-photos-shared-utils-riapi": {
-      "tags": ["scope:omgimgflow-shared", "type:utils"]
-    },
-    "omgimgflow-photos-shared-utils-clipboard-wrapper": {
-      "tags": ["scope:omgimgflow-shared", "type:utils"]
-    },
-    "omgimgflow-photos-shared-environments": {
-      "tags": ["scope:omgimgflow-shared", "type:environments"]
-    },
-    "home-cooked": {
-      "tags": ["scope:home-cooked", "type:app"]
-    },
-    "home-cooked-e2e": {
-      "tags": [],
-      "implicitDependencies": ["home-cooked"]
-    },
-    "home-cooked-shell": {
-      "tags": ["scope:home-cooked", "type:feature"]
-    },
-    "home-cooked-recipes-shell": {
-      "tags": ["scope:home-cooked", "type:feature"]
-    },
-    "home-cooked-recipes-feature-list": {
-      "tags": ["scope:home-cooked", "type:feature"]
-    },
-    "home-cooked-recipes-data-access": {
-      "tags": ["scope:home-cooked-recipes", "type:shared"]
-    },
-    "home-cooked-recipes-feature-view": {
-      "tags": ["scope:home-cooked", "type:feature"]
-    },
-    "home-cooked-shared-data-access": {
-      "tags": ["scope:home-cooked", "type:shared"]
-    }
+    "resume-builder": { "tags": ["scope:resume-builder", "type:app"], "implicitDependencies": ["resume-builder-api"] },
+    "resume-builder-e2e": { "tags": [], "implicitDependencies": ["resume-builder"] },
+    "resume-builder-api": { "tags": ["scope:api", "type:app"] },
+    "resume-builder-resume-shell-resume": { "tags": ["scope:resume", "type:feature"] },
+    "resume-builder-resume-feature-resume-list": { "tags": [] },
+    "resume-builder-resume-feature-resume-details": { "tags": ["scope:resume", "type:feature"] },
+    "resume-builder-domain-interfaces": { "tags": ["scope:resume-builder", "type:domain"] },
+    "resume-builder-resume-data-access": { "tags": ["scope:resume-builder", "type:data-access"] },
+    "shared-directives-content-host": { "tags": ["scope:shared", "type:ui"] },
+    "ui-kit-slide-in-components": { "tags": ["scope:shared", "type:ui"] },
+    "ui-kit-slide-in-state": { "tags": ["scope:ui-kit", "type:ui"] },
+    "ui-kit-slide-in-service": { "tags": ["scope:ui-kit", "type:service"] },
+    "resume-builder-utils-interface": { "tags": ["scope:resume-builder", "type:utils"] },
+    "ui-kit-forms-text-input": { "tags": ["scope:ui-kit", "type:ui"] },
+    "resume-builder-resume-feature-resume-work-experience": { "tags": ["scope:resume", "type:feature"] },
+    "ui-kit-forms-textarea": { "tags": ["scope:ui-kit", "type:ui"] },
+    "resume-builder-resume-feature-resume-education": { "tags": ["scope:resume", "type:feature"] },
+    "resume-builder-resume-feature-resume-skills": { "tags": ["scope:resume", "type:feature"] },
+    "resume-builder-resume-feature-resume-interests": { "tags": ["scope:resume", "type=feature"] },
+    "resume-builder-resume-feature-resume-languages": { "tags": ["scope:resume", "type:feature"] },
+    "ui-kit-forms-select": { "tags": ["scope:ui-kit", "type:ui"] },
+    "resume-builder-resume-feature-resume-references": { "tags": ["scope:resume", "type:feature"] },
+    "resume-builder-resume-feature-resume-profile": { "tags": ["scope:resume", "type:feature"] },
+    "resume-builder-resume-feature-resume-preview": { "tags": ["scope:resume-builder", "type:feature"] },
+    "ui-kit-page-loader-services": { "tags": ["scope:ui-kit", "type:service"] },
+    "ui-kit-page-loader-components": { "tags": ["scope:ui-kit", "type:ui"] },
+    "omgimgflow": { "tags": ["scope:omgimgflow", "type:app"] },
+    "omgimgflow-e2e": { "tags": [], "implicitDependencies": ["omgimgflow"] },
+    "omgimgflow-photos-shell": { "tags": ["scope:omgimgflow", "type:feature"] },
+    "omgimgflow-photos-feature-manage": { "tags": ["scope:omgimgflow", "type:feature"] },
+    "omgimgflow-photos-feature-manage-list": { "tags": ["scope:omgimgflow", "type:feature"] },
+    "omgimgflow-photos-domain": { "tags": ["scope:omgimgflow", "type:domain"] },
+    "omgimgflow-photos-feature-manage-edit": { "tags": ["scope:omgimgflow", "type:feature"] },
+    "omgimgflow-photos-feature-manage-create": { "tags": ["scope:omgimgflow", "type:feature"] },
+    "omgimgflow-photos-shared-ui-edit-form": { "tags": ["scope:omgimgflow", "type:ui"] },
+    "omgimgflow-photos-feature-configure": { "tags": ["scope:omgimgflow", "type:feature"] },
+    "omgimgflow-photos-shared-utils-riapi": { "tags": ["scope:omgimgflow-shared", "type:utils"] },
+    "omgimgflow-photos-shared-utils-clipboard-wrapper": { "tags": ["scope:omgimgflow-shared", "type:utils"] },
+    "omgimgflow-photos-shared-environments": { "tags": ["scope:omgimgflow-shared", "type:environments"] },
+    "home-cooked": { "tags": ["scope:home-cooked", "type:app"] },
+    "home-cooked-e2e": { "tags": [], "implicitDependencies": ["home-cooked"] },
+    "home-cooked-shell": { "tags": ["scope:home-cooked", "type:feature"] },
+    "home-cooked-recipes-shell": { "tags": ["scope:home-cooked", "type:feature"] },
+    "home-cooked-recipes-feature-list": { "tags": ["scope:home-cooked", "type:feature"] },
+    "home-cooked-recipes-data-access": { "tags": ["scope:home-cooked-recipes", "type:shared"] },
+    "home-cooked-recipes-feature-view": { "tags": ["scope:home-cooked", "type:feature"] },
+    "home-cooked-shared-data-access": { "tags": ["scope:home-cooked", "type:shared"] },
+    "home-cooked-shared-environments": { "tags": ["scope:home-cooked", "type:shared"] }
   }
 }
