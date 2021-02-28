@@ -1,6 +1,9 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShellComponent } from './shell.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ViewComponent } from './view.component';
 
 describe('ShellComponent', () => {
   let component: ShellComponent;
@@ -8,7 +11,8 @@ describe('ShellComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShellComponent ]
+      imports: [HttpClientModule, RouterTestingModule],
+      declarations: [ ShellComponent, ViewComponent ]
     })
     .compileComponents();
   });
