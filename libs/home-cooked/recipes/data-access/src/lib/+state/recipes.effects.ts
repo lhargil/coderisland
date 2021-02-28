@@ -4,6 +4,8 @@ import { fetch } from '@nrwl/angular';
 
 import * as RecipesFeature from './recipes.reducer';
 import * as RecipesActions from './recipes.actions';
+import { RecipesService } from '@coderisland/home-cooked/shared/data-access';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class RecipesEffects {
@@ -13,7 +15,10 @@ export class RecipesEffects {
       fetch({
         run: (action) => {
           // Your custom service 'load' logic goes here. For now just return a success action...
-          return RecipesActions.loadRecipesSuccess({ recipes: [] });
+          return this.recipesService.getAll()
+            .pipe(
+              map((recipes) => RecipesActions.loadRecipesSuccess({ recipes }))
+            );
         },
 
         onError: (action, error) => {
@@ -24,5 +29,5 @@ export class RecipesEffects {
     ),
   );
 
-  constructor(private actions$: Actions) {}
+  constructor(private actions$: Actions, private readonly recipesService: RecipesService) {}
 }

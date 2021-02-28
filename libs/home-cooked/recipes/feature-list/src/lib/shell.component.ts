@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ListFacade } from '@coderisland/home-cooked/recipes/data-access';
+import { ListFacade, RecipesFacade } from '@coderisland/home-cooked/recipes/data-access';
+import { Observable } from 'rxjs';
 
 @Component({
   templateUrl: './shell.component.html',
@@ -12,10 +13,11 @@ import { ListFacade } from '@coderisland/home-cooked/recipes/data-access';
   ]
 })
 export class ShellComponent implements OnInit {
-  constructor(public readonly listFacade: ListFacade) { }
+  recipes$ = this.recipesFacade.allRecipes$ as Observable<any[]>;
+  constructor(private readonly recipesFacade: RecipesFacade) { }
 
   ngOnInit(): void {
-    this.listFacade.loadRecipes();
+    this.recipesFacade.init();
   }
 
 }

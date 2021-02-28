@@ -14,7 +14,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 })
 export class ListComponent implements OnInit {
   @Input()
-  recipes?: any[] | null;
+  recipes: any[] | null = [];
   constructor() { }
 
   ngOnInit(): void {

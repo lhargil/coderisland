@@ -18,11 +18,11 @@
         <div class="flex-1 bg-white p-6 flex flex-col justify-between">
           <div class="flex-1">
             <p class="text-sm font-medium text-indigo-600">
-              <a [routerLink]="[i]" class="hover:underline">
+              <a [routerLink]="[recipe.id]" class="hover:underline">
                 {{ recipe.recipeBriefInformation.course }} > {{ recipe.recipeBriefInformation.cuisine }}
               </a>
             </p>
-            <a [routerLink]="[i]" class="block mt-2">
+            <a [routerLink]="[recipe.id]" class="block mt-2">
               <p class="text-xl font-semibold text-gray-900">
                 {{ recipe.recipeTitle }}
               </p>
