@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RecipesService } from '@coderisland/home-cooked/data-access';
+import { RecipesService } from '@coderisland/home-cooked/shared/data-access';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 

@@ -4,11 +4,11 @@ import { Observable, of } from 'rxjs';
 import * as recipes from './data/recipes.json';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RecipesService {
   private data: any[] = (recipes as any).default;
-  constructor(private readonly httpClient: HttpClient) { }
+  constructor(private readonly httpClient: HttpClient) {}
 
   getAll(): Observable<any> {
     return of(this.data);

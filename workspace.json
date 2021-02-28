@@ -1536,31 +1536,6 @@
         }
       }
     },
-    "home-cooked-data-access": {
-      "projectType": "library",
-      "root": "libs/home-cooked/data-access",
-      "sourceRoot": "libs/home-cooked/data-access/src",
-      "prefix": "coderisland",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/home-cooked/data-access/src/**/*.ts",
-              "libs/home-cooked/data-access/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/home-cooked/data-access"],
-          "options": {
-            "jestConfig": "libs/home-cooked/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "home-cooked-recipes-feature-view": {
       "projectType": "library",
       "root": "libs/home-cooked/recipes/feature-view",
@@ -1581,6 +1556,31 @@
           "outputs": ["coverage/libs/home-cooked/recipes/feature-view"],
           "options": {
             "jestConfig": "libs/home-cooked/recipes/feature-view/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-shared-data-access": {
+      "projectType": "library",
+      "root": "libs/home-cooked/shared/data-access",
+      "sourceRoot": "libs/home-cooked/shared/data-access/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/shared/data-access/src/**/*.ts",
+              "libs/home-cooked/shared/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/shared/data-access"],
+          "options": {
+            "jestConfig": "libs/home-cooked/shared/data-access/jest.config.js",
             "passWithNoTests": true
           }
         }

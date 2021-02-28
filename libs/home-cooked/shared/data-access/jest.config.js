@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'home-cooked-data-access',
-  preset: '../../../jest.preset.js',
+  displayName: 'home-cooked-shared-data-access',
+  preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/home-cooked/data-access',
+  coverageDirectory: '../../../../coverage/libs/home-cooked/shared/data-access',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
