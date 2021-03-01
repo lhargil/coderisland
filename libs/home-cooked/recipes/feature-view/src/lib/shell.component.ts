@@ -20,7 +20,7 @@ export class ShellComponent implements OnInit {
     this.viewFacade.loadRecipe(
       this.activatedRoute.paramMap
         .pipe(
-          map((paramMap: ParamMap) => +(paramMap.get('id') || ''))
+          map((paramMap: ParamMap) => (paramMap.get('id') || ''))
         ),
     );
   }

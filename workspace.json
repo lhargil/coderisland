@@ -1383,7 +1383,8 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "home-cooked:build"
+            "browserTarget": "home-cooked:build",
+            "proxyConfig": "apps/home-cooked/proxy.conf.json"
           },
           "configurations": {
             "production": {

@@ -8,13 +8,14 @@ import * as recipes from './data/recipes.json';
 })
 export class RecipesService {
   private data: any[] = (recipes as any).default;
+
   constructor(private readonly httpClient: HttpClient) {}
 
   getAll(): Observable<any> {
-    return of(this.data);
+    return this.httpClient.get(`api/recipes`);
   }
 
-  getOne(id: number) {
-    return of(this.data.find((_, index) => index == id));
+  getOne(id: string) {
+    return this.httpClient.get(`api/recipes/${id}`);
   }
 }

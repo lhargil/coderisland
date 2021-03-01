@@ -32,8 +32,8 @@ export class ViewFacade {
 
   constructor(private readonly recipesService: RecipesService) {}
 
-  loadRecipe(selectedRecipe: Observable<number>) {
-    selectedRecipe.pipe(switchMap((id: number) => this.recipesService.getOne(id))).subscribe((recipe: any) =>
+  loadRecipe(selectedRecipe: Observable<string>) {
+    selectedRecipe.pipe(switchMap((id: string) => this.recipesService.getOne(id))).subscribe((recipe: any) =>
       this.storeSubject.next(
         (this.viewState = {
           ...this.viewState,
