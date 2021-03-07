@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { ViewFacade } from '@coderisland/home-cooked/recipes/data-access';
-import { map } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import * as RecipesSelectors from '@coderisland/home-cooked/recipes/data-access';
+import { RecipesPartialState } from '@coderisland/home-cooked/recipes/data-access';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   templateUrl: './shell.component.html',
@@ -14,18 +16,19 @@ import { map } from 'rxjs/operators';
   ],
 })
 export class ShellComponent implements OnInit {
-  constructor(public readonly viewFacade: ViewFacade, private readonly activatedRoute: ActivatedRoute, private readonly router: Router) {}
+  recipe$: Observable<any>;
+  constructor(
+    private readonly store: Store<RecipesPartialState>,
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly router: Router,
+  ) {
+    this.recipe$ = this.store.pipe(select(RecipesSelectors.getSelectRecipe));
+  }
 
   ngOnInit(): void {
-    this.viewFacade.loadRecipe(
-      this.activatedRoute.paramMap
-        .pipe(
-          map((paramMap: ParamMap) => (paramMap.get('id') || ''))
-        ),
-    );
   }
 
   handleGoBack() {
-    this.router.navigate(['../'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['../'], { relativeTo: this.activatedRoute });
   }
 }

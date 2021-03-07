@@ -9,3 +9,12 @@ export const loadRecipesSuccess = createAction(
 );
 
 export const loadRecipesFailure = createAction('[Recipes/API] Load Recipes Failure', props<{ error: any }>());
+
+/**
+  [Recipes/View Page] Get Recipe
+    - recipeId
+ */
+export const getRecipe = createAction(
+  '[Recipes/View Page] Get Recipe',
+  props<{ recipeId: string }>()
+);

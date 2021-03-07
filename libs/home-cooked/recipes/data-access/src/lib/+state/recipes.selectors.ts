@@ -1,3 +1,4 @@
+import { selectRouteParams } from '@coderisland/home-cooked/shared/data-access';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { RECIPES_FEATURE_KEY, State, RecipesPartialState, recipesAdapter } from './recipes.reducer';
 
@@ -16,8 +17,14 @@ export const getRecipesEntities = createSelector(getRecipesState, (state: State)
 
 export const getSelectedId = createSelector(getRecipesState, (state: State) => state.selectedId);
 
-export const getSelected = createSelector(
+// export const getSelected = createSelector(
+//   getRecipesEntities,
+//   getSelectedId,
+//   (entities, selectedId) => selectedId && entities[selectedId],
+// );
+
+export const getSelectRecipe = createSelector(
   getRecipesEntities,
-  getSelectedId,
-  (entities, selectedId) => selectedId && entities[selectedId],
+  selectRouteParams,
+  (recipes, {id}) => recipes[id]
 );

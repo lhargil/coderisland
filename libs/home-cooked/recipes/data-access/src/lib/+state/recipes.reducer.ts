@@ -3,6 +3,7 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 import * as RecipesActions from './recipes.actions';
 import { RecipesEntity } from './recipes.models';
+import { ROUTER_NAVIGATION } from '@ngrx/router-store';
 
 export const RECIPES_FEATURE_KEY = 'recipes';
 
@@ -29,7 +30,7 @@ const recipesReducer = createReducer(
   on(RecipesActions.loadRecipesSuccess, (state, { recipes }) =>
     recipesAdapter.setAll(recipes, { ...state, loaded: true }),
   ),
-  on(RecipesActions.loadRecipesFailure, (state, { error }) => ({ ...state, error })),
+  on(RecipesActions.loadRecipesFailure, (state, { error }) => ({ ...state, error }))
 );
 
 export function reducer(state: State | undefined, action: Action) {

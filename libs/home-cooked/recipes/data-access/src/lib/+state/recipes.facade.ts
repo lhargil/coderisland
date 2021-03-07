@@ -14,7 +14,7 @@ export class RecipesFacade {
    */
   loaded$ = this.store.pipe(select(RecipesSelectors.getRecipesLoaded) as any);
   allRecipes$ = this.store.pipe(select(RecipesSelectors.getAllRecipes) as any);
-  selectedRecipes$ = this.store.pipe(select(RecipesSelectors.getSelected) as any);
+  // selectedRecipes$ = this.store.pipe(select(RecipesSelectors.getSelected) as any);
 
   constructor(private store: Store) {}
 
