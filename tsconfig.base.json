@@ -86,7 +86,8 @@
       "@coderisland/home-cooked/guides/shell": ["libs/home-cooked/guides/shell/src/index.ts"],
       "@coderisland/home-cooked/guides/feature-guide-steps": [
         "libs/home-cooked/guides/feature-guide-steps/src/index.ts"
-      ]
+      ],
+      "@coderisland/home-cooked/guides/data-access": ["libs/home-cooked/guides/data-access/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

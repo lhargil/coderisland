@@ -48,5 +48,6 @@ module.exports = {
     '<rootDir>/libs/home-cooked/shared/models',
     '<rootDir>/libs/home-cooked/guides/shell',
     '<rootDir>/libs/home-cooked/guides/feature-guide-steps',
+    '<rootDir>/libs/home-cooked/guides/data-access',
   ],
 };

@@ -1682,6 +1682,31 @@
           }
         }
       }
+    },
+    "home-cooked-guides-data-access": {
+      "projectType": "library",
+      "root": "libs/home-cooked/guides/data-access",
+      "sourceRoot": "libs/home-cooked/guides/data-access/src",
+      "prefix": "hc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/guides/data-access/src/**/*.ts",
+              "libs/home-cooked/guides/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/guides/data-access"],
+          "options": {
+            "jestConfig": "libs/home-cooked/guides/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
