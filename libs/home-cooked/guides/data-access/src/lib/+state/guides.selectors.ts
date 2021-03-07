@@ -19,6 +19,9 @@ export const getSelectedId = createSelector(getGuidesState, (state: State) => st
 export const getSelected = createSelector(
   getGuidesEntities,
   getSelectedId,
-  (entities, selectedId) => selectedId && entities[selectedId],
+  (entities, selectedId) => {
+    const result = selectedId ? entities[selectedId]: null;
+    return result;
+  },
 );
 
