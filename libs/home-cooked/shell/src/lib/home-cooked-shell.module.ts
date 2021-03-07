@@ -19,11 +19,16 @@ import { HttpClientModule } from '@angular/common/http';
               loadChildren: () =>
                 import('@coderisland/home-cooked/recipes/shell').then((module) => module.HomeCookedRecipesShellModule),
             },
+            {
+              path: 'guides',
+              loadChildren: () =>
+                import('@coderisland/home-cooked/guides/shell').then((module) => module.HomeCookedGuidesShellModule),
+            },
           ],
         },
       ],
       { initialNavigation: 'enabled', scrollPositionRestoration: 'top' },
-    )
+    ),
   ],
   exports: [RouterModule],
   declarations: [LayoutComponent],

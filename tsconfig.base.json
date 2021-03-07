@@ -82,7 +82,11 @@
       "@coderisland/home-cooked/recipes/feature-view": ["libs/home-cooked/recipes/feature-view/src/index.ts"],
       "@coderisland/home-cooked/shared/data-access": ["libs/home-cooked/shared/data-access/src/index.ts"],
       "@coderisland/home-cooked/shared/environments": ["libs/home-cooked/shared/environments/src/index.ts"],
-      "@coderisland/home-cooked/shared/models": ["libs/home-cooked/shared/models/src/index.ts"]
+      "@coderisland/home-cooked/shared/models": ["libs/home-cooked/shared/models/src/index.ts"],
+      "@coderisland/home-cooked/guides/shell": ["libs/home-cooked/guides/shell/src/index.ts"],
+      "@coderisland/home-cooked/guides/feature-guide-steps": [
+        "libs/home-cooked/guides/feature-guide-steps/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

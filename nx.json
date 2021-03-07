@@ -64,6 +64,8 @@
     "home-cooked-recipes-feature-view": { "tags": ["scope:home-cooked", "type:feature"] },
     "home-cooked-shared-data-access": { "tags": ["scope:home-cooked", "type:shared"] },
     "home-cooked-shared-environments": { "tags": ["scope:home-cooked", "type:shared"] },
-    "home-cooked-shared-models": { "tags": ["scope:home-cooked", "type:utils"] }
+    "home-cooked-shared-models": { "tags": ["scope:home-cooked", "type:utils"] },
+    "home-cooked-guides-shell": { "tags": ["scope:home-cooked", "type:feature"] },
+    "home-cooked-guides-feature-guide-steps": { "tags": ["scope:home-cooked", "type:feature"] }
   }
 }

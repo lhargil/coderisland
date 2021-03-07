@@ -1632,6 +1632,56 @@
           }
         }
       }
+    },
+    "home-cooked-guides-shell": {
+      "projectType": "library",
+      "root": "libs/home-cooked/guides/shell",
+      "sourceRoot": "libs/home-cooked/guides/shell/src",
+      "prefix": "hc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/guides/shell/src/**/*.ts",
+              "libs/home-cooked/guides/shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/guides/shell"],
+          "options": {
+            "jestConfig": "libs/home-cooked/guides/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-guides-feature-guide-steps": {
+      "projectType": "library",
+      "root": "libs/home-cooked/guides/feature-guide-steps",
+      "sourceRoot": "libs/home-cooked/guides/feature-guide-steps/src",
+      "prefix": "hc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/guides/feature-guide-steps/src/**/*.ts",
+              "libs/home-cooked/guides/feature-guide-steps/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/guides/feature-guide-steps"],
+          "options": {
+            "jestConfig": "libs/home-cooked/guides/feature-guide-steps/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
