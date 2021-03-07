@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { RecipesEntity } from './recipes.models';
 
-export const init = createAction('[Recipes Page] Init');
+export const init = createAction('[Recipes/List Page] Init');
 
 export const loadRecipesSuccess = createAction(
   '[Recipes/API] Load Recipes Success',
