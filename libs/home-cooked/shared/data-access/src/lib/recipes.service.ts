@@ -1,21 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import * as recipes from './data/recipes.json';
+import { Recipe } from '@coderisland/home-cooked/shared/models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecipesService {
-  private data: any[] = (recipes as any).default;
 
   constructor(private readonly httpClient: HttpClient) {}
 
-  getAll(): Observable<any> {
-    return this.httpClient.get(`api/recipes`);
+  getAll(): Observable<Recipe[]> {
+    return this.httpClient.get<Recipe[]>(`api/recipes`);
   }
 
-  getOne(id: string) {
-    return this.httpClient.get(`api/recipes/${id}`);
+  getOne(id: string): Observable<Recipe> {
+    return this.httpClient.get<Recipe>(`api/recipes/${id}`);
   }
 }

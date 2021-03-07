@@ -5,13 +5,14 @@ import { fetch } from '@nrwl/angular';
 import * as RecipesFeature from './recipes.reducer';
 import * as RecipesActions from './recipes.actions';
 import { RecipesService } from '@coderisland/home-cooked/shared/data-access';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class RecipesEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RecipesActions.init),
+      tap(console.log),
       fetch({
         run: (action) => {
           // Your custom service 'load' logic goes here. For now just return a success action...

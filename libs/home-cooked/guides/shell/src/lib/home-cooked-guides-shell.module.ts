@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ShellComponent } from './shell.component';
+import { HomeCookedSharedDataAccessModule } from '@coderisland/home-cooked/shared/data-access';
+import { HomeCookedGuidesDataAccessModule } from '@coderisland/home-cooked/guides/data-access';
 
 @NgModule({
   imports: [
@@ -12,7 +14,7 @@ import { ShellComponent } from './shell.component';
         component: ShellComponent,
         children: [
           {
-            path: ':id',
+            path: ':recipeGuideId',
             loadChildren: () =>
               import('@coderisland/home-cooked/guides/feature-guide-steps').then(
                 (module) => module.FeatureGuideStepsModule,
@@ -21,6 +23,8 @@ import { ShellComponent } from './shell.component';
         ],
       },
     ]),
+    HomeCookedSharedDataAccessModule,
+    HomeCookedGuidesDataAccessModule
   ],
   declarations: [ShellComponent],
 })
