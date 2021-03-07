@@ -27,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
           ],
         },
       ],
-      { initialNavigation: 'enabled', scrollPositionRestoration: 'top' },
+      { initialNavigation: 'enabled', scrollPositionRestoration: 'top', paramsInheritanceStrategy: 'always' },
     ),
   ],
   exports: [RouterModule],
