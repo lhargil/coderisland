@@ -9,7 +9,7 @@
       "cuisine": "Filipino",
       "keyword": ["chicken pochero", "pata", "pork stew"]
     },
-    "recipeTimes": { "prep time": "5 minutes", "cook time": "1 hour 30 minutes" },
+    "recipeTimes": { "prepTime": "5 minutes", "cookTime": "1 hour 30 minutes" },
     "recipeIngredients": [
       { "amount": 0.6, "unit": "lbs", "name": "pork pata", "notes": "boiled for 15 minutes" },
       { "amount": 1, "unit": "piece", "name": "Chorizo de Bilbao", "notes": null },
@@ -48,7 +48,7 @@
       "cuisine": "Filipino Recipe",
       "keyword": ["beef kaldereta", "caldereta", "kaldereta", "kaldereta recipe"]
     },
-    "recipeTimes": { "prep time": "10 minutes", "cook time": "1 hour", "total time": "1 hour 10 minutes" },
+    "recipeTimes": { "prepTime": "10 minutes", "cookTime": "1 hour", "totalTime": "1 hour 10 minutes" },
     "recipeIngredients": [
       { "amount": 2, "unit": "lbs", "name": "beef", "notes": "cubed" },
       { "amount": 3, "unit": "pieces", "name": "garlic cloves", "notes": "crushed and chopped" },
@@ -90,7 +90,7 @@
       "cuisine": "Filipino",
       "keyword": ["cooking", "crispy pork belly", "deep fried pork belly", "lechon", "lechon kawali"]
     },
-    "recipeTimes": { "prep time": "10 minutes", "cook time": "50 minutes", "total time": "1 hour" },
+    "recipeTimes": { "prepTime": "10 minutes", "cookTime": "50 minutes", "totalTime": "1 hour" },
     "recipeIngredients": [
       { "amount": 2, "unit": "lbs.", "name": "pork belly", "notes": null },
       { "amount": 2, "unit": "tablespoons", "name": "salt", "notes": null },
@@ -120,7 +120,7 @@
       "cuisine": "Filipino Recipe",
       "keyword": ["butter garlic shrimp", "garlic butter shrimp", "how to cook shrimp"]
     },
-    "recipeTimes": { "prep time": "10 minutes", "cook time": "12 minutes", "total time": "22 minutes" },
+    "recipeTimes": { "prepTime": "10 minutes", "cookTime": "12 minutes", "totalTime": "22 minutes" },
     "recipeIngredients": [
       { "amount": 2, "unit": "lbs", "name": "shrimp", "notes": "cleaned" },
       { "amount": 2, "unit": "tablespoons", "name": "parsley", "notes": "chopped" },
@@ -150,7 +150,7 @@
       "cuisine": "Filipino Recipe",
       "keyword": ["filipino menudo", "menudo recipe", "menudo,", "pork menudo", "pork menudo recipe", "vanjo menudo"]
     },
-    "recipeTimes": { "prep time": "10 minutes", "cook time": "1 hour", "total time": "1 hour 10 minutes" },
+    "recipeTimes": { "prepTime": "10 minutes", "cookTime": "1 hour", "totalTime": "1 hour 10 minutes" },
     "recipeIngredients": [
       { "amount": 2, "unit": "lbs.", "name": "pork", "notes": null },
       { "amount": 14, "unit": "lb.", "name": "pig liver", "notes": null },
@@ -185,7 +185,7 @@
     "recipeImage": "https://panlasangpinoy.com/wp-content/uploads/2015/09/Bulalo1-360x361.jpg",
     "recipeSummary": null,
     "recipeBriefInformation": { "cuisine": "Filipino Recipe" },
-    "recipeTimes": { "prep time": "10 minutes", "cook time": "1 hour 50 minutes", "total time": "2 hours" },
+    "recipeTimes": { "prepTime": "10 minutes", "cookTime": "1 hour 50 minutes", "totalTime": "2 hours" },
     "recipeIngredients": [
       { "amount": 2, "unit": "lbs", "name": "beef shank", "notes": null },
       { "amount": 0.5, "unit": null, "name": "pc small cabbage", "notes": "whole leaf individually detached" },
@@ -211,7 +211,7 @@
     "recipeImage": "https://panlasangpinoy.com/wp-content/uploads/2021/02/crispy-fried-chicken-360x361.jpg",
     "recipeSummary": "Crispy fried chicken that is tender and moist in the inside. This is simply delicious.",
     "recipeBriefInformation": { "course": "Main Course", "keyword": ["chicken recipe", "deep fried chicken"] },
-    "recipeTimes": { "prep time": "8 hours", "cook time": "14 minutes" },
+    "recipeTimes": { "prepTime": "8 hours", "cookTime": "14 minutes" },
     "recipeIngredients": [
       { "amount": 2, "unit": "lbs.", "name": "chicken", "notes": "cut into serving pieces" },
       { "amount": 1, "unit": "cup", "name": "all-purpose flour", "notes": null },
@@ -252,7 +252,7 @@
       "cuisine": "Filipino",
       "keyword": ["chicken recipe", "chicken with pineapple", "pineapple chicken"]
     },
-    "recipeTimes": { "prep time": "10 minutes", "cook time": "45 minutes", "total time": "55 minutes" },
+    "recipeTimes": { "prepTime": "10 minutes", "cookTime": "45 minutes", "totalTime": "55 minutes" },
     "recipeIngredients": [
       { "amount": 2, "unit": "lbs", "name": "chicken", "notes": "cut into serving pieces" },
       { "amount": 12, "unit": "ounces", "name": "pineapple chunks", "notes": "canned" },
@@ -288,7 +288,7 @@
       "cuisine": "Filipino",
       "keyword": ["adobo", "beef stew", "humba"]
     },
-    "recipeTimes": { "prep time": "15 minutes", "cook time": "2 hours" },
+    "recipeTimes": { "prepTime": "15 minutes", "cookTime": "2 hours" },
     "recipeIngredients": [
       { "amount": 4, "unit": "lbs.", "name": "pork belly", "notes": "cubed" },
       { "amount": 1, "unit": "piece", "name": "Knorr Pork Cube", "notes": null },
@@ -326,7 +326,7 @@
       "cuisine": "Fiipino",
       "keyword": ["filipino sisig", "pork sisig", "pork sisig recipe", "Sisig", "sisig recipe"]
     },
-    "recipeTimes": { "prep time": "12 minutes", "cook time": "1 hour 30 minutes", "total time": "1 hour 42 minutes" },
+    "recipeTimes": { "prepTime": "12 minutes", "cookTime": "1 hour 30 minutes", "totalTime": "1 hour 42 minutes" },
     "recipeIngredients": [
       { "amount": 1, "unit": "lb.", "name": "pig ears", "notes": null },
       { "amount": 112, "unit": "lb", "name": "pork belly", "notes": null },
@@ -371,7 +371,7 @@
       "cuisine": "Filipino",
       "keyword": ["adobo", "humba", "tokwa at baboy"]
     },
-    "recipeTimes": { "prep time": "5 minutes", "cook time": "1 hour 25 minutes" },
+    "recipeTimes": { "prepTime": "5 minutes", "cookTime": "1 hour 25 minutes" },
     "recipeIngredients": [
       { "amount": 112, "unit": "lbs.", "name": "pork belly", "notes": "cubed" },
       { "amount": 1, "unit": "cup", "name": "pineapple juice", "notes": null },

@@ -1611,6 +1611,27 @@
           }
         }
       }
+    },
+    "home-cooked-shared-models": {
+      "root": "libs/home-cooked/shared/models",
+      "sourceRoot": "libs/home-cooked/shared/models/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/home-cooked/shared/models/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/shared/models"],
+          "options": {
+            "jestConfig": "libs/home-cooked/shared/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -1,11 +1,11 @@
 import { createAction, props } from '@ngrx/store';
-import { RecipesEntity } from './recipes.models';
+import { Recipe } from '@coderisland/home-cooked/shared/models';
 
 export const init = createAction('[Recipes/List Page] Init');
 
 export const loadRecipesSuccess = createAction(
   '[Recipes/API] Load Recipes Success',
-  props<{ recipes: RecipesEntity[] }>(),
+  props<{ recipes: Recipe[] }>(),
 );
 
 export const loadRecipesFailure = createAction('[Recipes/API] Load Recipes Failure', props<{ error: any }>());

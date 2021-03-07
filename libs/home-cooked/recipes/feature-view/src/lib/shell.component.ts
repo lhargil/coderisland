@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as RecipesSelectors from '@coderisland/home-cooked/recipes/data-access';
 import { RecipesPartialState } from '@coderisland/home-cooked/recipes/data-access';
+import { Recipe } from '@coderisland/home-cooked/shared/models';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -16,7 +17,7 @@ import { Observable } from 'rxjs';
   ],
 })
 export class ShellComponent implements OnInit {
-  recipe$: Observable<any>;
+  recipe$: Observable<Recipe | null>;
   constructor(
     private readonly store: Store<RecipesPartialState>,
     private readonly activatedRoute: ActivatedRoute,

@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Recipe } from '@coderisland/home-cooked/shared/models';
 
 @Component({
   selector: 'hc-list',
@@ -14,7 +15,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 })
 export class ListComponent implements OnInit {
   @Input()
-  recipes: any[] | null = [];
+  recipes: Recipe[] | null = [];
   constructor() { }
 
   ngOnInit(): void {

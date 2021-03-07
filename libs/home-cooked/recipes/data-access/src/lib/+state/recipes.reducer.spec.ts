@@ -1,19 +1,29 @@
-import { RecipesEntity } from './recipes.models';
+import { Recipe } from '@coderisland/home-cooked/shared/models';
 import * as RecipesActions from './recipes.actions';
 import { State, initialState, reducer } from './recipes.reducer';
 
 describe('Recipes Reducer', () => {
-  const createRecipesEntity = (id: string, name = '') =>
+  const createRecipe = (id: string, name = '') =>
     ({
-      id,
-      name: name || `name-${id}`,
-    } as RecipesEntity);
+      id: '',
+      recipeTitle: '',
+      recipeImage: '',
+      recipeSummary: '',
+      recipeBriefInformation: {
+        course: '',
+        cuisine: '',
+        keyword: ['']
+      },
+      recipeTimes: {},
+      recipeIngredients: [],
+      recipeInstructions: [],
+    } as Recipe);
 
   beforeEach(() => {});
 
   describe('valid Recipes actions', () => {
     it('loadRecipesSuccess should return set the list of known Recipes', () => {
-      const recipes = [createRecipesEntity('PRODUCT-AAA'), createRecipesEntity('PRODUCT-zzz')];
+      const recipes = [createRecipe('PRODUCT-AAA'), createRecipe('PRODUCT-zzz')];
       const action = RecipesActions.loadRecipesSuccess({ recipes });
 
       const result: State = reducer(initialState, action);

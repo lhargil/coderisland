@@ -8,14 +8,14 @@
           <div class="relative">
             <img
               class="h-full w-full rounded-md"
-              [src]="recipe.recipeImage"
-              [attr.alt]="'Photo of ' + recipe.recipeSummary"
+              [src]="recipe?.recipeImage"
+              [attr.alt]="'Photo of ' + recipe?.recipeSummary"
             />
             <span class="absolute inset-0 shadow-inner rounded-full" aria-hidden="true"></span>
           </div>
         </div>
         <div class="space-y-4">
-          <h1 class="text-2xl font-bold text-gray-900">{{ recipe.recipeTitle }}</h1>
+          <h1 class="text-2xl font-bold text-gray-900">{{ recipe?.recipeTitle }}</h1>
           <div class="space-x-2">
             <button
               (click)="goBack.emit()"
@@ -70,32 +70,33 @@
                 <div class="sm:col-span-2">
                   <dt class="text-sm font-medium text-gray-500">About</dt>
                   <dd class="mt-1 text-sm text-gray-900">
-                    {{ recipe.recipeSummary }}
+                    {{ recipe?.recipeSummary }}
                   </dd>
                 </div>
                 <div class="sm:col-span-1">
                   <dt class="text-sm font-medium text-gray-500">Course</dt>
                   <dd class="mt-1 text-sm text-gray-900">
-                    {{ recipe.recipeBriefInformation.course }}
+                    {{ recipe?.recipeBriefInformation?.course }}
                   </dd>
                 </div>
                 <div class="sm:col-span-1">
                   <dt class="text-sm font-medium text-gray-500">Cuisine</dt>
                   <dd class="mt-1 text-sm text-gray-900">
-                    {{ recipe.recipeBriefInformation.cuisine }}
+                    {{ recipe?.recipeBriefInformation?.cuisine }}
                   </dd>
                 </div>
                 <div class="sm:col-span-1">
                   <dt class="text-sm font-medium text-gray-500">Keywords</dt>
                   <dd class="mt-1 text-sm text-gray-900">
-                    {{ recipe.recipeBriefInformation.keyword }}
+                    {{ recipe?.recipeBriefInformation?.keyword }}
                   </dd>
                 </div>
                 <div class="sm:col-span-1">
                   <dt class="text-sm font-medium text-gray-500">Times</dt>
                   <dd class="mt-1 text-sm text-gray-900 space-y-2">
-                    <p>Prep time: {{ recipe.recipeTimes['prep time'] }}</p>
-                    <p>Cook time: {{ recipe.recipeTimes['cook time'] }}</p>
+                    <p>Prep time: {{ recipe?.recipeTimes?.prepTime }}</p>
+                    <p>Cook time: {{ recipe?.recipeTimes?.cookTime }}</p>
+                    <p>Total time: {{ recipe?.recipeTimes?.totalTime }}</p>
                   </dd>
                 </div>
               </dl>
@@ -116,7 +117,7 @@
           <h2 id="timeline-title" class="text-lg font-medium text-gray-900">Ingredients</h2>
           <div class="mt-6 flow-root">
             <ul class="-mb-8">
-              <li *ngFor="let recipeIngredient of recipe.recipeIngredients; let i = index">
+              <li *ngFor="let recipeIngredient of recipe?.recipeIngredients; let i = index">
                 <div class="relative pb-6">
                   <div class="relative flex space-x-3">
                     <div>

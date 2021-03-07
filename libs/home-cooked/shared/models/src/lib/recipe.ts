@@ -1,7 +1,7 @@
 /**
  * Interface for the 'Recipes' data
  */
-export interface RecipesEntity {
+export interface Recipe {
   id: string | number; // Primary ID
   recipeTitle: string;
   recipeImage: string;
@@ -10,8 +10,12 @@ export interface RecipesEntity {
     course: string;
     cuisine: string;
     keyword: string[];
-  },
-  recipeTimes: { [key: string]: string},
-  recipeIngredients: [],
-  recipeInstructions: [],
+  };
+  recipeTimes: {
+    prepTime: string;
+    cookTime: string;
+    totalTime: string;
+  };
+  recipeIngredients: { amount: number; unit: string; name: string; notes: string }[];
+  recipeInstructions: string[];
 }

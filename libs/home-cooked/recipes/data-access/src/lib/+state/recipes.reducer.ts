@@ -2,12 +2,12 @@ import { createReducer, on, Action } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 import * as RecipesActions from './recipes.actions';
-import { RecipesEntity } from './recipes.models';
+import { Recipe } from '@coderisland/home-cooked/shared/models';
 import { ROUTER_NAVIGATION } from '@ngrx/router-store';
 
 export const RECIPES_FEATURE_KEY = 'recipes';
 
-export interface State extends EntityState<RecipesEntity> {
+export interface State extends EntityState<Recipe> {
   selectedId?: string | number; // which Recipes record has been selected
   loaded: boolean; // has the Recipes list been loaded
   error?: string | null; // last known error (if any)
@@ -17,7 +17,7 @@ export interface RecipesPartialState {
   readonly [RECIPES_FEATURE_KEY]: State;
 }
 
-export const recipesAdapter: EntityAdapter<RecipesEntity> = createEntityAdapter<RecipesEntity>();
+export const recipesAdapter: EntityAdapter<Recipe> = createEntityAdapter<Recipe>();
 
 export const initialState: State = recipesAdapter.getInitialState({
   // set initial required properties
