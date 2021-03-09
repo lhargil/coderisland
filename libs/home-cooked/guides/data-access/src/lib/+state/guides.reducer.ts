@@ -26,11 +26,17 @@ export const initialState: State = guidesAdapter.getInitialState({
 
 const guidesReducer = createReducer(
   initialState,
-  on(GuidesActions.selectGuide, (state, action) => {
+  on(GuidesActions.loadOneRecipeGuideFromRouteSuccess, (state, action) => ({
+    ...state,
+    selectedId: action.recipeGuideId,
+    loaded: true,
+    error: null,
+  })),
+  on(GuidesActions.loadOneRecipeGuideSuccess, (state, action) => {
     return guidesAdapter.setOne(action.recipeGuide, {
       ...state,
-      selectedId: action.id,
       loaded: true,
+      selectedId: action.recipeGuide.id,
       error: null
     });
   })
