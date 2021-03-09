@@ -23,7 +23,7 @@ export class ShellComponent implements OnInit {
     private readonly activatedRoute: ActivatedRoute,
     private readonly router: Router,
   ) {
-    this.recipe$ = this.store.pipe(select(RecipesSelectors.getSelectRecipe));
+    this.recipe$ = this.store.pipe(select(RecipesSelectors.getOneRecipe));
   }
 
   ngOnInit(): void {

@@ -21,7 +21,7 @@ export class ShellComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.store.dispatch(RecipesActions.init());
   }
 
 }

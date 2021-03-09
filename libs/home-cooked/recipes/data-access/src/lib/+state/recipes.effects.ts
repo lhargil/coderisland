@@ -4,8 +4,13 @@ import { fetch } from '@nrwl/angular';
 
 import * as RecipesFeature from './recipes.reducer';
 import * as RecipesActions from './recipes.actions';
-import { RecipesService } from '@coderisland/home-cooked/shared/data-access';
-import { map, tap } from 'rxjs/operators';
+import { RecipesService, selectRouteParam } from '@coderisland/home-cooked/shared/data-access';
+import { filter, map, mergeMap, switchMap, take, tap, withLatestFrom } from 'rxjs/operators';
+import { RouterNavigationAction, ROUTER_NAVIGATION } from '@ngrx/router-store';
+import { select, Store } from '@ngrx/store';
+import { getSelectRecipe } from './recipes.selectors';
+import { of } from 'rxjs';
+import { Recipe } from '@coderisland/home-cooked/shared/models';
 
 @Injectable()
 export class RecipesEffects {
@@ -16,10 +21,7 @@ export class RecipesEffects {
       fetch({
         run: (action) => {
           // Your custom service 'load' logic goes here. For now just return a success action...
-          return this.recipesService.getAll()
-            .pipe(
-              map((recipes) => RecipesActions.loadRecipesSuccess({ recipes }))
-            );
+          return this.recipesService.getAll().pipe(map((recipes) => RecipesActions.loadRecipesSuccess({ recipes })));
         },
 
         onError: (action, error) => {
@@ -30,5 +32,33 @@ export class RecipesEffects {
     ),
   );
 
-  constructor(private actions$: Actions, private readonly recipesService: RecipesService) {}
+  getOneRecipeFromRoute = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ROUTER_NAVIGATION),
+      withLatestFrom(this.store.pipe(select(selectRouteParam('recipeId'))), this.recipeStore),
+      filter(([, recipeId, recipeStore]) => !!recipeId),
+      mergeMap(([, recipeId, recipeStore]) => {
+        if (recipeId && recipeStore[RecipesFeature.RECIPES_FEATURE_KEY].entities[recipeId]) {
+          return of(RecipesActions.loadOneRecipeFromRouteSuccess({ recipeId: recipeId }));
+        }
+        return of(RecipesActions.loadOneRecipeFromRouteFailure({ recipeId: recipeId! }));
+      }),
+    );
+  });
+
+  getOneRecipeFromAPI = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(RecipesActions.loadOneRecipeFromRouteFailure.type),
+      switchMap(({ recipeId }) => {
+        return this.recipesService.getOne(recipeId).pipe(map((recipe: Recipe) => RecipesActions.loadOneRecipeSuccess({ recipe })));
+      }),
+    );
+  });
+
+  constructor(
+    private actions$: Actions,
+    private readonly recipesService: RecipesService,
+    private store: Store,
+    private recipeStore: Store<RecipesFeature.RecipesPartialState>,
+  ) {}
 }

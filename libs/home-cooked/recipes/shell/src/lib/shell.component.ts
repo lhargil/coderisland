@@ -17,10 +17,10 @@ import * as RecipesActions from '@coderisland/home-cooked/recipes/data-access';
 })
 export class ShellComponent implements OnInit {
 
-  constructor(private store: Store<RecipesPartialState>) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.store.dispatch(RecipesActions.init());
+
   }
 
 }

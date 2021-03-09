@@ -20,7 +20,7 @@ import { HomeCookedSharedDataAccessModule } from '@coderisland/home-cooked/share
               import('@coderisland/home-cooked/recipes/feature-list').then((module) => module.FeatureListModule),
           },
           {
-            path: ':id',
+            path: ':recipeId',
             loadChildren: () =>
               import('@coderisland/home-cooked/recipes/feature-view').then((module) => module.FeatureViewModule),
           },

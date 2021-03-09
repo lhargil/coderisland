@@ -30,7 +30,16 @@ const recipesReducer = createReducer(
   on(RecipesActions.loadRecipesSuccess, (state, { recipes }) =>
     recipesAdapter.setAll(recipes, { ...state, loaded: true }),
   ),
-  on(RecipesActions.loadRecipesFailure, (state, { error }) => ({ ...state, error }))
+  on(RecipesActions.loadRecipesFailure, (state, { error }) => ({ ...state, error })),
+  on(RecipesActions.loadOneRecipeFromRouteSuccess, (state, {recipeId}) => ({...state, selectedId: recipeId})),
+  on(RecipesActions.loadOneRecipeSuccess, (state, action) => {
+    return recipesAdapter.setOne(action.recipe, {
+      ...state,
+      loaded: true,
+      selectedId: action.recipe.id,
+      error: null
+    });
+  })
 );
 
 export function reducer(state: State | undefined, action: Action) {
