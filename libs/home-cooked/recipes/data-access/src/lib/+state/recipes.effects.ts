@@ -35,6 +35,7 @@ export class RecipesEffects {
   getOneRecipeFromRoute = createEffect(() => {
     return this.actions$.pipe(
       ofType(ROUTER_NAVIGATION),
+      filter((r: RouterNavigationAction) => r.payload.routerState.url.startsWith('/recipes/')),
       withLatestFrom(this.store.pipe(select(selectRouteParam('recipeId'))), this.recipeStore),
       filter(([, recipeId, recipeStore]) => !!recipeId),
       mergeMap(([, recipeId, recipeStore]) => {
