@@ -5,8 +5,8 @@ import { State, initialState, reducer } from './recipes.reducer';
 describe('Recipes Reducer', () => {
   const createRecipe = (id: string, name = '') =>
     ({
-      id: '',
-      recipeTitle: '',
+      id,
+      recipeTitle: name,
       recipeImage: '',
       recipeSummary: '',
       recipeBriefInformation: {

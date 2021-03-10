@@ -11,17 +11,17 @@ describe('Guides Reducer', () => {
 
   beforeEach(() => {});
 
-  describe('valid Guides actions', () => {
-    it('loadGuidesSuccess should return set the list of known Guides', () => {
-      const guides = [createGuidesEntity('PRODUCT-AAA'), createGuidesEntity('PRODUCT-zzz')];
-      const action = GuidesActions.loadGuidesSuccess({ guides });
+  // describe('valid Guides actions', () => {
+  //   it('loadGuidesSuccess should return set the list of known Guides', () => {
+  //     const guides = [createGuidesEntity('PRODUCT-AAA'), createGuidesEntity('PRODUCT-zzz')];
+  //     const action = GuidesActions.loadGuidesSuccess({ guides });
 
-      const result: State = reducer(initialState, action);
+  //     const result: State = reducer(initialState, action);
 
-      expect(result.loaded).toBe(true);
-      expect(result.ids.length).toBe(2);
-    });
-  });
+  //     expect(result.loaded).toBe(true);
+  //     expect(result.ids.length).toBe(2);
+  //   });
+  // });
 
   describe('unknown action', () => {
     it('should return the previous state', () => {

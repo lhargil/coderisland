@@ -17,7 +17,6 @@ export class RecipesEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RecipesActions.init),
-      tap(console.log),
       fetch({
         run: (action) => {
           // Your custom service 'load' logic goes here. For now just return a success action...
@@ -32,7 +31,7 @@ export class RecipesEffects {
     ),
   );
 
-  getOneRecipeFromRoute = createEffect(() => {
+  getOneRecipeFromRoute$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(ROUTER_NAVIGATION),
       filter((r: RouterNavigationAction) => r.payload.routerState.url.startsWith('/recipes/')),
@@ -47,7 +46,7 @@ export class RecipesEffects {
     );
   });
 
-  getOneRecipeFromAPI = createEffect(() => {
+  getOneRecipeFromAPI$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(RecipesActions.loadOneRecipeFromRouteFailure.type),
       switchMap(({ recipeId }) => {

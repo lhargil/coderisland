@@ -12,9 +12,9 @@ export interface Recipe {
     keyword: string[];
   };
   recipeTimes: {
-    prepTime: string;
-    cookTime: string;
-    totalTime: string;
+    prepTime?: string;
+    cookTime?: string;
+    totalTime?: string;
   };
   recipeIngredients: { amount: number; unit: string; name: string; notes: string }[];
   recipeInstructions: string[];

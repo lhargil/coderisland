@@ -19,6 +19,7 @@ describe('ListComponent', () => {
     fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
     component.recipes = [{
+    id: '',
     recipeTitle: '',
     recipeImage: '',
     recipeSummary: '',
@@ -27,7 +28,7 @@ describe('ListComponent', () => {
       cuisine: '',
       keyword: [''],
     },
-    recipeTimes: { 'prep time': '', 'cook time': '' },
+    recipeTimes: { 'prepTime': '', 'cookTime': '' },
     recipeIngredients: [],
     recipeInstructions: [],
   }];

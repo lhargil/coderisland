@@ -7,8 +7,8 @@ describe('Recipes Selectors', () => {
   const getRecipesId = (it: any) => it['id'];
   const createRecipe = (id: string, name = '') =>
     ({
-      id: '',
-      recipeTitle: '',
+      id,
+      recipeTitle: name,
       recipeImage: '',
       recipeSummary: '',
       recipeBriefInformation: {

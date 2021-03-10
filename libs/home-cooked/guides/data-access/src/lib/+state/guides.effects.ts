@@ -13,7 +13,7 @@ import * as GuidesFeature from './guides.reducer';
 
 @Injectable()
 export class GuidesEffects {
-  getOneRecipeFromRoute = createEffect(() => {
+  getOneRecipeFromRoute$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(ROUTER_NAVIGATION),
       filter((r: RouterNavigationAction) => r.payload.routerState.url.startsWith('/guides/')),
@@ -28,7 +28,7 @@ export class GuidesEffects {
     );
   });
 
-  getOneRecipeFromAPI = createEffect(() => {
+  getOneRecipeFromAPI$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(GuidesActions.loadOneRecipeGuideFromRouteFailure.type),
       switchMap(({recipeGuideId}) => {
