@@ -1,0 +1,29 @@
+<div class="mx-auto max-w-lg">
+  <div class="grid grid-cols-1 place-content-center">
+    <div class="bg-white overflow-hidden md:shadow md:rounded-lg">
+      <div class="px-4 py-5 h-32 sm:p-6">
+        <p>
+          {{ step }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="fixed bottom-0 inset-x-0 sm:relative sm:mt-4 mx-auto max-w-lg">
+  <div class="grid grid-cols-2 sm:gap-2">
+    <button
+      (click)="navigate.emit(-1)"
+      type="button"
+      class="w-full inline-flex justify-center sm:rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm"
+    >
+      Previous
+    </button>
+    <button
+      (click)="navigate.emit(1)"
+      type="button"
+      class="w-full inline-flex justify-center sm:rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm"
+    >
+      Next
+    </button>
+  </div>
+</div>

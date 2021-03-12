@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ListFacade } from '@coderisland/home-cooked/recipes/data-access';
+import { getAllRecipes, RecipesPartialState } from '@coderisland/home-cooked/recipes/data-access';
+import { select, Store } from '@ngrx/store';
+import * as RecipesActions from '@coderisland/home-cooked/recipes/data-access';
+import { Recipe } from '@coderisland/home-cooked/shared/models';
+import { Observable } from 'rxjs';
 
 @Component({
   templateUrl: './shell.component.html',
@@ -12,10 +16,12 @@ import { ListFacade } from '@coderisland/home-cooked/recipes/data-access';
   ]
 })
 export class ShellComponent implements OnInit {
-  constructor(public readonly listFacade: ListFacade) { }
+  recipes$ = this.store.pipe(select(getAllRecipes));
+  constructor(private readonly store: Store<RecipesPartialState>) {
+  }
 
   ngOnInit(): void {
-    this.listFacade.loadRecipes();
+    this.store.dispatch(RecipesActions.init());
   }
 
 }

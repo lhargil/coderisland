@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ShellComponent } from './shell.component';
+import { HomeCookedRecipesDataAccessModule } from '@coderisland/home-cooked/recipes/data-access';
+import { HomeCookedSharedDataAccessModule } from '@coderisland/home-cooked/shared/data-access';
 
 @NgModule({
   imports: [
@@ -18,13 +20,15 @@ import { ShellComponent } from './shell.component';
               import('@coderisland/home-cooked/recipes/feature-list').then((module) => module.FeatureListModule),
           },
           {
-            path: ':id',
+            path: ':recipeId',
             loadChildren: () =>
               import('@coderisland/home-cooked/recipes/feature-view').then((module) => module.FeatureViewModule),
           },
         ],
       },
     ]),
+    HomeCookedSharedDataAccessModule,
+    HomeCookedRecipesDataAccessModule
   ],
   declarations: [ShellComponent],
 })

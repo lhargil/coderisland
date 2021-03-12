@@ -1354,8 +1354,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/home-cooked/src/environments/environment.ts",
-                  "with": "apps/home-cooked/src/environments/environment.prod.ts"
+                  "replace": "libs/home-cooked/shared/environments/src/lib/environment.ts",
+                  "with": "libs/home-cooked/shared/environments/src/lib/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -1383,7 +1383,8 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "home-cooked:build"
+            "browserTarget": "home-cooked:build",
+            "proxyConfig": "apps/home-cooked/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -1536,31 +1537,6 @@
         }
       }
     },
-    "home-cooked-data-access": {
-      "projectType": "library",
-      "root": "libs/home-cooked/data-access",
-      "sourceRoot": "libs/home-cooked/data-access/src",
-      "prefix": "coderisland",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/home-cooked/data-access/src/**/*.ts",
-              "libs/home-cooked/data-access/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/home-cooked/data-access"],
-          "options": {
-            "jestConfig": "libs/home-cooked/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "home-cooked-recipes-feature-view": {
       "projectType": "library",
       "root": "libs/home-cooked/recipes/feature-view",
@@ -1581,6 +1557,152 @@
           "outputs": ["coverage/libs/home-cooked/recipes/feature-view"],
           "options": {
             "jestConfig": "libs/home-cooked/recipes/feature-view/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-shared-data-access": {
+      "projectType": "library",
+      "root": "libs/home-cooked/shared/data-access",
+      "sourceRoot": "libs/home-cooked/shared/data-access/src",
+      "prefix": "coderisland",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/shared/data-access/src/**/*.ts",
+              "libs/home-cooked/shared/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/shared/data-access"],
+          "options": {
+            "jestConfig": "libs/home-cooked/shared/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-shared-environments": {
+      "projectType": "library",
+      "root": "libs/home-cooked/shared/environments",
+      "sourceRoot": "libs/home-cooked/shared/environments/src",
+      "prefix": "hc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/shared/environments/src/**/*.ts",
+              "libs/home-cooked/shared/environments/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/shared/environments"],
+          "options": {
+            "jestConfig": "libs/home-cooked/shared/environments/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-shared-models": {
+      "root": "libs/home-cooked/shared/models",
+      "sourceRoot": "libs/home-cooked/shared/models/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/home-cooked/shared/models/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/shared/models"],
+          "options": {
+            "jestConfig": "libs/home-cooked/shared/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-guides-shell": {
+      "projectType": "library",
+      "root": "libs/home-cooked/guides/shell",
+      "sourceRoot": "libs/home-cooked/guides/shell/src",
+      "prefix": "hc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/guides/shell/src/**/*.ts",
+              "libs/home-cooked/guides/shell/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/guides/shell"],
+          "options": {
+            "jestConfig": "libs/home-cooked/guides/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-guides-feature-guide-steps": {
+      "projectType": "library",
+      "root": "libs/home-cooked/guides/feature-guide-steps",
+      "sourceRoot": "libs/home-cooked/guides/feature-guide-steps/src",
+      "prefix": "hc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/guides/feature-guide-steps/src/**/*.ts",
+              "libs/home-cooked/guides/feature-guide-steps/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/guides/feature-guide-steps"],
+          "options": {
+            "jestConfig": "libs/home-cooked/guides/feature-guide-steps/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-guides-data-access": {
+      "projectType": "library",
+      "root": "libs/home-cooked/guides/data-access",
+      "sourceRoot": "libs/home-cooked/guides/data-access/src",
+      "prefix": "hc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/guides/data-access/src/**/*.ts",
+              "libs/home-cooked/guides/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/guides/data-access"],
+          "options": {
+            "jestConfig": "libs/home-cooked/guides/data-access/jest.config.js",
             "passWithNoTests": true
           }
         }

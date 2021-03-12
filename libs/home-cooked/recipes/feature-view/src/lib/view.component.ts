@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { Recipe } from '@coderisland/home-cooked/shared/models';
 
 @Component({
   selector: 'hc-view',
@@ -14,7 +15,10 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 })
 export class ViewComponent implements OnInit {
   @Input()
-  recipe: any | null;
+  recipe?: Recipe | null;
+
+  @Output()
+  goBack = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit(): void {
