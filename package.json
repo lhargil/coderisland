@@ -36,6 +36,7 @@
     "format:write:omgimgflow": "nx format:write --projects=omgimgflow,omgimgflow-photos-shell",
     "start:home-cooked:hot": "nx serve home-cooked --hmr -o --port 4900",
     "start:home-cooked:local-api": "yarn run json-server --watch libs/home-cooked/shared/data-access/src/lib/data/db.json --routes libs/home-cooked/shared/data-access/src/lib/data/routes.json",
+    "start:home-cooked:api": "yarn nx serve home-cooked-api",
     "build:home-cooked": "nx run-many --target=build --projects=home-cooked --with-deps --prod --parallel",
     "unit:home-cooked": "nx run-many --target=test --projects=home-cooked --with-deps"
   },
