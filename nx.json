@@ -68,6 +68,7 @@
     "home-cooked-guides-shell": { "tags": ["scope:home-cooked", "type:feature"] },
     "home-cooked-guides-feature-guide-steps": { "tags": ["scope:home-cooked", "type:feature"] },
     "home-cooked-guides-data-access": { "tags": ["scope:home-cooked", "type:data-access"] },
-    "home-cooked-api": { "tags": ["scope:home-cooked-api", "type:app"] }
+    "home-cooked-api": { "tags": ["scope:home-cooked-api", "type:app"] },
+    "home-cooked-api-recipes": { "tags": ["scope:home-cooked-api", "type:feature"] }
   }
 }

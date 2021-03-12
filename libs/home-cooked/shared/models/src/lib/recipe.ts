@@ -16,6 +16,6 @@ export interface Recipe {
     cookTime?: string;
     totalTime?: string;
   };
-  recipeIngredients: { amount: number; unit: string; name: string; notes: string }[];
+  recipeIngredients: { amount: number; unit: string | null; name: string; notes: string | null }[];
   recipeInstructions: string[];
 }

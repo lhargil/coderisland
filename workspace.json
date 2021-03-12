@@ -1758,6 +1758,27 @@
           }
         }
       }
+    },
+    "home-cooked-api-recipes": {
+      "root": "libs/home-cooked/api/recipes",
+      "sourceRoot": "libs/home-cooked/api/recipes/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/home-cooked/api/recipes/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/api/recipes"],
+          "options": {
+            "jestConfig": "libs/home-cooked/api/recipes/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

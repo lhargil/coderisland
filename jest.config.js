@@ -50,5 +50,6 @@ module.exports = {
     '<rootDir>/libs/home-cooked/guides/feature-guide-steps',
     '<rootDir>/libs/home-cooked/guides/data-access',
     '<rootDir>/apps/home-cooked-api',
+    '<rootDir>/libs/home-cooked/api/recipes',
   ],
 };
