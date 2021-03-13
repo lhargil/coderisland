@@ -111,7 +111,8 @@ jobs:
         username: ${{ secrets.LHARGILCOM_DEPLOYER }}
         password: ${{ secrets.LHARGILCOM_DEPLOYERPW }}
         port: ${{ secrets.LHARGILCOM_PORT }}
-        script: mkdir -p ${{ secrets.HOMECOOKED_API_TEMP_DEST}}/api
+        script: |
+          mkdir -p ${{ secrets.HOMECOOKED_API_TEMP_DEST}}/api
     - name: copy to temp dest
       uses: appleboy/scp-action@v0.1.1
       with:
