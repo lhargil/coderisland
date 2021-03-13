@@ -26,7 +26,7 @@ export class RecipesService {
     return (recipe: Recipe) => {
       return {
         ...recipe,
-        recipeImage: `/omgimages/${recipe.recipeImage}?crop==10,10,-10,-100`
+        recipeImage: `/omgimages/${recipe.recipeImage}?crop=10,10,-10,-100`
       };
     };
   }
