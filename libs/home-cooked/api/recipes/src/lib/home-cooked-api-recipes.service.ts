@@ -10,13 +10,24 @@ import { RecipeDocument, RecipeModel } from './schema/recipe.schema';
 export class HomeCookedApiRecipesService {
   constructor(@InjectModel(RecipeModel.name) private readonly recipeModel: Model<RecipeDocument>) {}
 
-  getOne(id: string): Recipe | null | undefined {
-    // const recipeToReturn = this.recipes.find((recipe: Recipe) => recipe.id == id);
+  getOne(id: string): Observable<Recipe | null> {
+    const recipeToReturn = from(this.recipeModel.findOne({id}).exec())
+      .pipe(
+        map((recipeDocument: RecipeDocument | null) => {
+          if (!recipeDocument) {
+            return null;
+          }
 
-    return null;
+          const { id, recipeTitle, recipeImage, recipeSummary, recipeBriefInformation, recipeTimes, recipeIngredients, recipeInstructions } = recipeDocument;
+
+          return { id, recipeTitle, recipeImage, recipeSummary, recipeBriefInformation, recipeTimes, recipeIngredients, recipeInstructions };
+        })
+      );
+
+    return recipeToReturn;
   }
 
-  getAll(): Observable<any[]> {
+  getAll(): Observable<Recipe[]> {
     return from(this.recipeModel.find().limit(10).exec()).pipe(
       map((recipeDocuments: RecipeDocument[]) => {
         return recipeDocuments.map((recipeDocument: RecipeDocument) => {

@@ -22,7 +22,11 @@ export class RecipeModel {
       keyword: { type: [String] },
     }),
   )
-  recipeBriefInformation: Record<string, any>;
+  recipeBriefInformation: {
+    course: string;
+    cuisine: string;
+    keyword: string[];
+  };
   @Prop(
     raw({
       prepTime: { type: String },
@@ -30,14 +34,18 @@ export class RecipeModel {
       totalTime: { type: String },
     }),
   )
-  recipeTimes: Record<string, any>;
+  recipeTimes: {
+    prepTime?: string;
+    cookTime?: string;
+    totalTime?: string;
+  };
   @Prop([raw({
     amount: { type: Number },
     unit: { type: String },
     name: { type: String },
     notes: { type: String }
   })])
-  recipeIngredients: Record<string, any>[];
+  recipeIngredients: { amount: number; unit: string | null; name: string; notes: string | null }[];
   @Prop([String])
   recipeInstructions: string[];
 }

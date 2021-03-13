@@ -1,6 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { HomeCookedApiRecipesService } from './home-cooked-api-recipes.service';
-import { Recipe } from '@coderisland/home-cooked/shared/models';
 
 @Controller('recipes')
 export class HomeCookedApiRecipesController {
@@ -12,7 +11,7 @@ export class HomeCookedApiRecipesController {
   }
 
   @Get(':id')
-  getOne(@Param('id') id: string): Recipe | null | undefined {
+  getOne(@Param('id') id: string) {
     return this.homeCookedApiRecipesService.getOne(id);
   }
 }
