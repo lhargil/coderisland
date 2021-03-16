@@ -13,17 +13,21 @@ export class RecipesService {
   getAll(): Observable<Recipe[]> {
     return this.httpClient.get<Recipe[]>(`api/recipes`).pipe(
       map((recipes: Recipe[]) => {
-        return recipes.map((recipe: Recipe) => ({
-          ...recipe,
-          recipeImage: `${recipe.recipeImage}?crop=10,10,-10,-50`,
-        }));
+        return recipes.map(this.remapRecipe());
       }),
     );
   }
 
   getOne(id: string): Observable<Recipe> {
-    return this.httpClient
-      .get<Recipe>(`api/recipes/${id}`)
-      .pipe(map((recipe: Recipe) => ({ ...recipe, recipeImage: `${recipe.recipeImage}?crop=10,10,-10,-50` })));
+    return this.httpClient.get<Recipe>(`api/recipes/${id}`).pipe(map(this.remapRecipe()));
+  }
+
+  private remapRecipe(): (recipe: Recipe) => Recipe {
+    return (recipe: Recipe) => {
+      return {
+        ...recipe,
+        recipeImage: `/omgimages/${recipe.recipeImage}?crop=10,10,-10,-100`
+      };
+    };
   }
 }

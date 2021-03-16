@@ -1707,6 +1707,78 @@
           }
         }
       }
+    },
+    "home-cooked-api": {
+      "root": "apps/home-cooked-api",
+      "sourceRoot": "apps/home-cooked-api/src",
+      "projectType": "application",
+      "prefix": "home-cooked-api",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/home-cooked-api",
+            "main": "apps/home-cooked-api/src/main.ts",
+            "tsConfig": "apps/home-cooked-api/tsconfig.app.json",
+            "assets": ["apps/home-cooked-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/home-cooked-api/src/environments/environment.ts",
+                  "with": "apps/home-cooked-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "home-cooked-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/home-cooked-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/home-cooked-api"],
+          "options": {
+            "jestConfig": "apps/home-cooked-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "home-cooked-api-recipes": {
+      "root": "libs/home-cooked/api/recipes",
+      "sourceRoot": "libs/home-cooked/api/recipes/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/home-cooked/api/recipes/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/api/recipes"],
+          "options": {
+            "jestConfig": "libs/home-cooked/api/recipes/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
