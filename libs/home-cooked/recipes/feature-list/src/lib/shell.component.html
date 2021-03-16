@@ -1,1 +1,14 @@
+<div>
+  <form [formGroup]="searchRecipesForm">
+    <input type="text" formControlName="search">
+    <br>
+    <select formControlName="category" id="categories">
+      <option *ngFor="let cat of categories;" [value]="cat">{{cat}}</option>
+    </select>
+    <br>
+    <input type="text" formControlName="page">
+    <br>
+    <input type="text" formControlName="limit">
+  </form>
+</div>
 <hc-list [recipes]="recipes$ | async"></hc-list>

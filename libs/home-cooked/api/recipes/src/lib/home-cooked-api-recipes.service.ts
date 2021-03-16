@@ -1,4 +1,4 @@
-import { Recipe } from '@coderisland/home-cooked/shared/models';
+import { PagedResult, Recipe, RecipeSearch } from '@coderisland/home-cooked/shared/models';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -27,8 +27,8 @@ export class HomeCookedApiRecipesService {
     return recipeToReturn;
   }
 
-  getAll(): Observable<Recipe[]> {
-    return from(this.recipeModel.find().limit(10).exec()).pipe(
+  getAll(recipeSearch: RecipeSearch): Observable<PagedResult> {
+    return from(this.recipeModel.find().limit(Number(recipeSearch.limit)).exec()).pipe(
       map((recipeDocuments: RecipeDocument[]) => {
         return recipeDocuments.map((recipeDocument: RecipeDocument) => {
           const { id, recipeTitle, recipeImage, recipeSummary, recipeBriefInformation, recipeTimes, recipeIngredients, recipeInstructions } = recipeDocument;
@@ -36,6 +36,12 @@ export class HomeCookedApiRecipesService {
           return { id, recipeTitle, recipeImage, recipeSummary, recipeBriefInformation, recipeTimes, recipeIngredients, recipeInstructions };
         });
       }),
+      map((recipes: Recipe[]) => {
+        return {
+          recipes,
+          recipeSearch
+        }
+      })
     );
   }
 }

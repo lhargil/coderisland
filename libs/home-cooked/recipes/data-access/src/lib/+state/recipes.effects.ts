@@ -10,7 +10,7 @@ import { RouterNavigationAction, ROUTER_NAVIGATION } from '@ngrx/router-store';
 import { select, Store } from '@ngrx/store';
 import { getSelectRecipe } from './recipes.selectors';
 import { of } from 'rxjs';
-import { Recipe } from '@coderisland/home-cooked/shared/models';
+import { PagedResult, Recipe } from '@coderisland/home-cooked/shared/models';
 
 @Injectable()
 export class RecipesEffects {
@@ -52,6 +52,15 @@ export class RecipesEffects {
       switchMap(({ recipeId }) => {
         return this.recipesService.getOne(recipeId).pipe(map((recipe: Recipe) => RecipesActions.loadOneRecipeSuccess({ recipe })));
       }),
+    );
+  });
+
+  searchRecipes$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(RecipesActions.searchRecipes.type),
+      switchMap(({ recipeSearch }) => {
+        return this.recipesService.getRecipes(recipeSearch).pipe(map((pagedResult: PagedResult) => RecipesActions.loadPagedRecipesSuccess({ pagedResult })));
+      })
     );
   });
 
