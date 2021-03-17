@@ -25,20 +25,24 @@ export class ShellComponent implements OnInit {
     this.searchRecipesForm = this.formBuilder.group({
       search: [''],
       category: [''],
-      page: [null],
-      limit: [null],
+      page: [1],
+      limit: [10],
     });
   }
 
   ngOnInit(): void {
-    // this.store.dispatch(RecipesActions.init());
+    this.store.dispatch(RecipesActions.init());
+
     this.store.pipe(select(getRecipeSearch)).subscribe((recipeSearch: RecipeSearch) => {
-      this.searchRecipesForm.patchValue(recipeSearch, {emitEvent: false});
+
+      this.searchRecipesForm.patchValue(recipeSearch, { emitEvent: false });
     });
-    this.searchRecipesForm.valueChanges.pipe(
-      debounceTime(500),
-      distinctUntilChanged(),
-      tap((recipeSearch: RecipeSearch) => this.store.dispatch(RecipesActions.searchRecipes({ recipeSearch })))
-    ).subscribe();
+    this.searchRecipesForm.valueChanges
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        tap((recipeSearch: RecipeSearch) => this.store.dispatch(RecipesActions.searchRecipes({ recipeSearch }))),
+      )
+      .subscribe();
   }
 }
