@@ -28,7 +28,7 @@ export class HomeCookedApiRecipesService {
   }
 
   getAll(recipeSearch: RecipeSearch): Observable<PagedResult> {
-    return from(this.recipeModel.find().limit(Number(recipeSearch.limit)).exec()).pipe(
+    return from(this.recipeModel.find({$text: {$search: recipeSearch.search }}).limit(recipeSearch.limit).exec()).pipe(
       map((recipeDocuments: RecipeDocument[]) => {
         return recipeDocuments.map((recipeDocument: RecipeDocument) => {
           const { id, recipeTitle, recipeImage, recipeSummary, recipeBriefInformation, recipeTimes, recipeIngredients, recipeInstructions } = recipeDocument;

@@ -27,7 +27,7 @@ export const initialState: State = recipesAdapter.getInitialState({
     page: 1,
     limit: 10,
     search: '',
-    category: 'all'
+    category: 'recipe'
   }
 });
 

@@ -19,15 +19,3 @@ export interface Recipe {
   recipeIngredients: { amount: number; unit: string | null; name: string; notes: string | null }[];
   recipeInstructions: string[];
 }
-
-export interface RecipeSearch {
-  search: string;
-  category: string;
-  page: number;
-  limit: number;
-}
-
-export interface PagedResult {
-  recipes: Recipe[];
-  recipeSearch: RecipeSearch;
-}

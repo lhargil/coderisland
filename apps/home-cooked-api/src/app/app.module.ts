@@ -17,7 +17,6 @@ import { databaseConfig } from '@coderisland/home-cooked/shared/environments';
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => {
-        console.log(configService.get<string>('DATABASE.CONNECTION'));
         return {
           uri: configService.get<string>('DATABASE.CONNECTION'),
         };
