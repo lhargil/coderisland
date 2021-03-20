@@ -27,13 +27,13 @@ export class ListComponent implements OnInit {
   pageChangeClick = new EventEmitter<number>();
 
   searchRecipesForm!: FormGroup;
-  constructor(private readonly formBuilder: FormBuilder) {}
-
-  ngOnInit(): void {
+  constructor(private readonly formBuilder: FormBuilder) {
     this.searchRecipesForm = this.formBuilder.group({
       search: [''],
     });
   }
+
+  ngOnInit(): void {}
 
   patchForm(search = '') {
     this.searchRecipesForm.patchValue({ search }, { emitEvent: false });
