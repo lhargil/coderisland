@@ -10,9 +10,9 @@ import { Recipe } from '@coderisland/home-cooked/shared/models';
       :host {
         display: block;
       }
-    `
+    `,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListComponent implements OnInit {
   @Input()
@@ -27,18 +27,16 @@ export class ListComponent implements OnInit {
   pageChangeClick = new EventEmitter<number>();
 
   searchRecipesForm!: FormGroup;
-  constructor(private readonly formBuilder: FormBuilder) {
+  constructor(private readonly formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
     this.searchRecipesForm = this.formBuilder.group({
       search: [''],
     });
-
-  }
-
-  ngOnInit(): void {
   }
 
   patchForm(search = '') {
-    this.searchRecipesForm.patchValue({search}, {emitEvent: false});
+    this.searchRecipesForm.patchValue({ search }, { emitEvent: false });
     return this.searchRecipesForm;
   }
 
