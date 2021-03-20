@@ -29,10 +29,10 @@ module.exports = (isProd) => ({
     },
   },
   variants: {
+    extend: {
+      opacity: ['disabled'],
+      pointerEvents: ['disabled']
+    },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
 });

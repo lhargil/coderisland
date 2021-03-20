@@ -1,11 +1,36 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
-<div class="relative bg-gray-50 pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8">
-  <div class="absolute inset-0">
-    <div class="bg-white h-1/3 sm:h-2/3"></div>
-  </div>
+<div class="relative pb-20 xs:px-4 lg:pb-28">
   <div class="relative max-w-7xl mx-auto">
+    <div class="sm:max-w-lg w-full mx-auto mt-16">
+      <label for="search" class="sr-only">Search</label>
+      <form [formGroup]="searchRecipesForm">
+        <div class="relative">
+          <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+            <svg
+              class="flex-shrink-0 h-5 w-5 text-gray-400"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <input
+            formControlName="search"
+            id="search"
+            class="block w-full bg-white border border-gray-300 rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:outline-none focus:text-indigo-900 focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            placeholder="Search by recipe, cuisine or ingredients"
+            type="search"
+          />
+        </div>
+      </form>
+    </div>
     <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-      <div *ngFor="let recipe of recipes; let i = index;" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+      <div *ngFor="let recipe of recipes; let i = index" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
         <div class="flex-shrink-0">
           <img class="h-48 w-full object-cover" [src]="recipe.recipeImage" alt="" />
         </div>
@@ -41,6 +66,33 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="mt-12">
+      <nav class="py-3 flex items-center justify-between border-t border-gray-200" aria-label="Pagination">
+        <div class="hidden sm:block">
+          <p class="text-sm text-gray-700">
+            Showing
+            <span class="font-medium">{{ totalResults }}</span>
+            results
+          </p>
+        </div>
+        <div class="flex-1 flex justify-between sm:justify-end">
+          <button
+            (click)="handlePreviousClick()"
+            class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+            [disabled]="isFirstPage"
+          >
+            Previous
+          </button>
+          <button
+            (click)="handleNextClick()"
+            class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+            [disabled]="isLastPage"
+          >
+            Next
+          </button>
+        </div>
+      </nav>
     </div>
   </div>
 </div>

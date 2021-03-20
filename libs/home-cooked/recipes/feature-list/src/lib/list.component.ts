@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Recipe } from '@coderisland/home-cooked/shared/models';
 
 @Component({
@@ -16,9 +17,36 @@ import { Recipe } from '@coderisland/home-cooked/shared/models';
 export class ListComponent implements OnInit {
   @Input()
   recipes: Recipe[] | null = [];
-  constructor() { }
+  @Input()
+  totalResults?: number | null;
+  @Input()
+  isFirstPage: boolean | null = true;
+  @Input()
+  isLastPage: boolean | null = false;
+  @Output()
+  pageChangeClick = new EventEmitter<number>();
+
+  searchRecipesForm!: FormGroup;
+  constructor(private readonly formBuilder: FormBuilder) {
+    this.searchRecipesForm = this.formBuilder.group({
+      search: [''],
+    });
+
+  }
 
   ngOnInit(): void {
   }
 
+  patchForm(search = '') {
+    this.searchRecipesForm.patchValue({search}, {emitEvent: false});
+    return this.searchRecipesForm;
+  }
+
+  handleNextClick() {
+    this.pageChangeClick.emit(1);
+  }
+
+  handlePreviousClick() {
+    this.pageChangeClick.emit(-1);
+  }
 }

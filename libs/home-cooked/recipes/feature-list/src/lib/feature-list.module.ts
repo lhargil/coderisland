@@ -4,10 +4,9 @@ import { RouterModule } from '@angular/router';
 import { ShellComponent } from './shell.component';
 import { ListComponent } from './list.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SearchFormComponent } from './search-form.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule.forChild([{ path: '', pathMatch: 'full', component: ShellComponent }]), ReactiveFormsModule],
-  declarations: [ShellComponent, ListComponent, SearchFormComponent],
+  declarations: [ShellComponent, ListComponent],
 })
 export class FeatureListModule {}

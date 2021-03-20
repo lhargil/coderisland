@@ -24,10 +24,10 @@ export const initialState: State = recipesAdapter.getInitialState({
   // set initial required properties
   loaded: false,
   recipeSearch: {
+    search: '',
     page: 1,
     limit: 10,
-    search: '',
-    category: 'recipe'
+    totalItems: 1
   }
 });
 
