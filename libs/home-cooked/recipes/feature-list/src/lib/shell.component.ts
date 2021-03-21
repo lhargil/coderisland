@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { getAllRecipes, getRecipeSearch, RecipesPartialState } from '@coderisland/home-cooked/recipes/data-access';
+import { getAllRecipes, getRecipeSearch, getRecipesLoaded, RecipesPartialState } from '@coderisland/home-cooked/recipes/data-access';
 import { select, Store } from '@ngrx/store';
 import * as RecipesActions from '@coderisland/home-cooked/recipes/data-access';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -27,8 +27,14 @@ export class ShellComponent implements OnInit {
   searchRecipesForm!: FormGroup;
 
   page$ = new BehaviorSubject(1);
+
   recipes$ = this.store.pipe(select(getAllRecipes));
   recipeSearch$ = this.store.pipe(select(getRecipeSearch));
+  loading$ = this.store.pipe(
+    select(getRecipesLoaded),
+    map((loaded: boolean) => !loaded)
+  );
+
   totalResults$ = this.recipeSearch$.pipe(map((recipeSearch) => recipeSearch.totalItems));
   isFirstPage$ = this.page$.pipe(map(page => page == 1));
   isLastPage$ = this.totalResults$.pipe(map(totalResults => totalResults == 0));

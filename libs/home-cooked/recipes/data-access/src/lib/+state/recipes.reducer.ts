@@ -22,7 +22,7 @@ export const recipesAdapter: EntityAdapter<Recipe> = createEntityAdapter<Recipe>
 
 export const initialState: State = recipesAdapter.getInitialState({
   // set initial required properties
-  loaded: false,
+  loaded: true,
   recipeSearch: {
     search: '',
     page: 1,
@@ -47,6 +47,7 @@ const recipesReducer = createReducer(
       error: null
     });
   }),
+  on(RecipesActions.searchRecipes, (state) => ({ ...state, loaded: false, error: null })),
   on(RecipesActions.loadPagedRecipesSuccess, (state, action) =>
     recipesAdapter.setAll(action.pagedResult.recipes, {
     ...state, loaded: true, recipeSearch: action.pagedResult.recipeSearch }),
