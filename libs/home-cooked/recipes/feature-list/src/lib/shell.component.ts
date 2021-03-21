@@ -25,7 +25,6 @@ export class ShellComponent implements OnInit {
   readonly initialPage = 1;
 
   searchRecipesForm!: FormGroup;
-  categories = ['recipe', 'cuisine', 'ingredients'];
 
   page$ = new BehaviorSubject(1);
   recipes$ = this.store.pipe(select(getAllRecipes));
