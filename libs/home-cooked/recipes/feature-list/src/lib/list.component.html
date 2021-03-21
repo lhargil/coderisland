@@ -78,7 +78,7 @@
             results
           </p>
         </div>
-        <div class="flex-1 flex justify-between sm:justify-end">
+        <div class="hidden sm:flex-1 sm:flex sm:justify-end">
           <button
             (click)="handlePreviousClick()"
             class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
@@ -98,6 +98,29 @@
     </div>
   </div>
 </div>
+<div class="fixed bottom-0 inset-x-0 sm:hidden mx-auto max-w-lg">
+  <div class="bg-white">
+    <div class="grid grid-cols-2 sm:gap-2">
+      <button
+        (click)="handleNextClick()"
+        type="button"
+        class="w-full inline-flex justify-center sm:rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm disabled:opacity-50 disabled:pointer-events-none"
+        [disabled]="isFirstPage"
+      >
+        Previous
+      </button>
+      <button
+        (click)="handleNextClick()"
+        type="button"
+        class="w-full inline-flex justify-center sm:rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm disabled:opacity-50 disabled:pointer-events-none"
+        [disabled]="isLastPage"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+
 <ng-template #noRecipes>
   <div class="mt-12">
     <p class="text-center">Oops, there are no items found at the moment.</p>
