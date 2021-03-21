@@ -28,12 +28,7 @@ export class RecipesService {
 
     return this.httpClient.get<PagedResult>(`api/recipes/query`, { params }).pipe(
       map((pagedResult: PagedResult) => {
-        const recipes = pagedResult.recipes.map((recipe: Recipe) => {
-          return {
-            ...recipe,
-            recipeImage: `/omgimages/${recipe.recipeImage}?crop=10,10,-10,-100`
-          }
-        })
+        const recipes = pagedResult.recipes.map(this.remapRecipe())
         return {
           ...pagedResult,
           recipes
@@ -50,7 +45,7 @@ export class RecipesService {
     return (recipe: Recipe) => {
       return {
         ...recipe,
-        recipeImage: `/omgimages/${recipe.recipeImage}?crop=10,10,-10,-100`
+        recipeImage: `/omgimages/${recipe.recipeImage}`
       };
     };
   }
