@@ -22,7 +22,6 @@ describe('ShellComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ShellComponent);
     component = fixture.componentInstance;
-    component.searchRecipesForm = new FormGroup({search: new FormControl('')});
     fixture.detectChanges();
   });
 
