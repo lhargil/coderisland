@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Recipe } from '@coderisland/home-cooked/shared/models';
+import { Recipe, RecipeSearch } from '@coderisland/home-cooked/shared/models';
 
 @Component({
   selector: 'hc-list',
@@ -15,6 +15,16 @@ import { Recipe } from '@coderisland/home-cooked/shared/models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListComponent implements OnInit {
+  private _recipeSearch!: RecipeSearch | null;
+  @Input()
+  set recipeSearch(value: RecipeSearch | null) {
+    this._recipeSearch = value;
+    this.searchRecipesForm.patchValue({ search: value?.search }, { emitEvent: false });
+  }
+  get recipeSearch() {
+    return this._recipeSearch;
+  }
+
   @Input()
   recipes: Recipe[] | null = [];
   @Input()
@@ -34,11 +44,6 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  patchForm(search = '') {
-    this.searchRecipesForm.patchValue({ search }, { emitEvent: false });
-    return this.searchRecipesForm;
-  }
 
   handleNextClick() {
     this.pageChangeClick.emit(1);

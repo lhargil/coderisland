@@ -7,11 +7,18 @@ import {
 } from '@coderisland/home-cooked/recipes/data-access';
 import { select, Store } from '@ngrx/store';
 import * as RecipesActions from '@coderisland/home-cooked/recipes/data-access';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, map, switchMap, tap } from 'rxjs/operators';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  map,
+  scan,
+  shareReplay,
+  tap,
+  withLatestFrom,
+} from 'rxjs/operators';
 import { RecipeSearch } from '@coderisland/home-cooked/shared/models';
-import { BehaviorSubject, combineLatest } from 'rxjs';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { merge, Subject } from 'rxjs';
+import { UntilDestroy } from '@ngneat/until-destroy';
 import { ListComponent } from './list.component';
 
 @UntilDestroy()
@@ -29,56 +36,55 @@ export class ShellComponent implements OnInit {
   @ViewChild(ListComponent, { static: true }) listComponent!: ListComponent;
   readonly initialPage = 1;
 
-  searchRecipesForm!: FormGroup;
-
-  page$ = new BehaviorSubject(1);
+  localRecipeSearch: RecipeSearch | null = null;
 
   recipes$ = this.store.pipe(select(getAllRecipes));
-  recipeSearch$ = this.store.pipe(select(getRecipeSearch));
+  recipeSearch$ = this.store.pipe(
+    select(getRecipeSearch),
+    tap((recipeSearch) => (this.localRecipeSearch = recipeSearch)),
+  );
   loading$ = this.store.pipe(
     select(getRecipesLoaded),
     map((loaded: boolean) => !loaded),
   );
 
+  page$ = new Subject<number>();
+
   totalResults$ = this.recipeSearch$.pipe(map((recipeSearch) => recipeSearch.totalItems));
-  isFirstPage$ = this.page$.pipe(map((page) => page == 1));
+  isFirstPage$ = this.recipeSearch$.pipe(map((recipeSearch) => recipeSearch.page == this.initialPage));
   isLastPage$ = this.totalResults$.pipe(map((totalResults) => totalResults == 0));
 
   constructor(private readonly store: Store<RecipesPartialState>) {}
 
   ngOnInit(): void {
     this.store.dispatch(RecipesActions.init());
-
-    this.recipeSearch$.pipe(untilDestroyed(this)).subscribe((recipeSearch: RecipeSearch) => {
-      this.searchRecipesForm = this.listComponent.patchForm(recipeSearch.search);
-    });
-
-    combineLatest([
-      this.searchRecipesForm.valueChanges.pipe(
-        debounceTime(500),
+    merge(
+      this.page$.pipe(map((page) => ({ page }))),
+      this.listComponent.searchRecipesForm.valueChanges.pipe(
         distinctUntilChanged(),
-        tap((_) => this.page$.next(this.initialPage)),
+        debounceTime(500),
+        map((valueChanges) => ({ search: valueChanges.search, page: this.initialPage })),
       ),
-      this.page$,
-    ])
-      .pipe(
-        map(([recipeSearch, page]) => {
-          return {
-            recipeSearch,
-            page,
-          };
-        }),
-        tap(({ recipeSearch, page }) => {
-          const searchData = { ...recipeSearch, limit: 10, page };
-          this.store.dispatch(RecipesActions.searchRecipes({ recipeSearch: searchData }));
-        }),
-        untilDestroyed(this),
-      )
-      .subscribe();
+    ).pipe(
+      scan((prevState, command) => ({ ...prevState, ...command })),
+      shareReplay(1),
+      withLatestFrom(this.recipeSearch$),
+      map(([current, fromStore]) => ({current, fromStore})),
+      tap((state) => {
+        this.store.dispatch(RecipesActions.searchRecipes({
+          recipeSearch: {
+            ...state.fromStore,
+            ...state.current,
+            limit: 10,
+            totalItems: 1
+          }
+        }));
+      })
+    ).subscribe();
   }
 
   handlePageChangeClick(page: number) {
-    let currentPage = this.page$.getValue() + page;
+    let currentPage = (this.localRecipeSearch?.page || 1) + page;
     if (currentPage <= 0) {
       currentPage = this.initialPage;
     }

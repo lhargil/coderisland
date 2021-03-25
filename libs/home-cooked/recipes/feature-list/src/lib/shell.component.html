@@ -6,6 +6,7 @@
 </div>
 
 <hc-list
+  [recipeSearch]="recipeSearch$ | async"
   [recipes]="recipes$ | async"
   [totalResults]="totalResults$ | async"
   [isFirstPage]="isFirstPage$ | async"
