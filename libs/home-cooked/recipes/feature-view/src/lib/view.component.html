@@ -1,22 +1,29 @@
 <div class="min-h-screen bg-gray-100">
-  <div class="py-10">
-    <div
-      class="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-start md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8"
-    >
-      <div class="flex flex-col md:flex-row items-start space-y-2 md:space-x-4">
-        <div class="flex-shrink-0">
-          <div class="relative">
+  <div class="py-10 px-6 sm:px-0">
+    <div>
+      <div
+        class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3"
+      >
+        <div class="space-y-6 lg:col-start-1 lg:col-span-1">
+          <div>
             <img
               class="h-full w-full rounded-md"
               [src]="recipe?.recipeImage"
               [attr.alt]="'Photo of ' + recipe?.recipeSummary"
             />
-            <span class="absolute inset-0 shadow-inner rounded-full" aria-hidden="true"></span>
           </div>
         </div>
-        <div class="space-y-4">
-          <h1 class="text-2xl font-bold text-gray-900">{{ recipe?.recipeTitle }}</h1>
-          <div class="space-x-2">
+
+        <div class="lg:col-start-2 lg:col-span-2">
+          <div>
+            <h2 class="text-3xl sm:text-5xl font-bold text-gray-800">
+              {{ recipe?.recipeTitle }}
+            </h2>
+            <p class="mt-4">
+              {{ recipe?.recipeSummary }}
+            </p>
+          </div>
+          <div class="mt-8">
             <button
               (click)="goBack.emit()"
               type="button"
@@ -26,30 +33,13 @@
             </button>
             <a
               [routerLink]="['../../guides', recipe?.id]"
-              class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
+              class="inline-flex items-center justify-center px-4 py-2 ml-4 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
             >
               Start cooking
             </a>
           </div>
         </div>
       </div>
-      <!-- <div
-        class="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3"
-      >
-        <button
-          (click)="goBack.emit()"
-          type="button"
-          class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
-        >
-          Go back!
-        </button>
-        <button
-          type="button"
-          class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
-        >
-          Let's cook!
-        </button>
-      </div> -->
     </div>
 
     <div
@@ -58,40 +48,34 @@
       <div class="space-y-6 lg:col-start-2 lg:col-span-2">
         <!-- Description list-->
         <section aria-labelledby="applicant-information-title">
-          <div class="bg-white shadow sm:rounded-lg">
+          <div class="bg-white shadow rounded-lg">
             <div class="px-4 py-5 sm:px-6">
               <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
                 Recipe Information
               </h2>
-              <p class="mt-1 max-w-2xl text-sm text-gray-500">Recipe details</p>
+              <p class="mt-1 max-w-2xl text-sm text-gray-500">Brief details about this recipe.</p>
             </div>
             <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
               <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
-                <div class="sm:col-span-2">
-                  <dt class="text-sm font-medium text-gray-500">About</dt>
-                  <dd class="mt-1 text-sm text-gray-900">
-                    {{ recipe?.recipeSummary }}
-                  </dd>
-                </div>
-                <div class="sm:col-span-1">
+                <div *ngIf="recipe?.recipeBriefInformation?.course" class="sm:col-span-1">
                   <dt class="text-sm font-medium text-gray-500">Course</dt>
                   <dd class="mt-1 text-sm text-gray-900">
                     {{ recipe?.recipeBriefInformation?.course }}
                   </dd>
                 </div>
-                <div class="sm:col-span-1">
+                <div *ngIf="recipe?.recipeBriefInformation?.cuisine" class="sm:col-span-1">
                   <dt class="text-sm font-medium text-gray-500">Cuisine</dt>
                   <dd class="mt-1 text-sm text-gray-900">
                     {{ recipe?.recipeBriefInformation?.cuisine }}
                   </dd>
                 </div>
-                <div class="sm:col-span-1">
+                <div *ngIf="recipe?.recipeBriefInformation?.keyword" class="sm:col-span-1">
                   <dt class="text-sm font-medium text-gray-500">Keywords</dt>
                   <dd class="mt-1 text-sm text-gray-900">
                     {{ recipe?.recipeBriefInformation?.keyword }}
                   </dd>
                 </div>
-                <div class="sm:col-span-1">
+                <div *ngIf="recipe?.recipeTimes" class="sm:col-span-1">
                   <dt class="text-sm font-medium text-gray-500">Times</dt>
                   <dd class="mt-1 text-sm text-gray-900 space-y-2">
                     <p>Prep time: {{ recipe?.recipeTimes?.prepTime }}</p>
@@ -104,7 +88,7 @@
             <div>
               <a
                 href="#"
-                class="block bg-gray-50 text-sm font-medium text-gray-500 text-center px-4 py-4 hover:text-gray-700 sm:rounded-b-lg"
+                class="block bg-gray-50 text-sm font-medium text-gray-500 text-center px-4 py-4 hover:text-gray-700 rounded-b-lg"
                 >View full recipe</a
               >
             </div>
@@ -113,9 +97,12 @@
       </div>
 
       <section aria-labelledby="timeline-title" class="lg:col-start-1 lg:col-span-1">
-        <div class="bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6">
-          <h2 id="timeline-title" class="text-lg font-medium text-gray-900">Ingredients</h2>
-          <div class="mt-6 flow-root">
+        <div class="bg-white shadow rounded-lg">
+          <div class="px-4 pt-5 sm:px-6">
+            <h2 class="text-lg leading-6 font-medium text-gray-900">Ingredients</h2>
+            <p class="mt-1 max-w-2xl text-sm text-gray-500">Brief details about this recipe.</p>
+          </div>
+          <div class="border-t mt-6 flow-root px-4 py-5 sm:px-6">
             <ul class="-mb-8">
               <li *ngFor="let recipeIngredient of recipe?.recipeIngredients; let i = index">
                 <div class="relative pb-6">
