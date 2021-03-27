@@ -1,32 +1,26 @@
 import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
-import { fetch } from '@nrwl/angular';
 
 import * as RecipesFeature from './recipes.reducer';
 import * as RecipesActions from './recipes.actions';
 import { RecipesService, selectRouteParam } from '@coderisland/home-cooked/shared/data-access';
-import { filter, map, mergeMap, switchMap, take, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
 import { RouterNavigationAction, ROUTER_NAVIGATION } from '@ngrx/router-store';
 import { select, Store } from '@ngrx/store';
-import { getSelectRecipe } from './recipes.selectors';
+import { getRecipeSearch } from './recipes.selectors';
 import { of } from 'rxjs';
-import { Recipe } from '@coderisland/home-cooked/shared/models';
+import { PagedResult, Recipe, RecipeSearch } from '@coderisland/home-cooked/shared/models';
 
 @Injectable()
 export class RecipesEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RecipesActions.init),
-      fetch({
-        run: (action) => {
-          // Your custom service 'load' logic goes here. For now just return a success action...
-          return this.recipesService.getAll().pipe(map((recipes) => RecipesActions.loadRecipesSuccess({ recipes })));
-        },
-
-        onError: (action, error) => {
-          console.error('Error', error);
-          return RecipesActions.loadRecipesFailure({ error });
-        },
+      withLatestFrom(this.recipeStore.pipe(select(getRecipeSearch))),
+      mergeMap(([, recipeSearch]) => {
+        return this.recipesService
+          .getRecipes(recipeSearch)
+          .pipe(map((pagedResult: PagedResult) => RecipesActions.loadPagedRecipesSuccess({ pagedResult })));
       }),
     ),
   );
@@ -50,7 +44,20 @@ export class RecipesEffects {
     return this.actions$.pipe(
       ofType(RecipesActions.loadOneRecipeFromRouteFailure.type),
       switchMap(({ recipeId }) => {
-        return this.recipesService.getOne(recipeId).pipe(map((recipe: Recipe) => RecipesActions.loadOneRecipeSuccess({ recipe })));
+        return this.recipesService
+          .getOne(recipeId)
+          .pipe(map((recipe: Recipe) => RecipesActions.loadOneRecipeSuccess({ recipe })));
+      }),
+    );
+  });
+
+  searchRecipes$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(RecipesActions.searchRecipes.type),
+      switchMap(({ recipeSearch }) => {
+        return this.recipesService
+          .getRecipes(recipeSearch)
+          .pipe(map((pagedResult: PagedResult) => RecipesActions.loadPagedRecipesSuccess({ pagedResult })));
       }),
     );
   });

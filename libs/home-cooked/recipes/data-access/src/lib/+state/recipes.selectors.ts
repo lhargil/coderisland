@@ -17,6 +17,8 @@ export const getRecipesEntities = createSelector(getRecipesState, (state: State)
 
 export const getSelectedId = createSelector(getRecipesState, (state: State) => state.selectedId);
 
+export const getRecipeSearch = createSelector(getRecipesState, (state: State) => state.recipeSearch);
+
 export const getSelectRecipe = createSelector(
   getRecipesEntities,
   selectRouteParams,
