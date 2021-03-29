@@ -7,13 +7,14 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter
     `
       :host {
         display: block;
+        width: 100%;
       }
     `
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GuideStepComponent implements OnInit {
-  @Input() step!: string;
+  @Input() step: string | null = null;
   @Output() navigate = new EventEmitter<number>();
   constructor() { }
 
