@@ -1832,6 +1832,31 @@
           }
         }
       }
+    },
+    "home-cooked-shell-ui-main-view": {
+      "projectType": "library",
+      "root": "libs/home-cooked/shell/ui/main-view",
+      "sourceRoot": "libs/home-cooked/shell/ui/main-view/src",
+      "prefix": "hc",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home-cooked/shell/ui/main-view/src/**/*.ts",
+              "libs/home-cooked/shell/ui/main-view/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home-cooked/shell/ui/main-view"],
+          "options": {
+            "jestConfig": "libs/home-cooked/shell/ui/main-view/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
