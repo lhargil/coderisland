@@ -51,5 +51,7 @@ module.exports = {
     '<rootDir>/libs/home-cooked/guides/data-access',
     '<rootDir>/apps/home-cooked-api',
     '<rootDir>/libs/home-cooked/api/recipes',
+    '<rootDir>/libs/home-cooked/shell/ui/layout',
+    '<rootDir>/libs/home-cooked/shell/ui/nav-bar',
   ],
 };

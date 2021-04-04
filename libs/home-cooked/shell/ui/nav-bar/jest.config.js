@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'home-cooked-shell',
-  preset: '../../../jest.preset.js',
+  displayName: 'home-cooked-shell-ui-nav-bar',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/home-cooked/shell',
+  coverageDirectory: '../../../../../coverage/libs/home-cooked/shell/ui/nav-bar',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HomeCookedShellModule } from '@coderisland/home-cooked/shell';
+import { HomeCookedShellFeatureModule } from '@coderisland/home-cooked/shell/feature';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HomeCookedShellModule],
+  imports: [BrowserModule, HomeCookedShellFeatureModule],
   providers: [],
   bootstrap: [AppComponent],
 })

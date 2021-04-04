@@ -75,7 +75,6 @@
         "libs/omgimgflow/photos/shared/utils/clipboard-wrapper/src/index.ts"
       ],
       "@coderisland/omgimgflow/photos/shared/environments": ["libs/omgimgflow/photos/shared/environments/src/index.ts"],
-      "@coderisland/home-cooked/shell": ["libs/home-cooked/shell/src/index.ts"],
       "@coderisland/home-cooked/recipes/shell": ["libs/home-cooked/recipes/shell/src/index.ts"],
       "@coderisland/home-cooked/recipes/feature-list": ["libs/home-cooked/recipes/feature-list/src/index.ts"],
       "@coderisland/home-cooked/recipes/data-access": ["libs/home-cooked/recipes/data-access/src/index.ts"],
@@ -88,7 +87,10 @@
         "libs/home-cooked/guides/feature-guide-steps/src/index.ts"
       ],
       "@coderisland/home-cooked/guides/data-access": ["libs/home-cooked/guides/data-access/src/index.ts"],
-      "@coderisland/home-cooked/api/recipes": ["libs/home-cooked/api/recipes/src/index.ts"]
+      "@coderisland/home-cooked/api/recipes": ["libs/home-cooked/api/recipes/src/index.ts"],
+      "@coderisland/home-cooked/shell/feature": ["libs/home-cooked/shell/feature/src/index.ts"],
+      "@coderisland/home-cooked/shell/ui/layout": ["libs/home-cooked/shell/ui/layout/src/index.ts"],
+      "@coderisland/home-cooked/shell/ui/nav-bar": ["libs/home-cooked/shell/ui/nav-bar/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
