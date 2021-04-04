@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { GuidesPartialState, getSelected } from '@coderisland/home-cooked/guides/data-access';
 import { Recipe } from '@coderisland/home-cooked/shared/models';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
+import { map, scan, startWith, tap } from 'rxjs/operators';
 
 @Component({
   templateUrl: './shell-guide-steps.component.html',
@@ -15,29 +16,53 @@ import { Observable } from 'rxjs';
   ],
 })
 export class ShellGuideStepsComponent implements OnInit {
-  recipeGuide$: Observable<Recipe | null | undefined>;
-  recipeSteps: string[] = [];
-  currentStep = 0;
-  constructor(private readonly store: Store<GuidesPartialState>) {
-    this.recipeGuide$ = this.store.pipe(select(getSelected));
-  }
+  private currentStep = 0;
+  recipeGuide$ = this.store.pipe(select(getSelected));
+
+  recipeGuideSteps$ = this.recipeGuide$.pipe(map((recipeGuide: Recipe | null | undefined) => {
+    return recipeGuide?.recipeInstructions || [];
+  }));
+
+  lastStep$ = this.recipeGuideSteps$.pipe(
+    map((guideSteps: string[]) => guideSteps.length - 1)
+  );
+
+  stepChange$ = new Subject<number>();
+
+  currentStep$ = combineLatest([
+    this.stepChange$.pipe(startWith(0)),
+    this.lastStep$
+  ]).pipe(
+    map(([stepDirection, lastStep]) => {
+      const step = this.currentStep + stepDirection;
+
+      if (step < 0) {
+        this.currentStep = 0;
+      } else if (step > lastStep) {
+        this.currentStep = lastStep;
+      } else {
+        this.currentStep = step;
+      }
+      return this.currentStep;
+    })
+  );
+
+  currentGuideStep$ = combineLatest([
+    this.recipeGuideSteps$,
+    this.currentStep$
+  ]).pipe(
+    map(([recipeGuideSteps, currStep]: [string[], number]) => {
+      return recipeGuideSteps[currStep];
+    })
+  );
+
+
+  constructor(private readonly store: Store<GuidesPartialState>) {}
 
   ngOnInit(): void {
-    this.recipeGuide$.subscribe((guide: Recipe | null | undefined) => {
-      console.log(guide?.recipeInstructions);
-      this.recipeSteps = guide?.recipeInstructions || [];
-    });
   }
 
   handleNavigate(stepDirection: number) {
-    if (stepDirection < 0 && this.currentStep == 0) {
-      return;
-    }
-
-    if (stepDirection > 0 && this.currentStep >= this.recipeSteps.length - 1) {
-      return;
-    }
-
-    this.currentStep += stepDirection;
+    this.stepChange$.next(stepDirection);
   }
 }

@@ -1,3 +1,28 @@
-
-<!-- {{recipeSteps | json}} -->
-<hc-guide-step [step]="recipeSteps[currentStep]" (navigate)="handleNavigate($event)"></hc-guide-step>
+<div class="min-h-screen bg-gray-100 pt-4 px-4">
+  <ng-container *ngIf="recipeGuide$ | async as recipe">
+    <div class="bg-white px-4 border-b border-gray-200 sm:px-6 mx-auto max-w-4xl rounded-md">
+      <div class="flex item-center justify-center space-x-4">
+        <a
+          [routerLink]="['../../recipes', recipe?.id]"
+          class="flex-none text-gray-400 hover:text-gray-500 py-5"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span class="sr-only">Go back to recipe details page</span>
+        </a>
+        <h2 class="flex-1 text-lg leading-6 font-medium text-gray-900 py-5">{{ recipe.recipeTitle }}</h2>
+      </div>
+      <div class="flex flex-col items-center justify-start">
+        <div class="flex-none">
+          <img
+            class="h-40 w-40 sm:h-full sm:w-full rounded-md"
+            [src]="recipe?.recipeImage"
+            [attr.alt]="'Photo of ' + recipe?.recipeSummary"
+          />
+        </div>
+        <hc-guide-step [step]="currentGuideStep$ | async" (navigate)="handleNavigate($event)"></hc-guide-step>
+      </div>
+    </div>
+  </ng-container>
+</div>
