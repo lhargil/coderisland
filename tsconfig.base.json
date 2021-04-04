@@ -91,7 +91,8 @@
       "@coderisland/home-cooked/shell/feature": ["libs/home-cooked/shell/feature/src/index.ts"],
       "@coderisland/home-cooked/shell/ui/layout": ["libs/home-cooked/shell/ui/layout/src/index.ts"],
       "@coderisland/home-cooked/shell/ui/nav-bar": ["libs/home-cooked/shell/ui/nav-bar/src/index.ts"],
-      "@coderisland/home-cooked/shell/ui/main-view": ["libs/home-cooked/shell/ui/main-view/src/index.ts"]
+      "@coderisland/home-cooked/shell/ui/main-view": ["libs/home-cooked/shell/ui/main-view/src/index.ts"],
+      "@coderisland/home-cooked/shell/ui/footer": ["libs/home-cooked/shell/ui/footer/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

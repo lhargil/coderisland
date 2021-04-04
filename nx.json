@@ -72,6 +72,7 @@
     "home-cooked-shell-feature": { "tags": ["scope:home-cooked", "type:feature"] },
     "home-cooked-shell-ui-layout": { "tags": ["scope:home-cooked", "type:ui"] },
     "home-cooked-shell-ui-nav-bar": { "tags": ["scope:home-cooked", "type:ui"] },
-    "home-cooked-shell-ui-main-view": { "tags": ["scope:home-cooked", "type:ui"] }
+    "home-cooked-shell-ui-main-view": { "tags": ["scope:home-cooked", "type:ui"] },
+    "home-cooked-shell-ui-footer": { "tags": ["scope:home-cooked", "type:ui"] }
   }
 }

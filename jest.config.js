@@ -54,5 +54,6 @@ module.exports = {
     '<rootDir>/libs/home-cooked/shell/ui/layout',
     '<rootDir>/libs/home-cooked/shell/ui/nav-bar',
     '<rootDir>/libs/home-cooked/shell/ui/main-view',
+    '<rootDir>/libs/home-cooked/shell/ui/footer',
   ],
 };
