@@ -43,7 +43,7 @@
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <ng-container *ngFor="let link of links">
+            <ng-container *ngFor="let link of links$ | async">
               <a
                 [routerLink]="['/', link.path]"
                 routerLinkActive="bg-gray-900 text-white"
@@ -170,7 +170,8 @@
   <div class="hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <ng-container *ngFor="let link of links">
+      <ng-container *ngFor="let link of links$ | async">
+        {{link | json}}
         <a
           [routerLink]="['/', link.path]"
           routerLinkActive="bg-gray-900 text-white"
