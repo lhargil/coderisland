@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, TemplateRef } from '@angular/core';
+import { DialogService } from '@ngneat/dialog';
 
 @Component({
   selector: 'hc-layout',
@@ -7,7 +8,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent implements OnInit {
-  constructor() {}
+  constructor(private dialog: DialogService) {}
 
   ngOnInit(): void {}
+
+  open(tpl: TemplateRef<any>) {
+    this.dialog.open(tpl);
+  }
 }
