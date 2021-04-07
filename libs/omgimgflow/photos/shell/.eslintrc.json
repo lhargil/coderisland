@@ -9,8 +9,22 @@
         "project": ["libs/omgimgflow/photos/shell/tsconfig.*?.json"]
       },
       "rules": {
-        "@angular-eslint/directive-selector": ["error", { "type": "attribute", "prefix": "omg", "style": "camelCase" }],
-        "@angular-eslint/component-selector": ["error", { "type": "element", "prefix": "omg", "style": "kebab-case" }]
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "omg",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "omg",
+            "style": "kebab-case"
+          }
+        ]
       }
     },
     {
