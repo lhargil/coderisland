@@ -1335,11 +1335,8 @@
       "prefix": "hc",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "customWebpackConfig": {
-              "path": "tailwind-configs/home-cooked.webpack.config.js"
-            },
             "outputPath": "dist/apps/home-cooked",
             "index": "apps/home-cooked/src/index.html",
             "main": "apps/home-cooked/src/main.ts",
@@ -1381,7 +1378,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "home-cooked:build",
             "proxyConfig": "apps/home-cooked/proxy.conf.json"

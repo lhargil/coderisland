@@ -1,23 +1,19 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
+const { guessProductionMode } = require('@ngneat/tailwind');
+process.env.TAILWIND_MODE = guessProductionMode() ? 'build' : 'watch';
 
-module.exports = (isProd) => ({
+module.exports = {
   prefix: '',
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
+  mode: 'jit',
   purge: {
-    enabled: isProd,
     content: [
-      './apps/**/*.html',
-      './apps/**/*.ts',
-      './libs/**/*.html',
-      './libs/**/*.ts',
+      './apps/**/*.{html,ts,css,scss,sass,less,styl}',
+      './libs/**/*.{html,ts,css,scss,sass,less,styl}',
     ],
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     extend: {
       colors: {
@@ -35,4 +31,4 @@ module.exports = (isProd) => ({
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
-});
+};
