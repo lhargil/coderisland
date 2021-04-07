@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LayoutComponent } from './layout.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { DialogModule, DialogService } from '@ngneat/dialog';
+import { HomeCookedShellUiMainViewModule } from '@coderisland/home-cooked/shell/ui/main-view';
+import { HomeCookedShellUiNavBarModule } from '@coderisland/home-cooked/shell/ui/nav-bar';
+import { HomeCookedShellUiFooterModule } from '@coderisland/home-cooked/shell/ui/footer';
 
 describe('LayoutComponent', () => {
   let component: LayoutComponent;
@@ -8,7 +13,11 @@ describe('LayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LayoutComponent ]
+      imports: [RouterTestingModule, DialogModule, HomeCookedShellUiNavBarModule, HomeCookedShellUiMainViewModule, HomeCookedShellUiFooterModule],
+      declarations: [ LayoutComponent ],
+      providers: [{
+        provide: DialogService, useValue: {}
+      }]
     })
     .compileComponents();
   });
