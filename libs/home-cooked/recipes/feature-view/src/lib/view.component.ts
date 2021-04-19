@@ -19,9 +19,16 @@ export class ViewComponent implements OnInit {
 
   @Output()
   goBack = new EventEmitter<void>();
+
+  @Output()
+  startCooking = new EventEmitter<string[]>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  handleStartCooking() {
+    this.startCooking.emit(this.recipe?.recipeInstructions);
+  }
 }

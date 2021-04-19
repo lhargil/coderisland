@@ -1,0 +1,27 @@
+<div class="grid grid-cols-1 place-content-center w-full">
+  <div class="overflow-hidden">
+    <div class="px-4 py-4 sm:p-4">
+      <p class="w-full sm:w-9/12 mx-auto">
+        {{ ref.data[step] }}
+      </p>
+    </div>
+  </div>
+</div>
+<div class="relative mt-4">
+  <div class="grid grid-cols-2 px-4 py-5 sm:p-4 gap-2">
+    <button
+      (click)="handlePrevious()"
+      type="button"
+      class="w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm"
+    >
+      Previous
+    </button>
+    <button
+      (click)="handleNext()"
+      type="button"
+      class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm"
+    >
+      Next
+    </button>
+  </div>
+</div>
