@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DialogRef } from '@ngneat/dialog';
 
 import { CookGuideComponent } from './cook-guide.component';
 
@@ -8,6 +9,7 @@ describe('CookGuideComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      providers: [DialogRef],
       declarations: [ CookGuideComponent ]
     })
     .compileComponents();
@@ -16,6 +18,7 @@ describe('CookGuideComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CookGuideComponent);
     component = fixture.componentInstance;
+    component.ref.data = [];
     fixture.detectChanges();
   });
 
